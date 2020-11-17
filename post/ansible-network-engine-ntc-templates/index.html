@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible Network Engine and NTC Templates &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible Network Engine and NTC Templates</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 5 minutes,
+    40 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1250 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-01-27</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ntc">ntc</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>In this post we will talk about primarily three components that will work together to get structured
+data out of the command line of a Cisco device. The three pieces are:</p>
+<ul>
+<li><a href="https://github.com/ansible-network/network-engine">Ansible Network Engine</a></li>
+<li><a href="https://github.com/google/textfsm">Google&rsquo;s TextFSM</a></li>
+<li><a href="https://github.com/networktocode/ntc-templates">Network to Code Templates</a></li>
+</ul>
+<h2 id="why-this-post">Why this Post?</h2>
+<p>I&rsquo;m writing this post because I was initially hesitant to start using the Ansible role originally
+when I was doing everything pretty well with the generic modules that come available with Ansible. I
+was challenged to migrate a Python script that was using TextFSM and Netmiko to be in Ansible. So I
+was originally aware of Ansible Network Engine, but had not done anything with it. So what better
+time than to put it to practice than when it is needed.</p>
+<h2 id="ansible-network-engine">Ansible Network Engine</h2>
+<p>The Ansible network engine is an Ansible role that is being developed by the Red Hat Ansible team.
+From the Github page:</p>
+<blockquote>
+<p>This role provides the foundation for building network roles by providing modules and plug-ins that
+are common to all Ansible Network roles.</p>
+</blockquote>
+<p>Within Ansible Network Engine you have the ability to <code>parse</code> the output of text. You can write your
+own parser, or leverage some work that has been done by others (and willing to put the work out for
+the good of the community - not stealing it).</p>
+<blockquote>
+<p>I&rsquo;m going to recommend to read more on Ansible Network Engine parser with your own text parsing to
+go to this site - <a href="https://termlen0.github.io/2018/06/26/observations/">https://termlen0.github.io/2018/06/26/observations/</a>
+This post is more about using already existing TextFSM parsers with the help from NTC than the
+parser itself.</p>
+<p>A second link found recently is from the Ansible linklight (learning) team. Take a look here if
+wanting to do more with Parsers. <a href="https://github.com/ansible/workshops/tree/master/exercises/ansible_network/supplemental/3-1-parser">https://github.com/ansible/workshops/tree/master/exercises/ansible_network/supplemental/3-1-parser</a></p>
+</blockquote>
+<h3 id="textfsm">TextFSM</h3>
+<p>From the Github page:</p>
+<blockquote>
+<p>TextFSM is a Python module which implements a template based state machine for parsing
+semi-formatted text. Originally developed to allow programmatic access to information returned
+from the command line interface (CLI) of networking devices.</p>
+</blockquote>
+<p>Basically the gist of things is that TextFSM takes text that is output from a show command and puts
+it into structured data. It does this using a regex pattern matching setup under the hood. This can
+be helpful for grabbing information out of a text blob issues to networking devices.</p>
+<p>You <strong>must</strong> first install the textfsm python module for this to work. To install, I recommend
+installing on both Python2 and Python3 in case the Ansible version is still using Python2:</p>
+<pre><code>pip install textfsm
+</code></pre><pre><code>pip3 install textfsm
+</code></pre><h3 id="textfsm-parser">TextFSM Parser</h3>
+<p>Digging into the code on the Ansible Network Engine Github page you will find the file:
+<a href="https://github.com/ansible-network/network-engine/blob/devel/library/textfsm_parser.py">https://github.com/ansible-network/network-engine/blob/devel/library/textfsm_parser.py</a></p>
+<p>This is the TextFSM parser engine that is able to be leveraged. Looking at the Python file and the
+<code>EXAMPLES</code> section you can find much more information about how to leverage the particular module.
+From the Python file it has the following section:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">store returned facts into a key call output</span>
+  <span style="color:#f92672">textfsm_parser</span>:
+    <span style="color:#f92672">file</span>: <span style="color:#ae81ff">files/parser_templates/show_interface.yaml</span>
+    <span style="color:#f92672">content</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;file&#39;, &#39;output/show_interfaces.txt&#39;) }}&#34;</span>
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">output</span>
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Breaking this down further helps to get to the point.</p>
+<p>Line 1: This is the name of the Ansible task, nothing new here<br>
+Line 2: Calls the plugin <code>textfsm_parser</code><br>
+Line 3: <code>File</code>, this is the parsing file that you are leveraging in the task, and where you would
+call the file location for the ntc template
+Line 4: <code>Content</code>, this is what you are going to send through the parser. In the example given it is
+a file, but you can also have a variable of say output from a previous command run put in here
+Line 5: <code>name</code>, this is where you will store the output data, it will be in a structured format</p>
+<blockquote>
+<p>This will not get into reading the output of the structured data. For more on that please take a
+look back at my <a href="https://josh-v.com/blog/2019/01/05/ansible-output-work.html">previous post on working without output</a></p>
+</blockquote>
+<p>The original tricky part was the part about the <code>File</code>. Originally a lot of posts related to having
+a parser file all set to go. My original thinking was I don&rsquo;t see those parsers, but they are in the
+examples. I decided to try to point the textfsm parser at an NTC template that had been downloaded.
+After this, success.</p>
+<p><code>Content</code> is the text that you want to send through the parser. So a variable or a text file</p>
+<p>The <code>name</code> portion is what you are <em>registering</em> as facts that can be accessed underneath
+<code>ansible_facts</code>.</p>
+<h3 id="ntc-templates">NTC Templates</h3>
+<p>NTC (Network to Code) has a community environment with a significant number of parsers available. I
+have found these particularly helpful in the Cisco environment. To install - checkout the Github
+page.</p>
+<p><a href="https://github.com/networktocode/ntc-templates">https://github.com/networktocode/ntc-templates</a></p>
+<p>These are files, so the best methodology I have found is to download these to your machine using the
+git process of cloning. There are updates made regularly, so make sure to do <code>git pull</code> to get the
+most recent version.</p>
+<blockquote>
+<p>Pro tip: You may want to install these to your home directory. This is the default directory if
+memory serves me right that Netmiko will look for the textfsm templates as well</p>
+</blockquote>
+<h2 id="sample">Sample</h2>
+<p>Here is the playbook that I will run against the lab environment.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">switches</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+  <span style="color:#f92672">roles</span>:
+    - <span style="color:#ae81ff">ansible-network.network-engine</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">CLI &gt;&gt; Get CDP neighbors</span>
+      <span style="color:#f92672">ios_command</span>:
+        <span style="color:#f92672">commands</span>:
+          - <span style="color:#ae81ff">show cdp neighbors</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">SYS &gt;&gt; Parse CDP Information</span>
+      <span style="color:#f92672">textfsm_parser</span>:
+        <span style="color:#f92672">file</span>: <span style="color:#e6db74">&#34;/opt/ntc-templates/templates/cisco_ios_show_cdp_neighbors.template&#34;</span>
+        <span style="color:#f92672">content</span>: <span style="color:#e6db74">&#34;{{ command_output.stdout[0] }}&#34;</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cdp_facts</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; Print output</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ansible_facts.cdp_facts }}&#34;</span>
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="task-1-get-cdp-neighbor-information">Task 1: Get CDP Neighbor information</h4>
+<p>This task is going to log in and get the CDP neighbor information from the device and register it to
+a fact <code>command_output</code></p>
+<h4 id="task-2-send-through-the-parser">Task 2: Send through the parser</h4>
+<p>This is where the parser comes in, it will take the command output taken in the first task and send
+it through the textfsm parser. This then registers the information underneath <code>ansible_facts</code>. The
+next task is where you will see that output.</p>
+<h4 id="task-3-prints-the-output">Task 3: Prints the output</h4>
+<p>You will see the information underneath the <code>ansible_facts</code> to get at the information as it sits
+parsed.</p>
+<h3 id="sample-output">Sample Output</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PLAY <span style="color:#f92672">[</span>Switch config<span style="color:#f92672">]</span> *******************************************************************************
+
+TASK <span style="color:#f92672">[</span>CLI &gt;&gt; Get CDP neighbors<span style="color:#f92672">]</span> ********************************************************************
+ok: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span>
+
+TASK <span style="color:#f92672">[</span>SYS &gt;&gt; Parse CDP Information<span style="color:#f92672">]</span> ****************************************************************
+ok: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span>
+
+TASK <span style="color:#f92672">[</span>DEBUG &gt;&gt; Print output<span style="color:#f92672">]</span> ***********************************************************************
+ok: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#f92672">[</span>
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;CAPABILITY&#34;</span>: <span style="color:#e6db74">&#34;R S&#34;</span>,
+            <span style="color:#e6db74">&#34;LOCAL_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 1/0&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR&#34;</span>: <span style="color:#e6db74">&#34;Switch&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 1/0&#34;</span>,
+            <span style="color:#e6db74">&#34;PLATFORM&#34;</span>: <span style="color:#e6db74">&#34;I&#34;</span>
+        <span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;CAPABILITY&#34;</span>: <span style="color:#e6db74">&#34;R S&#34;</span>,
+            <span style="color:#e6db74">&#34;LOCAL_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 1/1&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR&#34;</span>: <span style="color:#e6db74">&#34;Switch&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 1/1&#34;</span>,
+            <span style="color:#e6db74">&#34;PLATFORM&#34;</span>: <span style="color:#e6db74">&#34;I&#34;</span>
+        <span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;CAPABILITY&#34;</span>: <span style="color:#e6db74">&#34;R&#34;</span>,
+            <span style="color:#e6db74">&#34;LOCAL_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 0/0&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR&#34;</span>: <span style="color:#e6db74">&#34;router_edge&#34;</span>,
+            <span style="color:#e6db74">&#34;NEIGHBOR_INTERFACE&#34;</span>: <span style="color:#e6db74">&#34;Gig 0/2&#34;</span>,
+            <span style="color:#e6db74">&#34;PLATFORM&#34;</span>: <span style="color:#e6db74">&#34;B&#34;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">]</span>
+<span style="color:#f92672">}</span>
+
+PLAY RECAP *****************************************************************************************
+sw01                       : ok<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>    changed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    unreachable<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    failed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="summary">Summary</h2>
+<p>Putting all of these together into a playbook you can more easily get at information presented from
+a network device command line. Let&rsquo;s say you wanted to get CDP neighbors. The CDP neighbor command
+output is tough to work with, other than seeing if something is in the output.</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/">Ansible differences between ios config and cli config</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-ios-banner/">Ansible IOS Banner</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-ios-banner/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

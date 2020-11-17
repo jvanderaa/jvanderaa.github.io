@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible Cisco IOS User Module &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible Cisco IOS User Module</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 8 minutes,
+    55 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1965 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-03-14</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/cisco">cisco</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ios_user">ios_user</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>In this post I will be taking a look at some of the usability setup of managing Cisco IOS devices
+with the <a href="https://docs.ansible.com/ansible/latest/modules/ios_config_module.html">Ansible Cisco IOS User Module</a>.
+This can be very helpful for setting up managed user accounts on systems, or the backup user
+accounts when you have TACACS or RADIUS setup.</p>
+<p>The module documentation overall looks complete from what I have done for user account management on
+devices in the past. There are a couple of interesting parameters available, that I may not get to
+completely on this post. There is support for aggregate, meaning that you can generate the
+configuration for multiple user accounts and pass it in as one. You can set a password in clear text
+that gets encrypted when on the device, or you can set a hashed_password with the type of hash and
+its corresponding value. And as expected with a module for setting user accounts you can also set
+the privilege level for which the user account uses.</p>
+<h2 id="ssh-before-setting-up-ssh-keys">SSH Before Setting Up SSH Keys</h2>
+<p>You have probably seen this before, but for completeness sake I did get the output of the SSH login
+banner. This has the default lab setup on the device. So we do get a banner, but I&rsquo;m getting
+prompted for a Password as well.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ssh rtr-1
+  The authenticity of host <span style="color:#e6db74">&#39;rtr-1 (10.250.0.167)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
+</span><span style="color:#e6db74">  RSA key fingerprint is SHA256:iyEgRBFlLhkW+Z2OOYWPvrjuzhTVY9wULmoHkWYgbrw.
+</span><span style="color:#e6db74">  Are you sure you want to continue connecting (yes/no)? yes
+</span><span style="color:#e6db74">  Warning: Permanently added &#39;</span>rtr-1<span style="color:#e6db74">&#39; (RSA) to the list of known hosts.
+</span><span style="color:#e6db74">  Warning: the RSA host key for &#39;</span>rtr-1<span style="color:#e6db74">&#39; differs from the key for the IP address &#39;</span>10.250.0.167<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">  Offending key for IP in /Users/joshv/.ssh/known_hosts:170
+</span><span style="color:#e6db74">  Are you sure you want to continue connecting (yes/no)? yes
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  **************************************************************************
+</span><span style="color:#e6db74">  * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+</span><span style="color:#e6db74">  * education. IOSv is provided as-is and is not supported by Cisco&#39;</span>s      *
+  * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+  * of the IOSv Software or Documentation to any third party <span style="color:#66d9ef">for</span> any       *
+  * purposes is expressly prohibited except as otherwise authorized by     *
+  * Cisco in writing.                                                      *
+  **************************************************************************Password:</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="adding-ssh-key-users">Adding SSH Key Users</h2>
+<p>Copying from the example on the module definition, I went ahead and created a playbook that will
+create an account on the same device but with my local computer account. Here is the playbook:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  ---
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PLAY 1: WORKING WITH IOS USER MODULE&#34;</span>
+    <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">cisco_routers</span>
+    <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+    <span style="color:#f92672">tasks</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Add local username with SSH Key&#34;</span>
+        <span style="color:#f92672">ios_user</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">joshv</span>
+          <span style="color:#f92672">nopassword</span>: <span style="color:#66d9ef">True</span>
+          <span style="color:#f92672">sshkey</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;file&#39;, &#39;~/.ssh/id_rsa.pub&#39;) }}&#34;</span>
+          <span style="color:#f92672">state</span>: <span style="color:#ae81ff">absent</span>
+          
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;FINAL TASK: Save Config&#34;</span>
+        <span style="color:#f92672">ios_config</span>:
+          <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">always</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>It is a single play playbook, with 2 tasks. Task 1 will add the local id_rsa public key to the IOS
+device. The final task is a play to save the configuration.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ansible-playbook working_with_ios_user-1.yml
+
+  PLAY <span style="color:#f92672">[</span>PLAY 1: WORKING WITH IOS USER MODULE<span style="color:#f92672">]</span> ****************************************************
+
+  TASK <span style="color:#f92672">[</span>TASK 1: Add local username with SSH Key<span style="color:#f92672">]</span> *************************************************
+  <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Module did not set no_log <span style="color:#66d9ef">for</span> update_password
+  <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Module did not set no_log <span style="color:#66d9ef">for</span> password_type
+  changed: <span style="color:#f92672">[</span>r1<span style="color:#f92672">]</span>
+
+  TASK <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> ***********************************************************************************
+  ok: <span style="color:#f92672">[</span>r1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#f92672">{</span>
+          <span style="color:#e6db74">&#34;ansible_facts&#34;</span>: <span style="color:#f92672">{</span>
+              <span style="color:#e6db74">&#34;discovered_interpreter_python&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>
+          <span style="color:#f92672">}</span>,
+          <span style="color:#e6db74">&#34;changed&#34;</span>: true,
+          <span style="color:#e6db74">&#34;commands&#34;</span>: <span style="color:#f92672">[</span>
+              <span style="color:#e6db74">&#34;ip ssh pubkey-chain&#34;</span>,
+              <span style="color:#e6db74">&#34;username joshv&#34;</span>,
+              <span style="color:#e6db74">&#34;key-hash ssh-rsa &lt;hash_masked&gt; joshv@&lt;adevice&gt;&#34;</span>,
+              <span style="color:#e6db74">&#34;exit&#34;</span>,
+              <span style="color:#e6db74">&#34;exit&#34;</span>,
+              <span style="color:#e6db74">&#34;username joshv nopassword&#34;</span>
+          <span style="color:#f92672">]</span>,
+          <span style="color:#e6db74">&#34;failed&#34;</span>: false,
+          <span style="color:#e6db74">&#34;warnings&#34;</span>: <span style="color:#f92672">[</span>
+              <span style="color:#e6db74">&#34;Module did not set no_log for update_password&#34;</span>,
+              <span style="color:#e6db74">&#34;Module did not set no_log for password_type&#34;</span>
+          <span style="color:#f92672">]</span>
+      <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+
+  TASK <span style="color:#f92672">[</span>FINAL TASK: Save Config<span style="color:#f92672">]</span> *****************************************************************
+  changed: <span style="color:#f92672">[</span>r1<span style="color:#f92672">]</span>
+
+  PLAY RECAP *************************************************************************************
+  r1                         : ok<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>    changed<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>    unreachable<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    failed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    skipped<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    rescued<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    ignored<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/img/add_user_with_key_mask.gif" alt="Playbook1 Execution"></p>
+<p>On execution one can see that the commands pushed in the debug task including setting up an IP SSH
+key pair, setting a username of joshv, and setting the key hash. Then Ansible exits to what is
+expected to be the first level of config mode and sets username <code>joshv</code> without a password.</p>
+<p>Execution is pretty much what we would expect of adding a username to the device. Taking a look at
+if we get prompted when connecting to the device is a no, I do not.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  $ ssh rtr-1
+
+  **************************************************************************
+  * IOSv is strictly limited to use <span style="color:#66d9ef">for</span> evaluation, demonstration and IOS  *
+  * education. IOSv is provided as-is and is not supported by Cisco<span style="color:#e6db74">&#39;s      *
+</span><span style="color:#e6db74">  * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+</span><span style="color:#e6db74">  * of the IOSv Software or Documentation to any third party for any       *
+</span><span style="color:#e6db74">  * purposes is expressly prohibited except as otherwise authorized by     *
+</span><span style="color:#e6db74">  * Cisco in writing.                                                      *
+</span><span style="color:#e6db74">  **************************************************************************
+</span><span style="color:#e6db74">  **************************************************************************
+</span><span style="color:#e6db74">  * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+</span><span style="color:#e6db74">  * education. IOSv is provided as-is and is not supported by Cisco&#39;</span>s      *
+  * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+  * of the IOSv Software or Documentation to any third party <span style="color:#66d9ef">for</span> any       *
+  * purposes is expressly prohibited except as otherwise authorized by     *
+  * Cisco in writing.                                                      *
+  **************************************************************************
+  rtr-1#</code></pre></td></tr></table>
+</div>
+</div>
+<p>Taking a look at the configuration in the router, it looks exactly as we would expect. There are
+only two users configured. The first being the one that Ansible uses to connect to this device. The
+second being the one we just reconfigured.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#ae81ff">rtr-1#show run | i username</span>
+  <span style="color:#ae81ff">username cisco secret 5 $1$GNTQ$RpNy.E9LZMzgrOz/g2pYJ.</span>
+  <span style="color:#ae81ff">username joshv nopassword</span>
+    <span style="color:#ae81ff">username joshv</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>On the output you see that there is the username <code>joshv</code> multiple times. One is in the generic
+username section that was created with the command <code>username joshv nopassword</code> and then another time
+that is within the public key section of the SSH configuration.</p>
+<h3 id="removing-ssh-key-user">Removing SSH Key User</h3>
+<p>To go along with creating an user on the device, I have created the playbook to remove the same user
+from the device. This is as simple as changing the state from <code>present</code> to <code>absent</code>. This will
+remove all of what was created on the device.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  ---
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PLAY 1: WORKING WITH IOS USER MODULE&#34;</span>
+    <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">cisco_routers</span>
+    <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+    <span style="color:#f92672">tasks</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Remove local username with SSH Key&#34;</span>
+        <span style="color:#f92672">ios_user</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">joshv</span>
+          <span style="color:#f92672">nopassword</span>: <span style="color:#66d9ef">True</span>
+          <span style="color:#f92672">sshkey</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;file&#39;, &#39;~/.ssh/id_rsa.pub&#39;) }}&#34;</span>
+          <span style="color:#f92672">state</span>: <span style="color:#ae81ff">absent</span>
+        <span style="color:#f92672">register</span>: <span style="color:#ae81ff">config_output</span>
+
+      - <span style="color:#f92672">debug</span>:
+          <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ config_output }}&#34;</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;FINAL TASK: Save Config&#34;</span>
+        <span style="color:#f92672">ios_config</span>:
+          <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">always</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Execution looks extremely similar. Here it is:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">WORKING WITH IOS USER MODULE] ****************************************************</span>
+
+  <span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Remove local username with SSH Key] **********************************************</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for update_password</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for password_type</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">TASK [debug] ***********************************************************************************</span>
+  <span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+      <span style="color:#f92672">&#34;msg&#34;: </span>{
+          <span style="color:#f92672">&#34;ansible_facts&#34;: </span>{
+              <span style="color:#f92672">&#34;discovered_interpreter_python&#34;: </span><span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>
+          },
+          <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>,
+          <span style="color:#f92672">&#34;commands&#34;: </span>[
+              <span style="color:#e6db74">&#34;ip ssh pubkey-chain&#34;</span>,
+              <span style="color:#e6db74">&#34;no username joshv&#34;</span>,
+              <span style="color:#e6db74">&#34;exit&#34;</span>
+          ],
+          <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+          <span style="color:#f92672">&#34;warnings&#34;: </span>[
+              <span style="color:#e6db74">&#34;Module did not set no_log for update_password&#34;</span>,
+              <span style="color:#e6db74">&#34;Module did not set no_log for password_type&#34;</span>
+          ]
+      }
+  }
+
+  <span style="color:#f92672">TASK [FINAL TASK</span>: <span style="color:#ae81ff">Save Config] *****************************************************************</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">PLAY RECAP *************************************************************************************</span>
+  <span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>In writing of this I did find what I would consider a bug within Ansilbe&rsquo;s ios_user. If you use an
+SSH Key with the credential, you will need to remove the user account with running the same taskk
+2 times. This is filed under issue <a href="https://github.com/ansible/ansible/issues/68238">https://github.com/ansible/ansible/issues/68238</a></p>
+</blockquote>
+<p><img src="https://jvanderaa.github.io/img/removing_user_with_key.gif" alt="Playbook2 Execution"></p>
+<p>Executing the module a second time you get the full removal of the user account.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">WORKING WITH IOS USER MODULE] ****************************************************</span>
+
+  <span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Remove local username with SSH Key] **********************************************</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for update_password</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for password_type</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">TASK [debug] ***********************************************************************************</span>
+  <span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+      <span style="color:#f92672">&#34;msg&#34;: </span>{
+          <span style="color:#f92672">&#34;ansible_facts&#34;: </span>{
+              <span style="color:#f92672">&#34;discovered_interpreter_python&#34;: </span><span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>
+          },
+          <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>,
+          <span style="color:#f92672">&#34;commands&#34;: </span>[
+              {
+                  <span style="color:#f92672">&#34;answer&#34;: </span><span style="color:#e6db74">&#34;y&#34;</span>,
+                  <span style="color:#f92672">&#34;command&#34;: </span><span style="color:#e6db74">&#34;no username joshv&#34;</span>,
+                  <span style="color:#f92672">&#34;newline&#34;: </span><span style="color:#66d9ef">false</span>,
+                  <span style="color:#f92672">&#34;prompt&#34;: </span><span style="color:#e6db74">&#34;This operation will remove all username related configurations with same name&#34;</span>
+              }
+          ],
+          <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+          <span style="color:#f92672">&#34;warnings&#34;: </span>[
+              <span style="color:#e6db74">&#34;Module did not set no_log for update_password&#34;</span>,
+              <span style="color:#e6db74">&#34;Module did not set no_log for password_type&#34;</span>
+          ]
+      }
+  }
+
+  <span style="color:#f92672">TASK [FINAL TASK</span>: <span style="color:#ae81ff">Save Config] *****************************************************************</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">PLAY RECAP *************************************************************************************</span>
+  <span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="setting-username-and-password---no-key">Setting Username and Password - No Key</h2>
+<p>Now that I have gone through the use of creating a SSH Key user, let&rsquo;s take a look at setting an
+user account on the device with a credential. I&rsquo;ve created a local environmental variable named
+<code>NEW_PASSWORD</code> that has the credential that I wish to set the username to. This could be any
+lookup that gets a password, such as a lookup to a password manager.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  ---
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PLAY 1: WORKING WITH IOS USER MODULE&#34;</span>
+    <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">cisco_routers</span>
+    <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+    <span style="color:#f92672">tasks</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Add local username with SSH Key&#34;</span>
+        <span style="color:#f92672">ios_user</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">josh2</span>
+          <span style="color:#f92672">configured_password</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;env&#39;, &#39;NEW_PASSWORD&#39;) }}&#34;</span>
+          <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+          <span style="color:#f92672">privilege</span>: <span style="color:#ae81ff">15</span>
+        <span style="color:#f92672">register</span>: <span style="color:#ae81ff">config_output</span>
+
+      - <span style="color:#f92672">debug</span>:
+          <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ config_output }}&#34;</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;FINAL TASK: Save Config&#34;</span>
+        <span style="color:#f92672">ios_config</span>:
+          <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">always</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The output on this particular setup is <strong>not</strong> idempotent. Each time the play will be run it will
+set a new username and password on the device due to the checking of the running configuration. You
+will need to add some additional logic to your playbook to have the task only executed when a
+condition is met.</p>
+<p>Here is the execution. Note that Ansible masks the password being set.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">WORKING WITH IOS USER MODULE] ****************************************************</span>
+
+  <span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Add local username with SSH Key] *************************************************</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for update_password</span>
+  <span style="color:#f92672">[WARNING]</span>: <span style="color:#ae81ff">Module did not set no_log for password_type</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">TASK [debug] ***********************************************************************************</span>
+  <span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+      <span style="color:#f92672">&#34;msg&#34;: </span>{
+          <span style="color:#f92672">&#34;ansible_facts&#34;: </span>{
+              <span style="color:#f92672">&#34;discovered_interpreter_python&#34;: </span><span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>
+          },
+          <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>,
+          <span style="color:#f92672">&#34;commands&#34;: </span>[
+              <span style="color:#e6db74">&#34;username josh2 secret ********&#34;</span>
+          ],
+          <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+          <span style="color:#f92672">&#34;warnings&#34;: </span>[
+              <span style="color:#e6db74">&#34;Module did not set no_log for update_password&#34;</span>,
+              <span style="color:#e6db74">&#34;Module did not set no_log for password_type&#34;</span>
+          ]
+      }
+  }
+
+  <span style="color:#f92672">TASK [FINAL TASK</span>: <span style="color:#ae81ff">Save Config] *****************************************************************</span>
+  <span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r1]</span>
+
+  <span style="color:#ae81ff">PLAY RECAP *************************************************************************************</span>
+  <span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/img/add_user_with_pass.gif" alt="Playbook2 Execution"></p>
+<h2 id="summary">Summary</h2>
+<p>From the examples that I have given, hopefully this will help to see what you <em>could</em> do in your own
+environment. Need to regularly rotate an offline access password? A playbook may be a way that is
+low impact to get you on your way for automating the management of your Cisco IOS devices.</p>
+<p>I also started with the use of SSH keys as well as this may be an under utilized method to log into
+devices. This sets up and uses a known cryptographic key set for authentication. Please check with
+the team/individuals responsible for security before implementing.</p>
+<p>As always, I hope this has helped!</p>
+<p>I&rsquo;ve added the Playbooks executed within this post to my collection of examples on Github at
+<a href="https://github.com/jvanderaa/ansible-using_ios">https://github.com/jvanderaa/ansible-using_ios</a>.</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/">Ansible Cisco ios_interfaces module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/apple_automator/">Using Apple Automator to Open Projects</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/apple_automator/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://jvanderaa.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

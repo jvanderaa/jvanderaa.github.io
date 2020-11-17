@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/</link>
+    <description>Recent content on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 01 Nov 2020 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practicing Network Automation with GNS3</title>
+      <link>https://jvanderaa.github.io/post/practicing_with_gns3/</link>
+      <pubDate>Sun, 01 Nov 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/practicing_with_gns3/</guid>
+      <description>In an earlier post I took a look at how to setup EVE-NG to get access to virtualized network devices and topologies. This post is going to take a look at how to setup GNS3 systems to allow access.
+In the overall topology that is a &amp;ldquo;home&amp;rdquo; network sits a device that supports a routing protocol, usually either OSPF or BGP. What is known to work at an inexpensive price point is the Ubiquiti EdgeRouter X.</description>
+    </item>
+    
+    <item>
+      <title>Ansible for Enterprise</title>
+      <link>https://jvanderaa.github.io/post/ansible_for_enterprise/</link>
+      <pubDate>Sun, 09 Aug 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible_for_enterprise/</guid>
+      <description>One of the appealing features that I have towards working with Ansible is that it is able to automate components across the entire Enterprise IT stacks. Rather than having to stitch together your network, server, and desktop automation tools, there is at least one automation tool that will work with just about your entire IT stack. In this I will take a high level overview of some of the features that are there for you to explore.</description>
+    </item>
+    
+    <item>
+      <title>Docker for Automation Environment - Ansible 2.10</title>
+      <link>https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/</link>
+      <pubDate>Sat, 27 Jun 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/</guid>
+      <description>Docker is a terrific solution for making a consistent working environment. It&amp;rsquo;s been about a year or so since I built my very first own Docker container. I had always known why you use a container, but was always intimidated too much so to even get started. I am glad that I did get started and am off on my journey of using Docker containers. Let me jump into the problem and why?</description>
+    </item>
+    
+    <item>
+      <title>Using Apple Automator to Open Projects</title>
+      <link>https://jvanderaa.github.io/post/apple_automator/</link>
+      <pubDate>Sun, 21 Jun 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/apple_automator/</guid>
+      <description>Today I&amp;rsquo;m going to walk through the newest part of my personal workflow for working with projects. Straight to the point, this is going to be using Apple Automator to quickly open your project that you wish to work on within VS Code, and presumably PyCharm as well.
+Problem So what is the problem that I&amp;rsquo;m trying to solve? I am one that generally likes the workspace concept within VS Code, but I don&amp;rsquo;t like having to maintain workspace files.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Cisco IOS User Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-user/</link>
+      <pubDate>Sat, 14 Mar 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-user/</guid>
+      <description>In this post I will be taking a look at some of the usability setup of managing Cisco IOS devices with the Ansible Cisco IOS User Module. This can be very helpful for setting up managed user accounts on systems, or the backup user accounts when you have TACACS or RADIUS setup.
+The module documentation overall looks complete from what I have done for user account management on devices in the past.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Cisco ios_interfaces module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/</link>
+      <pubDate>Sun, 26 Jan 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/</guid>
+      <description>This has become a post about the ios_interfaces module with documentation that can be found Ansible ios_interfaces doc. Originally I was going to write about the deprecations for just the Cisco IOS modules. Then as I investigated further, I had found that there are many more modules that are being deprecated. In this post I will take a closer look at the differences between the ios_interface and ios_vlan modules that I had written posts on last year and what their new counter parts look like.</description>
+    </item>
+    
+    <item>
+      <title>Disney Plus Streaming Bandwidth</title>
+      <link>https://jvanderaa.github.io/post/disney_plus_streaming/</link>
+      <pubDate>Thu, 14 Nov 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/disney_plus_streaming/</guid>
+      <description>This will be a brief departure from the automation focused attention that I have been giving to this blog over the past year or so. This week in the United States was the launch of Disney+ streaming service. I have subscribed to it at this point and have found some interesting data based on SNMP polling my network.
+This post is about the bandwidth that I am seeing used, not about anything about the service, or if another service is better.</description>
+    </item>
+    
+    <item>
+      <title>Ansible differences between ios command and cli command</title>
+      <link>https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/</link>
+      <pubDate>Sat, 19 Oct 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/</guid>
+      <description>In an earlier post I covered the differences between ios_config and cli_config. However I did not cover what the difference was between ios_command and cli_command. Most of the items covered there remain the same. So this will be a post that mostly gets straight to it and sees what the difference is.
+ A reminder that I am also putting playbooks used here out on Github. You can find this at: https://github.</description>
+    </item>
+    
+    <item>
+      <title>EVE-NG for Automation Practice and Testing</title>
+      <link>https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/</link>
+      <pubDate>Sun, 04 Aug 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/</guid>
+      <description>As I restarted looking at how I&amp;rsquo;m continuing my education on the Network Automation and certification realm I asked the question &amp;ldquo;How are you simulating your network environment?&amp;rdquo; At the same time there has been thought on the idea of leveraging cloud resources to gain experience there.
+First requirement for me is that whatever tool/simulation set that I use it has to work. That being said, I need to be able to generate configurations, connect devices to each other, and have packets flow through the simulated network, just like any other network.</description>
+    </item>
+    
+    <item>
+      <title>Ansible IOS BGP Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-ios-bgp-module/</link>
+      <pubDate>Sun, 14 Jul 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-ios-bgp-module/</guid>
+      <description>In this post I&amp;rsquo;m going to be taking a deeper dive into the new in Ansible 2.8 IOS BGP module. This may be one of the more complex modules to date and I&amp;rsquo;ll try to make it as simple as possible.
+For a reminder about the BGP protocol is that this is the predominate protocol that runs the Internet. It is used to peer up with other companies and is what helps to make the Internet great.</description>
+    </item>
+    
+    <item>
+      <title>Ansible ASA OG Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-asa-og/</link>
+      <pubDate>Sun, 23 Jun 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-asa-og/</guid>
+      <description>Today we are taking a look at the newest module out for Cisco ASA Ansible module - asa_og. This one is particularly exciting for the configurations that are being managed heavily with Object Groups on firewalls. I&amp;rsquo;m particularly excited to review the asa_og module, time to dig in.
+New in this post is the finished playbooks being added to Github. I&amp;rsquo;m hoping that this may be helpful and I am uploading the contents to Github for more to be able to see and get access to if necessary.</description>
+    </item>
+    
+    <item>
+      <title>Ansible ASA Command Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-asa-command/</link>
+      <pubDate>Thu, 20 Jun 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-asa-command/</guid>
+      <description>Today will be a touch shorter post, but it is good to be back at it. In this post I will be taking a quick look around at the asa_command module, as we start down the path with looking at the ASA modules in Ansible. This is spurned on a little bit by Ansible 2.8 coming out with an Object Group specific module. I will be looking into that further in a future post.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules</title>
+      <link>https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/</link>
+      <pubDate>Sat, 30 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/</guid>
+      <description>Today I&amp;rsquo;m going to take a look at a method to be able to save the configuration of a Cisco device to NVRAM (copy run start). I will be taking a look at multiple Cisco platforms to save changes done during an Ansible Playbook to NVRAM. There are options to save the configuration on every change within the modules such as ios_config or cli_config, however, this can slow down the execution of your playbook.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Cisco IOS Interface Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-interface/</link>
+      <pubDate>Sun, 17 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-interface/</guid>
+      <description>Update: ios_interface is to be deprecated as of Ansible 2.13
+In this post I will be taking a deeper look at the ios_interface module. This module is used to configure individual interfaces on a Cisco IOS device. The documentation for the module is located here. In this module I did have to dig into the actual Python file, and that is located here.
+ Edit: Had to update the link due to the change in Ansible coming in 2.</description>
+    </item>
+    
+    <item>
+      <title>Ansible IOS VLAN</title>
+      <link>https://jvanderaa.github.io/post/ansible-ios-vlan/</link>
+      <pubDate>Sat, 09 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-ios-vlan/</guid>
+      <description>Back to it finally. Going to take a look at the Ansible module ios_vlan. The purpose of this is to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2 images. There are a few interesting quirks (as I will call it) within the parameters for the module.
+Module Documentation First, the module documentation page is here.
+Getting Started with the module VLANs pre-module work Starting out the switch is pretty bare as it relates to the number of VLANs.</description>
+    </item>
+    
+    <item>
+      <title>Ansible IOS Banner</title>
+      <link>https://jvanderaa.github.io/post/ansible-ios-banner/</link>
+      <pubDate>Sun, 10 Feb 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-ios-banner/</guid>
+      <description>Today&amp;rsquo;s post is going to be a short and sweet one (unless I get to writing two). I&amp;rsquo;m going to take a look at ios_banner module. This one is pretty much straight to the point, what it states, modifying the banner on an IOS device. There are multiple reasons to want to manipulate the banner on a Cisco device. We will leave those reasons to you and the organization that you are a part of for that.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Network Engine and NTC Templates</title>
+      <link>https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/</link>
+      <pubDate>Sun, 27 Jan 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/</guid>
+      <description>In this post we will talk about primarily three components that will work together to get structured data out of the command line of a Cisco device. The three pieces are:
+ Ansible Network Engine Google&amp;rsquo;s TextFSM Network to Code Templates  Why this Post? I&amp;rsquo;m writing this post because I was initially hesitant to start using the Ansible role originally when I was doing everything pretty well with the generic modules that come available with Ansible.</description>
+    </item>
+    
+    <item>
+      <title>Ansible differences between ios config and cli config</title>
+      <link>https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/</link>
+      <pubDate>Sat, 12 Jan 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/</guid>
+      <description>This is a post that I&amp;rsquo;m going to review some of the differences between the ios_config module and the new cli_config module within Ansible networking. I became interested in the module after a recent discussion between the two. I have decided to take a look at the differences between the two.
+This is not an under the hood look at the modules. This has already been covered very well (and with better graphics than I can produce) here at the Ansible Blog look for &amp;ldquo;cli_command and cli_config&amp;rdquo; with your browser find function.</description>
+    </item>
+    
+    <item>
+      <title>Ansible - Working with command output</title>
+      <link>https://jvanderaa.github.io/post/ansible-output-work/</link>
+      <pubDate>Sat, 05 Jan 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-output-work/</guid>
+      <description>You have decided to move forward with using/trying Ansible. You can now connect to a device and get a green success that you get a hello world like command such as show hostname or show inventory and get the GREEN success on Ansible. Now what. You may want to see the output of the command that you sent and got information back. This is your post on getting started.
+This is the process that I typically go through when developing a playbook for use.</description>
+    </item>
+    
+    <item>
+      <title>Discontiguous Masks</title>
+      <link>https://jvanderaa.github.io/post/discontiguous_masks/</link>
+      <pubDate>Sat, 08 Dec 2018 14:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/discontiguous_masks/</guid>
+      <description>Discontiguous masks are something that is going to be somewhat historic within the network design toolbox. It is basically a methodology of looking at particular bits of a network/host definition. The big thing to recall is that as a packet crosses a network device it does so within a packet. The packet is nothing more than a stream of bits. Within the packet header there are bits that define the source network address and the destination network address.</description>
+    </item>
+    
+    <item>
+      <title>Micro Segmentation vs Segmentation</title>
+      <link>https://jvanderaa.github.io/post/microsegmentation/</link>
+      <pubDate>Thu, 06 Dec 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/microsegmentation/</guid>
+      <description>In a recent podcast there was some discussion that it sounded like the term Micro Segmentation was being used where it was really traditional segmentation. So I thought I would put out a few thoughts on this front.
+What is Segmnentation in Networking Segmentation is a methodology to create separatet zones of sorts of various traffic types. Various places you may want to do this is within a campus environment to separate students from faculty, or engineering from finance.</description>
+    </item>
+    
+    <item>
+      <title>Keeping Up on Tech</title>
+      <link>https://jvanderaa.github.io/post/keeping-up-on-tech/</link>
+      <pubDate>Sat, 24 Nov 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/keeping-up-on-tech/</guid>
+      <description>Life always gets busy. That is one thing that you always hear about. I am definitely in that boat as well that things are getting busy. With this in mind, I have never felt better about my ability to learn new things in the field. I do a few things that I feel are probably unique that I should share.
+The first opportunity that has never been more capable of doing is to listen to podcasts.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with the Blog</title>
+      <link>https://jvanderaa.github.io/post/2018-11-22-blog_getting_started/</link>
+      <pubDate>Thu, 22 Nov 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2018-11-22-blog_getting_started/</guid>
+      <description>Why this post? Because I decided to change the style of how I was hosting my blog. Before I had decided to just host the blog on something that was easy to get to and update. I could have kept on blogging there, but I found making blog posts a little bit more difficult than what I wanted to. I also wanted to learn some of the new ways of doing things within networking technologies.</description>
+    </item>
+    
+    <item>
+      <title>Network CI/CD - work in progress (Links to other videos/pages)</title>
+      <link>https://jvanderaa.github.io/post/network-cicd/</link>
+      <pubDate>Sun, 11 Nov 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/network-cicd/</guid>
+      <description>At DevNet Create 2018 there is a video that was put together related to CI/CD in the NetDevOps world. This is something that is very exciting to see that there has been time put in to putting that together. The video can be seen here:
+DevNet Create Video
+Pete Lumbis CI/CD Info
+With tools such as VIRL, EveNG, and GNS3, there should be a methodology to be able to put a network together to do testing.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Blocks</title>
+      <link>https://jvanderaa.github.io/post/ansible-blocks/</link>
+      <pubDate>Sun, 17 Jun 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-blocks/</guid>
+      <description>One of the more interesting features that I have just come across within the Ansible automation world is that of the block. I find this very helpful for both error handling, and also grouping tasks into logical separation.
+Ansible Official Link Ansible Docs: Block
+ Blocks allow for logical grouping of tasks and in play error handling. Most of what you can apply to a single task can be applied at the block level, which also makes it much easier to set data or directives common to the tasks.</description>
+    </item>
+    
+    <item>
+      <title>Big Image Sample</title>
+      <link>https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/</link>
+      <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/</guid>
+      <description>&lt;p&gt;The image banners at the top of the page are refered to as &amp;ldquo;bigimg&amp;rdquo; in this theme. They are optional, and one more more can be specified. If more than one is specified, the images rotate every 10 seconds. In the front matter, bigimgs are specified using an array of hashes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Math Sample</title>
+      <link>https://jvanderaa.github.io/post/2017-03-05-math-sample/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2017-03-05-math-sample/</guid>
+      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas. It supports in-line math using the &lt;code&gt;\\( ... \\)&lt;/code&gt; delimiters, like this: \( E = mc^2 \). By default, it does &lt;em&gt;not&lt;/em&gt; support in-line delimiters &lt;code&gt;$...$&lt;/code&gt; because those occur too commonly in typical webpages. It supports displayed math using the &lt;code&gt;$$&lt;/code&gt; or &lt;code&gt;\\[...\\]&lt;/code&gt; delimiters, like this:&lt;/p&gt;
+&lt;p&gt;Formula 1:
+$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$&lt;/p&gt;
+&lt;p&gt;Formula 2: (same formula, different delimiter)
+\[
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+\]&lt;/p&gt;
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Code Sample</title>
+      <link>https://jvanderaa.github.io/post/2016-03-08-code-sample/</link>
+      <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2016-03-08-code-sample/</guid>
+      <description>&lt;p&gt;The following are two code samples using syntax highlighting.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flake it till you make it</title>
+      <link>https://jvanderaa.github.io/post/2015-02-26-flake-it-till-you-make-it/</link>
+      <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-02-26-flake-it-till-you-make-it/</guid>
+      <description>Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?</description>
+    </item>
+    
+    <item>
+      <title>Test markdown</title>
+      <link>https://jvanderaa.github.io/post/2015-02-20-test-markdown/</link>
+      <pubDate>Fri, 20 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-02-20-test-markdown/</guid>
+      <description>You can write regular markdown here and Jekyll will automatically convert it to a nice webpage. I strongly encourage you to take 5 minutes to learn how to write in markdown - it&amp;rsquo;ll teach you how to transform regular text into bold/italics/headings/tables/etc.
+Here is some bold text
+Here is a secondary heading Here&amp;rsquo;s a useless table:
+   Number Next number Previous number     Five Six Four   Ten Eleven Nine   Seven Eight Six   Two Three One    How about a yummy crepe?</description>
+    </item>
+    
+    <item>
+      <title>To be</title>
+      <link>https://jvanderaa.github.io/post/2015-02-13-hamlet-monologue/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-02-13-hamlet-monologue/</guid>
+      <description>To be, or not to be&amp;ndash;that is the question: Whether &amp;lsquo;tis nobler in the mind to suffer The slings and arrows of outrageous fortune Or to take arms against a sea of troubles And by opposing end them. To die, to sleep&amp;ndash; No more&amp;ndash;and by a sleep to say we end The heartache, and the thousand natural shocks That flesh is heir to. &amp;lsquo;Tis a consummation Devoutly to be wished. To die, to sleep&amp;ndash; To sleep&amp;ndash;perchance to dream: ay, there&amp;rsquo;s the rub, For in that sleep of death what dreams may come When we have shuffled off this mortal coil, Must give us pause.</description>
+    </item>
+    
+    <item>
+      <title>Dear diary</title>
+      <link>https://jvanderaa.github.io/post/2015-01-27-dear-diary/</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-01-27-dear-diary/</guid>
+      <description>What is it with that Mary girl? Dragging me to school every day. As if I had a choice. What you don&amp;rsquo;t hear in those nursery rhymes is that she starves me if I don&amp;rsquo;t go to school with her; it&amp;rsquo;s the only way I can stay alive! I&amp;rsquo;m thinking about being adopted by Little Bo Peep, sure I may get lost, but anything is better than being with Mary and those little brats at school (shudder, shudder).</description>
+    </item>
+    
+    <item>
+      <title>Soccer</title>
+      <link>https://jvanderaa.github.io/post/2015-01-19-soccer/</link>
+      <pubDate>Mon, 19 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-01-19-soccer/</guid>
+      <description>From Wikipedia:
+Association football, more commonly known as football or soccer,[2] is a sport played between two teams of eleven players with a spherical ball. It is played by 250 million players in over 200 countries, making it the world&amp;rsquo;s most popular sport.[3][4][5][6] The game is played on a rectangular field with a goal at each end. The object of the game is to score by getting the ball into the opposing goal.</description>
+    </item>
+    
+    <item>
+      <title>Pirates arrrr</title>
+      <link>https://jvanderaa.github.io/post/2015-01-15-pirates/</link>
+      <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-01-15-pirates/</guid>
+      <description>Piracy is typically an act of robbery or criminal violence at sea. The term can include acts committed on land, in the air, or in other major bodies of water or on a shore. It does not normally include crimes committed against persons traveling on the same vessel as the perpetrator (e.g. one passenger stealing from others on the same vessel). The term has been used throughout history to refer to raids across land borders by non-state agents.</description>
+    </item>
+    
+    <item>
+      <title>First post!</title>
+      <link>https://jvanderaa.github.io/post/2015-01-04-first-post/</link>
+      <pubDate>Mon, 05 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2015-01-04-first-post/</guid>
+      <description>This is my first post, how exciting!</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://jvanderaa.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/about/</guid>
+      <description>I&amp;rsquo;m a veteran Network Engineer who has finally caught on how to put together CS teachings with a Networking degree. Working on doing almost all things via automation.
+Self re-taught network/automation engineer. I&amp;rsquo;ve primarily been digging around within Ansible and Python. I&amp;rsquo;ve been doing Python networking since 2015 when a speaker came in and talked about how he had put together a NOC for a conference heavily leveraging automation capabilities via Python.</description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://jvanderaa.github.io/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/archive/</guid>
+      <description>archive</description>
+    </item>
+    
+    <item>
+      <title>Podcasts &amp; Links</title>
+      <link>https://jvanderaa.github.io/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/links/</guid>
+      <description>My Content on Other Sites Using NetBox as a SoT for Ansible + Diving into Ansible Filters
+In the video I go over NetBox as your Source of Truth, and walk one through getting started with using Ansible as that Source of Truth. In the later portion I go through using Ansible Filters to audit NetBox data to the device data.
+Introduction to Ansible for Network Automation
+This is a course that I created for Packet Pushers Ignition site.</description>
+    </item>
+    
+  </channel>
+</rss>

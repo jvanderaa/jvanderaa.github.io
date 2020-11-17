@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible differences between ios command and cli command &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible differences between ios command and cli command</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    24 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2068 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-10-19</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>In an earlier <a href="https://josh-v.com/blog/2019/01/12/ansible-cli-vs-ios-high-level.html">post</a> I
+covered the differences between <code>ios_config</code> and  <code>cli_config</code>. However I did not cover what the
+difference was between <code>ios_command</code> and <code>cli_command</code>. Most of the items covered there remain the
+same. So this will be a post that mostly gets straight to it and sees what the difference is.</p>
+<blockquote>
+<p>A reminder that I am also putting playbooks used here out on Github. You can find this at:
+<a href="https://github.com/jvanderaa/ansible-using_ios">https://github.com/jvanderaa/ansible-using_ios</a></p>
+</blockquote>
+<h2 id="differences">Differences</h2>
+<p>First, for the <code>cli_commands</code> module, you must be using a connection method of <code>network_cli</code>. You
+should not use <code>connection: local</code> for this module. Note that the <code>cli_command</code> can also be used
+with multiple device types, including multiple vendors. Take a look at the <code>cli_command</code>
+documentation page that there is a link at the bottom of the post.</p>
+<h3 id="parameters">Parameters</h3>
+<p>As in the config modules, the first difference is how you pass what you wish to have executed. With
+<code>cli_command</code> you are sending a single string, just one command. This is under the <strong>command</strong>
+parameter. With <code>ios_command</code> you get to send a <strong>list of commands</strong> send with the <strong>commands</strong>
+parameter. This <em>can</em> be handy in some times to execute a whole bunch of commands in one task to a
+device.</p>
+<h3 id="output">Output</h3>
+<p>The second major difference according to the documentation between <code>cli_command</code> and <code>ios_command</code>
+is the return format. Assuming a single command on the <code>ios_command</code> side of things is sent, here
+are the returns from the module:</p>
+<h4 id="ios_command-returns">ios_command returns</h4>
+<ul>
+<li>failed_conditions</li>
+<li>stdout</li>
+<li>stdout_lines</li>
+</ul>
+<h4 id="cli_command-returns">cli_command returns</h4>
+<ul>
+<li>json</li>
+<li>stdout</li>
+</ul>
+<h4 id="analysis-of-returns">Analysis of returns</h4>
+<p>The first thing about the <strong>stdout_lines</strong> output is that it makes it very human readable what the
+output of the command is. If you are working on something programmatically speaking, you will likely
+only want to use <strong>stdout</strong>.</p>
+<p>Next we see that cli_command has a json return, which is going to provide more structured feedback
+from the command.</p>
+<p>Both have in common the <strong>stdout</strong> return, however, the data type is <strong>very</strong> different. Since
+<code>cli_command</code> sent only a single string, the return is a single string. On <code>ios_command</code> this is a
+list of responses. Even if you sent a single command, it comes back as a list that is only one item.
+So you will need to access <code>variable_name.stdout.0</code> (or <code>variable_name.stdout[0]</code>) to get at the
+command output.</p>
+<p>Let&rsquo;s get to taking a look at the output.</p>
+<h2 id="demo-of-commands">Demo of commands</h2>
+<p>Let&rsquo;s take a look at how the responses look with just a single command first. I have a preference of
+taking a look at NTP associations lately.</p>
+<h3 id="ios_command---single-command">ios_command - single command</h3>
+<p>Here is what the task portion of the playbook looks like with a single command.</p>
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">tasks</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Get NTP Associations&#34;</span>
+    <span style="color:#f92672">ios_command</span>:
+      <span style="color:#f92672">commands</span>:
+        - <span style="color:#ae81ff">show ntp associations</span>
+    <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: Debug output&#34;</span>
+    <span style="color:#f92672">debug</span>:
+      <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>}</p>
+<p>The output from this is as follows assuming an NTP association to the cloudflare NTP servers:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Using ios_command for a single command] **********************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Get NTP Associations] ****************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1]</span>
+
+<span style="color:#f92672">TASK [TASK 2</span>: <span style="color:#ae81ff">Debug output] ************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;stdout&#34;: </span>[
+            <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp\n*~162.159.200.123 10.72.8.95       3     14     64     7 21.111  72.531  0.746\n * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>
+        ],
+        <span style="color:#f92672">&#34;stdout_lines&#34;: </span>[
+            [
+                <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp&#34;</span>,
+                <span style="color:#e6db74">&#34;*~162.159.200.123 10.72.8.95       3     14     64     7 21.111  72.531  0.746&#34;</span>,
+                <span style="color:#e6db74">&#34; * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>
+            ]
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP ************************************************************************************************************</span>
+<span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/assets/2019/10/blog-ios_single.gif" alt="IOS Command Single"></p>
+<p>There are four items returned, with the first two primarily being &ldquo;standard&rdquo; Ansible returns for
+<code>changed</code> and <code>failed</code>. There is then:</p>
+<ul>
+<li><code>stdout</code>: <strong>List</strong> of outputs, so when there are multiple commands.</li>
+<li><code>stdout_lines</code>: <strong>List</strong> of <strong>lists</strong>, the inner list is the commands printed line by line, which
+makes it more human readable. The outer list is like that of stdout, that is for each command run,
+including if there is only a single command. <strong>Look at the end of line 11, and line 13</strong>. This shows
+that there is in fact a list [] of responses to parse through.</li>
+</ul>
+<h3 id="cli_command---single-command">cli_command - single command</h3>
+<p>The tasks on the <code>cli_command</code> looks pretty similar. However there a few differences. First the
+value of <code>command:</code> is a string, this you will see by not having a <code>-</code> in the line. I&rsquo;m also going
+to use quotes around to demonstrate this.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">tasks</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Get NTP Associations&#34;</span>
+    <span style="color:#f92672">cli_command</span>:
+      <span style="color:#f92672">command</span>: <span style="color:#e6db74">&#34;show ntp associations&#34;</span>
+    <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: Debug output&#34;</span>
+    <span style="color:#f92672">debug</span>:
+      <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The command output looks awfully similar now in recent versions of Ansible.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Using cli_command for a single command] ****************************************************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Get NTP Associations] **********************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1]</span>
+
+<span style="color:#f92672">TASK [TASK 2</span>: <span style="color:#ae81ff">Debug output] ******************************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;stdout&#34;: </span><span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp\n*~162.159.200.123 10.72.8.95       3     50     64   377 16.772  28.507  5.117\n * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>,
+        <span style="color:#f92672">&#34;stdout_lines&#34;: </span>[
+            <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp&#34;</span>,
+            <span style="color:#e6db74">&#34;*~162.159.200.123 10.72.8.95       3     50     64   377 16.772  28.507  5.117&#34;</span>,
+            <span style="color:#e6db74">&#34; * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP ***********************************************************************************************************************</span>
+<span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/assets/2019/10/blog-cli_single.gif" alt="CLI Command Single"></p>
+<p>The big difference here is that the <strong>stdout</strong> part of the response is of type string, and not of a
+type list like <code>ios_command</code>. Take a look at line number 11 where <strong>stdout</strong> is. Immediately
+following the colon is a double quote, indicating that this is a string. So if you are doing work on
+this variable, you will need to take string actions.</p>
+<h3 id="ios_comamnd---multiple-commands">ios_comamnd - multiple commands</h3>
+<p>The &ldquo;bonus&rdquo; of the ios_command module is that you can run multiple commands within a single task. As
+I type that out, it seems against the idea of individual task execution, to do 2 or more things in a
+single task. But that is what the module allows us in this instance. Let&rsquo;s take a look at this
+playbook to verify NTP information and then get the time from the device.</p>
+<blockquote>
+<p>This could be a part of the <code>ios_command</code> history as well. When <code>ios_command</code> was written each
+individual task would start a new connection to IOS devices. So to preserve the number of logins
+required it would be good to be able to execute multiple lines.</p>
+</blockquote>
+<p>There is now a single task, but there are two commands in the commands section. These will be run
+and saved to a variable named <code>command_output</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Get NTP Associations&#34;</span>
+  <span style="color:#f92672">ios_command</span>:
+    <span style="color:#f92672">commands</span>:
+      - <span style="color:#ae81ff">show ntp associations</span>
+      - <span style="color:#ae81ff">show clock</span>
+  <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: Debug output&#34;</span>
+  <span style="color:#f92672">debug</span>:
+    <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Let&rsquo;s take a look at how this looks now:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Using ios_command for a single command] ****************************************************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Get NTP Associations] **********************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1]</span>
+
+<span style="color:#f92672">TASK [TASK 2</span>: <span style="color:#ae81ff">Debug output] ******************************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;stdout&#34;: </span>[
+            <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp\n*~162.159.200.123 10.72.8.95       3    262    512   377 16.551  65.112  0.097\n * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>,
+            <span style="color:#e6db74">&#34;21:57:28.776 UTC Sun Oct 20 2019&#34;</span>
+        ],
+        <span style="color:#f92672">&#34;stdout_lines&#34;: </span>[
+            [
+                <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp&#34;</span>,
+                <span style="color:#e6db74">&#34;*~162.159.200.123 10.72.8.95       3    262    512   377 16.551  65.112  0.097&#34;</span>,
+                <span style="color:#e6db74">&#34; * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>
+            ],
+            [
+                <span style="color:#e6db74">&#34;21:57:28.776 UTC Sun Oct 20 2019&#34;</span>
+            ]
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP ***********************************************************************************************************************</span>
+<span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/assets/2019/10/blog-ios_multiple.gif" alt="IOS Command Multiple"></p>
+<p>This is where you start to see that there are multiple list items in the response. Taking a look at
+line number 11 we still have the <code>[</code> of the list showing at the end, then line 12 ends in a comma,
+indicating the next list item. Line 13 ends the list. This repeats on the stdout_lines as well.</p>
+<p>If you wanted to get at just the time of the device in this instance, this is how you would do a
+debug task for it:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Debug time&#34;</span>
+  <span style="color:#f92672">debug</span>:
+    <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output.stdout[1] }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>You see that you need to call the variable name, then the return value that you are looking for -
+stdout. Then you need the list position on the response that corresponds to where it was called on
+the <code>ios_command</code> module.</p>
+<h3 id="cli_command---multiple-commands">cli_command - multiple commands</h3>
+<p>To do the same multiple commands on the <code>cli_command</code> front, you will want to use a loop. Here I
+prefer to use the <code>with_items</code> loop. You will see several more key/value pairs on the variable when
+using a loop, so let&rsquo;s take a look below:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Get NTP Associations&#34;</span>
+  <span style="color:#f92672">cli_command</span>:
+    <span style="color:#f92672">command</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+  <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+  <span style="color:#f92672">with_items</span>:
+    - <span style="color:#e6db74">&#34;show ntp associations&#34;</span>
+    - <span style="color:#e6db74">&#34;show clock&#34;</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: Debug command output&#34;</span>
+  <span style="color:#f92672">debug</span>:
+    <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The output:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Using cli_command for a single command] ****************************************************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Get NTP Associations] **********************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; (item=show ntp associations)</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; (item=show clock)</span>
+
+<span style="color:#f92672">TASK [TASK 2</span>: <span style="color:#ae81ff">Debug command output] **********************************************************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r1] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;msg&#34;: </span><span style="color:#e6db74">&#34;All items completed&#34;</span>,
+        <span style="color:#f92672">&#34;results&#34;: </span>[
+            {
+                <span style="color:#f92672">&#34;ansible_loop_var&#34;: </span><span style="color:#e6db74">&#34;item&#34;</span>,
+                <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;invocation&#34;: </span>{
+                    <span style="color:#f92672">&#34;module_args&#34;: </span>{
+                        <span style="color:#f92672">&#34;answer&#34;: </span><span style="color:#66d9ef">null</span>,
+                        <span style="color:#f92672">&#34;check_all&#34;: </span><span style="color:#66d9ef">false</span>,
+                        <span style="color:#f92672">&#34;command&#34;: </span><span style="color:#e6db74">&#34;show ntp associations&#34;</span>,
+                        <span style="color:#f92672">&#34;prompt&#34;: </span><span style="color:#66d9ef">null</span>,
+                        <span style="color:#f92672">&#34;sendonly&#34;: </span><span style="color:#66d9ef">false</span>
+                    }
+                },
+                <span style="color:#f92672">&#34;item&#34;: </span><span style="color:#e6db74">&#34;show ntp associations&#34;</span>,
+                <span style="color:#f92672">&#34;stdout&#34;: </span><span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp\n*~162.159.200.123 10.72.8.95       3     64    128   377 16.354 -25.131  2.283\n * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>,
+                <span style="color:#f92672">&#34;stdout_lines&#34;: </span>[
+                    <span style="color:#e6db74">&#34;address         ref clock       st   when   poll reach  delay  offset   disp&#34;</span>,
+                    <span style="color:#e6db74">&#34;*~162.159.200.123 10.72.8.95       3     64    128   377 16.354 -25.131  2.283&#34;</span>,
+                    <span style="color:#e6db74">&#34; * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured&#34;</span>
+                ]
+            },
+            {
+                <span style="color:#f92672">&#34;ansible_loop_var&#34;: </span><span style="color:#e6db74">&#34;item&#34;</span>,
+                <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;invocation&#34;: </span>{
+                    <span style="color:#f92672">&#34;module_args&#34;: </span>{
+                        <span style="color:#f92672">&#34;answer&#34;: </span><span style="color:#66d9ef">null</span>,
+                        <span style="color:#f92672">&#34;check_all&#34;: </span><span style="color:#66d9ef">false</span>,
+                        <span style="color:#f92672">&#34;command&#34;: </span><span style="color:#e6db74">&#34;show clock&#34;</span>,
+                        <span style="color:#f92672">&#34;prompt&#34;: </span><span style="color:#66d9ef">null</span>,
+                        <span style="color:#f92672">&#34;sendonly&#34;: </span><span style="color:#66d9ef">false</span>
+                    }
+                },
+                <span style="color:#f92672">&#34;item&#34;: </span><span style="color:#e6db74">&#34;show clock&#34;</span>,
+                <span style="color:#f92672">&#34;stdout&#34;: </span><span style="color:#e6db74">&#34;02:19:22.598 UTC Mon Oct 21 2019&#34;</span>,
+                <span style="color:#f92672">&#34;stdout_lines&#34;: </span>[
+                    <span style="color:#e6db74">&#34;02:19:22.598 UTC Mon Oct 21 2019&#34;</span>
+                ]
+            }
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP ***********************************************************************************************************************</span>
+<span style="color:#f92672">r1                         </span>: <span style="color:#ae81ff">ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://jvanderaa.github.io/assets/2019/10/blog-cli_multiple-looping.gif" alt="CLI Command Multiple"></p>
+<p>In this execution we now have to get at the information within the results section. You do however
+also get the command in the output, as well as some other module arguments, which can be handy! To
+get at the results from <code>show ntp associations</code> you will need to use
+<code>command_output.results[0].stdout</code> and <code>command_output.results[1].stdout</code> to get at the results of
+<code>show clock</code>.</p>
+<h2 id="summary">Summary</h2>
+<p>I hope this has been valuable to you as a reader. With <code>cli_command</code> still relatively new, having
+been released in Ansible 2.7, I expect that it will continue to evolve. Take a look at the docs
+pages for these here:</p>
+<p><a href="https://docs.ansible.com/ansible/latest/modules/cli_command_module.html">cli_command</a><br>
+<a href="https://docs.ansible.com/ansible/latest/modules/ios_command_module.html">ios_command</a></p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/">EVE-NG for Automation Practice and Testing</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/disney_plus_streaming/">Disney Plus Streaming Bandwidth</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/disney_plus_streaming/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://jvanderaa.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

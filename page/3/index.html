@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title></title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+  <link rel="alternate" type="application/rss+xml" title="Josh-V.com Draft"
+    href='https://jvanderaa.github.io/feed.xml' />
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://jvanderaa.github.io/feed.xml'><i
+          class="fas fa-rss"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1></h1>
+  <h2>Network Automation, Networking, Tech, APIs, and my interests</h2>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/microsegmentation/">Micro Segmentation vs Segmentation</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    12 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 705 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-12-06</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/network_design">network_design</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In a recent podcast there was some discussion that it sounded like the term Micro Segmentation was being used where it was really traditional segmentation. So I thought I would put out a few thoughts on this front.
+What is Segmnentation in Networking Segmentation is a methodology to create separatet zones of sorts of various traffic types. Various places you may want to do this is within a campus environment to separate students from faculty, or engineering from finance.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/microsegmentation/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/keeping-up-on-tech/">Keeping Up on Tech</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    33 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 781 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-11-24</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/learning">learning</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Life always gets busy. That is one thing that you always hear about. I am definitely in that boat as well that things are getting busy. With this in mind, I have never felt better about my ability to learn new things in the field. I do a few things that I feel are probably unique that I should share.
+The first opportunity that has never been more capable of doing is to listen to podcasts.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/keeping-up-on-tech/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2018-11-22-blog_getting_started/">Getting Started with the Blog</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    16 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 722 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-11-22</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Why this post? Because I decided to change the style of how I was hosting my blog. Before I had decided to just host the blog on something that was easy to get to and update. I could have kept on blogging there, but I found making blog posts a little bit more difficult than what I wanted to. I also wanted to learn some of the new ways of doing things within networking technologies.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2018-11-22-blog_getting_started/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/network-cicd/">Network CI/CD - work in progress (Links to other videos/pages)</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 0 minutes,
+    42 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 157 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-11-11</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/devnet">devnet</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/cicd">cicd</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    At DevNet Create 2018 there is a video that was put together related to CI/CD in the NetDevOps world. This is something that is very exciting to see that there has been time put in to putting that together. The video can be seen here:
+DevNet Create Video
+Pete Lumbis CI/CD Info
+With tools such as VIRL, EveNG, and GNS3, there should be a methodology to be able to put a network together to do testing.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/network-cicd/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-blocks/">Ansible Blocks</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 1 minutes,
+    7 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 249 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-06-17</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    One of the more interesting features that I have just come across within the Ansible automation world is that of the block. I find this very helpful for both error handling, and also grouping tasks into logical separation.
+Ansible Official Link Ansible Docs: Block
+ Blocks allow for logical grouping of tasks and in play error handling. Most of what you can apply to a single task can be applied at the block level, which also makes it much easier to set data or directives common to the tasks.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-blocks/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/">Big Image Sample</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 0 minutes,
+    52 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 191 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-03-07</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/example">example</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/bigimg">bigimg</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    <p>The image banners at the top of the page are refered to as &ldquo;bigimg&rdquo; in this theme. They are optional, and one more more can be specified. If more than one is specified, the images rotate every 10 seconds. In the front matter, bigimgs are specified using an array of hashes.</p>
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2017-03-05-math-sample/">Math Sample</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 1 minutes,
+    5 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 240 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-03-05</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/example">example</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/math">math</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    <p>KaTeX can be used to generate complex math formulas. It supports in-line math using the <code>\\( ... \\)</code> delimiters, like this: \( E = mc^2 \). By default, it does <em>not</em> support in-line delimiters <code>$...$</code> because those occur too commonly in typical webpages. It supports displayed math using the <code>$$</code> or <code>\\[...\\]</code> delimiters, like this:</p>
+<p>Formula 1:
+$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$</p>
+<p>Formula 2: (same formula, different delimiter)
+\[
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+\]</p>
+<p>Additional details can be found on <a href="https://github.com/Khan/KaTeX">GitHub</a> or on the <a href="http://tiddlywiki.com/plugins/tiddlywiki/katex/">Wiki</a>.</p>
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2017-03-05-math-sample/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2016-03-08-code-sample/">Code Sample</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 0 minutes,
+    49 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 183 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-03-08</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/example">example</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/code">code</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    <p>The following are two code samples using syntax highlighting.</p>
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2016-03-08-code-sample/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2015-02-26-flake-it-till-you-make-it/">Flake it till you make it</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 2 minutes,
+    21 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 519 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2015-02-26</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2015-02-26-flake-it-till-you-make-it/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/2015-02-20-test-markdown/">Test markdown</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 0 minutes,
+    25 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 95 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2015-02-20</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/example">example</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/markdown">markdown</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    You can write regular markdown here and Jekyll will automatically convert it to a nice webpage. I strongly encourage you to take 5 minutes to learn how to write in markdown - it&rsquo;ll teach you how to transform regular text into bold/italics/headings/tables/etc.
+Here is some bold text
+Here is a secondary heading Here&rsquo;s a useless table:
+   Number Next number Previous number     Five Six Four   Ten Eleven Nine   Seven Eight Six   Two Three One    How about a yummy crepe?
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/2015-02-20-test-markdown/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <a href="https://jvanderaa.github.io/page/2/"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;3 / 4&nbsp;</span>
+  
+  <a href="https://jvanderaa.github.io/page/4/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/docker/</link>
+    <description>Recent content in docker on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 27 Jun 2020 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/docker/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker for Automation Environment - Ansible 2.10</title>
+      <link>https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/</link>
+      <pubDate>Sat, 27 Jun 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/</guid>
+      <description>Docker is a terrific solution for making a consistent working environment. It&amp;rsquo;s been about a year or so since I built my very first own Docker container. I had always known why you use a container, but was always intimidated too much so to even get started. I am glad that I did get started and am off on my journey of using Docker containers. Let me jump into the problem and why?</description>
+    </item>
+    
+  </channel>
+</rss>

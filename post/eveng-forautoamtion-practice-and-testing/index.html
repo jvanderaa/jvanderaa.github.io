@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>EVE-NG for Automation Practice and Testing &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>EVE-NG for Automation Practice and Testing</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    30 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 992 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-08-04</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/eveng">eveng</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible-level-medium">ansible-level-medium</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>As I restarted looking at how I&rsquo;m continuing my education on the Network
+Automation and certification realm I asked the question &ldquo;How are you simulating
+your network environment?&rdquo; At the same time there has been thought on the idea
+of leveraging cloud resources to gain experience there.</p>
+<p>First requirement for me is that whatever tool/simulation set that I use it has
+to work. That being said, I need to be able to generate configurations, connect
+devices to each other, and have packets flow through the simulated network, just
+like any other network.</p>
+<p>Second requirement is that I desire the solution to be economical. As a
+<strong>budget</strong> for this there wasn&rsquo;t a lot of money left to be throwing around.</p>
+<p>Asking around, the third softer requirement is the solution should have a GUI of
+some sorts to make things work quickly so you aren&rsquo;t fussing around with
+creating your own middleware solution.</p>
+<p>My answer then to this at this point in time (2019-08-04) is EVE-NG. There is a
+strong possibility of this changing in the near future based on what I saw at
+2019 Cisco Live to Cisco&rsquo;s VIRL, but at the moment, EVE-NG and GNS3 both meet
+the requirements.</p>
+<p>If you are looking for the part about how I get at devices in the EVE-NG network
+jump down to &ldquo;EVE-NG for Automation Practice&rdquo;.</p>
+<p>This is not going to be a post on getting started on using the solutions.
+This post assumes that you are up and running with EVE locally on your network
+already. There are links further down that do help though for getting
+connectivity.</p>
+<h2 id="requirements-for-automation">Requirements for automation</h2>
+<ul>
+<li>Must be able to simulate larger networks</li>
+<li>Must be able to SSH to the devices directly for automation (Not just click on
+and get a console window)</li>
+</ul>
+<h2 id="evaluation-in-my-mind-no-formal-written-down">Evaluation (In my mind, no formal written down)</h2>
+<p>First when looking at the cloud side of things for running EVE-NG, I had built
+out an instance of EVE-NG in Google Cloud with the help of
+<a href="https://twitter.com/showipintbri">@showipintbri</a>&rsquo;s article on
+<a href="https://showipintbri.blogspot.com/2018/08/eve-ng-in-cloud.html">EVE-NG in the Cloud</a>.
+As I looked at what I had already done with a bare metal host it appeared that
+I would need to create a VPN to be able to get at the network behind the cloud
+of an EVE-NG. Looking at the pricing on a VPN tunnel per minute/hour with Google
+Cloud, I made the evaluation that doing this in the cloud would not be
+economical.</p>
+<p>GNS3 has been a solid main stay for some time in the Network simulation world.
+There is nothing wrong with it. I have been successful in reaching into the
+GNS3 simulated world from a real network. There are some instructions on the web
+about how to do so. I had basically followed this instruction set (that has been removed, using the
+way back machine to get the old post) -
+<a href="https://web.archive.org/web/20190521002219/https://docs.gns3.com/1vFs-KENh2uUFfb47Q2oeSersmEK4WahzWX-HrMIMd00/index.html">Connect GNS3 to the Internet</a>.</p>
+<p>For me to get started quickly, I had recently installed an EVE-NG bare metal
+installation. That is the route that I have chosen at the moment to get started
+quickly. For instructions on doing a bare metal installation of EVE-NG I
+followed the online docs located on the EVE-NG main page -
+<a href="https://www.eve-ng.net/documentation/installation/bare-install">EVE-NG Bare Metal Install</a>.</p>
+<h2 id="eve-ng-for-automation-practice-and-testing">EVE-NG for Automation Practice and Testing</h2>
+<p>So now how do we get access to the network? First within EVE-NG I <strong>Add a New
+Network</strong> to the project. I make sure that it is set to:</p>
+<ul>
+<li>Number of Networks to build: 1</li>
+<li>Name/Prefix: Internet (Be creative if you wish)</li>
+<li>Type: <strong>bridge</strong></li>
+</ul>
+<p><img src="https://jvanderaa.github.io/assets/2019/07/eveng_add_bridge_net.png" alt="EVE-NG Bridge Net"><br>
+The type of <strong>bridge</strong> is what we are looking for to enable the connectivity.</p>
+<h3 id="connecting-your-router">Connecting your router</h3>
+<p>First thing you need to do within EVE-NG is to add a router and connect it to
+your <em>Outside</em> network. I&rsquo;ve done so as shown here:</p>
+<p><img src="https://jvanderaa.github.io/assets/2019/07/eveng_add_bridge_host.png" alt="EVE-NG Router Host"></p>
+<p>Then the configuration on this Cisco edge device I have configured the following
+on the interface that has been connected to the outside.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>% raw %<span style="color:#f92672">}</span>
+
+interface GigabitEthernet0/0
+ ip address dhcp
+ duplex full
+ speed <span style="color:#ae81ff">1000</span>
+ media-type rj45
+end
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>This allows the device to come online and get a network address. If you wanted
+to prescribe what address it is in a static fashion, that is something you can
+do too. I like to use DHCP to verify that the device is in fact connected to the
+home network.</p>
+<h3 id="routing">Routing</h3>
+<p>For connectivity this is where I like to start with OSPF to peer with my home
+firewall. Why? First, because the firewall at home supports OSPF and why not use
+routing! Secondly it is more practice with OSPF. Much of the time in my career
+has been spent at places where EIGRP is the predominant IGP. It always helps to
+continue to gain experience. This is where you could use a static route for your
+device to send the routes back into your EVE-NG environment. You&rsquo;ll want to make
+sure that you have routes for the networks that are in the network and that they
+do not overlap with your existing home network.</p>
+<h3 id="test-connections">Test Connections</h3>
+<p>Once connected, I make sure that I make sure that I&rsquo;m able to connect
+successfully with SSH before starting the Ansible work. You could create and get
+started with a playbook and test, but I found it is easier to verify that you
+have SSH connectivity natively to your devices just like you would with a
+non-virtualized network.</p>
+<h2 id="automation-testing">Automation Testing</h2>
+<p>Now that there is connectivity to the devices on the box that you can SSH to
+each device from your home network, you are able to do testing of various
+playbooks. Start with some simple show commands using the <strong>ios_command</strong> or the
+newer <strong>cli_command</strong> module. And then debug it. Head on over to the post my
+earlier post
+<a href="https://josh-v.com/blog/2019/01/05/ansible-output-work.html">Ansible - working with command output</a>
+for some samples on getting started with Cisco devices.</p>
+<p>Hope this is something that is helpful for you at home already running EVE
+locally!</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-ios-bgp-module/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-ios-bgp-module/">Ansible IOS BGP Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/">Ansible differences between ios command and cli command</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

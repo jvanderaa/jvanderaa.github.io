@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pycharm on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/pycharm/</link>
+    <description>Recent content in pycharm on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 21 Jun 2020 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/pycharm/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Apple Automator to Open Projects</title>
+      <link>https://jvanderaa.github.io/post/apple_automator/</link>
+      <pubDate>Sun, 21 Jun 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/apple_automator/</guid>
+      <description>Today I&amp;rsquo;m going to walk through the newest part of my personal workflow for working with projects. Straight to the point, this is going to be using Apple Automator to quickly open your project that you wish to work on within VS Code, and presumably PyCharm as well.
+Problem So what is the problem that I&amp;rsquo;m trying to solve? I am one that generally likes the workspace concept within VS Code, but I don&amp;rsquo;t like having to maintain workspace files.</description>
+    </item>
+    
+  </channel>
+</rss>

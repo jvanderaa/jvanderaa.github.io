@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Micro Segmentation vs Segmentation &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Micro Segmentation vs Segmentation</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    12 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 705 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-12-06</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/network_design">network_design</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>In a recent podcast there was some discussion that it sounded like the term <strong>Micro Segmentation</strong>
+was being used where it was really traditional <strong>segmentation</strong>. So I thought I would put out a few
+thoughts on this front.</p>
+<h2 id="what-is-segmnentation-in-networking">What is Segmnentation in Networking</h2>
+<p>Segmentation is a methodology to create separatet <em>zones</em> of sorts of various traffic types. Various
+places you may want to do this is within a campus environment to separate students from faculty, or
+engineering from finance. The list of examples goes on and on. Go to a basic reading of VLANs and
+you will get the idea of what segmentation is. Once you have VLANs, really segmentation then builds
+upon this and allows policy to be applied. This policy can be whether or not hosts should be able to
+talk to each other, or various traffic treatments (QoS). This is something that is well covered
+already and I do not wish to cover more.</p>
+<h2 id="what-is-micro-segmentation">What is Micro Segmentation?</h2>
+<p>So the newer term is <strong>Micro Segmentation</strong>. This is exactly as what was covered before but doing it
+at an even more detailed level. This is getting into being able to apply policy to individual hosts
+within a segment, creating a micro-segmentation effort.</p>
+<h2 id="in-practice">In Practice</h2>
+<p><img src="https://jvanderaa.github.io/assets/2018/12/segments.png" alt="SegmentDrawing"></p>
+<table>
+<thead>
+<tr>
+<th>Source Host</th>
+<th>Destination Host</th>
+<th style="text-align:center">Able to apply policy - Segmentation</th>
+<th style="text-align:center">Able to apply policy - Micro Segmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host A</td>
+<td>Host B</td>
+<td style="text-align:center"><strong>No</strong></td>
+<td style="text-align:center"><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>Host A</td>
+<td>Host C</td>
+<td style="text-align:center"><strong>No</strong></td>
+<td style="text-align:center"><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>Host A</td>
+<td>Host D</td>
+<td style="text-align:center">Yes, at that L3 device/firewall</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>Host B</td>
+<td>Host C</td>
+<td style="text-align:center"><strong>No</strong></td>
+<td style="text-align:center"><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>Host B</td>
+<td>Host D</td>
+<td style="text-align:center">Yes, at that L3 device/firewall</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>Host C</td>
+<td>Host D</td>
+<td style="text-align:center">Yes, at that L3 device/firewall</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Given the diagram above of two network segments with a firewall in between, we will cover what you
+can enforce policy with and what you can&rsquo;t. In this drawing this is a firewall that separates the
+network segments. However, you could also have this be a L3 device, such as a L3 switch, or a router
+where there are ACLs in place.</p>
+<p>With traditional segmentation, you can apply policy only between the two segments. Host D will have
+policy applied to try to talk with Host A, B, or C. Host A, B, and C will be able to communicate
+between each other without any policy being applied.</p>
+<h3 id="micro-segmentation">Micro Segmentation</h3>
+<p>In that same diagram with Micro Segmentation practices applied, not only can you have policy applied
+between Host D and the trio of hosts (A, B, C), but you can also apply policy between hosts A, B, C
+on the same network segment. So if you wanted to lock down so that Host A can only talk out of the
+segment, but not to any other hosts within the same segment, this <strong>is</strong> possible. This is the major
+difference between standard <strong>Segmentation</strong> and <strong>Micro Segmentation</strong>, the ability to prevent
+east-west traffic between hosts in the same network segments.</p>
+<h2 id="how-to">How to?</h2>
+<p>So how is this done you may ask? There may be more ways about this, but the ones that I&rsquo;m aware of
+are:</p>
+<ul>
+<li>Controller Based Wireless (Preventing host to host communication)</li>
+<li><a href="https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html">Cisco ISE</a></li>
+<li><a href="https://www.cisco.com/c/en/us/solutions/data-center-virtualization/application-centric-infrastructure/index.html">Cisco ACI</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Private_VLAN">Private VLANs</a> (<strong>Administratively burdensome</strong>)</li>
+<li><a href="https://www.vmware.com/try-vmware/nsx-micro-hol-labs.html">NSX</a></li>
+<li>Host based firewalls (<strong>More burden</strong>) (Maybe Illumio can help here? - <a href="https://packetpushers.net/podcast/bib-062-globally-scalable-microsegmentation-with-illumio/">Packet Pushers BIB Illumio</a>)</li>
+</ul>
+<h3 id="does-this-work">Does this work?</h3>
+<p>Absolutely. I have done host to host policy enforcement within a VLAN using Cisco ISE in a campus
+LAN environment. There was a requirement to prevent one host to talk to any other host within the
+same network segment. Cisco ISE definitely delivered on this, within the policy matrix by defining
+policy that a tag (say 6) could not talk to that same tag (6). If you have some unmanaged switches
+in the wire that don&rsquo;t have the hosts wired up directly to a switchport, this is no longer feasible.</p>
+<h2 id="summary">Summary</h2>
+<p>So in summary, hopefully this helps clear up some ideas about what Segmentation and Micro
+Segmentation are in the industry. This is my take on what the difference between <strong>Segmentation</strong>
+and <strong>Micro Segmentation</strong> and that there is a difference. Not just segmenting at a L3 boundry.</p>
+<h4 id="discussion">Discussion</h4>
+<p>I have not figured out yet how to add disqus to the blog at this point. Hopefully I can get that
+added soon.</p>
+<h4 id="notes">Notes</h4>
+<p>Drawing completed at <a href="https://draw.io">draw.io</a>.</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/keeping-up-on-tech/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/keeping-up-on-tech/">Keeping Up on Tech</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/discontiguous_masks/">Discontiguous Masks</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/discontiguous_masks/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

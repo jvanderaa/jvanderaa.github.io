@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>segmentation on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/segmentation/</link>
+    <description>Recent content in segmentation on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 08 Dec 2018 14:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/segmentation/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discontiguous Masks</title>
+      <link>https://jvanderaa.github.io/post/discontiguous_masks/</link>
+      <pubDate>Sat, 08 Dec 2018 14:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/discontiguous_masks/</guid>
+      <description>Discontiguous masks are something that is going to be somewhat historic within the network design toolbox. It is basically a methodology of looking at particular bits of a network/host definition. The big thing to recall is that as a packet crosses a network device it does so within a packet. The packet is nothing more than a stream of bits. Within the packet header there are bits that define the source network address and the destination network address.</description>
+    </item>
+    
+  </channel>
+</rss>

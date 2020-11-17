@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vlan on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/vlan/</link>
+    <description>Recent content in vlan on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 09 Mar 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/vlan/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible IOS VLAN</title>
+      <link>https://jvanderaa.github.io/post/ansible-ios-vlan/</link>
+      <pubDate>Sat, 09 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-ios-vlan/</guid>
+      <description>Back to it finally. Going to take a look at the Ansible module ios_vlan. The purpose of this is to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2 images. There are a few interesting quirks (as I will call it) within the parameters for the module.
+Module Documentation First, the module documentation page is here.
+Getting Started with the module VLANs pre-module work Starting out the switch is pretty bare as it relates to the number of VLANs.</description>
+    </item>
+    
+  </channel>
+</rss>

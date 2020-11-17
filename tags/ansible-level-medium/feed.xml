@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ansible-level-medium on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/ansible-level-medium/</link>
+    <description>Recent content in ansible-level-medium on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 04 Aug 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/ansible-level-medium/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EVE-NG for Automation Practice and Testing</title>
+      <link>https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/</link>
+      <pubDate>Sun, 04 Aug 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/</guid>
+      <description>As I restarted looking at how I&amp;rsquo;m continuing my education on the Network Automation and certification realm I asked the question &amp;ldquo;How are you simulating your network environment?&amp;rdquo; At the same time there has been thought on the idea of leveraging cloud resources to gain experience there.
+First requirement for me is that whatever tool/simulation set that I use it has to work. That being said, I need to be able to generate configurations, connect devices to each other, and have packets flow through the simulated network, just like any other network.</description>
+    </item>
+    
+  </channel>
+</rss>

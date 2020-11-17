@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deprecation on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/deprecation/</link>
+    <description>Recent content in deprecation on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 26 Jan 2020 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/deprecation/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Cisco ios_interfaces module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/</link>
+      <pubDate>Sun, 26 Jan 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/</guid>
+      <description>This has become a post about the ios_interfaces module with documentation that can be found Ansible ios_interfaces doc. Originally I was going to write about the deprecations for just the Cisco IOS modules. Then as I investigated further, I had found that there are many more modules that are being deprecated. In this post I will take a closer look at the differences between the ios_interface and ios_vlan modules that I had written posts on last year and what their new counter parts look like.</description>
+    </item>
+    
+  </channel>
+</rss>

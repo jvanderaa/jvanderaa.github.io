@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible Cisco ios_interfaces module &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible Cisco ios_interfaces module</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    58 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2194 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-01-26</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/cisco">cisco</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/deprecation">deprecation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>This has become a post about the <strong>ios_interfaces</strong> module with documentation that can be found
+<a href="https://docs.ansible.com/ansible/latest/modules/ios_interfaces_module.html#ios-interfaces-module">Ansible ios_interfaces doc</a>.
+Originally I was going to write about the deprecations for just the Cisco IOS modules. Then as I
+investigated further, I had found that there are many more modules that are being deprecated. In
+this post I will take a closer look at the differences between the <code>ios_interface</code> and <code>ios_vlan</code>
+modules that I had written posts on last year and what their new counter parts look like. And in the
+end the post had quite a bit of good detail about the module. I think you will like what is here.</p>
+<blockquote>
+<p>Previous Posts</p>
+<ul>
+<li><a href="https://josh-v.com/blog/2019/03/17/ansible-cisco-ios-interface.html">ios_interface</a></li>
+<li><a href="https://josh-v.com/blog/2019/03/09/ansible-ios-vlan.html">ios_vlan</a></li>
+</ul>
+</blockquote>
+<h2 id="module-deprecations">Module Deprecations</h2>
+<p>In addition to the Cisco &ldquo;legacy&rdquo; interface and vlan modules that are being deprecated, the Ansible
+generic modules are being deprecated as well. These include <code>net_interface</code>, <code>net_linkagg</code>,
+<code>net_l2/l3_interface</code>, and <code>net_l2/l3_vlan</code>.</p>
+<p>Not to be outdone, not only are the Cisco and Ansible generic modules being deprecated, so are each
+of the same set of modules for Juniper, EOS, VYOS, NXOS, IOSXR, and Netvisor.</p>
+<p>In all by doing a browser search for <code>(D)</code> on the Ansible 2.9 Network Modules
+<a href="https://docs.ansible.com/ansible/2.9/modules/list_of_network_modules.html">page</a> I come across a
+total of 77 different modules that are in the process of being deprecated. That is quite a bit, so
+make sure that you are taking a look at your playbooks to look for this.</p>
+<p>One of the downsides I see coming out of this module change is the change from <code>ios_interface</code> to
+<code>ios_interfaces</code>. This is such a subtle difference between the two. You are going to need to pay
+extra attention to it. In fact I was taken back when I first saw the parameters of the module being
+posted on the Network To Code Public Slack that I had to take a second look. I thought that someone
+was way off on the parameters they were using. Then I saw the deprecations and new modules.</p>
+<h3 id="panos-module-deprecation">PANOS Module Deprecation</h3>
+<p>I did also observe an interesting (in my mind) planned deprecation. All of the PANOS modules are
+planned to be deprecated in favor of using community drivers from Ansible Galaxy. Why is this
+interesting? Well, this is the start of the move to move modules out of Ansible Core and start using
+Ansible Galaxy to distribute the modules that you need. More on that to come in another post.</p>
+<h2 id="differences">Differences</h2>
+<p>There are quite a bit of differences in the modules. The first level parameters for *_interfaces
+across vendors has been reduced to just two, <strong>config</strong> and <strong>state</strong>.</p>
+<p>A second difference that I&rsquo;m observing is the lack of the ability to save the config when change.
+This means that you as the playbook creator will need to take action such as notifying a handler or
+running a save config when there is a change. You can do this, or have a task executed when there is
+a change.</p>
+<h3 id="config">Config</h3>
+<p>All of the bulk of the configuration has moved into the config parameter. Within Cisco
+<code>ios_interfaces</code> you now have the options to configure the <em>description</em>, <em>duplex</em>, <em>enabled</em>,
+<em>mtu</em>, <em>name</em>*, and <em>speed</em>. These were previously first level parameters within the module
+definition. You can find the module definition at
+<a href="https://docs.ansible.com/ansible/latest/modules/ios_interfaces_module.html#ios-interfaces-module">Ansible Docs ios_interfaces</a>.</p>
+<h3 id="state">State</h3>
+<p>The state is now referencing the configuration of the interface. It does not state whether or not
+the interface is enabled or disabled. That is controlled by the <em>enabled</em> sub-parameter of
+<strong>config</strong>. The options for <strong>state</strong> include <em>merged</em> (default setting), <em>replaced</em>, <em>overridden</em>,
+and <em>deleted</em>.</p>
+<h4 id="state-merged">State: Merged</h4>
+<p>This looks to take whatever is already in the interface configuration and adding/replacing based on
+what the module parameters that are configured. So if you have an interface that has just the speed
+configured and you just have a task that configures the duplex, you will have speed and duplex
+configured.</p>
+<p>With the merged module, you will run the commands that are defined, not worrying about the defaults.
+For this demo, I have set the MTU to 1450, which is different than the default of 1500 for this
+device type. You will see that in other states, that Ansible will change the configuration. Where as
+with the <strong>merged</strong> type, you will run the commands seen in the module parameters, not worrying
+about the other parameters not provided.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+          <span style="color:#f92672">ios_interfaces</span>:
+          <span style="color:#f92672">state</span>: <span style="color:#ae81ff">replaced</span>
+          <span style="color:#f92672">config</span>:
+              - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GigabitEthernet0/3</span>
+              <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+              <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+          <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+          <span style="color:#f92672">debug</span>:
+          <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">&#34;commands&#34;: </span>[
+      <span style="color:#e6db74">&#34;interface GigabitEthernet0/3&#34;</span>,
+      <span style="color:#e6db74">&#34;description Configured by Ansible&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="state-replaced">State: Replaced</h4>
+<p>When using replaced, the entire interface will be configured with what is set in the module. If you
+set duplex only, you will only get the duplex of the interface set.</p>
+<p>In this example I will only be looking to enable the interface and change the description. There
+will be no changes to the other interfaces defined.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+      <span style="color:#f92672">ios_interfaces</span>:
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">replaced</span>
+        <span style="color:#f92672">config</span>:
+          - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GigabitEthernet0/3</span>
+            <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+            <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The output (shown in full here only, will skip the &ldquo;after&rdquo; and &ldquo;before&rdquo; keys in subsequent examples)
+shows that the only changes being made are to <code>GigabitEthernet0/3</code>. This is similar to what we will
+see in the overridden section. Overridden will configure every interface on the device vs replaced
+looks to only be handling the interface defined within the config parameter.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;msg&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+        <span style="color:#f92672">&#34;after&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;loopback0&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/0&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;MANAGEMENT&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/1&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;PRODUCTION&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;mtu&#34;</span>: <span style="color:#ae81ff">1400</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            }
+        ],
+        <span style="color:#f92672">&#34;before&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;loopback0&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/0&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;MANAGEMENT&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/1&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;PRODUCTION&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;mtu&#34;</span>: <span style="color:#ae81ff">1400</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;BEFORE ANSIBLE&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;mtu&#34;</span>: <span style="color:#ae81ff">1450</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            }
+        ],
+        <span style="color:#f92672">&#34;changed&#34;</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;commands&#34;</span>: [
+            <span style="color:#e6db74">&#34;interface GigabitEthernet0/3&#34;</span>,
+            <span style="color:#e6db74">&#34;no mtu&#34;</span>,
+            <span style="color:#e6db74">&#34;description Configured by Ansible&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="state-overridden">State: Overridden</h4>
+<p>This one was not completely obvious to me when originally looking at. But as I tested, I have now
+come to find that this state is something to be <strong>VERY</strong> cautious with. In the testing, I had the
+following configuration on the devices:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  interface GigabitEthernet0/1
+   description MANAGEMENT
+   OUTPUT OMITTED
+  !
+  interface GigabitEthernet0/2
+   description PRODUCTION</code></pre></td></tr></table>
+</div>
+</div>
+<p>You can see that there are configurations applied to the description. I then created these playbook
+tasks to test the <code>Overridden</code> setting.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+      <span style="color:#f92672">ios_interfaces</span>:
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">overridden</span>
+        <span style="color:#f92672">config</span>:
+          - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GigabitEthernet0/3</span>
+            <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+            <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The output shows that Ansible is going to erase the description lines:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#e6db74">&#34;commands&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/1&#34;</span>,
+    <span style="color:#e6db74">&#34;no description&#34;</span>,
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/2&#34;</span>,
+    <span style="color:#e6db74">&#34;no description&#34;</span>
+  ]</code></pre></td></tr></table>
+</div>
+</div>
+<p>This indicates that Ansible will default settings that are not specifically defined within the
+module.</p>
+<p>The next test I changed the MTU on <code>GigabitEthernet0/1</code> and <code>GigabitEthernet0/2</code> to some random
+14xx MTUs. I&rsquo;ve left everything else the same as the play above with no changing fo the MTU, just
+setting the description on a single interface. The results from running that playbook now show that
+the interface MTU is reset to default since it was not statically defined in the task.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#e6db74">&#34;commands&#34;</span>: <span style="color:#f92672">[</span>
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/1&#34;</span>,
+    <span style="color:#e6db74">&#34;no mtu&#34;</span>,
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/2&#34;</span>,
+    <span style="color:#e6db74">&#34;no mtu&#34;</span>,
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/3&#34;</span>,
+    <span style="color:#e6db74">&#34;no mtu&#34;</span>
+<span style="color:#f92672">]</span>,</code></pre></td></tr></table>
+</div>
+</div>
+<h5 id="state-overridden---loop">State: Overridden - Loop</h5>
+<p>So what does this look like if we wanted to loop over a set of interfaces? Would there be special
+considerations made for the module? The answer is no. If you attempted to loop over a module that is
+using the state of <strong>overridden</strong>, then you are going to default the other interfaces. Given the
+following task:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+      <span style="color:#f92672">ios_interfaces</span>:
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">overridden</span>
+        <span style="color:#f92672">config</span>:
+          - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+            <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+            <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+      <span style="color:#f92672">loop</span>:
+        - <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>
+        - <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>
+      <span style="color:#f92672">loop_control</span>:
+        <span style="color:#f92672">loop_var</span>: <span style="color:#ae81ff">item</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>You will have two loops. The first time through the loop when the loop_var is <code>GigabitEthernet0/2</code>
+you will have the other interfaces all defaulted, except <code>GigabitEthernet0/2</code> will have the state
+enabled and the description set to <code>Configured by Ansible</code>. The rest of the interface descriptions
+will be removed. MTU all set to default, and so on.</p>
+<p>The second time through the loop the module will configure <code>GigabitEthernet0/3</code> with each of the
+interface configurations. Defaulting the rest of the interfaces on teh device. So the description
+at the end of this execution for <code>GigabitEthernet0/2</code> will be blank. Even though it was configured
+on the first loop through.</p>
+<p>To handle this you will need to define the interfaces within the context of the config. Here is the
+new configuration of the tasks:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+      <span style="color:#f92672">ios_interfaces</span>:
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">overridden</span>
+        <span style="color:#f92672">config</span>:
+          - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>
+            <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+            <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+          - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>
+            <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+            <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>With having multiple interfaces defined under the config as another list item you are able to get
+both of the interfaces configured with what you are looking to do.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">        <span style="color:#e6db74">&#34;after&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+            {
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;loopback0&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/0&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/1&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Configured by Ansible&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            }
+        ]<span style="color:#960050;background-color:#1e0010">,</span>
+        <span style="color:#e6db74">&#34;before&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+            {
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;loopback0&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/0&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/1&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;BEFORE ANSIBLE&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/2&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;BEFORE ANSIBLE&#34;</span>,
+                <span style="color:#f92672">&#34;duplex&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>,
+                <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;GigabitEthernet0/3&#34;</span>,
+                <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+            }
+        ]<span style="color:#960050;background-color:#1e0010">,</span>
+        <span style="color:#e6db74">&#34;changed&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">,</span>
+        <span style="color:#e6db74">&#34;commands&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+            <span style="color:#e6db74">&#34;interface GigabitEthernet0/2&#34;</span>,
+            <span style="color:#e6db74">&#34;description Configured by Ansible&#34;</span>,
+            <span style="color:#e6db74">&#34;interface GigabitEthernet0/3&#34;</span>,
+            <span style="color:#e6db74">&#34;description Configured by Ansible&#34;</span>
+        ]</code></pre></td></tr></table>
+</div>
+</div>
+<p>You now see within the <em>commands</em> key that both of hte interfaces are configured by Ansible. At this
+point with both interfaces being defined in the config parameter, you get both of the interfaces
+configured. To do this more programmatically  you would need to create the list ahead of time and
+feed the list of interfaces with their state into the module. This may be a future blog post.</p>
+<h4 id="state-deleted">State: Deleted</h4>
+<p>The task looks straight to the point for the deleted status. As expected. In this you define which
+interface name is to have the configuration removed, and then the module will default all of the
+sub-parameters of <em>description</em>, <em>duplex</em>, <em>enabled</em>, <em>mtu</em>, and <em>speed</em>. Note that the <em>enabled</em>
+default in the module is currently (2020-01-26) set to enabled.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: IOS &gt;&gt; Set some interfaces with merge&#34;</span>
+      <span style="color:#f92672">ios_interfaces</span>:
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">deleted</span>
+        <span style="color:#f92672">config</span>:
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GigabitEthernet0/3</span>
+        <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_interface_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: SYS &gt;&gt; DEBUG OUTPUT&#34;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">      <span style="color:#f92672">debug</span>:
+</span>        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ios_interface_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>When the configuration previously had an interface description and an MTU set, the following is
+the commands that are executed on just the single interface that is defined in the task:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">&#34;commands&#34;: </span>[
+    <span style="color:#e6db74">&#34;interface GigabitEthernet0/3&#34;</span>,
+    <span style="color:#e6db74">&#34;no description&#34;</span>,
+    <span style="color:#e6db74">&#34;no mtu&#34;</span>
+  ]</code></pre></td></tr></table>
+</div>
+</div>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/disney_plus_streaming/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/disney_plus_streaming/">Disney Plus Streaming Bandwidth</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/">Ansible Cisco IOS User Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

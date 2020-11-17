@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Discontiguous Masks &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Discontiguous Masks</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 5 minutes,
+    50 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1284 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-12-08</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/network_design">network_design</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/segmentation">segmentation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Discontiguous masks are something that is going to be somewhat historic within the network design
+toolbox. It is basically a methodology of looking at particular bits of a network/host definition.
+The big thing to recall is that as a packet crosses a network device it does so within a packet. The
+packet is nothing more than a stream of bits. Within the packet header there are bits that define
+the source network address and the destination network address. This is where discontiguous masks
+come into play. With a system that can leverage discontiguous masks, you can access information
+about any part of the network bits, not just starting reading and then stopping (or vice versa) when
+you look at a bit boundry masking only.</p>
+<p>This is a originally posted from my previous blog here
+<a href="https://connectforall.blogspot.com/2011/06/discontiguous-masks.html">Previous Post</a>. I plan to give
+this a complete re-write when I have the opportunity.</p>
+<h2 id="original-post">Original post</h2>
+<p>Simply put, discontiguous masks are those that are represented by a potentially alternating sets of
+1s and 0s within a mask (subnet/standard mask or wild card). This does not really apply to a subnet
+mask as you have a network portion of the address, and then the host portion, so everything is
+contiguous. The primary place that you will see this is in Access Control Lists or ACLs (for more
+info on ACLs, here is a quick link to a Wikipedia article. This may be a topic later on within this
+blog <a href="http://en.wikipedia.org/wiki/Standard_Access_Control_List)">http://en.wikipedia.org/wiki/Standard_Access_Control_List)</a>.</p>
+<p>The first two use cases that these come in handy for are for Quality of Service ACLs and
+Security/Firewall ACLs. There are many more uses out there, but these are the two primary ones that
+I have come across. Feel free to leave comments, and I will dive into it, modifying this post for
+this.</p>
+<p>My first tip for understanding this concept is that you need to think the way that a router (or
+other network device) thinks. Everything that passes through a router or switch is passing through
+the device in a logical method. The router and switch are looking at binary 1s and 0s as they cross
+the wire.</p>
+<p>Everything for this discussion revolves around binary addressing. Remember that currently in the
+IPv4 space that there are 32 bits to a network address. That is the IP address 192.168.0.1 can be
+translated into binary bits of <code>1100 0000 . 1010 1000 . 0000 0000 . 0000 0001</code>.</p>
+<p>Discontiguous masks are as they state, a mask that can be discontiguous. Many devices in the
+industry have support for what is a contiguous mask. This does not have do with wild card or subnet
+masking yet. It just matters how the devices check to see if something matches. In a standard mask
+or subnet mask, the mask that you define may look something like
+255.255.255.0 (11111111.11111111.11111111.00000000). In this case you will be doing a logical &ldquo;AND&rdquo;
+operation where the bits that you care about are represented by a &ldquo;1&rdquo;.  The bits that are
+represented by a &ldquo;0&rdquo; are those that you do not care about. In the Cisco world of wild card masking,
+it is the inverse. Most of my examples will be in wild card notation, since this is where it is most
+prevalent in my world.</p>
+<p>A discontiguous mask does not follow this. First, let&rsquo;s take the previous example of the mask
+255.255.255.0 and turn it into a wild card mask, so that we can follow along in the same fashion
+moving forward. This then turns into a 0.0.0.255 mask. Simply changing the important bits, or the
+bits that you care about from a &ldquo;1&rdquo; to a &ldquo;0&rdquo; and vice versa. Binary representation is
+<code>00000000.00000000.00000000.11111111</code>. So now, the discontiguous part. Let&rsquo;s say you run a network
+where you have 10 sites. They are all the same IP address wise, except that you change the third
+octet to represent your site. Let&rsquo;s use addressing 192.168.0.0 - 192.168.255.255 to represent this.
+Site A has the IP addresses 192.168.1.0/24 (contiguous masking) and site B has the IP addresses
+192.168.2.0/24. You assign a server the address of X.X.X.2 at each site. Now you want to write an
+ACL that will match that at each site.</p>
+<p>The process that I would follow, is we need to figure out what is important. As we look at the 10
+site  addresses (we will just use two, but we will see the commonality) that we care about.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">IP address</th>
+<th style="text-align:center">Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">192.168.1.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0001 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.2.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0010 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.3.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0011 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.4.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0100 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.5.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0101 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.6.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0110 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.7.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 0111 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.8.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 1000 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.9.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 1001 . 0000 0010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.10.2</td>
+<td style="text-align:center"><code>1100 0000 . 1010 1000 . 0000 1010 . 0000 0010</code></td>
+</tr>
+</tbody>
+</table>
+<p>You notice a little bit of a pattern develop. So if I were to look at a wild card mask here, let&rsquo;s
+look at each individual octet one at a time. I encourage you to do so when trying to create your
+own. We know that in this world that all of the addresses will start with 192.168. on all of the
+sites. This makes the first two octets very easy to write the wild card mask. You care about all of
+the bits in the first two octets. So they are simply &ldquo;0&rdquo;. So far we have 0.0.?.? for a mask.</p>
+<p>The third octet is where it becomes more difficult. As we take a look at the binary information
+above, you will notice that there isn&rsquo;t a complete pattern in that octet (with only 10 sites, there
+is a little bit of a pattern, but if this were to get expanded out to say 100 or 200 sites with each
+the same addressing, then it becomes more difficult. We will say for our discussion, that we don&rsquo;t
+care what the third octet is. It can be 2, it could be 254 or 140. For simplicity sake of
+discontiguous explanation, this is the case, we don&rsquo;t care about any of the bits. So now we would
+have the mask 0.0.255.?</p>
+<p>The last octet is once again easy in this case. We care about every bit. So it is &ldquo;0&rdquo; again. Our
+complete wild card mask would be 0.0.255.0 in this case. This is where discontiguous masks are very
+powerful. Now, let&rsquo;s say that we add a second server at each site. The easiest thing to do from a
+network perspective is set the IP address to .3 at the site. These two servers do the same
+functionality in a high availability design, so you want all traffic to be treated as equal. You
+simply change the very last bit in the octet to be a 1 (in that you don&rsquo;t care if it is a 0 or a 1),
+and you have your new wild card mask of 0.0.255.1 that will match traffic on two IP addresses at a
+site instead of just one.</p>
+<p>In a contiguous state, there would need to be a clear &ldquo;border&rdquo; between the 0s and 1s, that you can&rsquo;t
+go back and forth on. So <code>0000000000000001111111111111111</code> is a contiguous mask. The
+<code>000000000000000011111111000000000</code> mask would not play well with hardware that does not support it.</p>
+<p>Remember, think about how a router thinks in order to understand clearly what is happening.</p>
+<p>Happy masking!</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/microsegmentation/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/microsegmentation/">Micro Segmentation vs Segmentation</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-output-work/">Ansible - Working with command output</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-output-work/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

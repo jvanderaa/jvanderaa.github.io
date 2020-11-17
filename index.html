@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title></title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+  <link rel="alternate" type="application/rss+xml" title="Josh-V.com Draft"
+    href='https://jvanderaa.github.io/feed.xml' />
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://jvanderaa.github.io/feed.xml'><i
+          class="fas fa-rss"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1></h1>
+  <h2>Network Automation, Networking, Tech, APIs, and my interests</h2>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/practicing_with_gns3/">Practicing Network Automation with GNS3</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 2 minutes,
+    27 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 541 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-11-01</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In an earlier post I took a look at how to setup EVE-NG to get access to virtualized network devices and topologies. This post is going to take a look at how to setup GNS3 systems to allow access.
+In the overall topology that is a &ldquo;home&rdquo; network sits a device that supports a routing protocol, usually either OSPF or BGP. What is known to work at an inexpensive price point is the Ubiquiti EdgeRouter X.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/practicing_with_gns3/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible_for_enterprise/">Ansible for Enterprise</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    52 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 853 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-08-09</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    One of the appealing features that I have towards working with Ansible is that it is able to automate components across the entire Enterprise IT stacks. Rather than having to stitch together your network, server, and desktop automation tools, there is at least one automation tool that will work with just about your entire IT stack. In this I will take a high level overview of some of the features that are there for you to explore.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible_for_enterprise/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/">Docker for Automation Environment - Ansible 2.10</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 8 minutes,
+    22 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1843 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-06-27</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/docker">docker</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Docker is a terrific solution for making a consistent working environment. It&rsquo;s been about a year or so since I built my very first own Docker container. I had always known why you use a container, but was always intimidated too much so to even get started. I am glad that I did get started and am off on my journey of using Docker containers. Let me jump into the problem and why?
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/apple_automator/">Using Apple Automator to Open Projects</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    3 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 891 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-06-21</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/vscode">vscode</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/pycharm">pycharm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Today I&rsquo;m going to walk through the newest part of my personal workflow for working with projects. Straight to the point, this is going to be using Apple Automator to quickly open your project that you wish to work on within VS Code, and presumably PyCharm as well.
+Problem So what is the problem that I&rsquo;m trying to solve? I am one that generally likes the workspace concept within VS Code, but I don&rsquo;t like having to maintain workspace files.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/apple_automator/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/">Ansible Cisco IOS User Module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 8 minutes,
+    55 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1965 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-03-14</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/cisco">cisco</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ios_user">ios_user</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In this post I will be taking a look at some of the usability setup of managing Cisco IOS devices with the Ansible Cisco IOS User Module. This can be very helpful for setting up managed user accounts on systems, or the backup user accounts when you have TACACS or RADIUS setup.
+The module documentation overall looks complete from what I have done for user account management on devices in the past.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/">Ansible Cisco ios_interfaces module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    58 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2194 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-01-26</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/cisco">cisco</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/deprecation">deprecation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    This has become a post about the ios_interfaces module with documentation that can be found Ansible ios_interfaces doc. Originally I was going to write about the deprecations for just the Cisco IOS modules. Then as I investigated further, I had found that there are many more modules that are being deprecated. In this post I will take a closer look at the differences between the ios_interface and ios_vlan modules that I had written posts on last year and what their new counter parts look like.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/disney_plus_streaming/">Disney Plus Streaming Bandwidth</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 2 minutes,
+    49 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 622 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-11-14</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/homenet">homenet</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/disney">disney</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/streaming">streaming</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    This will be a brief departure from the automation focused attention that I have been giving to this blog over the past year or so. This week in the United States was the launch of Disney+ streaming service. I have subscribed to it at this point and have found some interesting data based on SNMP polling my network.
+This post is about the bandwidth that I am seeing used, not about anything about the service, or if another service is better.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/disney_plus_streaming/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/">Ansible differences between ios command and cli command</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    24 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2068 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-10-19</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In an earlier post I covered the differences between ios_config and cli_config. However I did not cover what the difference was between ios_command and cli_command. Most of the items covered there remain the same. So this will be a post that mostly gets straight to it and sees what the difference is.
+ A reminder that I am also putting playbooks used here out on Github. You can find this at: https://github.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/">EVE-NG for Automation Practice and Testing</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    30 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 992 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-08-04</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/eveng">eveng</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible-level-medium">ansible-level-medium</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    As I restarted looking at how I&rsquo;m continuing my education on the Network Automation and certification realm I asked the question &ldquo;How are you simulating your network environment?&rdquo; At the same time there has been thought on the idea of leveraging cloud resources to gain experience there.
+First requirement for me is that whatever tool/simulation set that I use it has to work. That being said, I need to be able to generate configurations, connect devices to each other, and have packets flow through the simulated network, just like any other network.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-ios-bgp-module/">Ansible IOS BGP Module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 10 minutes,
+    14 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2252 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-07-14</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/iosbgp">iosbgp</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In this post I&rsquo;m going to be taking a deeper dive into the new in Ansible 2.8 IOS BGP module. This may be one of the more complex modules to date and I&rsquo;ll try to make it as simple as possible.
+For a reminder about the BGP protocol is that this is the predominate protocol that runs the Internet. It is used to peer up with other companies and is what helps to make the Internet great.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-ios-bgp-module/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <i class="fa fa-chevron-left"></i>
+  
+  <span>&nbsp;1 / 4&nbsp;</span>
+  
+  <a href="https://jvanderaa.github.io/page/2/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ntc on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/ntc/</link>
+    <description>Recent content in ntc on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 27 Jan 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/ntc/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Network Engine and NTC Templates</title>
+      <link>https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/</link>
+      <pubDate>Sun, 27 Jan 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/</guid>
+      <description>In this post we will talk about primarily three components that will work together to get structured data out of the command line of a Cisco device. The three pieces are:
+ Ansible Network Engine Google&amp;rsquo;s TextFSM Network to Code Templates  Why this Post? I&amp;rsquo;m writing this post because I was initially hesitant to start using the Ansible role originally when I was doing everything pretty well with the generic modules that come available with Ansible.</description>
+    </item>
+    
+  </channel>
+</rss>

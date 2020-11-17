@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/math/</link>
+    <description>Recent content in math on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 05 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/math/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math Sample</title>
+      <link>https://jvanderaa.github.io/post/2017-03-05-math-sample/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2017-03-05-math-sample/</guid>
+      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas. It supports in-line math using the &lt;code&gt;\\( ... \\)&lt;/code&gt; delimiters, like this: \( E = mc^2 \). By default, it does &lt;em&gt;not&lt;/em&gt; support in-line delimiters &lt;code&gt;$...$&lt;/code&gt; because those occur too commonly in typical webpages. It supports displayed math using the &lt;code&gt;$$&lt;/code&gt; or &lt;code&gt;\\[...\\]&lt;/code&gt; delimiters, like this:&lt;/p&gt;
+&lt;p&gt;Formula 1:
+$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$&lt;/p&gt;
+&lt;p&gt;Formula 2: (same formula, different delimiter)
+\[
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+\]&lt;/p&gt;
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

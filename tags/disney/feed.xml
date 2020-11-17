@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>disney on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/disney/</link>
+    <description>Recent content in disney on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 14 Nov 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/disney/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disney Plus Streaming Bandwidth</title>
+      <link>https://jvanderaa.github.io/post/disney_plus_streaming/</link>
+      <pubDate>Thu, 14 Nov 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/disney_plus_streaming/</guid>
+      <description>This will be a brief departure from the automation focused attention that I have been giving to this blog over the past year or so. This week in the United States was the launch of Disney+ streaming service. I have subscribed to it at this point and have found some interesting data based on SNMP polling my network.
+This post is about the bandwidth that I am seeing used, not about anything about the service, or if another service is better.</description>
+    </item>
+    
+  </channel>
+</rss>

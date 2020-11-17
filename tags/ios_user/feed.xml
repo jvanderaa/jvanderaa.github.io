@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ios_user on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/ios_user/</link>
+    <description>Recent content in ios_user on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 14 Mar 2020 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/ios_user/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Cisco IOS User Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-user/</link>
+      <pubDate>Sat, 14 Mar 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-user/</guid>
+      <description>In this post I will be taking a look at some of the usability setup of managing Cisco IOS devices with the Ansible Cisco IOS User Module. This can be very helpful for setting up managed user accounts on systems, or the backup user accounts when you have TACACS or RADIUS setup.
+The module documentation overall looks complete from what I have done for user account management on devices in the past.</description>
+    </item>
+    
+  </channel>
+</rss>

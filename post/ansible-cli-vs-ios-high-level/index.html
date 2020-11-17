@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible differences between ios config and cli config &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible differences between ios config and cli config</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    38 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1022 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-01-12</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>This is a post that I&rsquo;m going to review some of the differences between the ios_config module and
+the new cli_config module within Ansible networking. I became interested in the module after a
+recent discussion between the two. I have decided to take a look at the differences between the two.</p>
+<p>This is not an under the hood look at the modules. This has already been covered very well (and
+with better graphics than I can produce) here at the
+<a href="https://www.ansible.com/blog/red-hat-ansible-network-automation-updates">Ansible Blog</a> look for
+&ldquo;cli_command and cli_config&rdquo; with your browser find function.</p>
+<blockquote>
+<p>I may also try to take a look at some of the other modules as well as time may permit. Next up on
+my interest of is the NXOS commands. I may also be limited a touch on some of the other major
+platforms out there, but hopefully I can find some legitimately and provide some value back.</p>
+</blockquote>
+<h2 id="differences">Differences</h2>
+<h3 id="parameters">Parameters</h3>
+<p>First the differences come in a couple of front and center options. First, in <code>cli_config</code> there are
+a few more options to do with <strong>committing</strong> configurations. These play a role in having a &ldquo;uniform&rdquo;
+module for pushing to all sorts of devices like IOS, JUNOS, and the such.</p>
+<p><strong>Lines vs config</strong></p>
+<p>One of the major differences in the paramaters comes on how you put a configuration into the module.
+With the original <code>ios_config</code> you get to pass <em>The ordered set of commands</em> to the module. This
+means that you can apply multiple commands within one statement.</p>
+<p>With <code>cli_config</code> you are passing a <strong>string</strong> into the module that is
+<em>The config to be pushed to the network device</em>.</p>
+<p>This difference is a very important one. For instance if you wanted to apply multiple lines to a
+configuration you will need to find another way with <code>cli_config</code> that previously was very simple to
+read:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; No shut the interfaces</span>
+      <span style="color:#f92672">ios_config</span>:
+        <span style="color:#f92672">lines</span>:
+          - <span style="color:#ae81ff">description ** Configured by Ansible **</span>
+          - <span style="color:#66d9ef">no</span> <span style="color:#ae81ff">shutdown</span>
+        <span style="color:#f92672">parents</span>: <span style="color:#ae81ff">interface GigabitEthernet1/0</span>
+}
+}
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>After doing a few different tests including using the <code>|</code> character to send multiple lines, <code>\n</code> as
+a new line character, and using <code>with_items</code> all to no avail. Last step I tried to use the old
+carriage return <code>\r</code> in the config at which point it was successful.</p>
+
+<h3 id="templating">Templating</h3>
+<p>Templating is also a little different. From the
+<a href="https://docs.ansible.com/ansible/latest/modules/cli_config_module.html">main module page</a> you can
+see an example that is the following:</p>
+<p><strong>CLI Config</strong>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">configure device with config (CLI)</span>
+  <span style="color:#f92672">cli_config</span>:
+    <span style="color:#f92672">config</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;template&#39;, &#39;basic/config.j2&#39;) }}&#34;</span>
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p><strong>IOS Config</strong>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">configure device with config (IOS)</span>
+  <span style="color:#f92672">ios_config</span>:
+    <span style="color:#f92672">src</span>: <span style="color:#ae81ff">config.j2</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>So the only real difference is the lookup module used in the CLI version. This is pretty straight
+forward to see what it is doing. It is using the <em>lookup filter</em>, of type <em>template</em>. Then the 2nd
+argument is the template file that you wish to render.</p>
+<h3 id="execution-information">Execution Information</h3>
+<p>This is maybe the <strong>biggest</strong> difference that I have found between the <em>ios_config</em> module and the
+<em>cli_config</em> module. When storing results of the configuration module execution, you will only get
+back two fields - <em>changed</em> and <em>failed</em>. You will not be able to see what was executed that you can
+see with the <em>ios_config</em> module.</p>
+<h4 id="lab-setup">Lab Setup</h4>
+<p>The lab setup for this is pretty simple. I have added a Cisco IOS L2 switch image to the previous
+lab that I had in the <a href="https://josh-v.com/blog/2019/01/05/ansible-output-work.html">previous post</a>.
+This is really just for a device to connect to.</p>
+<p>I am configuring a port channel, only because that is something that I had lined up quick in the
+test, no other particular reason.</p>
+<p>The Jinja2 template file that I am calling in this execution is the following:</p>
+<pre><code class="language-cisco" data-lang="cisco">interface Port-channel5
+ switchport trunk allowed vlan 2,4,5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast edge trunk</code></pre>
+<p>Here is the playbook run with the CLI module:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">switches</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+  <span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#39;switches&#39;</span>]
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">CLI &gt;&gt; Configure Port channel</span>
+      <span style="color:#f92672">cli_config</span>:
+        <span style="color:#f92672">config</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;template&#39;, &#39;port_channel.j2&#39;) }}&#34;</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">cli_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+      <span style="color:#f92672">with_items</span>:
+        - <span style="color:#e6db74">&#34;{{ cli_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Output from this is:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PLAY <span style="color:#f92672">[</span>Switch config<span style="color:#f92672">]</span> *******************************************************************************
+
+TASK <span style="color:#f92672">[</span>CLI &gt;&gt; Configure Port channel<span style="color:#f92672">]</span> ***************************************************************
+changed: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span>
+
+TASK <span style="color:#f92672">[</span>DEBUG<span style="color:#f92672">]</span> ***************************************************************************************
+ok: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>item<span style="color:#f92672">={</span><span style="color:#e6db74">&#39;failed&#39;</span>: False, u<span style="color:#e6db74">&#39;changed&#39;</span>: True<span style="color:#f92672">})</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;changed&#34;</span>: true,
+        <span style="color:#e6db74">&#34;failed&#34;</span>: false
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+PLAY RECAP *****************************************************************************************
+sw01                       : ok<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>    changed<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>    unreachable<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    failed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Moving to virtually the same playbook here:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">switches</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+  <span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#39;switches&#39;</span>]
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; Configure port channel</span>
+      <span style="color:#f92672">ios_config</span>:
+        <span style="color:#f92672">src</span>: <span style="color:#ae81ff">port_channel.j2</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ios_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+      <span style="color:#f92672">with_items</span>:
+        - <span style="color:#e6db74">&#34;{{ ios_output }}&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The resulting output also includes <em>banners</em>, <em>commands</em>, and <em>updates</em>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PLAY <span style="color:#f92672">[</span>Switch config<span style="color:#f92672">]</span> ***********************************************************
+
+TASK <span style="color:#f92672">[</span>IOS &gt;&gt; Configure port channel<span style="color:#f92672">]</span> *******************************************
+changed: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span>
+
+TASK <span style="color:#f92672">[</span>DEBUG<span style="color:#f92672">]</span> *******************************************************************
+ok: <span style="color:#f92672">[</span>sw01<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>item<span style="color:#f92672">={</span><span style="color:#e6db74">&#39;failed&#39;</span>: False, u<span style="color:#e6db74">&#39;commands&#39;</span>: <span style="color:#f92672">[</span>u<span style="color:#e6db74">&#39;interface Port-channel5&#39;</span>,
+u<span style="color:#e6db74">&#39;switchport trunk allowed vlan 2,4,6&#39;</span><span style="color:#f92672">]</span>, u<span style="color:#e6db74">&#39;changed&#39;</span>: True, u<span style="color:#e6db74">&#39;updates&#39;</span>: <span style="color:#f92672">[</span>u<span style="color:#e6db74">&#39;interf
+</span><span style="color:#e6db74">ace Port-channel5&#39;</span>, u<span style="color:#e6db74">&#39;switchport trunk allowed vlan 2,4,6&#39;</span><span style="color:#f92672">]</span>, u<span style="color:#e6db74">&#39;banners&#39;</span>: <span style="color:#f92672">{}})</span> <span style="color:#f92672">=</span>&gt;
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;banners&#34;</span>: <span style="color:#f92672">{}</span>,
+        <span style="color:#e6db74">&#34;changed&#34;</span>: true,
+        <span style="color:#e6db74">&#34;commands&#34;</span>: <span style="color:#f92672">[</span>
+            <span style="color:#e6db74">&#34;interface Port-channel5&#34;</span>,
+            <span style="color:#e6db74">&#34;switchport trunk allowed vlan 2,4,6&#34;</span>
+        <span style="color:#f92672">]</span>,
+        <span style="color:#e6db74">&#34;failed&#34;</span>: false,
+        <span style="color:#e6db74">&#34;updates&#34;</span>: <span style="color:#f92672">[</span>
+            <span style="color:#e6db74">&#34;interface Port-channel5&#34;</span>,
+            <span style="color:#e6db74">&#34;switchport trunk allowed vlan 2,4,6&#34;</span>
+        <span style="color:#f92672">]</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+PLAY RECAP *********************************************************************
+sw01                       : ok<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>    changed<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>    unreachable<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>    failed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-output-work/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-output-work/">Ansible - Working with command output</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/">Ansible Network Engine and NTC Templates</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://jvanderaa.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

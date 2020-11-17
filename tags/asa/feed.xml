@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asa on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/asa/</link>
+    <description>Recent content in asa on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Jun 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/asa/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible ASA OG Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-asa-og/</link>
+      <pubDate>Sun, 23 Jun 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-asa-og/</guid>
+      <description>Today we are taking a look at the newest module out for Cisco ASA Ansible module - asa_og. This one is particularly exciting for the configurations that are being managed heavily with Object Groups on firewalls. I&amp;rsquo;m particularly excited to review the asa_og module, time to dig in.
+New in this post is the finished playbooks being added to Github. I&amp;rsquo;m hoping that this may be helpful and I am uploading the contents to Github for more to be able to see and get access to if necessary.</description>
+    </item>
+    
+    <item>
+      <title>Ansible ASA Command Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-asa-command/</link>
+      <pubDate>Thu, 20 Jun 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-asa-command/</guid>
+      <description>Today will be a touch shorter post, but it is good to be back at it. In this post I will be taking a quick look around at the asa_command module, as we start down the path with looking at the ASA modules in Ansible. This is spurned on a little bit by Ansible 2.8 coming out with an Object Group specific module. I will be looking into that further in a future post.</description>
+    </item>
+    
+  </channel>
+</rss>

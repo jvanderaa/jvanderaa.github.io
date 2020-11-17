@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title></title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+  <link rel="alternate" type="application/rss+xml" title="Josh-V.com Draft"
+    href='https://jvanderaa.github.io/feed.xml' />
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://jvanderaa.github.io/feed.xml'><i
+          class="fas fa-rss"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1></h1>
+  <h2>Network Automation, Networking, Tech, APIs, and my interests</h2>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-asa-og/">Ansible ASA OG Module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 20 minutes,
+    6 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 4422 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-06-23</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/asa">asa</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/asa_og">asa_og</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Today we are taking a look at the newest module out for Cisco ASA Ansible module - asa_og. This one is particularly exciting for the configurations that are being managed heavily with Object Groups on firewalls. I&rsquo;m particularly excited to review the asa_og module, time to dig in.
+New in this post is the finished playbooks being added to Github. I&rsquo;m hoping that this may be helpful and I am uploading the contents to Github for more to be able to see and get access to if necessary.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-asa-og/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-asa-command/">Ansible ASA Command Module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 3 minutes,
+    33 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 781 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-06-20</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/asa">asa</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Today will be a touch shorter post, but it is good to be back at it. In this post I will be taking a quick look around at the asa_command module, as we start down the path with looking at the ASA modules in Ansible. This is spurned on a little bit by Ansible 2.8 coming out with an Object Group specific module. I will be looking into that further in a future post.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-asa-command/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/">Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    23 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2065 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-03-30</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/saving_config">saving_config</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Today I&rsquo;m going to take a look at a method to be able to save the configuration of a Cisco device to NVRAM (copy run start). I will be taking a look at multiple Cisco platforms to save changes done during an Ansible Playbook to NVRAM. There are options to save the configuration on every change within the modules such as ios_config or cli_config, however, this can slow down the execution of your playbook.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/">Ansible Cisco IOS Interface Module</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    35 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2110 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-03-17</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ios_interface">ios_interface</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Update: ios_interface is to be deprecated as of Ansible 2.13
+In this post I will be taking a deeper look at the ios_interface module. This module is used to configure individual interfaces on a Cisco IOS device. The documentation for the module is located here. In this module I did have to dig into the actual Python file, and that is located here.
+ Edit: Had to update the link due to the change in Ansible coming in 2.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-ios-vlan/">Ansible IOS VLAN</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 11 minutes,
+    9 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2453 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-03-09</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/vlan">vlan</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Back to it finally. Going to take a look at the Ansible module ios_vlan. The purpose of this is to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2 images. There are a few interesting quirks (as I will call it) within the parameters for the module.
+Module Documentation First, the module documentation page is here.
+Getting Started with the module VLANs pre-module work Starting out the switch is pretty bare as it relates to the number of VLANs.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-ios-vlan/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-ios-banner/">Ansible IOS Banner</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 5 minutes,
+    12 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1145 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-02-10</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Today&rsquo;s post is going to be a short and sweet one (unless I get to writing two). I&rsquo;m going to take a look at ios_banner module. This one is pretty much straight to the point, what it states, modifying the banner on an IOS device. There are multiple reasons to want to manipulate the banner on a Cisco device. We will leave those reasons to you and the organization that you are a part of for that.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-ios-banner/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/">Ansible Network Engine and NTC Templates</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 5 minutes,
+    40 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1250 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-01-27</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ntc">ntc</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    In this post we will talk about primarily three components that will work together to get structured data out of the command line of a Cisco device. The three pieces are:
+ Ansible Network Engine Google&rsquo;s TextFSM Network to Code Templates  Why this Post? I&rsquo;m writing this post because I was initially hesitant to start using the Ansible role originally when I was doing everything pretty well with the generic modules that come available with Ansible.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/">Ansible differences between ios config and cli config</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    38 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1022 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-01-12</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    This is a post that I&rsquo;m going to review some of the differences between the ios_config module and the new cli_config module within Ansible networking. I became interested in the module after a recent discussion between the two. I have decided to take a look at the differences between the two.
+This is not an under the hood look at the modules. This has already been covered very well (and with better graphics than I can produce) here at the Ansible Blog look for &ldquo;cli_command and cli_config&rdquo; with your browser find function.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/ansible-output-work/">Ansible - Working with command output</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 13 minutes,
+    59 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 3077 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-01-05</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    You have decided to move forward with using/trying Ansible. You can now connect to a device and get a green success that you get a hello world like command such as show hostname or show inventory and get the GREEN success on Ansible. Now what. You may want to see the output of the command that you sent and got information back. This is your post on getting started.
+This is the process that I typically go through when developing a playbook for use.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/ansible-output-work/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+    <article>
+  <header>
+    <h2><a href="https://jvanderaa.github.io/post/discontiguous_masks/">Discontiguous Masks</a></h2>
+
+    <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 5 minutes,
+    50 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 1284 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-12-08</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/network_design">network_design</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/segmentation">segmentation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+    Discontiguous masks are something that is going to be somewhat historic within the network design toolbox. It is basically a methodology of looking at particular bits of a network/host definition. The big thing to recall is that as a packet crosses a network device it does so within a packet. The packet is nothing more than a stream of bits. Within the packet header there are bits that define the source network address and the destination network address.
+  </p>
+
+  
+  <footer>
+    <a href="https://jvanderaa.github.io/post/discontiguous_masks/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <a href="https://jvanderaa.github.io/"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;2 / 4&nbsp;</span>
+  
+  <a href="https://jvanderaa.github.io/page/3/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

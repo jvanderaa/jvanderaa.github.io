@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bigimg on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/bigimg/</link>
+    <description>Recent content in bigimg on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 07 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/bigimg/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Big Image Sample</title>
+      <link>https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/</link>
+      <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/</guid>
+      <description>&lt;p&gt;The image banners at the top of the page are refered to as &amp;ldquo;bigimg&amp;rdquo; in this theme. They are optional, and one more more can be specified. If more than one is specified, the images rotate every 10 seconds. In the front matter, bigimgs are specified using an array of hashes.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

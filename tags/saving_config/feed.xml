@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>saving_config on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/saving_config/</link>
+    <description>Recent content in saving_config on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 30 Mar 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/saving_config/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules</title>
+      <link>https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/</link>
+      <pubDate>Sat, 30 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/</guid>
+      <description>Today I&amp;rsquo;m going to take a look at a method to be able to save the configuration of a Cisco device to NVRAM (copy run start). I will be taking a look at multiple Cisco platforms to save changes done during an Ansible Playbook to NVRAM. There are options to save the configuration on every change within the modules such as ios_config or cli_config, however, this can slow down the execution of your playbook.</description>
+    </item>
+    
+  </channel>
+</rss>

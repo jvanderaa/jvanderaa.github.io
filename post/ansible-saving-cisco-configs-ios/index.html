@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 9 minutes,
+    23 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2065 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-03-30</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/saving_config">saving_config</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Today I&rsquo;m going to take a look at a method to be able to save the configuration of a Cisco device to
+NVRAM (copy run start). I will be taking a look at multiple Cisco platforms to save changes done
+during an Ansible Playbook to NVRAM. There are options to save the configuration on every change
+within the modules such as <strong>ios_config</strong> or <strong>cli_config</strong>, however, this can slow down the
+execution of your playbook.</p>
+<p>First I will take a look at saving the configuration within its own task just for saving
+configuration. This is how I have many of my playbooks as I&rsquo;m executing several tasks, breaking them
+out. I then have a dedicated task that will save the configuration. I do this for speed of the
+playbook execution. If there are multiple changes on tasks and each one of the tasks is saving the
+configuration, then there will be some significant time spent saving the configuration multiple
+times. In this I will take a look at the copy command execution, but also, the trick I like to use
+of the config module and just <strong>save_when</strong> parameter.</p>
+<p>The second methodology I will take a look at is the saving the configuration within the task itself,
+using the <strong>save_when</strong> parameter. This is something that I use when I have simple playbooks, with
+only a couple of tasks that will modify the configuration.</p>
+<p>We will be taking a look at how to do this with the following Cisco platforms:</p>
+<ul>
+<li>Cisco IOS</li>
+<li>Cisco NXOS</li>
+<li>Cisco WLC</li>
+</ul>
+<h2 id="saving-configuration-in-one-task">Saving Configuration in one task</h2>
+<h3 id="ios--nxos">IOS / NXOS</h3>
+<p>The method I like to use to save the configuration is to use the <strong>ios_config</strong> module with the
+parameter of <strong>save_when</strong> set to <em>always</em>. No other parameter set, just the <strong>save_when</strong>. The
+<strong>nxos_config</strong> and <strong>ios_config</strong> modules both work in the same way. I&rsquo;ll show both of the outputs,
+but no separate write up on the NXOS side.</p>
+<p>To save the configuration then here is the task:</p>
+<h4 id="playbook-definition">Playbook Definition</h4>
+<p><strong>IOS</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">rtr02</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; Save Configuration to NVRAM</span>
+      <span style="color:#f92672">ios_config</span>:
+        <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">always</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; output</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ output }}&#34;</span>
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>NXOS</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">nxos_switches</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">NXOS &gt;&gt; Save Configuration to NVRAM</span>
+      <span style="color:#f92672">nxos_config</span>:
+        <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">always</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; output</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ output }}&#34;</span>
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="playbook-execution">Playbook Execution</h4>
+<p>On the output from the playbook, you don&rsquo;t get a lot of feedback that the config is copied other
+than the task being successful. However, since I&rsquo;m using a vIOS image in my lab environment the
+console does show GRUB messages. The second output shows the successful saving of the configuration
+that was done as the Ansible Playbook was being executed.</p>
+<p><strong>Playbook Execution - IOS</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; Save Configuration to NVRAM] **************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">rtr02]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; output] *********************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">rtr02] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">rtr02                      </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0  </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>GRUB Output - IOS</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#75715e">*Mar</span> <span style="color:#f92672">30 16:51:15.832: %GRUB-5-CONFIG_WRITING</span>: <span style="color:#ae81ff">GRUB configuration is being updated on disk. Please wait...</span>
+<span style="color:#75715e">*Mar</span> <span style="color:#f92672">30 16:51:16.446: %GRUB-5-CONFIG_WRITTEN</span>: <span style="color:#ae81ff">GRUB configuration was written to disk successfully</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>NXOS Execution</strong></p>
+<p>Here the output is minimal, with the output reporting success as our only method to know that the
+configuration was in fact saved.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [NXOS &gt;&gt; Save Configuration to NVRAM] *************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">nxos01]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; output] *********************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">nxos01] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">nxos01                     </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0 </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="method-with-ios_command">Method with IOS_Command</h4>
+<p>Not recommended, but if you must.</p>
+<p>Here there are two options for using a dedicated task for saving the configuration. The second method
+requires specific configuration to be added, which is something that I don&rsquo;t really like to have to
+do. You would use the configuration <code>file prompt quiet</code> within the configuratoin of the IOS device,
+then you can use the <strong>ios_command</strong> module to issue <code>copy run start</code>.</p>
+<h3 id="cisco-wlc---save-configuration-aireos_command">Cisco WLC - Save Configuration aireos_command</h3>
+<p>I have not been able to test the methodology of using <strong>save_when</strong> on the Cisco Wireless
+Controllers yet, but the methodology that I have used is using the command module. The difficulty on
+the aireos_command module is that there really isn&rsquo;t a methodology to handle prompts yet. This is
+actually very easy to overcome however on the module using escape characters.</p>
+<p>Here you see a <code>\r</code> in the middle of the output before the response of <code>y</code> for do you wish to save.
+You do not need one on the end as there is an implicit carriage return at the end of any line within
+the modules.</p>
+<p>Using the <strong>aireos_command</strong> module task looks like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">WLC &gt;&gt; Save Configuration</span>
+  <span style="color:#f92672">aireos_command</span>:
+    <span style="color:#f92672">commands</span>:
+      - <span style="color:#e6db74">&#34;save config\ry&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="saving-configurations-on-each-task">Saving Configurations on Each Task</h2>
+<p>When looking at the four modules of <strong>ios_config</strong>, <strong>nxos_config</strong>, <strong>cli_config</strong>, and
+<strong>aireos_config</strong> you will find that there is an parameter for either <strong>save</strong> or <strong>save_when</strong>. The
+parameter <strong>save</strong> is something that is being deprecated and I would not recommend using this. All
+of these modules will flag deprecation warnings on Ansible version 2.7.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Deprecated Parameter <!-- raw HTML omitted --> Move Away</th>
+<th>Current Save <!-- raw HTML omitted -->Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ios_config</td>
+<td>save (yes, no)</td>
+<td>save_when (always, never, modified, changed)</td>
+</tr>
+<tr>
+<td>nxos_config</td>
+<td>save (yes, no)</td>
+<td>save_when (always, never, modified, changed)</td>
+</tr>
+<tr>
+<td>aireos_config</td>
+<td>save (yes, no)</td>
+<td>save_when (always, never, modified, changed)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: I do not actively have a Cisco Wireless Controller available in my lab at the time of the
+writing. From working in my production environment, the configuration being save follows closely
+to that of the <strong>ios_config</strong> or <strong>nxos_config</strong> modules.</p>
+</blockquote>
+<h3 id="module-details-links">Module Details Links</h3>
+<p><a href="https://docs.ansible.com/ansible/latest/modules/aireos_config_module.html">aireos_config</a><br>
+<a href="https://docs.ansible.com/ansible/latest/modules/ios_config_module.html">ios_config</a><br>
+<a href="https://docs.ansible.com/ansible/latest/modules/nxos_config_module.html">nxos_config</a></p>
+<h3 id="parameter-choices">Parameter Choices</h3>
+<ul>
+<li>always</li>
+<li>never</li>
+<li>modified</li>
+<li>changed</li>
+</ul>
+<h3 id="choices-detail">Choices Detail</h3>
+<blockquote>
+<p>When changes are made to the device running-configuration, the changes are not copied to
+non-volatile storage by default. Using this argument will change that before. If the argument is
+set to always, then the running-config will always be copied to the startup-config and the
+modified flag will always be set to True. If the argument is set to modified, then the
+running-config will only be copied to the startup-config if it has changed since the last save to
+startup-config. If the argument is set to never, the running-config will never be copied to the
+startup-config. If the argument is set to changed, then the running-config will only be copied to
+the startup-config if the task has made a change. changed was added in Ansible 2.6.</p>
+</blockquote>
+<h3 id="ios_config-save_when-parameter">ios_config save_when Parameter</h3>
+<p>This is straight forward, when you want to save the configuration after a change within each task
+then you would set the parameter <strong>save_when</strong> to <strong>changed</strong>. This is advantages on simple
+playbooks. Next we will take a look at a playbook with the task set to <strong>changed</strong>.</p>
+<h4 id="playbook-definition-1">Playbook Definition</h4>
+<p>At the start, I have modified the hostname of the router that I&rsquo;m going to be working on. I have set
+the hostname to <code>router02</code> which you can see with the prompt being <code>router02#</code> once entering enable
+mode. This playbook we will be changing the hostname of hte device to match that which is in the
+Ansible inventory file.</p>
+<p>Here is the playbook</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">rtr02</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; Set hostname</span>
+      <span style="color:#f92672">ios_config</span>:
+        <span style="color:#f92672">lines</span>:
+          - <span style="color:#ae81ff">hostname {{ inventory_hostname }}</span>
+        <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">changed</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; output</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>When looking at the startup configuration on the router this is what we have:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">router02#show start | i hostname</span>
+<span style="color:#ae81ff">hostname router02</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="playbook-execution-1">Playbook Execution</h4>
+<p>We see that the configuration was updated with the command:</p>
+<pre><code>hostname rtr02
+</code></pre><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; Set hostname] *****************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">rtr02]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; output] *********************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">rtr02] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;banners&#34;: </span>{}, 
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;hostname rtr02&#34;</span>
+        ], 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>, 
+        <span style="color:#f92672">&#34;updates&#34;: </span>[
+            <span style="color:#e6db74">&#34;hostname rtr02&#34;</span>
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">rtr02                      </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0   </span>
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>After the execution we have the startup configuration with the new name, just as we expected</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">rtr02#show start | i hostname</span>
+<span style="color:#ae81ff">hostname rtr02</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="second-execution-of-the-ios_config-module">Second Execution of the ios_config module</h4>
+<p>I&rsquo;m going to run the same playbook once again, to show that the module has the smarts to not change
+the configuration since it is set. Note the <strong>changed</strong> output is set to <em>false</em>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; Set hostname] *****************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">rtr02]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; output] *********************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">rtr02] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">false</span>, 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">rtr02                      </span>: <span style="color:#ae81ff">ok=2    changed=0    unreachable=0    failed=0  </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="nxos_config-save_when-parameter">nxos_config save_when Parameter</h3>
+<p>Similar to the <strong>ios_config</strong> here is a run through of the same set of plays this time with a NXOS
+device.</p>
+<h4 id="playbook-definition-2">Playbook Definition</h4>
+<p>Once again, I have the NXOS device hostname set to something different than we would like.</p>
+<p>The startup configuration has the hostname of <code>nxos_switch1</code> but the Ansible inventory has the name
+<code>nxos01</code> for the inventory_name.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">nxos_switch1# show start | i hostname</span>
+<span style="color:#ae81ff">hostname nxos_switch1</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>THe playbook now looks like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">nxos_switches</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">NXOS &gt;&gt; Set hostname</span>
+      <span style="color:#f92672">nxos_config</span>:
+        <span style="color:#f92672">lines</span>:
+          - <span style="color:#ae81ff">hostname {{ inventory_hostname }}</span>
+        <span style="color:#f92672">save_when</span>: <span style="color:#ae81ff">changed</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; output</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ output }}&#34;</span>
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="playbook-execution-2">Playbook Execution</h4>
+<p>Just as before we have the hostname change to match that of the Ansible inventory.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [NXOS &gt;&gt; Set hostname] ****************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">nxos01]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; output] *********************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">nxos01] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;hostname nxos01&#34;</span>
+        ], 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>, 
+        <span style="color:#f92672">&#34;updates&#34;: </span>[
+            <span style="color:#e6db74">&#34;hostname nxos01&#34;</span>
+        ]
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">nxos01                     </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0   </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The show start shows that the startup configuration was changed.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">nxos01# show start | i hostname</span>
+<span style="color:#ae81ff">hostname nxos_switch1</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="summary">Summary</h2>
+<p>There are multiple methods available for saving the configuration to NVRAM in the Cisco world. The
+first method works very well when you have a large number of tasks and always wish to have the
+startup configuration match that of the running configuration from playbook execution. If there are
+small/simple playbooks with only one or two configurations being applied, it may be worth it to
+have the task save the configuration.</p>
+<p>Hope this was helpful!</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/">Ansible Cisco IOS Interface Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-asa-command/">Ansible ASA Command Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-asa-command/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://jvanderaa.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

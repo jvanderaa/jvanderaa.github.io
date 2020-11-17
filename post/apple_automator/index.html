@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Using Apple Automator to Open Projects &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Using Apple Automator to Open Projects</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 4 minutes,
+    3 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 891 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-06-21</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/vscode">vscode</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/pycharm">pycharm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Today I&rsquo;m going to walk through the newest part of my personal workflow for working with projects.
+Straight to the point, this is going to be using Apple Automator to quickly open your project that
+you wish to work on within VS Code, and presumably PyCharm as well.</p>
+<h2 id="problem">Problem</h2>
+<p>So what is the problem that I&rsquo;m trying to solve? I am one that generally likes the workspace concept
+within VS Code, but I don&rsquo;t like having to maintain workspace files. I have found them a little
+difficult to maintain and keep organized. To that end I have found that there is an option to
+install VS Code shortcut into your OS path from the command pallet (cmd-P), and <code>path</code>.</p>
+<p><img src="https://jvanderaa.github.io/img/vscode-path.png" alt="VS Code Path"></p>
+<p>Once this is installed, you can issue at a terminal (or iTerm2) prompt the command <code>code .</code> and this
+will bring up VS Code from the folder that you are currently working on.</p>
+<p>This sounds great, what is the problem? Well, I tend to open a lot of iTerm2 tabs just to open up
+and go into VS Code. While working in VS Code, I then use the terminal that is baked into VS Code as
+my terminal. So I have a window that is open unnecessarily.</p>
+<h2 id="my-solution---apple-script-and-automator">My Solution - Apple Script and Automator</h2>
+<p>So I was reminded about Apple Automator for some particular reason and I thought this would be a
+great solution to opening VS Code directly to my folder that I want to work on and be able to close
+VS Code windows whenever I was done working in a folder. So for me I use a specific directory on my
+Mac to have all of my projects in them. This is a typical directory structure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">projects
+├── project1
+├── project2
+</code></pre></div><h3 id="automator-flow">Automator Flow</h3>
+<p>The flow is going to have a prompt come to the top when a command shortcut is executed. So -&gt;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">command-shortcut -&gt; Select project -&gt; Open VS Code
+</code></pre></div><h3 id="start-a-new-quick-action">Start a New Quick Action</h3>
+<p>When creating a new document in your Automator, make sure to select the type as <strong>Quick Action</strong>.
+This type is needed in order to use the Keyboard shortcut later.</p>
+<h3 id="first-step-run-applescript">First Step: Run AppleScript</h3>
+<p>I looked at a couple of options here to get the prompt to display. From what I could tell there was
+options in both AppleScript and JavaScript. I choose to stick with AppleScript in the current
+iteration for ease of access to the file system. I will have to do additional research, but that
+would be for a learning thing, not necessarily for productivity gains. I worked through a few links
+and eventually came up with the following AppleScript:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#66d9ef">on</span> run {input, parameters}
+    <span style="color:#75715e"># Define the folder that is being used as project directory. This is the only thing that needs to be set</span>
+    <span style="color:#66d9ef">set</span> projectFolder <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#34;/Users/joshv/projects/&#34;</span>
+    <span style="color:#75715e"># Use the finder application to get the list of all the folders inside of the folder</span>
+    <span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;Finder&#34;</span>
+        <span style="color:#66d9ef">set</span> fileList <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">of</span> folders <span style="color:#66d9ef">of</span> folder (projectFolder <span style="color:#66d9ef">as</span> POSIX file)
+    <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span>
+    <span style="color:#75715e"># Create a prompt</span>
+    choose from list fileList <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">prompt</span> <span style="color:#e6db74">&#34;Which project?&#34;</span>
+    <span style="color:#75715e"># Create a string of projectFolder with result of response</span>
+    <span style="color:#66d9ef">set</span> resultString <span style="color:#66d9ef">to</span> projectFolder <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">result</span> <span style="color:#66d9ef">as </span><span style="color:#a6e22e">string</span>
+    <span style="color:#75715e"># Return the path</span>
+    <span style="color:#66d9ef">return</span> the resultString <span style="color:#66d9ef">as </span><span style="color:#a6e22e">string</span>
+<span style="color:#66d9ef">end</span> run
+</code></pre></div><p>The only parameter that needs to be changed is the path to the directory on the third line, to match
+what is your own project directory.</p>
+<h3 id="second-step-run-shell-script">Second Step: Run Shell Script</h3>
+<p>I then took the easy way out at the moment to execute an application. I will have to work to add
+this all into one AppleScript or JavaScript execution in the future, but for now I know this works.
+It is a short command, first I needed to find out where the <code>code</code> application that was mentioned
+above is stored. So I did the command <code>which code</code> to get my path to the code shortcut. The final
+result for me is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/bin/code $1
+</code></pre></div><p>This takes an argument that is passed in from the AppleScript and passes it into the shell script.
+The next change I needed to do on the Run Shell Script module of Automator was to set
+<strong>Pass input</strong> to <em>as arguments</em> to pass it in as an argument.</p>
+<p>This now looks like the following from an Automator application:</p>
+<p><img src="https://jvanderaa.github.io/img/automator-complete.png" alt="Automator"></p>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<p>Last thing to do is to assign a keyboard shortcut to your automation.</p>
+<ol>
+<li>Open Keyboard preferences</li>
+<li>Select <strong>Shortcuts</strong></li>
+<li>Select <em>Services</em> on the left</li>
+<li>Scroll to the section <em>General</em></li>
+<li>Find the name of your document that you created in Automator</li>
+<li>Assign a keyboard shortcut, I&rsquo;m using <code>CMD-Shift-'</code> for mine</li>
+</ol>
+<p><img src="https://jvanderaa.github.io/img/shortcuts.png" alt="Shortcut"></p>
+<p>Now when I select the keyboard shortcut, I get a visual prompt of the folders in the project folder
+specified. And when I select the project and <strong>OK</strong> I am then taken to either a new VS Code window
+based in that directory or the already opened VS Code window for that project folder.</p>
+<h2 id="summary">Summary</h2>
+<p>Not all automation tools have to be Python, Ansible, or other modern language. You can use tools
+that are provided that may feel old to help you in your every day work. Hopefully this comes in
+handy for you as well! Let me know. In the end, if this helps great, otherwise this is good
+documentation for myself if needed in the future!</p>
+<p>Thanks,</p>
+<p>-Josh</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-user/">Ansible Cisco IOS User Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/">Docker for Automation Environment - Ansible 2.10</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://jvanderaa.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

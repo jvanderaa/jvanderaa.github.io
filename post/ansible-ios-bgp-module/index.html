@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible IOS BGP Module &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible IOS BGP Module</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 10 minutes,
+    14 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2252 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-07-14</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/iosbgp">iosbgp</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>In this post I&rsquo;m going to be taking a deeper dive into the new in Ansible 2.8
+<a href="https://docs.ansible.com/ansible/2.8/modules/ios_bgp_module.html">IOS BGP</a>
+module. This may be one of the more complex modules to date and I&rsquo;ll try to
+make it as simple as possible.</p>
+<p>For a reminder about the BGP protocol is that this is the predominate protocol
+that runs the Internet. It is used to peer up with other companies and is what
+helps to make the Internet great. This is a very powerful protocol, and has been
+expanded to support many things. This is also a protocol that is heavily used in
+modern data centers.</p>
+<p>On this module there are a TON of parameters (OK - 47 parameters). That is going
+to be too many to list out. If you want to take a look at each and every one of
+the parameters (which I do recommend doing at times, or at least going to the
+examples) check out the link above that takes you to the Ansible documentation.</p>
+<p>Let&rsquo;s dive on in.</p>
+<blockquote>
+<p>Note: In this I will be working with a &ldquo;fixed version&rdquo; of the <code>ios_bgp</code>
+module. In working on the post it was found that <code>next-hop-self</code> was not
+getting applied when used in the module. This is fixed in a coming release of
+Ansible. As of 2.8.1 this is still broken. See
+<a href="https://github.com/ansible/ansible/pull/58789">https://github.com/ansible/ansible/pull/58789</a>
+for more information.</p>
+</blockquote>
+<h2 id="observations">Observations</h2>
+<p>A couple of general observations and my take on the module before getting into
+the lab and demo portions. This module is a great start on simplifying what can
+be a very complex configuration with BGP. By its nature BGP has a deep and
+complex configuration because of how flexible and how much has been stuffed into
+the BGP protocol. It&rsquo;s being used within Data Centers of single tenants! This is
+not going to be a post about BGP however - you can find plenty of those
+elsewhere that are more in depth at this point.</p>
+<p>This module gets the basics spot on. I&rsquo;m going to look to leverage this wherever
+I can. That said however, there are still a few pieces that I haven&rsquo;t been able
+to figure out how to do with this, and first comes the ISP world. Where there
+are multiple VRFs configured within BGP. I&rsquo;m hopeful that this can be expanded
+in the future to support VRF configuration as well.</p>
+<p>All that said, this is a complex module, and has a lot of great standardization
+to it. Take a look at the module definition in the
+<a href="https://docs.ansible.com/ansible/2.8/modules/ios_bgp_module.html">Ansible docs</a>.</p>
+<p>A very impressive part to this as well is that the redistribution from multiple
+protocols is covered within the module. Route maps can be applied on
+redistributions as well as the network advertisements. It&rsquo;s going to continue to
+improve!</p>
+<h2 id="lab-setup">Lab Setup</h2>
+<h3 id="lab-devices">Lab Devices</h3>
+<p>For this module in particular I went ahead and designed a new lab so we can dig
+deep into the setup of various methods of BGP. First we are having R2 as the
+edge of the lab, heading out Gig0/1 towards the Internet. R2 is acting as a
+single router within an ISP in this instance. R1 is the edge of the virtualized
+environment which allows me to leverage Ansible from my machine as the control
+machine. R3 and R4 will be on the edge of the enterprise network, with R5
+originating some routes via EIGRP to the routers on R3 and R4.</p>
+<p><img src="https://jvanderaa.github.io/assets/2019/07/lab_for_bgp.png" alt="BGPLabDesign"></p>
+<h3 id="networks">Networks</h3>
+<p>Routes being advertised by R5 are two /25 networks out of the 203.0.113.0/24
+network. All of the addressing in the &ldquo;production&rdquo; area of this enterprise are
+using <a href="https://tools.ietf.org/html/rfc5737">RFC5737</a> address space. These are:</p>
+<ul>
+<li>198.51.100.0/24</li>
+<li>203.0.113.0/24</li>
+<li>192.0.2.0/24</li>
+</ul>
+<h3 id="scenario">Scenario</h3>
+<p>For demonstration purposes the configuration will be getting done on only R3
+from a text perspective. There will however be the modules on the
+<a href="https://github.com/jvanderaa/ansible-using_ios">Github</a> page, and in a follow
+on subsequent video demonstration of the playbook.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>% raw %<span style="color:#f92672">}</span>
+
+- name: <span style="color:#e6db74">&#34;PLAY 1: Get Configuration Backup to verify connectivity&#34;</span>
+    - name: <span style="color:#e6db74">&#34;TASK 1: Verify Config Backup&#34;</span>
+- name: <span style="color:#e6db74">&#34;PLAY 2: Setup R2&#34;</span>
+    - name: <span style="color:#e6db74">&#34;TASK 1: Setup eBGP Peers&#34;</span>
+- name: <span style="color:#e6db74">&#34;PLAY 3: Setup R4&#34;</span>
+    - name: <span style="color:#e6db74">&#34;TASK 1: Setup BGP Peers&#34;</span>
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>This is going to walk through getting R3 to eBGP peer with R2 as a 3rd party
+connection, and to R4 as an iBGP peer for internal BGP. This will not work with
+the internal routing protocols. We assume that these are already all set to
+go.</p>
+<h4 id="initial-routing-configuration">Initial Routing Configuration</h4>
+<p>This is more just to show where we are and that there is nothing configured for
+BGP on R3.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>% raw %<span style="color:#f92672">}</span>
+
+R3#show run | sec bgp
+R3#
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="first-bgp-neighbor">First BGP Neighbor</h4>
+<p>The first BGP neighbor we should bring up is within the same AS. Let&rsquo;s make sure
+that we are able to get BGP going to that within your same autonomous system
+and control before bringing up an exterior peer. In this example we will be
+building a BGP peer to 198.51.100.2 with the AS65500.</p>
+<h5 id="playbook-start---add-ibgp-peer">Playbook Start - Add iBGP peer</h5>
+<p>Getting started with building the internal BGP connection the task does get a
+touch lengthy, so leveraging copy and paste and finding the fields with the
+help of the module documentation this is the play to build that iBGP neighbor:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PLAY 1: Setup iBGP Peer to R4&#34;</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">r3</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Setup iBGP Peer&#34;</span>
+      <span style="color:#f92672">ios_bgp</span>:
+        <span style="color:#f92672">config</span>:
+          <span style="color:#f92672">bgp_as</span>: <span style="color:#ae81ff">65500</span>
+          <span style="color:#f92672">router_id</span>: <span style="color:#ae81ff">10.0.0.3</span>
+          <span style="color:#f92672">log_neighbor_changes</span>: <span style="color:#66d9ef">true</span>
+          <span style="color:#f92672">neighbors</span>:
+            - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">198.51.100.2</span>
+              <span style="color:#f92672">remote_as</span>: <span style="color:#ae81ff">65500</span>
+              <span style="color:#f92672">activate</span>: <span style="color:#66d9ef">true</span>
+              <span style="color:#f92672">timers</span>:
+                <span style="color:#f92672">keepalive</span>: <span style="color:#ae81ff">15</span>
+                <span style="color:#f92672">holdtime</span>: <span style="color:#ae81ff">45</span>
+                <span style="color:#f92672">min_neighbor_holdtime</span>: <span style="color:#ae81ff">5</span>
+              <span style="color:#f92672">description</span>: <span style="color:#ae81ff">R4</span>
+          <span style="color:#f92672">networks</span>:
+            - <span style="color:#f92672">prefix</span>: <span style="color:#ae81ff">198.51.100.0</span>
+              <span style="color:#f92672">masklen</span>: <span style="color:#ae81ff">24</span>
+            - <span style="color:#f92672">prefix</span>: <span style="color:#ae81ff">203.0.113.0</span>
+              <span style="color:#f92672">masklen</span>: <span style="color:#ae81ff">24</span>
+          <span style="color:#f92672">address_family</span>:
+            - <span style="color:#f92672">afi</span>: <span style="color:#ae81ff">ipv4</span>
+              <span style="color:#f92672">safi</span>: <span style="color:#ae81ff">unicast</span>
+              <span style="color:#f92672">neighbors</span>:
+                - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">198.51.100.2</span>
+                  <span style="color:#f92672">activate</span>: <span style="color:#66d9ef">yes</span>
+                  <span style="color:#f92672">next_hop_self</span>: <span style="color:#66d9ef">yes</span>
+        <span style="color:#f92672">operation</span>: <span style="color:#ae81ff">merge</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">ibgp_peer1</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 2: Debug output&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ ibgp_peer1 }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Lines 10, 11, 12 are very common on the BGP configuration. Let&rsquo;s walk through
+some of these.</p>
+<p>Line 10: Sets the locally running BGP AS on the router<br>
+Line 11: Sets the router-id to be used for the BGP process<br>
+Line 12: Sets logging of neighbor changes to true<br>
+Lines 13-21: Sets configuration of neighbor detail, outside of the address
+family<br>
+Lines 22-26: Are used for what networks we want to advertise from BGP<br>
+Lines 27-33: Used for BGP address family configuration updates<br>
+Lines 34-36: Identify our neighbor within the address family<br>
+Line 37: The operation style from Merge, Replace, Override or Delete</p>
+<h5 id="playbook-ibgp---execution">Playbook iBGP - Execution</h5>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- name: <span style="color:#e6db74">&#34;PLAY 1: Setup iBGP Peer to R4&#34;</span>
+    - name: <span style="color:#e6db74">&#34;TASK 1: Setup iBGP Peer&#34;</span>
+    - name: <span style="color:#e6db74">&#34;TASK 2: Debug output&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<p>There are 2 tasks so we can see the output. The first task is to setup an iBGP
+peer. We get to see the output on the second task.</p>
+<p>Task 2 output has all of the router configurations that are going to be applied.
+Before the change there are no neighbors established. On the console there is
+an immediate neighbor established on the iBGP side of things with this
+configuration.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Setup iBGP Peer to R4] *******************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Setup iBGP Peer] *************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r3]</span>
+
+<span style="color:#f92672">TASK [TASK 2</span>: <span style="color:#ae81ff">Debug output] ****************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r3] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;router bgp 65500&#34;</span>,
+            <span style="color:#e6db74">&#34;bgp router-id 10.0.0.3&#34;</span>,
+            <span style="color:#e6db74">&#34;bgp log-neighbor-changes&#34;</span>,
+            <span style="color:#e6db74">&#34;neighbor 198.51.100.2 remote-as 65500&#34;</span>,
+            <span style="color:#e6db74">&#34;neighbor 198.51.100.2 timers 15 45 5&#34;</span>,
+            <span style="color:#e6db74">&#34;neighbor 198.51.100.2 description R4&#34;</span>,
+            <span style="color:#e6db74">&#34;network 198.51.100.0 mask 255.255.255.0&#34;</span>,
+            <span style="color:#e6db74">&#34;network 203.0.113.0 mask 255.255.255.128&#34;</span>,
+            <span style="color:#e6db74">&#34;address-family ipv4&#34;</span>,
+            <span style="color:#e6db74">&#34;no auto-summary&#34;</span>,
+            <span style="color:#e6db74">&#34;neighbor 198.51.100.2 activate&#34;</span>,
+            <span style="color:#e6db74">&#34;neighbor 198.51.100.2 next-hop-self&#34;</span>,
+            <span style="color:#e6db74">&#34;exit-address-family&#34;</span>,
+            <span style="color:#e6db74">&#34;exit&#34;</span>
+        ],
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">r3                         </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0    s</span>
+<span style="color:#ae81ff">kipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Pretty straight to the point, that we have a complete BGP configuration getting
+deployed. A second run of the playbook <em>should</em> be idempotent, however, when
+executing the <code>show run</code> to get the configuration of the device and the network
+is subnetted on its proper class boundary the Ansible playbook will re-execute
+the command.</p>
+<blockquote>
+<p>In working on this I have opened up a bug report on the module to see if this
+can be made idempotent. See
+<a href="https://github.com/ansible/ansible/issues/59083">Github Ansible Issue #59083</a></p>
+</blockquote>
+<h4 id="second-neighbor---the-isp-connection">Second neighbor - the ISP connection</h4>
+<p>Let&rsquo;s get to adding the second BGP connection. We will add a few more pieces of
+information onto the single task of creating a full BGP configuration.</p>
+<p>First let&rsquo;s take a look at the BGP table on the router at this time, there is
+only one neighbor:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>% raw %<span style="color:#f92672">}</span>
+
+BGP router identifier 10.0.0.3, local AS number <span style="color:#ae81ff">65500</span>
+BGP table version is 37404, main routing table version <span style="color:#ae81ff">37404</span>
+<span style="color:#ae81ff">11</span> network entries using <span style="color:#ae81ff">1584</span> bytes of memory
+<span style="color:#ae81ff">12</span> path entries using <span style="color:#ae81ff">960</span> bytes of memory
+6/6 BGP path/bestpath attribute entries using <span style="color:#ae81ff">912</span> bytes of memory
+<span style="color:#ae81ff">1</span> BGP AS-PATH entries using <span style="color:#ae81ff">24</span> bytes of memory
+<span style="color:#ae81ff">0</span> BGP route-map cache entries using <span style="color:#ae81ff">0</span> bytes of memory
+<span style="color:#ae81ff">0</span> BGP filter-list cache entries using <span style="color:#ae81ff">0</span> bytes of memory
+BGP using <span style="color:#ae81ff">3480</span> total bytes of memory
+BGP activity 18/6 prefixes, 18708/18696 paths, scan interval <span style="color:#ae81ff">60</span> secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+198.51.100.2    <span style="color:#ae81ff">4</span>        <span style="color:#ae81ff">65500</span>   <span style="color:#ae81ff">37400</span>      <span style="color:#ae81ff">63</span>    <span style="color:#ae81ff">37404</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> 00:13:39       <span style="color:#ae81ff">11</span>
+
+<span style="color:#f92672">{</span>% endraw %<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>THe playbook is now:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PLAY 1: Setup iBGP Peer to R4&#34;</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">r3</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TASK 1: Setup iBGP Peer&#34;</span>
+      <span style="color:#f92672">ios_bgp</span>:
+        <span style="color:#f92672">config</span>:
+          <span style="color:#f92672">bgp_as</span>: <span style="color:#ae81ff">65500</span>
+          <span style="color:#f92672">router_id</span>: <span style="color:#ae81ff">10.0.0.3</span>
+          <span style="color:#f92672">log_neighbor_changes</span>: <span style="color:#66d9ef">true</span>
+          <span style="color:#f92672">neighbors</span>:
+            - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">198.51.100.2</span>
+              <span style="color:#f92672">remote_as</span>: <span style="color:#ae81ff">65500</span>
+              <span style="color:#f92672">timers</span>:
+                <span style="color:#f92672">keepalive</span>: <span style="color:#ae81ff">15</span>
+                <span style="color:#f92672">holdtime</span>: <span style="color:#ae81ff">45</span>
+                <span style="color:#f92672">min_neighbor_holdtime</span>: <span style="color:#ae81ff">5</span>
+              <span style="color:#f92672">description</span>: <span style="color:#ae81ff">R4</span>
+            - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">192.0.2.1</span>
+              <span style="color:#f92672">remote_as</span>: <span style="color:#ae81ff">65510</span>
+              <span style="color:#f92672">timers</span>:
+                <span style="color:#f92672">keepalive</span>: <span style="color:#ae81ff">15</span>
+                <span style="color:#f92672">holdtime</span>: <span style="color:#ae81ff">45</span>
+                <span style="color:#f92672">min_neighbor_holdtime</span>: <span style="color:#ae81ff">5</span>
+              <span style="color:#f92672">description</span>: <span style="color:#ae81ff">ISP Neighbor 1</span>
+          <span style="color:#f92672">networks</span>:
+            - <span style="color:#f92672">prefix</span>: <span style="color:#ae81ff">198.51.100.0</span>
+              <span style="color:#f92672">masklen</span>: <span style="color:#ae81ff">24</span>
+            - <span style="color:#f92672">prefix</span>: <span style="color:#ae81ff">203.0.113.0</span>
+              <span style="color:#f92672">masklen</span>: <span style="color:#ae81ff">25</span>
+            - <span style="color:#f92672">prefix</span>: <span style="color:#ae81ff">203.0.113.128</span>
+              <span style="color:#f92672">masklen</span>: <span style="color:#ae81ff">25</span>
+          <span style="color:#f92672">address_family</span>:
+            - <span style="color:#f92672">afi</span>: <span style="color:#ae81ff">ipv4</span>
+              <span style="color:#f92672">safi</span>: <span style="color:#ae81ff">unicast</span>
+              <span style="color:#f92672">auto_summary</span>: <span style="color:#66d9ef">no</span>
+              <span style="color:#f92672">neighbors</span>:
+                - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">198.51.100.2</span>
+                  <span style="color:#f92672">activate</span>: <span style="color:#66d9ef">yes</span>
+                  <span style="color:#f92672">next_hop_self</span>: <span style="color:#66d9ef">yes</span>
+                - <span style="color:#f92672">neighbor</span>: <span style="color:#ae81ff">192.0.2.1</span>
+                  <span style="color:#f92672">activate</span>: <span style="color:#66d9ef">yes</span>
+        <span style="color:#f92672">operation</span>: <span style="color:#ae81ff">merge</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">bgp_setup</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;SUMMARY TASK: Debug output&#34;</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>:
+          - <span style="color:#e6db74">&#34;{{ bgp_setup }}&#34;</span>
+...
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="adding-second-neighbor---execution">Adding Second Neighbor - Execution</h4>
+<p>The execution of the playbook is straight forward again. As expected a second
+neighbor statement is created with the <code>remote-as</code>, <code>timers</code>, and <code>description</code>.
+The module also activates the neighbor.</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#f92672">PLAY [PLAY 1</span>: <span style="color:#ae81ff">Setup iBGP Peer to R4] *******************************************</span>
+
+<span style="color:#f92672">TASK [TASK 1</span>: <span style="color:#ae81ff">Setup iBGP Peer] *************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">r3]</span>
+
+<span style="color:#f92672">TASK [SUMMARY TASK</span>: <span style="color:#ae81ff">Debug output] **********************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">r3] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>[
+        {
+            <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;commands&#34;: </span>[
+                <span style="color:#e6db74">&#34;router bgp 65500&#34;</span>,
+                <span style="color:#e6db74">&#34;neighbor 192.0.2.1 remote-as 65510&#34;</span>,
+                <span style="color:#e6db74">&#34;neighbor 192.0.2.1 timers 15 45 5&#34;</span>,
+                <span style="color:#e6db74">&#34;neighbor 192.0.2.1 description ISP Neighbor 1&#34;</span>,
+                <span style="color:#e6db74">&#34;network 198.51.100.0 mask 255.255.255.0&#34;</span>,
+                <span style="color:#e6db74">&#34;network 203.0.113.128 mask 255.255.255.128&#34;</span>,
+                <span style="color:#e6db74">&#34;address-family ipv4&#34;</span>,
+                <span style="color:#e6db74">&#34;no auto-summary&#34;</span>,
+                <span style="color:#e6db74">&#34;neighbor 192.0.2.1 activate&#34;</span>,
+                <span style="color:#e6db74">&#34;exit-address-family&#34;</span>,
+                <span style="color:#e6db74">&#34;exit&#34;</span>
+            ],
+            <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+        }
+    ]
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">r3                         </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0    s</span>
+<span style="color:#ae81ff">kipped=0    rescued=0    ignored=0</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Taking a look at the BGP table, we now have 2 neighbors formed instead of just
+the one.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">BGP router identifier 10.0.0.3, local AS number 65500</span>
+<span style="color:#ae81ff">BGP table version is 58006, main routing table version 58006</span>
+<span style="color:#ae81ff">11</span> <span style="color:#ae81ff">network entries using 1584 bytes of memory</span>
+<span style="color:#ae81ff">19</span> <span style="color:#ae81ff">path entries using 1520 bytes of memory</span>
+<span style="color:#ae81ff">9</span><span style="color:#ae81ff">/6 BGP path/bestpath attribute entries using 1368 bytes of memory</span>
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">BGP AS-PATH entries using 24 bytes of memory</span>
+<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">BGP route-map cache entries using 0 bytes of memory</span>
+<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">BGP filter-list cache entries using 0 bytes of memory</span>
+<span style="color:#ae81ff">BGP using 4496 total bytes of memory</span>
+<span style="color:#ae81ff">BGP activity 21/9 prefixes, 29013/28994 paths, scan interval 60 secs</span>
+
+<span style="color:#ae81ff">Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd</span>
+<span style="color:#ae81ff">192.0.2.1</span>       <span style="color:#ae81ff">4</span>        <span style="color:#ae81ff">65510</span>      <span style="color:#ae81ff">31</span>      <span style="color:#ae81ff">30</span>    <span style="color:#ae81ff">56929</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">03</span>:<span style="color:#ae81ff">26</span>        <span style="color:#ae81ff">6</span>
+<span style="color:#ae81ff">198.51.100.2</span>    <span style="color:#ae81ff">4</span>        <span style="color:#ae81ff">65500</span>   <span style="color:#ae81ff">57996</span>      <span style="color:#ae81ff">99</span>    <span style="color:#ae81ff">58006</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">06</span>       <span style="color:#ae81ff">11</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="summary">Summary</h2>
+<p>The module library keeps expanding. Originally I was taken back on the number of
+different modules being created that had a specialty to it. Take a look at the
+number of modules available for Ansible 2.9 and
+<a href="https://docs.ansible.com/ansible/2.9/modules/list_of_network_modules.html#nxos">NXOS</a>!
+I now see the benefit, and this module is a great addition the IOS module
+family. There are still areas that aren&rsquo;t covered that may be better suited to
+be done with a Jinja template, but this is a great start on the BGP world for
+IOS.</p>
+<p>Hope that this has helped someone along the way!</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-asa-og/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-asa-og/">Ansible ASA OG Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/">EVE-NG for Automation Practice and Testing</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

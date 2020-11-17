@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ios_interface on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/ios_interface/</link>
+    <description>Recent content in ios_interface on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 17 Mar 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/ios_interface/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Cisco IOS Interface Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-cisco-ios-interface/</link>
+      <pubDate>Sun, 17 Mar 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-cisco-ios-interface/</guid>
+      <description>Update: ios_interface is to be deprecated as of Ansible 2.13
+In this post I will be taking a deeper look at the ios_interface module. This module is used to configure individual interfaces on a Cisco IOS device. The documentation for the module is located here. In this module I did have to dig into the actual Python file, and that is located here.
+ Edit: Had to update the link due to the change in Ansible coming in 2.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iosbgp on Josh-V.com Draft</title>
+    <link>https://jvanderaa.github.io/tags/iosbgp/</link>
+    <description>Recent content in iosbgp on Josh-V.com Draft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 14 Jul 2019 07:00:00 +0000</lastBuildDate><atom:link href="https://jvanderaa.github.io/tags/iosbgp/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible IOS BGP Module</title>
+      <link>https://jvanderaa.github.io/post/ansible-ios-bgp-module/</link>
+      <pubDate>Sun, 14 Jul 2019 07:00:00 +0000</pubDate>
+      
+      <guid>https://jvanderaa.github.io/post/ansible-ios-bgp-module/</guid>
+      <description>In this post I&amp;rsquo;m going to be taking a deeper dive into the new in Ansible 2.8 IOS BGP module. This may be one of the more complex modules to date and I&amp;rsquo;ll try to make it as simple as possible.
+For a reminder about the BGP protocol is that this is the predominate protocol that runs the Internet. It is used to peer up with other companies and is what helps to make the Internet great.</description>
+    </item>
+    
+  </channel>
+</rss>

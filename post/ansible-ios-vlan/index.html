@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.78.2" />
+
+  <title>Ansible IOS VLAN &middot; Josh-V.com Draft</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://jvanderaa.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://jvanderaa.github.io/img/router.png" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://jvanderaa.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://jvanderaa.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+<a class="pure-menu-heading brand" href="https://jvanderaa.github.io/">Josh-V</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jvanderaa.github.io/links/"><i class='fa fa-link fa-fw'></i>Links</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/vanderaaj" rel="me" target="_blank"><i
+          class="fab fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/josh-vanderaa" rel="me" target="_blank"><i
+          class="fab fa-linkedin"></i></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/jvanderaa" rel="me" target="_blank"><i
+          class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Ansible IOS VLAN</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+  
+  <div>
+    
+
+    
+    
+
+    <i class="fa fa-hourglass-start fa-fw"></i> 11 minutes,
+    9 seconds |
+    <i class="fa fa-book-open fa-fw"></i> 2453 words |
+    
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-03-09</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/blog">blog</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/ansible">ansible</a>&nbsp;&#47;
+    
+    <a class="post-taxonomy-tag"
+      href="https://jvanderaa.github.io/tags/vlan">vlan</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Back to it finally. Going to take a look at the Ansible module <strong>ios_vlan</strong>. The purpose of this is
+to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2
+images. There are a few interesting quirks (as I will call it) within the parameters for the module.</p>
+<h2 id="module-documentation">Module Documentation</h2>
+<p>First, the module documentation page is
+<a href="https://docs.ansible.com/ansible/latest/modules/ios_vlan_module.html#ios-vlan-module">here</a>.</p>
+<h2 id="getting-started-with-the-module">Getting Started with the module</h2>
+<h3 id="vlans-pre-module-work">VLANs pre-module work</h3>
+<p>Starting out the switch is pretty bare as it relates to the number of VLANs. There is VLAN2 defined
+on the switch that has an uplink to the edge (of the lab) router. The base VLANs are the only other
+ones on the device:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+<span style="color:#75715e">#show vlan</span>
+
+<span style="color:#ae81ff">VLAN Name                             Status    Ports</span>
+---- -------------------------------- --------- -------------------------------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">default                          active    Gi0/1, Gi0/3, Gi1/0, Gi1/2</span>
+                                                <span style="color:#ae81ff">Gi1/3</span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">TRANSIT                          active    Gi0/0, Gi1/1</span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi-default                     act/unsup </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">token-ring-default               act/unsup </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fddinet-default                  act/unsup </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet-default                    act/unsup </span>
+
+<span style="color:#ae81ff">VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2</span>
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">enet  100001     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">enet  100002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi  101002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">tr    101003     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fdnet 101004     1500  -      -      -        ieee -        0      0   </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet 101005     1500  -      -      -        ibm  -        0      0   </span>
+
+<span style="color:#ae81ff">Remote SPAN VLANs</span>
+------------------------------------------------------------------------------
+
+
+<span style="color:#ae81ff">Primary Secondary Type              Ports</span>
+------- --------- ----------------- ------------------------------------------
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="building-the-play">Building the Play</h3>
+<p>The module has the following parameters, required ones in bold. This skips over the deprecated
+parameters:</p>
+<ul>
+<li>aggregate: List of VLANs definitions</li>
+<li>associated_interfaces: Checks for the operational state of the interface</li>
+<li>delay: default to 10 seconds, how long to wait for the declarative state to be seen</li>
+<li>interfaces: a <strong>list</strong> of interfaces that should have the VLAN assigned to it</li>
+<li>name: Name of the VLAN</li>
+<li>purge: Purge VLANs not defined in the aggregate parameter</li>
+<li>state: present/absent/active/suspend - the state that it should be in</li>
+<li>vlan_id: ID of the VLAN</li>
+</ul>
+<p>So what does aggregate mean? It sounds like that if you wanted to have a large list of VLANs, this
+is the way to go with a task. First attempt at seeing what it does, the following playbook was setup</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">sw19</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; VLAN Updates</span>
+      <span style="color:#f92672">ios_vlan</span>:
+        <span style="color:#f92672">aggregate</span>:
+          - <span style="color:#ae81ff">2</span>
+          - <span style="color:#ae81ff">5</span>
+        <span style="color:#f92672">vlan_id</span>: <span style="color:#ae81ff">5</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">TEST VLAN 5</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; VLAN Update</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>When executing it came across an error that gave some more insight that was not portrayed on the
+module definition page.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+<span style="color:#ae81ff">ansible-playbook output_test.yml -i ./lab_hosts</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; VLAN Updates] *****************************************************</span>
+<span style="color:#f92672">fatal: [sw19]</span>: <span style="color:#ae81ff">FAILED! =&gt; {&#34;changed&#34;: false, &#34;msg&#34;: &#34;parameters are mutually exclusive: vlan_id, aggregate&#34;}</span>
+	<span style="color:#f92672">to retry, use</span>: --<span style="color:#ae81ff">limit @/Users/joshv/Documents/Ansible/output_test.retry</span>
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">sw19                       </span>: <span style="color:#ae81ff">ok=0    changed=0    unreachable=0    failed=1   </span>
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Modifying the playbook with the fatal error message out. It now looks like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">sw19</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; VLAN Updates</span>
+      <span style="color:#f92672">ios_vlan</span>:
+        <span style="color:#f92672">aggregate</span>: 
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 2, &#39;name&#39;</span>: <span style="color:#e6db74">&#39;TRANSIT&#39;</span> }
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 5, &#39;name&#39;</span>: <span style="color:#e6db74">&#39;Test VLAN&#39;</span> }
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; VLAN Update</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>This will now deploy in aggregate all of the VLANs that are being defined in the list of
+dictionaries. Looking at the output this is what is now on the switch:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+<span style="color:#75715e">#show vlan</span>
+
+<span style="color:#ae81ff">VLAN Name                             Status    Ports</span>
+---- -------------------------------- --------- -------------------------------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">default                          active    Gi0/1, Gi0/3, Gi1/0, Gi1/2</span>
+                                                <span style="color:#ae81ff">Gi1/3</span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">TRANSIT                          active    Gi0/0, Gi1/1</span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">Test VLAN                        active    Gi0/2</span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi-default                     act/unsup </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">token-ring-default               act/unsup </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fddinet-default                  act/unsup </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet-default                    act/unsup </span>
+
+<span style="color:#ae81ff">VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2</span>
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">enet  100001     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">enet  100002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">enet  100005     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi  101002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">tr    101003     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fdnet 101004     1500  -      -      -        ieee -        0      0   </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet 101005     1500  -      -      -        ibm  -        0      0   </span>
+
+<span style="color:#ae81ff">Remote SPAN VLANs</span>
+------------------------------------------------------------------------------
+
+
+<span style="color:#ae81ff">Primary Secondary Type              Ports</span>
+------- --------- ----------------- ------------------------------------------
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="changing-the-vlans-on-the-device">Changing the VLANs on the device</h2>
+<p>Removing a VLAN that is not supposed to be on the device is incredibly simple with this
+<strong>aggregate</strong> feature as well. If we change the play to looking like this</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">sw19</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; VLAN Updates</span>
+      <span style="color:#f92672">ios_vlan</span>:
+        <span style="color:#f92672">aggregate</span>: 
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 2, &#39;name&#39;: &#39;TRANSIT&#39;, state</span>: <span style="color:#ae81ff">present }</span>
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 5, &#39;name&#39;: &#39;Test VLAN&#39;, state</span>: <span style="color:#ae81ff">absent }</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; VLAN Update</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The resulting play execution shows that the VLAN is removed from the command output.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; VLAN Updates] *****************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">sw19]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; VLAN Update] ****************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">sw19] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;no vlan 5&#34;</span>
+        ], 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">sw19                       </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0   </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="adding-a-vlan-and-assigning-to-interface">Adding a VLAN and assigning to Interface</h3>
+<p>Want to create an interface and assign it to a VLAN quickly? Here is where the <strong>ios_vlan</strong> module
+may be able to help very quickly. In the lab it is very simple as there are only a few interfaces
+on the layer 2 switch that we have.</p>
+<h4 id="play-definition">Play Definition</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">sw19</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; VLAN Updates</span>
+      <span style="color:#f92672">ios_vlan</span>:
+        <span style="color:#f92672">vlan_id</span>: <span style="color:#ae81ff">12</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test-vlan</span>
+        <span style="color:#f92672">interfaces</span>:
+          - <span style="color:#ae81ff">GigabitEthernet1/2</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; VLAN Update</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="playbook-execution---adding-a-vlan">Playbook Execution - Adding a VLAN</h4>
+<p>This play execution will both add a VLAN to the switch, and assign the interfaces to the VLAN as an
+access port. With the output from the execution the module registers each of the commands that are
+being issued to the switch. This shows the VLAN is first created, then goes into the interface
+assigned as a parameter. Lastly it sets that interface to being an access interface in the VLAN.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; VLAN Updates] *****************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">sw19]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; VLAN Update] ****************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">sw19] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;vlan 12&#34;</span>, 
+            <span style="color:#e6db74">&#34;name test-vlan&#34;</span>, 
+            <span style="color:#e6db74">&#34;interface GigabitEthernet1/2&#34;</span>, 
+            <span style="color:#e6db74">&#34;switchport mode access&#34;</span>, 
+            <span style="color:#e6db74">&#34;switchport access vlan 12&#34;</span>
+        ], 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">sw19                       </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0   </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ios_vlan---purge-parameter">IOS_VLAN - Purge Parameter</h3>
+<p>Originally when looking at this module I kind of passed over <strong>purge</strong> parameter. It was mentioned
+that this is used with conjunction of the <strong>aggregrate</strong> parameter. My original thinking when I read
+<em>aggregate</em> was that this was somehow related to Link Aggregation Control Protocol. Now with looking
+at the module much more in depth, I see that was a wrong assumption (in case it was for others).
+This adds significant power, to make sure that a switch is configured the way that you define within
+a play/task and stays configured that way. If some rogue actor has added a VLAN, how will you ever
+know. So for this next test, I went and created three manual VLANs on the switch for VLANs 10, 13,
+and 100.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">VLAN Name                             Status    Ports</span>
+---- -------------------------------- --------- -------------------------------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">default                          active    Gi0/1, Gi0/3, Gi1/0, Gi1/3</span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">TRANSIT                          active    Gi0/0, Gi1/1</span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">Test VLAN                        active    Gi0/2</span>
+<span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">MANUAL                           active    </span>
+<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">QB VLAN                          active    Gi1/2</span>
+<span style="color:#ae81ff">13</span>   <span style="color:#ae81ff">MANUAL13                         active    </span>
+<span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">MANUAL100                        active    </span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi-default                     act/unsup </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">token-ring-default               act/unsup </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fddinet-default                  act/unsup </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet-default                    act/unsup </span>
+
+<span style="color:#ae81ff">VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2</span>
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">enet  100001     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">enet  100002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">enet  100005     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">enet  100010     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">enet  100012     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">13</span>   <span style="color:#ae81ff">enet  100013     1500  -      -      -        -    -        0      0   </span>
+          
+<span style="color:#ae81ff">VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2</span>
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+<span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">enet  100100     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi  101002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">tr    101003     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fdnet 101004     1500  -      -      -        ieee -        0      0   </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet 101005     1500  -      -      -        ibm  -        0      0   </span>
+
+<span style="color:#ae81ff">Remote SPAN VLANs</span>
+------------------------------------------------------------------------------
+
+
+<span style="color:#ae81ff">Primary Secondary Type              Ports</span>
+------- --------- ----------------- ------------------------------------------
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="play-setup---purge-vlans">Play Setup - Purge VLANs</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+---
+<span style="color:#75715e"># yamllint disable rule:truthy</span>
+<span style="color:#75715e"># yamllint disable rule:line-length</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Switch config</span>
+  <span style="color:#f92672">connection</span>: <span style="color:#ae81ff">network_cli</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">sw19</span>
+  <span style="color:#f92672">gather_facts</span>: <span style="color:#66d9ef">no</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+  <span style="color:#f92672">become_method</span>: <span style="color:#ae81ff">enable</span>
+
+  <span style="color:#f92672">tasks</span>:
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">IOS &gt;&gt; VLAN Updates</span>
+      <span style="color:#f92672">ios_vlan</span>:
+        <span style="color:#f92672">aggregate</span>: 
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 2, &#39;name&#39;: &#39;TRANSIT&#39;, state</span>: <span style="color:#ae81ff">present }</span>
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 5, &#39;name&#39;: &#39;Test VLAN&#39;, state</span>: <span style="color:#ae81ff">present }</span>
+          - { <span style="color:#f92672">&#39;vlan_id&#39;: 12, &#39;name&#39;: &#39;THE TEST VLAN&#39;, state</span>: <span style="color:#ae81ff">present }</span>
+        <span style="color:#f92672">purge</span>: <span style="color:#66d9ef">yes</span>
+      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">command_output</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">DEBUG &gt;&gt; VLAN Update</span>
+      <span style="color:#f92672">debug</span>:
+        <span style="color:#f92672">msg</span>: <span style="color:#e6db74">&#34;{{ command_output }}&#34;</span>
+
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="play-execution">PLAY EXECUTION</h4>
+<p>Below you will find the play execution and the resulting commands sent to the switch. To show this
+I did have to run the playbook twice as the bug that I found did not run properly the first time.</p>
+<blockquote>
+<p>One <strong>important</strong> note that I did find when testing this playbook, at least within Ansible version
+2.7.5 to use the <em>purge</em> function, you <strong>must</strong> use the keyword <strong>yes</strong> instead of <em>true</em>. If you
+use <em>true</em> the purge function will not work.</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#ae81ff">PLAY [Switch config] ***********************************************************</span>
+
+<span style="color:#ae81ff">TASK [IOS &gt;&gt; VLAN Updates] *****************************************************</span>
+<span style="color:#f92672">changed</span>: [<span style="color:#ae81ff">sw19]</span>
+
+<span style="color:#ae81ff">TASK [DEBUG &gt;&gt; VLAN Update] ****************************************************</span>
+<span style="color:#f92672">ok</span>: [<span style="color:#ae81ff">sw19] =&gt; {</span>
+    <span style="color:#f92672">&#34;msg&#34;: </span>{
+        <span style="color:#f92672">&#34;changed&#34;: </span><span style="color:#66d9ef">true</span>, 
+        <span style="color:#f92672">&#34;commands&#34;: </span>[
+            <span style="color:#e6db74">&#34;vlan 5&#34;</span>, 
+            <span style="color:#e6db74">&#34;name Test VLAN&#34;</span>, 
+            <span style="color:#e6db74">&#34;vlan 12&#34;</span>, 
+            <span style="color:#e6db74">&#34;name THE TEST VLAN&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 10&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 13&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 100&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 1002&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 1003&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 1004&#34;</span>, 
+            <span style="color:#e6db74">&#34;no vlan 1005&#34;</span>
+        ], 
+        <span style="color:#f92672">&#34;failed&#34;: </span><span style="color:#66d9ef">false</span>
+    }
+}
+
+<span style="color:#ae81ff">PLAY RECAP *********************************************************************</span>
+<span style="color:#f92672">sw19                       </span>: <span style="color:#ae81ff">ok=2    changed=1    unreachable=0    failed=0  </span>
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="resulting-vlan-configuration">Resulting VLAN Configuration</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#ae81ff">% raw %}</span>
+
+<span style="color:#75715e">#show vlan</span>
+
+<span style="color:#ae81ff">VLAN Name                             Status    Ports</span>
+---- -------------------------------- --------- -------------------------------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">default                          active    Gi0/1, Gi0/3, Gi1/0, Gi1/3</span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">TRANSIT                          active    Gi0/0, Gi1/1</span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">Test VLAN                        active    Gi0/2</span>
+<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">THE TEST VLAN                    active    Gi1/2</span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi-default                     act/unsup </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">token-ring-default               act/unsup </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fddinet-default                  act/unsup </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet-default                    act/unsup </span>
+
+<span style="color:#ae81ff">VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2</span>
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+<span style="color:#ae81ff">1</span>    <span style="color:#ae81ff">enet  100001     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">enet  100002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">5</span>    <span style="color:#ae81ff">enet  100005     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">enet  100012     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1002</span> <span style="color:#ae81ff">fddi  101002     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1003</span> <span style="color:#ae81ff">tr    101003     1500  -      -      -        -    -        0      0   </span>
+<span style="color:#ae81ff">1004</span> <span style="color:#ae81ff">fdnet 101004     1500  -      -      -        ieee -        0      0   </span>
+<span style="color:#ae81ff">1005</span> <span style="color:#ae81ff">trnet 101005     1500  -      -      -        ibm  -        0      0   </span>
+
+<span style="color:#ae81ff">Remote SPAN VLANs</span>
+------------------------------------------------------------------------------
+
+
+<span style="color:#ae81ff">Primary Secondary Type              Ports</span>
+------- --------- ----------------- ------------------------------------------
+
+{<span style="color:#ae81ff">% endraw %}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="summary">Summary</h2>
+<p>In summary there are some pieces that need to get worked out. This was the first time that I had
+taken a look at the module. For the work that I&rsquo;ve done previously I was just using Jinja2 templates
+to assign VLAN configuration to an interface. Looking closer at this module there is a lot of power
+to make sure that the proper VLANs are configured everywhere that you need, and be able to eliminate
+others. This module is definitely something that you should keep in your pocket.</p>
+
+  
+  
+
+
+
+<style>
+	ul.share-buttons {
+		list-style: none;
+		padding: 0;
+	}
+
+	ul.share-buttons li {
+		display: inline;
+	}
+
+	ul.share-buttons .sr-only {
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+</style>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-ios-banner/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://jvanderaa.github.io/post/ansible-ios-banner/">Ansible IOS Banner</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/">Ansible Cisco IOS Interface Module</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://jvanderaa.github.io/post/ansible-cisco-ios-interface/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'josh-v';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://jvanderaa.github.io/js/ui.js"></script>
+<script src="https://jvanderaa.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128969022-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

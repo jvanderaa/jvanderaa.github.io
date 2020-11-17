@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jvanderaa.github.io/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/ansible/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/blog/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/practicing_with_gns3/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/</loc>
+    <lastmod>2020-11-01T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible_for_enterprise/</loc>
+    <lastmod>2020-08-09T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/docker/</loc>
+    <lastmod>2020-06-27T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/docker_for_automation_environment_ansible_210/</loc>
+    <lastmod>2020-06-27T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/pycharm/</loc>
+    <lastmod>2020-06-21T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/apple_automator/</loc>
+    <lastmod>2020-06-21T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/vscode/</loc>
+    <lastmod>2020-06-21T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-cisco-ios-user/</loc>
+    <lastmod>2020-03-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/cisco/</loc>
+    <lastmod>2020-03-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/ios_user/</loc>
+    <lastmod>2020-03-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-cisco-ios-interfaces-module/</loc>
+    <lastmod>2020-01-26T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/deprecation/</loc>
+    <lastmod>2020-01-26T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/disney/</loc>
+    <lastmod>2019-11-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/disney_plus_streaming/</loc>
+    <lastmod>2019-11-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/homenet/</loc>
+    <lastmod>2019-11-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/streaming/</loc>
+    <lastmod>2019-11-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-cli-vs-ios-command/</loc>
+    <lastmod>2019-10-19T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/ansible-level-medium/</loc>
+    <lastmod>2019-08-04T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/eveng-forautoamtion-practice-and-testing/</loc>
+    <lastmod>2019-08-04T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/eveng/</loc>
+    <lastmod>2019-08-04T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-ios-bgp-module/</loc>
+    <lastmod>2019-07-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/iosbgp/</loc>
+    <lastmod>2019-07-14T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-asa-og/</loc>
+    <lastmod>2019-06-23T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/asa/</loc>
+    <lastmod>2019-06-23T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/asa_og/</loc>
+    <lastmod>2019-06-23T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-asa-command/</loc>
+    <lastmod>2019-06-20T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-saving-cisco-configs-ios/</loc>
+    <lastmod>2019-03-30T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/saving_config/</loc>
+    <lastmod>2019-03-30T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-cisco-ios-interface/</loc>
+    <lastmod>2019-03-17T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/ios_interface/</loc>
+    <lastmod>2019-03-17T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-ios-vlan/</loc>
+    <lastmod>2019-03-09T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/vlan/</loc>
+    <lastmod>2019-03-09T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-ios-banner/</loc>
+    <lastmod>2019-02-10T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-network-engine-ntc-templates/</loc>
+    <lastmod>2019-01-27T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/ntc/</loc>
+    <lastmod>2019-01-27T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-cli-vs-ios-high-level/</loc>
+    <lastmod>2019-01-12T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-output-work/</loc>
+    <lastmod>2019-01-05T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/discontiguous_masks/</loc>
+    <lastmod>2018-12-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/network_design/</loc>
+    <lastmod>2018-12-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/segmentation/</loc>
+    <lastmod>2018-12-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/microsegmentation/</loc>
+    <lastmod>2018-12-06T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/keeping-up-on-tech/</loc>
+    <lastmod>2018-11-24T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/learning/</loc>
+    <lastmod>2018-11-24T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2018-11-22-blog_getting_started/</loc>
+    <lastmod>2018-11-22T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/cicd/</loc>
+    <lastmod>2018-11-11T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/devnet/</loc>
+    <lastmod>2018-11-11T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/network-cicd/</loc>
+    <lastmod>2018-11-11T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/ansible-blocks/</loc>
+    <lastmod>2018-06-17T07:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2017-03-07-bigimg-sample/</loc>
+    <lastmod>2017-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/bigimg/</loc>
+    <lastmod>2017-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/example/</loc>
+    <lastmod>2017-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/math/</loc>
+    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2017-03-05-math-sample/</loc>
+    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/code/</loc>
+    <lastmod>2016-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2016-03-08-code-sample/</loc>
+    <lastmod>2016-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-02-26-flake-it-till-you-make-it/</loc>
+    <lastmod>2015-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/tags/markdown/</loc>
+    <lastmod>2015-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-02-20-test-markdown/</loc>
+    <lastmod>2015-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-02-13-hamlet-monologue/</loc>
+    <lastmod>2015-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-01-27-dear-diary/</loc>
+    <lastmod>2015-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-01-19-soccer/</loc>
+    <lastmod>2015-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-01-15-pirates/</loc>
+    <lastmod>2015-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/post/2015-01-04-first-post/</loc>
+    <lastmod>2015-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/archive/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/links/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jvanderaa.github.io/topics/</loc>
+  </url>
+  
+</urlset>
