@@ -11,7 +11,7 @@ mainSections = ["posts"]
 
 [homepage]
   layout = "profile" # valid options: page, profile, custom
-  showRecent = true
+  showRecent = false
   recentLimit = 5
 
 [article]

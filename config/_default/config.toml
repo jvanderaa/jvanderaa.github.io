@@ -1,6 +1,6 @@
 # config/_default/config.toml
 
-baseURL = "https://josh-v.com/"
+baseURL = "https://jvanderaa.github.io/"
 languageCode = "en"
 
 [permalinks]
