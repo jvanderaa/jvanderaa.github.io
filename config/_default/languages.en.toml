@@ -1,0 +1,21 @@
+# config/_default/languages.en.toml
+
+title = "Josh VanDeraa"
+
+[params]
+  isoCode = "en"
+  displayName = "EN"
+  description = "Network automation, networking, Python, and GoLang"
+  rtl = false
+
+[author]
+  name = "Josh VanDeraa"
+  image = "/images/vanderaa_headshot.png"
+  headline = "Network Automator"
+  bio = "Network Engineer turned to Automating networks via code."
+  links = [
+    { linkedin = "https://linkedin.com/in/josh-vanderaa"},
+    { mastodon = "https://fosstodon.org/@jvanderaa/"},
+    { twitter = "https://twitter.com/vanderaaj" },
+    { github = "https://github.com/jvanderaa"},
+  ]

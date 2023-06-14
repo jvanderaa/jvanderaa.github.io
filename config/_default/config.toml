@@ -1,0 +1,11 @@
+# config/_default/config.toml
+
+baseURL = "https://josh-v.com/"
+languageCode = "en"
+
+[permalinks]
+  posts = "/:title"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
