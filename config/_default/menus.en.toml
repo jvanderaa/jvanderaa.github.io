@@ -37,15 +37,6 @@
   weight = 25
 
 [[main]]
-  name = "GitHub"
-  url = "https://github.com/jvanderaa/"
-  weight = 50
-  [main.params]
-    icon = "github"
-    showName = false
-    target = "_blank"
-
-[[main]]
   name = "Tags"
   pageRef = "tags"
   weight = 30
@@ -61,6 +52,41 @@
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
+# [[footer]]
+#   name = "Privacy"
+#   pageRef = "privacy"
 [[footer]]
-  name = "Privacy"
-  pageRef = "privacy"
+  name = "GitHub"
+  url = "https://github.com/jvanderaa/"
+  weight = 100
+  [footer.params]
+    icon = "github"
+    showName = false
+    target = "_blank"
+
+[[footer]]
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/josh-vanderaa/"
+  weight = 70
+  [footer.params]
+    icon = "linkedin"
+    showName = false
+    target = "_blank"
+
+[[footer]]
+  name = "Mastodon"
+  url = "https://fosstodon.org/@jvanderaa/"
+  weight = 75
+  [footer.params]
+    icon = "mastodon"
+    showName = false
+    target = "_blank"
+
+[[footer]]
+  name = "Twitter"
+  url = "https://twitter.com/vanderaaj/"
+  weight = 80
+  [footer.params]
+    icon = "twitter"
+    showName = false
+    target = "_blank"
