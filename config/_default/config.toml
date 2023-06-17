@@ -9,4 +9,3 @@ googleAnalytics = "G-QCDLSTK9K6"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
