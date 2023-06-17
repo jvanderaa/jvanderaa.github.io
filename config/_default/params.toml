@@ -14,6 +14,9 @@ mainSections = ["posts"]
   showRecent = false
   recentLimit = 5
 
+[header]
+  logo = "/images/vanderaa_headshot.png"
+
 [article]
   showDate = true
   showDateUpdated = true
