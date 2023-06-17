@@ -57,6 +57,9 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Fix RSS Feed
+        run: |
+          cp public/index.xml public/feed.xml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
