@@ -57,9 +57,10 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      # - name: Fix RSS Feed
-      #   run: |
-      #     cp public/index.xml public/feed.xml
+      - name: Fix RSS Feed
+        run: |
+          cp public/index.xml public/feed.xml
+          awk '{sub(/<title>Josh VanDeraa</, "<title>Josh-V<")}1' public/feed.xml > temp.txt && mv temp.txt public/feed.xml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
