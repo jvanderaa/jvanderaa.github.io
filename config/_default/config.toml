@@ -5,6 +5,10 @@ languageCode = "en"
 googleAnalytics = "G-QCDLSTK9K6"
 rssURI = "feed.xml"
 
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
+
 [permalinks]
   posts = "/:title"
 
