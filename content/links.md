@@ -96,6 +96,11 @@ various technologies related to Network Automation.
 [YAML Guide 1](https://learnxinyminutes.com/docs/yaml/)  
 [Coding Packets Ansible](https://codingpackets.com/code/ansible/)
 
+### Monitoring and Telemetry Links
+
+[Panos2Grafana](https://github.com/vbarahona/Panos2Grafana)  
+[Panograf](https://github.com/stealthllama/panograf)  
+
 ### Python
 
 [Real Python Code Quality](https://realpython.com/python-code-quality/)
