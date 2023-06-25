@@ -100,6 +100,7 @@ various technologies related to Network Automation.
 
 [Panos2Grafana](https://github.com/vbarahona/Panos2Grafana)  
 [Panograf](https://github.com/stealthllama/panograf)  
+[APC UPS Monitoring](http://opsandautomation.com/2018/10/24/monitoring-your-apc-ups-with-the-tick-stack-and-grafana/)  
 
 ### Python
 
@@ -121,10 +122,6 @@ TBD, content coming soon!
 ### Database Tools
 
 [DBeaver](https://dbeaver.io/) - Thanks @itdependsnet  
-
-## Monitoring
-
-[APC UPS Monitoring](http://opsandautomation.com/2018/10/24/monitoring-your-apc-ups-with-the-tick-stack-and-grafana/)
 
 ## Technology Overviews
 
