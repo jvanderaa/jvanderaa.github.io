@@ -72,4 +72,6 @@ Here is what the Nautobot terminology lined up:
 
 Nautobot is handling secrets right in my opinion. That secrets are not to be stored within Nautobot. These are things that there are great solutions already available for. Use those tools. Nautobot provides a good mechanism to be able to integrate with various secrets providers. This hopefully helps out someone get started with using Hashicorp Vault secrets and Nautobot. I know I will be using this post again in the future some day!
 
+Let me know on social media (until I get a comment system built in) what your thoughts are. 
+
 Josh
