@@ -8,14 +8,18 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 mainSections = ["posts"]
+enableImageLazyLoading = true
 
 [homepage]
   layout = "profile" # valid options: page, profile, custom
-  showRecent = false
+  showRecent = true
   recentLimit = 5
 
 [header]
-  logo = "/images/vanderaa_headshot.png"
+  # logo = "rsz_vanderaa_headshot.png"
+  # logoDark = "rsz_vanderaa_headshot.png"
+  layout = "basic"
+  showTitle = true
 
 [article]
   showDate = true
