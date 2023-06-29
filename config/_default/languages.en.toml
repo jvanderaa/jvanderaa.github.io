@@ -10,7 +10,7 @@ title = "Josh VanDeraa"
 
 [author]
   name = "Josh VanDeraa"
-  image = "/images/vanderaa_headshot.png"
+  image = "vanderaa_headshot.png"
   headline = "Network Automator"
   bio = "Network Engineer turned to Automating networks via code."
   links = [

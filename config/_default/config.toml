@@ -1,8 +1,9 @@
 # config/_default/config.toml
 
-baseURL = "https://jvanderaa.github.io/"
+baseURL = "https://josh-v.com"
 languageCode = "en"
 googleAnalytics = "G-QCDLSTK9K6"
+
 
 [permalinks]
   posts = "/:title"
