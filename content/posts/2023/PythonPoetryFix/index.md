@@ -26,10 +26,10 @@ With this error, I made the mistake (maybe) of just removing `poetry` by finding
 
 The proper way that I'm finding to fix this is to run the Poetry uninstall scripts, which are found on the Poetry [docs](https://python-poetry.org/docs/).
 
-```
+{{< highlight bash >}}
 curl -sSL https://install.python-poetry.org | python3 - --uninstall
 curl -sSL https://install.python-poetry.org | POETRY_UNINSTALL=1 python3 -
-```
+{{< /highlight >}}
 
 Once it is removed, you try to re-install Poetry, but then you get the following symlinks issue:
 
@@ -40,9 +40,9 @@ Exception: This build of python cannot create venvs without using symlinks
 
 This is coming from a pyenv set up that I've also been convinced to run (however, I'm not convinced). So the next step is instead of installing to `python3`, you install to the current minor version of Python:
 
-```
+{{< highlight bash >}}
 curl -sSL https://install.python-poetry.org | python3.10 -
-```
+{{< /highlight >}}
 
 ## My Preferred Set Up For Various Versions of Python
 
