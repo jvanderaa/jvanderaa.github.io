@@ -3,7 +3,7 @@
 baseURL = "https://josh-v.com"
 languageCode = "en"
 googleAnalytics = "G-QCDLSTK9K6"
-
+theme = "congo"
 
 [permalinks]
   posts = "/:title"
