@@ -15,11 +15,13 @@ One of Nautobot's primary functions is to serve as an IPAM solution. Within that
   - Python Requests
   - GoLang HTTP
   - pynautobot
+  - Ansible Lookup
 - Nautobot GraphQL API
   - curl
   - Python Requests
   - GoLang HTTP
   - pynautobot
+  - Ansible Lookup
 
 Each method I will demonstrate how to get the IP address for Loopback0 on the [device](https://demo.nautobot.com/dcim/devices/5e7c0bdd-254b-44cb-bf7c-2f2560082f6d/?tab=main) `bre01-edge-01` within the demo instance of Nautobot. This device has 62 interfaces, so being able to filter down to which interface IP address we are looking for makes sense.
 
@@ -234,6 +236,111 @@ The execution:
 10.30.128.1/32
 ```
 
+### REST API - Ansible
+
+With Ansible, there are two methods available to use. You can use the native URI module that will gather data from the API endpoint. This example is with the Nautobot Ansible collection lookup plugin, which uses pynautobot under the hood. This allows for a little easier methodology of gathering data.
+
+```yaml {linenos=table}
+---
+- name: "GET IP ADDRESS FROM NAUTOBOT"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    nautobot_url: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_URL') }}"
+    nautobot_token: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_TOKEN') }}"
+  tasks:
+    - name: "10: GET IP ADDRESS FROM NAUTOBOT"
+      set_fact:
+        ip_address: "{{ lookup('networktocode.nautobot.lookup',
+          'ip-addresses',
+          api_endpoint=nautobot_url,
+          token=nautobot_token,
+          api_filter='device=bre01-edge-01 interface=Loopback0') }}"
+
+    - debug:
+        msg: "{{ ip_address['value']['address'] }}"
+```
+
+Which gives the following output.
+
+```json
+PLAYBOOK: get_ip.yml ***********************************************************************************************************************
+1 plays in get_ip.yml
+
+PLAY [GET IP ADDRESS FROM NAUTOBOT] ********************************************************************************************************
+META: ran handlers
+
+TASK [10: GET IP ADDRESS FROM NAUTOBOT] ****************************************************************************************************
+task path: /home/joshv/projects/sandbox-ansible/get_ip.yml:10
+ok: [localhost] => {
+    "ansible_facts": {
+        "ip_address": {
+            "key": "77371932-3b7f-4e94-9179-d1d4290695d9",
+            "value": {
+                "address": "10.30.128.1/32",
+                "assigned_object": {
+                    "cable": null,
+                    "device": {
+                        "display": "bre01-edge-01",
+                        "id": "5e7c0bdd-254b-44cb-bf7c-2f2560082f6d",
+                        "name": "bre01-edge-01",
+                        "url": "https://demo.nautobot.com/api/dcim/devices/5e7c0bdd-254b-44cb-bf7c-2f2560082f6d/"
+                    },
+                    "display": "Loopback0",
+                    "id": "6ecee964-e4e0-4a0a-83b7-b7485633fc78",
+                    "name": "Loopback0",
+                    "url": "https://demo.nautobot.com/api/dcim/interfaces/6ecee964-e4e0-4a0a-83b7-b7485633fc78/"
+                },
+                "assigned_object_id": "6ecee964-e4e0-4a0a-83b7-b7485633fc78",
+                "assigned_object_type": "dcim.interface",
+                "created": "2022-11-09",
+                "custom_fields": {},
+                "description": "",
+                "display": "10.30.128.1/32",
+                "dns_name": "edge-01.bre01.mlb.nautobot.com",
+                "family": {
+                    "label": "IPv4",
+                    "value": 4
+                },
+                "id": "77371932-3b7f-4e94-9179-d1d4290695d9",
+                "last_updated": "2022-11-09T15:11:51.606550Z",
+                "nat_inside": null,
+                "nat_outside": null,
+                "notes_url": "https://demo.nautobot.com/api/ipam/ip-addresses/77371932-3b7f-4e94-9179-d1d4290695d9/notes/",
+                "role": null,
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [],
+                "tenant": {
+                    "display": "Nautobot Baseball Stadiums",
+                    "id": "a39f2dd8-84c8-4816-9e6f-4a7c46e91a77",
+                    "name": "Nautobot Baseball Stadiums",
+                    "slug": "nautobot-baseball-stadiums",
+                    "url": "https://demo.nautobot.com/api/tenancy/tenants/a39f2dd8-84c8-4816-9e6f-4a7c46e91a77/"
+                },
+                "url": "https://demo.nautobot.com/api/ipam/ip-addresses/77371932-3b7f-4e94-9179-d1d4290695d9/",
+                "vrf": null
+            }
+        }
+    },
+    "changed": false
+}
+
+TASK [debug] *******************************************************************************************************************************
+task path: /home/joshv/projects/sandbox-ansible/get_ip.yml:18
+ok: [localhost] => {
+    "msg": "10.30.128.1/32"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+```
+
 ## GraphQL
 
 The second methodology, which is the preferred method to get data from Nautobot, as it provides the data you are looking for only, it doesn't get all of the additional data that comes with the REST API calls. The best methodology for discovering the GraphQL query is by using the iQL interface. This is by selecting `GraphQL` icon on the bottom right of the Nautobot instance.
@@ -420,6 +527,56 @@ query {
 nautobot = pynautobot.api(url=os.getenv("NAUTOBOT_URL"), token=os.getenv("NAUTOBOT_TOKEN"))
 print(nautobot.graphql.query(query=query_str).json["data"]["ip_addresses"][0]["address"])
 
+```
+
+### GraphQL: Ansible
+
+A slight modification to the Ansible playbook, adding a variable at the top for the query string, and using the action module to query instead of a lookup plugin.
+
+```yaml {linenos=table}
+---
+- name: "GET IP ADDRESS FROM NAUTOBOT"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    nautobot_url: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_URL') }}"
+    nautobot_token: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_TOKEN') }}"
+    query_str: |
+      query {
+        ip_addresses(device:"bre01-edge-01", interface: "Loopback0") {
+          address
+        }
+      }
+
+  tasks:
+    - name: "10: GET IP ADDRESS FROM NAUTOBOT"
+      networktocode.nautobot.query_graphql:
+        url: "{{ nautobot_url }}"
+        token: "{{ nautobot_token }}"
+        query: "{{ query_str }}"
+      register: "query_response"
+
+    - debug:
+        msg: "{{ query_response['data']['ip_addresses'][0]['address'] }}"
+
+```
+
+With the expected result as seen:
+
+```
+PLAY [GET IP ADDRESS FROM NAUTOBOT] ********************************************************************************************************
+
+TASK [10: GET IP ADDRESS FROM NAUTOBOT] ****************************************************************************************************
+ok: [localhost]
+
+TASK [debug] *******************************************************************************************************************************
+ok: [localhost] => {
+    "msg": "10.30.128.1/32"
+}
+
+PLAY RECAP *********************************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
 
 ## Summary
