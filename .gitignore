@@ -1,2 +1,7 @@
 ./.venv/
 .venv
+
+### Hugo ###
+# Generated files by hugo
+**/public/
+**/resources/_gen/
