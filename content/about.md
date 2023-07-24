@@ -40,6 +40,9 @@ In 2022 I had the opportunity to complete my first NANOG talk, on automating cir
 
 ### Ansible Content
 
+In 2019 I worked to develop a Network Automation Course with Ansible for Packet Pushers. This was in my transition time to Network to Code. Note that the course was developed at a time when only NetBox was around. At this point in time I would swap out NetBox in favor of Nautobot. 
+
+- Packet Pushers Network Automation with Ansible: [YouTube](https://www.youtube.com/playlist?list=PLtO_OYBiEo6lW_LO-ucRuz7Z8_DJ62NAM)
 - Network Automation Course (Packet Pushers): [Ignition](https://ignition.packetpushers.net/courses/ansible-for-network-automation/) page.
 - [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
   - First half using NetBox with the NetBox Ansible Collections
