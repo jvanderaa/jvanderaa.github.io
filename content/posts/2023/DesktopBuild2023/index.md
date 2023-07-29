@@ -26,20 +26,24 @@ My goals:
 
 What I'm going with are the following:
 
-| Component    | Item                                  | Amazon Link             |
-| ------------ | ------------------------------------- | ----------------------- |
-| Processor    | Intel i5-12600K                       | https://amzn.to/3XLsi3H |
-| Motherboard  | ASUS Prime B760M-A                    | https://amzn.to/46KSRKm |
-| Memory       | Qty 2, 2 x 32 GB TEAMGROUP Elite DDR5 | https://amzn.to/3rp0RAR |
-| Storage      | Samsung 980 Pro SSD NVMe              | https://amzn.to/3PS3Fk3 |
-| Case         | Cooler Master MasterBox Q300L         | https://amzn.to/43kHF4j |
-| Power Supply | Thermaltake SMART 600W                | https://amzn.to/3NPuCCt |
-| CPU Cooler   | DeepCool AK400                        | https://amzn.to/3rrpM6y |
+| Component    | Item                                          | Amazon Link             |
+| ------------ | --------------------------------------------- | ----------------------- |
+| Processor    | Intel i5-12600K                               | https://amzn.to/3XLsi3H |
+| Motherboard  | ~~ASUS Prime B760M-A~~ Gigabyte B765M DS3H AX | https://amzn.to/3OhpdEe |
+| Memory       | Qty 2, 2 x 32 GB TEAMGROUP Elite DDR5         | https://amzn.to/3rp0RAR |
+| Storage      | Samsung 980 Pro SSD NVMe                      | https://amzn.to/3PS3Fk3 |
+| Case         | Cooler Master MasterBox Q300L                 | https://amzn.to/43kHF4j |
+| Power Supply | Thermaltake SMART 600W                        | https://amzn.to/3NPuCCt |
+| CPU Cooler   | DeepCool AK400                                | https://amzn.to/3rrpM6y |
+| GPU          | AISURIX Radeon RX 580                         | https://amzn.to/3Yf4B4a |
 
 {{< alert >}}
 These are all affiliate links. I am not a big affiliate person today, but trying it out.
 {{< /alert >}}
 
+{{< alert >}}
+I am making some minor updates based on changes that I had made in troubleshooting. I have swapped out what originally was an ASUS Prime B760M motherboard for a Gigabyte B765M DS3H AX. This provides additional networking capabilities (Wifi/Bluetooth and 2.5 Gbps NIC) and an additional M.2 slot. I have also swapped out the GPU and will stick with the new GPU at this point.
+{{< /alert >}} 
 ### Processor
 
 I was in between the i5 and i7-12700K processor for this. As I look at my systems though, I don't really ever touch the CPU and looking at Passmark on power usage, the i7 (as expected) has a higher TDP, at which point for the amount of idle time that I do expect on the system I stuck with the i5-12600K. It has plenty of speed, and should support what I'm looking to do no issue.
