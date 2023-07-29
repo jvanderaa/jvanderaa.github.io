@@ -12,7 +12,7 @@ coverCaption: |
 
 ---
 
-In my previous post I wrote about a workstation that I was working on building. It took an incredibly long time to get up and into a stable environment. But I have finally accomplished stability (hoping to not jinx it here with the post). I went through a fair bit of troubleshooting to get to this point.
+In my [previous post](https://josh-v.com/desktop-build-2023/) I wrote about a workstation that I was working on building. It took an incredibly long time to get up and into a stable environment. But I have finally accomplished stability (hoping to not jinx it here with the post). I went through a fair bit of troubleshooting to get to this point.
 
 ## Symptom
 
