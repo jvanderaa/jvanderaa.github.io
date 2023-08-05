@@ -1,7 +1,7 @@
 ---
 author: Josh VanDeraa
 comments: true
-date: 2023-08-02
+date: 2023-08-05
 slug: google-earth-golf
 tags:
 - golf
