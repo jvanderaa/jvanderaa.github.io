@@ -36,7 +36,7 @@ enableImageLazyLoading = true
   showTableOfContents = true
   showTaxonomies = true
   showWordCount = true
-  showComments = false
+  showComments = true
   sharingLinks = ["mastodon", "linkedin", "reddit", "twitter", "pinterest",  "email", "facebook"]
 
 [list]
