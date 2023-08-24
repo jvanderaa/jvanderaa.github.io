@@ -65,7 +65,7 @@ To verify what I had seen previously, I test a `ping 1.1.1.1` to see if there is
 
 ![Workstation Main View](wks_main.png)
 
-### Update Netplan
+### Netplan
 
 Taking a look at the network connections I run the command `ip add` and I get the following output, where the interface name is highlighted on line 8.
 
