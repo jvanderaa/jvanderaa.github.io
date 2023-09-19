@@ -8,6 +8,10 @@ showDate: false
 showTableOfContents: false
 ---
 
+{{< alert "triangle-exclamation" >}}
+Automation demos link: [https://github.com/jvanderaa/automation_demos](https://github.com/jvanderaa/automation_demos)
+{{< /alert >}}
+
 I'm a veteran Network Engineer who has finally caught on how to put together CS teachings with a Networking degree. Working on doing almost all things via automation.
 
 Self re-taught network/automation engineer. I've primarily been digging around within Ansible and Python. I've been doing Python networking since 2015 when a speaker came in and talked about how he had put together a NOC for a conference heavily leveraging automation capabilities via Python. Since then I have been going deep down the rabbit hole that is Network Automation.
