@@ -56,4 +56,8 @@ The next step for me will be to find the time to set the appropriate WebHook/Job
 
 ## Summary
 
-Tags are an awesome and often forgotten capability with a SOT tool like Nautobot. You can leverage tags quite a bit to help control environments and the data that is being added/updated inside of Nautobot. Anything else that you use tags for? What other ideas do you have?
+Tags are an awesome and often forgotten capability with a SOT tool like Nautobot. You can leverage tags quite a bit to help control environments and the data that is being added/updated inside of Nautobot. Anything else that you use tags for? What other ideas do you have? Let me know in the comments.
+
+Need a step by step guide on getting started with open source network management tools? Check out my book on [LeanPub](https://leanpub.com/opensourcenetworkmanagement) or on [Amazon](https://amzn.to/45kVu40).
+
+Josh
