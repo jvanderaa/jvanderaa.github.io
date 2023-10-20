@@ -72,13 +72,14 @@ various technologies related to Network Automation.
 
 [Building Dynamic Documentation Using Parser](https://github.com/ansible/workshops/tree/master/exercises/ansible_network/supplemental/3-1-parser)  
 [Genie Parsers](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers)
-
 ### JSON/YAML
 
 [David Barroso - JSON in Flat Format](https://github.com/dbarrosop/pycatj)
 
 ### Ansible
 
+[Pinakes](https://github.com/ansible/pinakes/blob/devel/INSTALL.md) - Self Service portal  
+[EcoSystem Homepage](https://docs.ansible.com/ecosystem.html)  
 [Network CLI Connection Types](https://docs.ansible.com/ansible/latest/network/user_guide/platform_index.html)  
 [Ansible Lint Github Link](https://github.com/ansible/ansible-lint)  
 [Ken's List of Links](https://github.com/itdependsnetworks/awesome-network-automation)  
