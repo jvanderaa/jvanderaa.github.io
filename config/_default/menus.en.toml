@@ -93,6 +93,6 @@
   url = "https://twitter.com/vanderaaj/"
   weight = 80
   [footer.params]
-    icon = "twitter"
+    icon = "x-twitter"
     showName = false
     target = "_blank"

@@ -16,6 +16,6 @@ title = "Josh VanDeraa"
   links = [
     { linkedin = "https://linkedin.com/in/josh-vanderaa"},
     { mastodon = "https://fosstodon.org/@jvanderaa/"},
-    { twitter = "https://twitter.com/vanderaaj" },
+    { x-twitter = "https://twitter.com/vanderaaj" },
     { github = "https://github.com/jvanderaa"},
   ]
