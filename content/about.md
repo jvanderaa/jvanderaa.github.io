@@ -32,9 +32,29 @@ During the pandemic, I thought what better way to get started than with writing 
 
 ### Speaking Engagements
 
+**2023 Internet2 Technology Exchange**  
+At Internet2's TechEx 2023 I gave an overview of Nautobot to the Network Automation community and introduced several of the core Nautobot Open Source Ecosystem Plugins such as Nautobot Golden Config, and the new configuration remediation capabilities built in.
+
+
+**2023 WWT Automation Day - Minneapolis**  
+In this speaking engagement I had the opportunity to talk about Nautobot as the Open Source Network Automation and SOT applications. I gave an overview of what Nautobot brings to the table and incorporated demos of using real world scripts to complete activities leveraging the Nautobot open source ecosystem.
+
+**2023 Summer MNNUG**  
+Introduction of Nautobot and the core functionality for the the audience. Drove attendance with the focus on Network Automation that saw individuals drive from 3 hours away!
+
+**2022 NANOG86**  
 In 2022 I had the opportunity to complete my first NANOG talk, on automating circuit maintenance notifications. This section will outline my continued source of talks:
 
 - NANOG86 - [Automating Circuit Maintenance Notifications](https://www.youtube.com/watch?v=m6bOFnY3jQE)
+
+**2021 Ansible Meetup**  
+[Minneapolis Ansible Meetup January 2021 - Ansible Records Ansible - ARA](https://www.youtube.com/watch?v=Cz3vw1Sv-B4)
+
+**2020 Interop**  
+[Interop Network Automation CICD](https://www.youtube.com/watch?v=0ucaw6I99eY)
+
+**2020 Ansible Meetup**
+- [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
 
 ### Podcasts
 
