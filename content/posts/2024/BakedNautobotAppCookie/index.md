@@ -18,7 +18,7 @@ Just recently released at the beginning of 2024 is a project that I am super exc
 
 ## CookieCutter
 
-First, a real quick summary and link to more documentation of what is a (CookieCutter)[https://github.com/nautobot/cookiecutter-nautobot-app]? Well, just like in making cookies with fancy designs, this is a template that will generate the entire project layout for you for a Nautobot App. Using Python [CookieCutter]([URL Coming Soon](https://cookiecutter.readthedocs.io/en/stable/)), you tell Python to build a directory structure/layout according to the template defined. 
+First, a real quick summary and link to more documentation of what is a [CookieCutter](https://github.com/nautobot/cookiecutter-nautobot-app)? Well, just like in making cookies with fancy designs, this is a template that will generate the entire project layout for you for a Nautobot App. Using Python [CookieCutter](https://cookiecutter.readthedocs.io/en/stable/), you tell Python to build a directory structure/layout according to the template defined. 
 
 ## Nautobot
 
