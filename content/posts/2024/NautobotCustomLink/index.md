@@ -15,7 +15,9 @@ coverCaption: |
 
 ---
 
-One of my favorite features of Nautobot that may not be well known is the capability to put a button on pages that take you to other locations. This can be helpful when lining up the source of truth as that first place that you go, the idea of adding custom links will just help to enforce that as the first place to go.
+One of my favorite features of Nautobot that may not be well known is the capability to put a button on pages that take you to other locations. This can be helpful when lining up the source of truth as that first place that you go, the idea of adding custom links will just help to enforce that as the first place to go. When you look at the idea of a source of truth to help feed other systems, you start to see the topology like below. 
+
+![Nautobot Source of Truth for Other Systems](image-8.png)
 
 The documentation for creating your own custom links is here: [https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/customlink/](https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/customlink/)
 
