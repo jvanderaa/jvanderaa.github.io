@@ -49,7 +49,7 @@ Click on `Create` on the bottom. This will create the link. Now when you navigat
 
 ## Advanced Link Creation
 
-One of the awesome things that comes along with the Custom Links is the ability to put some logic into the text that you put there, such as only show the button if it is a particular device type, or manufacturer. This may also play in with systems that are part of a controller based system. Perhaps a link to Arista Cloudvision if the device is an Arista device. I have done links to Grafana dashboards using the [Modern Telemetry](https://a.co/d/fbv2H4U) system that we have deployed, only if the device is of a particular device type that would be created to be in the monitoring solution.
+One of the awesome things that comes along with the Custom Links is the ability to put some logic into the text that you put there, such as only show the button if it is a particular device type, or manufacturer. This may also play in with systems that are part of a controller based system. Perhaps a link to Arista CloudVision if the device is an Arista device. I have done links to Grafana dashboards using the [Modern Telemetry](https://a.co/d/fbv2H4U) system that we have deployed, only if the device is of a particular device type that would be created to be in the monitoring solution.
 
 Let's make two more links using the same steps above, but with the custom logic of a link to CloudVision when the device manufacturer is Arista. If the device manufacturer is Cisco then link to the Cisco controller. In both instances for the demo, it will be a link to the manufacturer's webpage. The custom text we will want is the following (will be a single line in the text of the button):
 
