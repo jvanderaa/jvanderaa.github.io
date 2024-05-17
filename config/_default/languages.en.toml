@@ -8,7 +8,7 @@ title = "Josh VanDeraa"
   description = "Network automation, networking, Python, and GoLang"
   rtl = false
 
-[author]
+[params.author]
   name = "Josh VanDeraa"
   image = "vanderaa_headshot.png"
   headline = "Network Automator"
