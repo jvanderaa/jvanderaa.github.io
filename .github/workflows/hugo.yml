@@ -59,6 +59,7 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --debug \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Fix RSS Feed
         run: |
