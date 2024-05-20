@@ -9,7 +9,7 @@ tags:
 - redux
 title: "Automation Redux: Firewall Tables"
 toc: true
-coverAlt: Cookies in random shapes
+coverAlt: Library lights
 coverCaption: |
     Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/photos/photo-of-library-with-turned-on-lights-sfL_QOnmy00?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
   
