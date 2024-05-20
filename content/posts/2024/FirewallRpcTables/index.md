@@ -23,7 +23,7 @@ Today I'm going to dive into my getting started with network automation, and per
 
 The issue at hand was there was an issue with a particular firewall system that was causing various connection issues to occur within the Microsoft Office suite of communications. There were some tables that were tracking Microsoft RPC connections through the firewall that were filling up. There were no log messages indicating that this was happening. Nor were there any metrics available via SNMP at the time.
 
-![RPC connections through firewall](image.png)
+![RPC connections through firewall](fw_traffic.png)
 
 {{< alert "circle-info" >}} I forget the details about how it was diagnosed as an issue and made its way to the firewall as the culprit. But that is not important. {{< /alert >}} 
 
