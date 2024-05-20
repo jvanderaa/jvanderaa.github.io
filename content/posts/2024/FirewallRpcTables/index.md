@@ -7,7 +7,7 @@ tags:
 - programming
 - automation
 - redux
-title: "Automation Redux: Firewall Tables"
+title: "Automation Redux-Firewall Tables"
 toc: true
 coverAlt: Library lights
 coverCaption: |
