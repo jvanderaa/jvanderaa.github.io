@@ -1,13 +1,12 @@
 ---
 author: Josh VanDeraa
 comments: true
-date: 2024-05-18
+date: 2024-05-19
 slug: firewall-rpc-tables
 tags:
 - programming
 - automation
-- redux
-title: "Automation Redux-Firewall Tables"
+title: "Automation Redux: Firewall Tables"
 toc: true
 coverAlt: Library lights
 coverCaption: |
