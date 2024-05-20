@@ -16,7 +16,7 @@ coverCaption: |
 
 Today I'm going to dive into my getting started with network automation, and perhaps my first successful automation. There are definitely some things that I would re-do and complete differently, and some things that I consider a success.
 
-{{< alert "circle-info" >}}I'm working on a new series within my blog, about how I would look to have done things differently than I had done before, with the tooling and knowledge that I now have, years later. This is the first in the series. {{< /alert >}}
+I'm working on a new series within my blog, about how I would look to have done things differently than I had done before, with the tooling and knowledge that I now have, years later. This is the first in the series.
 
 ## Scenario
 
