@@ -2,13 +2,13 @@
 author: Josh VanDeraa
 comments: true
 date: 2024-05-19
-slug: firewall-rpc-tables
+slug: firewall-tables
 tags:
 - programming
 - automation
 title: "Automation Redux: Firewall Tables"
 toc: true
-coverAlt: Couple of coders
+coverAlt:
 coverCaption: |
     Photo by <a href="https://unsplash.com/@sigmund?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">rivage</a> on <a href="https://unsplash.com/photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 ---
