@@ -82,5 +82,3 @@ The last piece with having the script now, I would look to enhance the monitorin
 There are definitely some things that I would look to do a small bit differently. But the thing that I like most is that I was able to apply some recently developing skills at the time - Python, to directly get a business outcome. It may have been seen as a break/fix just fixing things, but it was a band aid that was needed, and helped save my personal work/life balance (not having to clear the tables often manually). Network Automation is an ever evolving field. There will be continued maintenance of what is built.
 
 Overall, the journey is about continuing to learn. Learning is one of the important aspects of the DevOps culture. I'm hopeful that this may help others on the journey to either learn from my past (would not call them mistakes), or inspire other thoughts of your own. Let me know what you think.
-
--Josh
