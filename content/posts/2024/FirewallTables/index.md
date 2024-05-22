@@ -8,7 +8,7 @@ tags:
 - redux
 title: "Automation Redux: Firewall Tables"
 toc: true
-coverAlt:
+coverAlt: Devs looking at screen
 coverCaption: |
     Photo by <a href="https://unsplash.com/@sigmund?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">rivage</a> on <a href="https://unsplash.com/photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
