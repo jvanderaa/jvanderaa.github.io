@@ -8,8 +8,9 @@ tags:
 - redux
 title: "Automation Redux: Firewall Tables"
 toc: true
-# coverAlt: Devs looking at screen
-# coverCaption: Photo by rivage - https://unsplash.com/photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10 on Unsplash
+coverAlt: Devs looking at screen
+coverCaption: |
+    Photo by <a href="https://unsplash.com/@sigmund?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">rivage</a> on <a href="https://unsplash.com/photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 ---
 
@@ -82,9 +83,3 @@ The last piece with having the script now, I would look to enhance the monitorin
 There are definitely some things that I would look to do a small bit differently. But the thing that I like most is that I was able to apply some recently developing skills at the time - Python, to directly get a business outcome. It may have been seen as a break/fix just fixing things, but it was a band aid that was needed, and helped save my personal work/life balance (not having to clear the tables often manually). Network Automation is an ever evolving field. There will be continued maintenance of what is built.
 
 Overall, the journey is about continuing to learn. Learning is one of the important aspects of the DevOps culture. I'm hopeful that this may help others on the journey to either learn from my past (would not call them mistakes), or inspire other thoughts of your own. Let me know what you think.
-
-{{< alert "circle-info" >}}
-Cover photo by rivage - https://unsplash.com/photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10 on Unsplash
-
-I'm having issues building with new posts containing the key for coverCaption in front matter.
-{{< /alert >}}
