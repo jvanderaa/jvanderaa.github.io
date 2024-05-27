@@ -60,6 +60,7 @@ various technologies related to Network Automation.
 
 ### Blog Sites
 
+[Byrn Baker](https://blog.byrnbaker.me/)
 [Nick Russo](http://njrusmc.net/) - [@nickrusso42518](https://twitter.com/nickrusso42518)  
 [Colin McCarthy](https://www.thenetwork.engineer) - [@Colinnation](https://twitter.com/Colinnation)  
 [Katherine McNamara](https://www.network-node.com/) - [@kmcnam1](https://twitter.com/kmcnam1)  
