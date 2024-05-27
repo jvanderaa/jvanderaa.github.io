@@ -30,10 +30,10 @@ copyright: >
   Copyright &copy; 2018 - 2024 Josh VanDeraa –
   <a href="#__consent">Change cookie settings</a>
 theme:
+  name: material
   font:
     text: Inter
   logo: assets/router.png
-  name: material
   icon:
     annotation: material/arrow-right-circle
   features:
