@@ -119,7 +119,8 @@ TBD, content coming soon!
 ### Helpful Tools
 
 [Template Rendering Online Tester](https://td4a.codethenetwork.com/)  
-[PiKVM](https://blog.ktz.me/use-1-pikvm-instance-to-control-4-systems/)
+[PiKVM](https://blog.ktz.me/use-1-pikvm-instance-to-control-4-systems/)  
+[Proxmox Kubernetes Environment](https://blog.andreasm.io/2024/01/15/proxmox-with-opentofu-kubespray-and-kubernetes/#documentTop)  
 
 ### Database Tools
 

@@ -34,16 +34,17 @@ Custom Links are built in the Nautobot UI under the `Extensibility` menu. Let's 
 ![Custom Links without any links present](image-1.png)
 4. Select +Add on the upper right
 5. Fill out the form with the following:
-| Field | Value | Description |
-| ----- | ----- | ----------- |
-| Content Type | `dcim \| location` | What Nautobot data type this applies to. |
-| Name | Site Link | The name of the custom link. | 
-| Text | Nautobot Docs | What the button should say. |
-| URL | https://docs.nautobot.com | What the link is sending to. |
-| Weight | 100 | This helps tweak where the link will appear in relation to other links. |
-| Group Name |  | If you want to group links together. |
-| Button Class | Info (Aqua) | This colors the button for the link. |
-| New Window | Checked | Opens the link in a new tab/window. |
+
+| Field        | Value                     | Description                                                             |
+| ------------ | ------------------------- | ----------------------------------------------------------------------- |
+| Content Type | `dcim \| location`        | What Nautobot data type this applies to.                                |
+| Name         | Site Link                 | The name of the custom link.                                            |
+| Text         | Nautobot Docs             | What the button should say.                                             |
+| URL          | https://docs.nautobot.com | What the link is sending to.                                            |
+| Weight       | 100                       | This helps tweak where the link will appear in relation to other links. |
+| Group Name   |                           | If you want to group links together.                                    |
+| Button Class | Info (Aqua)               | This colors the button for the link.                                    |
+| New Window   | Checked                   | Opens the link in a new tab/window.                                     |
 
 ![Custom Link Build](image-2.png)
 
@@ -66,16 +67,16 @@ CloudVision
 {% endif %}
 ```
 
-| Field | Value | Description |
-| ----- | ----- | ----------- |
-| Content Type | `dcim \| device` | What Nautobot data type this applies to. |
-| Name | Arista CloudVision | The name of the custom link. | 
-| Text | {% if obj.device_type.manufacturer.name == "Arista" %}CloudVision{% endif %} | What the button should say. |
-| URL | https://www.arista.com/en/products/eos/eos-cloudvision | What the link is sending to. |
-| Weight | 100 | This helps tweak where the link will appear in relation to other links. |
-| Group Name |  | If you want to group links together. |
-| Button Class | Warning (Orange) | This colors the button for the link. |
-| New Window | Checked | Opens the link in a new tab/window. |
+| Field        | Value                                                                        | Description                                                             |
+| ------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Content Type | `dcim \| device`                                                             | What Nautobot data type this applies to.                                |
+| Name         | Arista CloudVision                                                           | The name of the custom link.                                            |
+| Text         | {% if obj.device_type.manufacturer.name == "Arista" %}CloudVision{% endif %} | What the button should say.                                             |
+| URL          | https://www.arista.com/en/products/eos/eos-cloudvision                       | What the link is sending to.                                            |
+| Weight       | 100                                                                          | This helps tweak where the link will appear in relation to other links. |
+| Group Name   |                                                                              | If you want to group links together.                                    |
+| Button Class | Warning (Orange)                                                             | This colors the button for the link.                                    |
+| New Window   | Checked                                                                      | Opens the link in a new tab/window.                                     |
 
 ![CloudVision Button](image-4.png)
 
@@ -87,16 +88,16 @@ Cisco
 {% endif %}
 ```
 
-| Field        | Value                                                  | Description                                                             |
-| ------------ | ------------------------------------------------------ | ----------------------------------------------------------------------- |
-| Content Type | `dcim \| device`                                       | What Nautobot data type this applies to.                                |
-| Name         | Cisco                                                  | The name of the custom link.                                            |
+| Field        | Value                                                                 | Description                                                             |
+| ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Content Type | `dcim \| device`                                                      | What Nautobot data type this applies to.                                |
+| Name         | Cisco                                                                 | The name of the custom link.                                            |
 | Text         | {% if obj.device_type.manufacturer.name == "Cisco" %}Cisco{% endif %} | What the button should say.                                             |
-| URL          | https://www.cisco.com                                  | What the link is sending to.                                            |
-| Weight       | 100                                                    | This helps tweak where the link will appear in relation to other links. |
-| Group Name   |                                                        | If you want to group links together.                                    |
-| Button Class | Warning (Orange)                                       | This colors the button for the link.                                    |
-| New Window   | Checked                                                | Opens the link in a new tab/window.                                     |
+| URL          | https://www.cisco.com                                                 | What the link is sending to.                                            |
+| Weight       | 100                                                                   | This helps tweak where the link will appear in relation to other links. |
+| Group Name   |                                                                       | If you want to group links together.                                    |
+| Button Class | Warning (Orange)                                                      | This colors the button for the link.                                    |
+| New Window   | Checked                                                               | Opens the link in a new tab/window.                                     |
 
 ![Cisco Button](image-5.png)
 

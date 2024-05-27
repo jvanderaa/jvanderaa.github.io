@@ -11,7 +11,7 @@ extra:
     property: G-QCDLSTK9K6
   consent:
     title: Cookie consent
-    description: >- 
+    description: >-
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
@@ -24,7 +24,7 @@ extra:
       link: https://www.linkedin.com/in/josh-vanderaa/
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/vanderaaj
-    - icon: fontawesome/brands/mastodon 
+    - icon: fontawesome/brands/mastodon
       link: https://fosstodon.org/@jvanderaa
 copyright: >
   Copyright &copy; 2018 - 2024 Josh VanDeraa –
@@ -39,11 +39,11 @@ theme:
   features:
     - navigation.sections
     - content.code.copy
+    - content.action.view
     - content.tabs.link
     - navigation.expand
     - navigation.footer
     - navigation.indexes
-    - navigation.instant
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
@@ -66,7 +66,7 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
-markdown_extensions: 
+markdown_extensions:
   - attr_list
   - md_in_html
   - admonition
@@ -82,9 +82,11 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.snippets
   - pymdownx.superfences
+  - toc:
+      permalink: "#"
 plugins:
   - blog:
-      blog_dir: . 
+      blog_dir: .
       post_url_format: "{slug}"
       blog_toc: true
   - glightbox
@@ -95,6 +97,6 @@ plugins:
       tags_file: tags.md
 nav:
   - index.md
-  - About: about.md
-  - "Book: OSS Net Mgmt": book.md
-  - "Links": links.md
+  - "👤 About": about.md
+  - "📖 Book: OSS Net Mgmt": book.md
+  - "🔗 Links": links.md
