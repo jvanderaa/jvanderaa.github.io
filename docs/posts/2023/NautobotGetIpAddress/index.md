@@ -40,7 +40,7 @@ export NAUTOBOT_TOKEN=secretTokenHere
 
 The first straight forward method is going to be using the curl application to accomplish the goal.
 
-```bash {linenos=table}
+```bash linenums="1"
 curl -X "GET" \
   "$NAUTOBOT_URL/api/ipam/ip-addresses/?device=bre01-edge-01&interface=Loopback0" \
   -H "accept: application/json" \
@@ -52,7 +52,7 @@ curl -X "GET" \
 
 This is the full API response that is provided then:
 
-```json {linenos=table}
+```json linenums="1"
 {
   "count": 1,
   "next": null,
@@ -111,7 +111,7 @@ This is the full API response that is provided then:
 
 ### Python Requests
 
-```python {linenos=table}
+```python linenums="1"
 from requests import Session
 import json
 import os
@@ -140,7 +140,7 @@ In this example I've used the requests Session method to store the headers inste
 
 ### GoLang HTTP
 
-```go {linenos=table}
+```go linenums="1"
 package main
 
 import (
@@ -221,7 +221,7 @@ IP Address: 10.30.128.1/32
 
 The Python SDK that works to turn the Nautobot API into a Python object you can get the IP address data with the code below. Pynautobot examples are falling under the REST API section at the moment as that is where it fits the best.
 
-```python {linenos=table}
+```python linenums="1"
 import os
 import pynautobot
 
@@ -233,7 +233,7 @@ print(ip_address)
 
 The execution:
 
-```bash {linenos=table}
+```bash linenums="1"
 ❯ python get_ip_address_sdk.py
 10.30.128.1/32
 ```
@@ -242,7 +242,7 @@ The execution:
 
 With Ansible, there are two methods available to use. You can use the native URI module that will gather data from the API endpoint. This example is with the Nautobot Ansible collection lookup plugin, which uses pynautobot under the hood. This allows for a little easier methodology of gathering data.
 
-```yaml {linenos=table}
+```yaml linenums="1"
 ---
 - name: "GET IP ADDRESS FROM NAUTOBOT"
   hosts: localhost
@@ -349,7 +349,7 @@ The second methodology, which is the preferred method to get data from Nautobot,
 
 The query that is going to be used here:
 
-```plaintext {linenos=table}
+```plaintext linenums="1"
 query {
   ip_addresses(device:"bre01-edge-01", interface: "Loopback0") {
     address
@@ -386,7 +386,7 @@ The response is back as expected, just in the printed format.
 
 ### Python Requests
 
-```python {linenos=table}
+```python linenums="1"
 from requests import Session
 import json
 import os
@@ -419,7 +419,7 @@ The structure returned by GraphQL is a little bit different than the REST API, b
 
 ### GoLang
 
-```go {linenos=table}
+```go linenums="1"
 package main
 
 import (
@@ -515,7 +515,7 @@ func main() {
 
 Pynautobot also provides a helper method to be able to make GraphQL queries as well. It returns a JSON object at `.json` and can be accessed as a dictionary:
 
-```python {linenos=table}
+```python linenums="1"
 import os
 import pynautobot
 
@@ -535,7 +535,7 @@ print(nautobot.graphql.query(query=query_str).json["data"]["ip_addresses"][0]["a
 
 A slight modification to the Ansible playbook, adding a variable at the top for the query string, and using the action module to query instead of a lookup plugin.
 
-```yaml {linenos=table}
+```yaml linenums="1"
 ---
 - name: "GET IP ADDRESS FROM NAUTOBOT"
   hosts: localhost
