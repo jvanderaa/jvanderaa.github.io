@@ -1,0 +1,106 @@
+site_name: Josh VanDeraa
+site_author: Josh VanDeraa
+site_url: https://josh-v.com/
+
+repo_name: jvanderaa/jvanderaa.github.io
+repo_url: https://github.com/jvanderaa/jvanderaa.github.io
+
+extra:
+  analytics:
+    provider: google
+    property: G-QCDLSTK9K6
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jvanderaa
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/josh-vanderaa/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/vanderaaj
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@jvanderaa
+copyright: >
+  Copyright &copy; 2018 - 2024 Josh VanDeraa –
+  <a href="#__consent">Change cookie settings</a>
+theme:
+  name: material
+  font:
+    text: Inter
+  logo: assets/router.png
+  icon:
+    annotation: material/arrow-right-circle
+  features:
+    - navigation.sections
+    - content.code.copy
+    - content.action.view
+    - content.tabs.link
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - accent: deep orange
+      primary: indigo
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - accent: deep orange
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: "#"
+plugins:
+  - blog:
+      blog_dir: .
+      post_url_format: "{slug}"
+      blog_toc: true
+      categories_toc: false
+      archive_name: "📚 Posts"
+      categories_name: "🏷️ Categories"
+      pagination_per_page: 8
+  - glightbox
+  - rss
+  - search:
+      lang: en
+  - tags:
+      tags_file: tags.md
+nav:
+  - index.md
+  - "👤 About": about.md
+  - "📖 Book: OSS Net Mgmt": book.md
+  - "🔗 Links": links.md
