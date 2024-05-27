@@ -89,6 +89,10 @@ plugins:
       blog_dir: .
       post_url_format: "{slug}"
       blog_toc: true
+      categories_toc: false
+      archive_name: "📚 Posts"
+      categories_name: "🏷️ Categories"
+      pagination_per_page: 8
   - glightbox
   - rss
   - search:

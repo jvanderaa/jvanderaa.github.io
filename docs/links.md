@@ -2,6 +2,9 @@
 title: "Links"
 date: 2023-06-13
 draft: false
+hide:
+  - navigation
+  - footer
 ---
 ## My Content on Other Sites
 

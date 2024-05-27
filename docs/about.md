@@ -6,6 +6,8 @@ showWordCount: false
 showReadingTime: false
 showDate: false
 showTableOfContents: false
+hide:
+  - footer
 ---
 
 I'm a veteran Network Engineer who has finally caught on how to put together CS teachings with a Networking degree. Working on doing almost all things via automation.

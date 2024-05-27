@@ -2,6 +2,9 @@
 title: "Book"
 date: 2023-06-13
 draft: false
+hide:
+  - navigation
+  - footer
 ---
 
 <figure markdown="span">
