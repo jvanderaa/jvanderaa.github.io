@@ -21,6 +21,7 @@ All of the work through the modules thus far in the series have brought us to wh
 !!! note
     This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 
+<!-- more -->
 
 There are many optional parameters for the module specifically. I encourage you to take a look at the module documentaation (linked below) in order to get a good sense of all of the options available. The required parameters for a device that is present are:
 

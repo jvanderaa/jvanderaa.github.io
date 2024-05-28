@@ -17,6 +17,8 @@ Life always gets busy. That is one thing that you always hear about. I am defini
 
 The first opportunity that has never been more capable of doing is to listen to podcasts. The commuting time to/from work is a tremendous opportunity. I leverage three podcasts as my primary learning mechanism these days. 
 
+<!-- more -->
+
 ## Podcasts
 
 ### Packet Pushers

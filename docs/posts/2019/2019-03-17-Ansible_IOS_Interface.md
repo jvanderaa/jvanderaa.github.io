@@ -28,6 +28,9 @@ configure individual interfaces on a Cisco IOS device. The documentation for the
 In this module I did have to dig into the actual Python file, and that is located
 [here](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/modules/network/ios/ios_interfaces.py).  
 
+<!-- more -->
+
+
 > Edit: Had to update the link due to the change in Ansible coming in 2.10. I have hard linked to
 > the IOS Interfaces module.
 

@@ -29,6 +29,8 @@ this post I will take a closer look at the differences between the `ios_interfac
 modules that I had written posts on last year and what their new counter parts look like. And in the
 end the post had quite a bit of good detail about the module. I think you will like what is here.  
 
+<!-- more -->
+
 > Previous Posts
 >
 > - [ios_interface](https://josh-v.com/blog/2019/03/17/ansible-cisco-ios-interface.html)

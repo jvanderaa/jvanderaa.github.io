@@ -17,6 +17,9 @@ toc: true
 ---
 A device role is aptly named, the role of the device. This is likely to be something that is meaningful to your organization and could change. For example you may have the 3 tier system of Core, Distribution, and Access layer environments. These are just fine. So you would want to have the roles there to reflect this reality. You may have leaf-spine environments, there are two more roles. And in my past I have also had roles that would indicate that there are dedicated DMZ, WAN edge, Internet edge devices. So this is the place to set this.
 
+<!-- more -->
+
+
 ## Module Documentation
 
 * [Read the Docs](https://nautobot-ansible.readthedocs.io/en/latest/plugins/device_role_module.html)

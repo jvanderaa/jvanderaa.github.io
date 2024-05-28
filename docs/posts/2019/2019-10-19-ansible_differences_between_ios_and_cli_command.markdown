@@ -26,6 +26,8 @@ covered the differences between `ios_config` and  `cli_config`. However I did no
 difference was between `ios_command` and `cli_command`. Most of the items covered there remain the
 same. So this will be a post that mostly gets straight to it and sees what the difference is.  
 
+<!-- more -->
+
 > A reminder that I am also putting playbooks used here out on Github. You can find this at:
 > https://github.com/jvanderaa/ansible-using_ios
 

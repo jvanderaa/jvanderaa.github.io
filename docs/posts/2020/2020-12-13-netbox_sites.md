@@ -20,6 +20,8 @@ This post dives into the [NetBox Ansible Content Collection](https://netbox-ansi
 !!! note
     This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 
+<!-- more -->
+
 
 When it comes to creating and deleting sites in NetBox, this one is an easy one. In my opinion this is a **yes it should be**. Most likely an IT tool is not the tool that will be the Source of Truth as it comes to physical sites. So this module in particualr that should be looked at and put into production use with Ansible.
 

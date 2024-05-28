@@ -12,6 +12,8 @@ toc: true
 ---
 Recently I had some discussions with [Nick Russo](https://twitter.com/nickrusso42518) on some URL redirection changes he was making for his content. I'm not going to take any of his thunder of what he is doing, and that is quite awesome. I decided that I wanted to take a look at that as well within my domain/blog using the Jekyll approach. This is going to be my short post regarding the steps I took to add the URL redirection setup to my personal blog page - josh-v.com.  
 
+<!-- more -->
+
 ## First Step - Research
 
 Not being a native Ruby/gem person myself (Python + Ansible), the first thing I did was what anyone should do, see if there is prior art. So I did a search on your favorite search tool and there are a few references. Terrific this should be able to be done.  

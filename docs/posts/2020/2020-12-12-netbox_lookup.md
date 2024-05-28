@@ -14,6 +14,7 @@ toc: true
 ---
 The NetBox lookup plugin is to **get information** out of NetBox for use within Ansible. This uses [pynetbox](https://github.com/digitalocean/pynetbox) to query the NetBox API for the information requested. On top of being helpful in gathering data from NetBox (when it is not your inventory source), but it is extremely helpful in larger NetBox deployments when compared to using the URI module as well. If you wish to use NetBox as your inventory source, you should definitely read my previous post on getting started with the [NetBox Inventory Plugin](https://josh-v.com/netbox_ansible_collection/netbox-ansible-inventory_plugin/).
 
+<!-- more -->
 
 - [Read the Docs](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/lookup/nb_lookup/netbox.netbox.nb_lookup_lookup.html)
 - [GitHub Source File](https://github.com/netbox-community/ansible_modules/blob/devel/plugins/lookup/nb_lookup.py)

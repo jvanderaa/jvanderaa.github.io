@@ -16,6 +16,8 @@ Why this post? Because I decided to change the style of how I was hosting my blo
 
 With this, I decided to bring my blog over to a static site generator. I'm not doing anything significantly crazy with a blog site, other than hopefully creating some useful content. So static site generation brought me over to Github.
 
+<!-- more -->
+
 ## What I wanted to accomplish
 
 What I wanted to accomplish with my blog:

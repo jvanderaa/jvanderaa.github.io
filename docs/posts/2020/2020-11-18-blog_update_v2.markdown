@@ -17,6 +17,8 @@ toc: true
 I've changed a few things on the site. Sorry about that! URLs have changed. Over the past week or so I have been working through making some what originally were small updates to the blog, that turned into a little too much effort. I was hoping to add a little bit of polish to the site while keeping the content in place. Earlier in 2020, maybe even back in 2019 I had become aware of Hashnode from the posts of [David Flores - aka NetPanda](https://twitter.com/davidban77) who is on the Hashnode side at [https://davidban77.hashnode.dev/](https://davidban77.hashnode.dev/). I liked many things that the blogging site has to offer. From a very quick up and running, to having a strong start of a
 community.
 
+<!-- more -->
+
 ## Hashnode Trial
 
 I decided to move the blog to Hashnode as a let's get started. I found it is easy to move the site as they already supported Markdown, which is what I write my blogs in already. The only downside that I originally saw as that there were no line numberings on the code blocks. I can live without that, but I still did desire it. I added my domain name and made the necessary DNS updates and it started to work out.

@@ -22,6 +22,8 @@ Let's explore two scenarios where a developer might choose to alias the response
 
 I will demonstrate the capabilities of these scenarios using the Nautobot demo instance at https://demo.nautobot.com. For each of these, make sure that you have logged in already before going to the GraphiQL page.
 
+<!-- more -->
+
 ## Base GraphQL Query
 
 The base GraphQL query will be:

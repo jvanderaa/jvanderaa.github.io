@@ -26,6 +26,8 @@ down the path with looking at the ASA modules in Ansible. This is spurned on a
 little bit by Ansible 2.8 coming out with an Object Group specific module. I
 will be looking into that further in a future post.
 
+<!-- more -->
+
 For the set of posts regarding the ASA, we will be starting with a pretty bare
 configuration on the device. We will have just a management IP address and the
 ability to SSH to the device.

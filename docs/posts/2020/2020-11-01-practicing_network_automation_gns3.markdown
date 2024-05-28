@@ -19,6 +19,9 @@ In an earlier post I took a look at how to setup EVE-NG to get access to virtual
 
 In the overall topology that is a "home" network sits a device that supports a routing protocol, usually either OSPF or BGP. What is known to work at an inexpensive price point is the [Ubiquiti EdgeRouter X](https://www.ui.com/edgemax/edgerouter-x/). 
 
+<!-- more -->
+
+
 ## GNS3 Setup
 
 This post is **not** a post on how to setup GNS3, it is meant to help you start to access devices. This tutorial is running a GNS3 VM on a remote host. Take a look at the [GNS3 docs](https://docs.gns3.com/docs/) on how to install GNS3 specifically.

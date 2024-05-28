@@ -21,6 +21,7 @@ A device role is aptly named, the role of the device. This is likely to be somet
 !!! note
     This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 
+<!-- more -->
 
 ## Module Documentation
 

@@ -23,6 +23,8 @@ This is a post that I'm going to review some of the differences between the ios_
 the new cli_config module within Ansible networking. I became interested in the module after a
 recent discussion between the two. I have decided to take a look at the differences between the two.
 
+<!-- more -->
+
 This is not an under the hood look at the modules. This has already been covered very well (and
 with better graphics than I can produce) here at the
 [Ansible Blog](https://www.ansible.com/blog/red-hat-ansible-network-automation-updates) look for
