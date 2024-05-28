@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.12"
+          python-version: "3.9"
 
       - name: Install Poetry
         run: |
@@ -34,8 +34,28 @@ jobs:
         run: |
           cp site/feed_rss_created.xml site/feed.xml
 
+      - name: Upload site content
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download site content
+        uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: site
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
