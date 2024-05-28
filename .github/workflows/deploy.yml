@@ -82,6 +82,7 @@ jobs:
         run: |
           mkdocs --version
           python -m mkdocs build -s
+          cp site/feed_rss_created.xml site/feed.xml
 
       # - name: Adjust permissions
       #   run: |
