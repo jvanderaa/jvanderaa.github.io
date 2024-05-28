@@ -35,7 +35,7 @@ jobs:
           cp site/feed_rss_created.xml site/feed.xml
 
       - name: Upload site content
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site
           path: site
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download site content
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: site
           path: site
