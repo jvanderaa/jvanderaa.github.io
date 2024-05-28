@@ -34,8 +34,10 @@ jobs:
         run: |
           cp site/feed_rss_created.xml site/feed.xml
 
-      - name: Configure credentials
-        run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
 
-      - name: Publish blog
-        run: mkdocs gh-deploy
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
