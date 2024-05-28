@@ -1,0 +1,2911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Josh VanDeraa">
+      
+      
+        <link rel="canonical" href="https://josh-v.com/category/netbox/page/2/">
+      
+      
+        <link rel="prev" href="../../../nautobot/">
+      
+      
+        <link rel="next" href="../../../netdevops/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>netbox - Josh VanDeraa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6v2Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QCDLSTK9K6"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QCDLSTK9K6",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QCDLSTK9K6",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#netbox" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Josh VanDeraa" class="md-header__button md-logo" aria-label="Josh VanDeraa" data-md-component="logo">
+      
+  <img src="../../../../assets/router.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Josh VanDeraa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              netbox
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jvanderaa/jvanderaa.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jvanderaa/jvanderaa.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  🏠 Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  👤 About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../book/" class="md-tabs__link">
+        
+  
+    
+  
+  📖 Book: OSS Net Mgmt
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../links/" class="md-tabs__link">
+        
+  
+    
+  
+  🔗 Links
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../archive/2024/" class="md-tabs__link">
+          
+  
+    
+  
+  📚 Posts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../ansible/" class="md-tabs__link">
+          
+  
+    
+  
+  🏷️ Categories
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Josh VanDeraa" class="md-nav__button md-logo" aria-label="Josh VanDeraa" data-md-component="logo">
+      
+  <img src="../../../../assets/router.png" alt="logo">
+
+    </a>
+    Josh VanDeraa
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jvanderaa/jvanderaa.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jvanderaa/jvanderaa.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏠 Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👤 About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📖 Book: OSS Net Mgmt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🔗 Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    📚 Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            📚 Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    🏷️ Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            🏷️ Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../arista/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arista
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../asa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../asa_og/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asa_og
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cisco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco_ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cisco_ios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco_nxos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cisco_nxos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cisco_wlc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cisco_wlc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    communications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    devnet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../earth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    earth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eveng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eveng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../expert/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    expert
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../golang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    golang
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../golf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    golf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    graphql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hashicorp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hashicorp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homeassistant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    homeassistant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ios_interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../juniper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    juniper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meraki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meraki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nautobot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nautobot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="../../" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    netbox
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../netdevops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    netdevops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../netmiko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    netmiko
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network-simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network_design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nornir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nornir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    poetry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../productivity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    productivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../prometheus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    prometheus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saving_config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    saving_config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    slack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="netbox">netbox<a class="headerlink" href="#netbox" title="Permanent link">#</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/22228848" alt="Josh VanDeraa">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2020-11-28 00:00:00">November 28, 2020</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">netbox</a>, 
+              <a href="../../../ansible/" class="md-meta__link">ansible</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="netbox-ansible-collection-installation"><a class="toclink" href="../../../../collection_install/">NetBox Ansible Collection: Installation</a></h2>
+<p>This is the first post as I start to look at the NetBox Ansible Collection. This is an impressive collection with modules for several of the NetBox applications, a query plugin, and an inventory plugin. This will take a deeper dive into several of the components of the <strong>inventory plugin</strong>, but not all of the options. The documentation for all of the collection can be found at:</p>
+<ul>
+<li>ReadTheDocs: <a href="https://netbox-ansible-collection.readthedocs.io/en/latest/">https://netbox-ansible-collection.readthedocs.io/en/latest/</a></li>
+<li>Galaxy Page: <a href="https://galaxy.ansible.com/netbox/netbox">https://galaxy.ansible.com/netbox/netbox</a>  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using <a href="https://www.nautobot.com">Nautobot</a> due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.</p>
+</div>
+<p>This post is going to give information on how to install the collection as it may be applicable to every post in the series (as they get posted).</p>
+<p>(Update 2020-12-05)
+The corresponding YouTube video is here:</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+  <iframe src="https://www.youtube.com/embed/KjGwNRoBYU0" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+          frameborder="0" 
+          allowfullscreen>
+  </iframe>
+</div>
+
+<h3 id="installation"><a class="toclink" href="../../../../collection_install/#installation">Installation</a></h3>
+<p>Installation is done via Ansible Galaxy. It is recommended to have the latest version of the collection when working on it as there are updates happening routinely. There is a <strong>Python requirement</strong> with the modules of the <a href="https://github.com/digitalocean/pynetbox">pynetbox</a> package.  </p>
+<p>It does not matter which order you install these in, you just need to install both before you start using the module.</p>
+<h4 id="installation-pynetbox"><a class="toclink" href="../../../../collection_install/#installation-pynetbox">Installation - pynetbox</a></h4>
+<p>To install you execute the following to get the latest version of pynetbox:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pynetbox<span class="w"> </span>--upgrade
+</span></code></pre></div>
+<h4 id="installation-netbox-collection"><a class="toclink" href="../../../../collection_install/#installation-netbox-collection">Installation - NetBox Collection</a></h4>
+<p>The collection is installed via Ansible Galaxy as a primary method to install. You can also install the collection manually from GitHub, but the galaxy method is the preferred method.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>netbox.netbox<span class="w"> </span>--force
+</span></code></pre></div>
+<p>The addition of <code>--force</code> will have Ansible Galaxy install the latest version on top of what you may already have. If you already have a version of the collection installed, Galaxy will not overwrite what you already have.</p>
+<h3 id="verification-of-installation"><a class="toclink" href="../../../../collection_install/#verification-of-installation">Verification of Installation</a></h3>
+<p>Once you have run the steps there are many ways to verify that the installation is completed successfully for the Python package. The one that I like to use is to execute a <code>pip freeze | grep &lt;package_name&gt;</code>. The execution looks like this on the current date:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>pip3<span class="w"> </span>freeze<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>pynetbox<span class="w">    </span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">pynetbox</span><span class="o">==</span><span class="m">5</span>.1.0
+</span></code></pre></div>
+<p>To verify that you have installed the NetBox Ansible Collection, you can execute the Ansible Doc command to get the current documentation. This is done as followed with the netbox_device module to verify that the docs load:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ansible-doc<span class="w"> </span>netbox.netbox.netbox_device
+</span></code></pre></div>
+<p>If the module is not installed properly you will see, with a key in on the first line</p>
+<p><div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="o">[</span>WARNING<span class="o">]</span>:<span class="w"> </span>module<span class="w"> </span>netbox.netbox.netbox_inventory<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">in</span>:
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a>~/.local/lib/python3.7/site-packages/ansible/modules
+</span></code></pre></div></td></tr></table></div>
+The output when I sent the stdout to a file is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>&gt; NETBOX.NETBOX.NETBOX_DEVICE    (/Users/joshvanderaa/.ansible/collections/ansible_collections/netbox/netbox/plugins/modules/netbox_device.py)
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        Creates, updates or removes devices from Netbox
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>OPTIONS (= is mandatory):
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>= data
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        Defines the device configuration
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>        type: dict
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>        SUBOPTIONS:
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>        - asset_tag
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>            Asset tag that is associated to the device
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>            [Default: (null)]
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>            type: str
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>        - cluster
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>            Cluster that the device will be assigned to
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>            [Default: (null)]
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>            type: raw
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>        - comments
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>            Comments that may include additional information in
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>            regards to the device
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>            [Default: (null)]
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>            type: str
+</span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>
+</span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>        - custom_fields
+</span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>            must exist in Netbox
+</span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>            [Default: (null)]
+</span><span id="__span-23-33"><a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>            type: dict
+</span><span id="__span-23-34"><a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>
+</span><span id="__span-23-35"><a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>        - device_role
+</span><span id="__span-23-36"><a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>            Required if `state=present&#39; and the device does not exist
+</span><span id="__span-23-37"><a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>            yet
+</span><span id="__span-23-38"><a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>            [Default: (null)]
+</span><span id="__span-23-39"><a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>            type: raw
+</span><span id="__span-23-40"><a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>
+</span><span id="__span-23-41"><a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>        - device_type
+</span><span id="__span-23-42"><a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>            Required if `state=present&#39; and the device does not exist
+</span><span id="__span-23-43"><a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a>            yet
+</span><span id="__span-23-44"><a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a>            [Default: (null)]
+</span><span id="__span-23-45"><a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a>            type: raw
+</span><span id="__span-23-46"><a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>
+</span><span id="__span-23-47"><a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a>        - face
+</span><span id="__span-23-48"><a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a>            Required if `rack&#39; is defined
+</span><span id="__span-23-49"><a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a>            (Choices: Front, front, Rear, rear)[Default: (null)]
+</span><span id="__span-23-50"><a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a>            type: str
+</span><span id="__span-23-51"><a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a>
+</span><span id="__span-23-52"><a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a>        - local_context_data
+</span><span id="__span-23-53"><a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a>            Arbitrary JSON data to define the devices configuration
+</span><span id="__span-23-54"><a id="__codelineno-23-54" name="__codelineno-23-54" href="#__codelineno-23-54"></a>            variables.
+</span><span id="__span-23-55"><a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a>            [Default: (null)]
+</span><span id="__span-23-56"><a id="__codelineno-23-56" name="__codelineno-23-56" href="#__codelineno-23-56"></a>            type: dict
+</span><span id="__span-23-57"><a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a>
+</span><span id="__span-23-58"><a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a>        = name
+</span><span id="__span-23-59"><a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a>            The name of the device
+</span><span id="__span-23-60"><a id="__codelineno-23-60" name="__codelineno-23-60" href="#__codelineno-23-60"></a>
+</span><span id="__span-23-61"><a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a>            type: str
+</span><span id="__span-23-62"><a id="__codelineno-23-62" name="__codelineno-23-62" href="#__codelineno-23-62"></a>
+</span><span id="__span-23-63"><a id="__codelineno-23-63" name="__codelineno-23-63" href="#__codelineno-23-63"></a>        - platform
+</span><span id="__span-23-64"><a id="__codelineno-23-64" name="__codelineno-23-64" href="#__codelineno-23-64"></a>            The platform of the device
+</span><span id="__span-23-65"><a id="__codelineno-23-65" name="__codelineno-23-65" href="#__codelineno-23-65"></a>            [Default: (null)]
+</span><span id="__span-23-66"><a id="__codelineno-23-66" name="__codelineno-23-66" href="#__codelineno-23-66"></a>            type: raw
+</span><span id="__span-23-67"><a id="__codelineno-23-67" name="__codelineno-23-67" href="#__codelineno-23-67"></a>
+</span><span id="__span-23-68"><a id="__codelineno-23-68" name="__codelineno-23-68" href="#__codelineno-23-68"></a>        - position
+</span><span id="__span-23-69"><a id="__codelineno-23-69" name="__codelineno-23-69" href="#__codelineno-23-69"></a>            The position of the device in the rack defined above
+</span><span id="__span-23-70"><a id="__codelineno-23-70" name="__codelineno-23-70" href="#__codelineno-23-70"></a>            [Default: (null)]
+</span><span id="__span-23-71"><a id="__codelineno-23-71" name="__codelineno-23-71" href="#__codelineno-23-71"></a>            type: int
+</span><span id="__span-23-72"><a id="__codelineno-23-72" name="__codelineno-23-72" href="#__codelineno-23-72"></a>
+</span><span id="__span-23-73"><a id="__codelineno-23-73" name="__codelineno-23-73" href="#__codelineno-23-73"></a>        - primary_ip4
+</span><span id="__span-23-74"><a id="__codelineno-23-74" name="__codelineno-23-74" href="#__codelineno-23-74"></a>            Primary IPv4 address assigned to the device
+</span><span id="__span-23-75"><a id="__codelineno-23-75" name="__codelineno-23-75" href="#__codelineno-23-75"></a>            [Default: (null)]
+</span><span id="__span-23-76"><a id="__codelineno-23-76" name="__codelineno-23-76" href="#__codelineno-23-76"></a>            type: raw
+</span><span id="__span-23-77"><a id="__codelineno-23-77" name="__codelineno-23-77" href="#__codelineno-23-77"></a>
+</span><span id="__span-23-78"><a id="__codelineno-23-78" name="__codelineno-23-78" href="#__codelineno-23-78"></a>        - primary_ip6
+</span><span id="__span-23-79"><a id="__codelineno-23-79" name="__codelineno-23-79" href="#__codelineno-23-79"></a>            Primary IPv6 address assigned to the device
+</span><span id="__span-23-80"><a id="__codelineno-23-80" name="__codelineno-23-80" href="#__codelineno-23-80"></a>            [Default: (null)]
+</span><span id="__span-23-81"><a id="__codelineno-23-81" name="__codelineno-23-81" href="#__codelineno-23-81"></a>            type: raw
+</span><span id="__span-23-82"><a id="__codelineno-23-82" name="__codelineno-23-82" href="#__codelineno-23-82"></a>
+</span><span id="__span-23-83"><a id="__codelineno-23-83" name="__codelineno-23-83" href="#__codelineno-23-83"></a>        - rack
+</span><span id="__span-23-84"><a id="__codelineno-23-84" name="__codelineno-23-84" href="#__codelineno-23-84"></a>            The name of the rack to assign the device to
+</span><span id="__span-23-85"><a id="__codelineno-23-85" name="__codelineno-23-85" href="#__codelineno-23-85"></a>            [Default: (null)]
+</span><span id="__span-23-86"><a id="__codelineno-23-86" name="__codelineno-23-86" href="#__codelineno-23-86"></a>            type: raw
+</span><span id="__span-23-87"><a id="__codelineno-23-87" name="__codelineno-23-87" href="#__codelineno-23-87"></a>
+</span><span id="__span-23-88"><a id="__codelineno-23-88" name="__codelineno-23-88" href="#__codelineno-23-88"></a>        - serial
+</span><span id="__span-23-89"><a id="__codelineno-23-89" name="__codelineno-23-89" href="#__codelineno-23-89"></a>            Serial number of the device
+</span><span id="__span-23-90"><a id="__codelineno-23-90" name="__codelineno-23-90" href="#__codelineno-23-90"></a>            [Default: (null)]
+</span><span id="__span-23-91"><a id="__codelineno-23-91" name="__codelineno-23-91" href="#__codelineno-23-91"></a>            type: str
+</span><span id="__span-23-92"><a id="__codelineno-23-92" name="__codelineno-23-92" href="#__codelineno-23-92"></a>
+</span><span id="__span-23-93"><a id="__codelineno-23-93" name="__codelineno-23-93" href="#__codelineno-23-93"></a>        - site
+</span><span id="__span-23-94"><a id="__codelineno-23-94" name="__codelineno-23-94" href="#__codelineno-23-94"></a>            Required if `state=present&#39; and the device does not exist
+</span><span id="__span-23-95"><a id="__codelineno-23-95" name="__codelineno-23-95" href="#__codelineno-23-95"></a>            yet
+</span><span id="__span-23-96"><a id="__codelineno-23-96" name="__codelineno-23-96" href="#__codelineno-23-96"></a>            [Default: (null)]
+</span><span id="__span-23-97"><a id="__codelineno-23-97" name="__codelineno-23-97" href="#__codelineno-23-97"></a>            type: raw
+</span><span id="__span-23-98"><a id="__codelineno-23-98" name="__codelineno-23-98" href="#__codelineno-23-98"></a>
+</span><span id="__span-23-99"><a id="__codelineno-23-99" name="__codelineno-23-99" href="#__codelineno-23-99"></a>        - status
+</span><span id="__span-23-100"><a id="__codelineno-23-100" name="__codelineno-23-100" href="#__codelineno-23-100"></a>            The status of the device
+</span><span id="__span-23-101"><a id="__codelineno-23-101" name="__codelineno-23-101" href="#__codelineno-23-101"></a>            [Default: (null)]
+</span><span id="__span-23-102"><a id="__codelineno-23-102" name="__codelineno-23-102" href="#__codelineno-23-102"></a>            type: raw
+</span><span id="__span-23-103"><a id="__codelineno-23-103" name="__codelineno-23-103" href="#__codelineno-23-103"></a>
+</span><span id="__span-23-104"><a id="__codelineno-23-104" name="__codelineno-23-104" href="#__codelineno-23-104"></a>        - tags
+</span><span id="__span-23-105"><a id="__codelineno-23-105" name="__codelineno-23-105" href="#__codelineno-23-105"></a>            Any tags that the device may need to be associated with
+</span><span id="__span-23-106"><a id="__codelineno-23-106" name="__codelineno-23-106" href="#__codelineno-23-106"></a>            [Default: (null)]
+</span><span id="__span-23-107"><a id="__codelineno-23-107" name="__codelineno-23-107" href="#__codelineno-23-107"></a>            type: list
+</span><span id="__span-23-108"><a id="__codelineno-23-108" name="__codelineno-23-108" href="#__codelineno-23-108"></a>
+</span><span id="__span-23-109"><a id="__codelineno-23-109" name="__codelineno-23-109" href="#__codelineno-23-109"></a>        - tenant
+</span><span id="__span-23-110"><a id="__codelineno-23-110" name="__codelineno-23-110" href="#__codelineno-23-110"></a>            The tenant that the device will be assigned to
+</span><span id="__span-23-111"><a id="__codelineno-23-111" name="__codelineno-23-111" href="#__codelineno-23-111"></a>            [Default: (null)]
+</span><span id="__span-23-112"><a id="__codelineno-23-112" name="__codelineno-23-112" href="#__codelineno-23-112"></a>            type: raw
+</span><span id="__span-23-113"><a id="__codelineno-23-113" name="__codelineno-23-113" href="#__codelineno-23-113"></a>
+</span><span id="__span-23-114"><a id="__codelineno-23-114" name="__codelineno-23-114" href="#__codelineno-23-114"></a>        - vc_position
+</span><span id="__span-23-115"><a id="__codelineno-23-115" name="__codelineno-23-115" href="#__codelineno-23-115"></a>            Position in the assigned virtual chassis
+</span><span id="__span-23-116"><a id="__codelineno-23-116" name="__codelineno-23-116" href="#__codelineno-23-116"></a>            [Default: (null)]
+</span><span id="__span-23-117"><a id="__codelineno-23-117" name="__codelineno-23-117" href="#__codelineno-23-117"></a>            type: int
+</span><span id="__span-23-118"><a id="__codelineno-23-118" name="__codelineno-23-118" href="#__codelineno-23-118"></a>
+</span><span id="__span-23-119"><a id="__codelineno-23-119" name="__codelineno-23-119" href="#__codelineno-23-119"></a>        - vc_priority
+</span><span id="__span-23-120"><a id="__codelineno-23-120" name="__codelineno-23-120" href="#__codelineno-23-120"></a>            Priority in the assigned virtual chassis
+</span><span id="__span-23-121"><a id="__codelineno-23-121" name="__codelineno-23-121" href="#__codelineno-23-121"></a>            [Default: (null)]
+</span><span id="__span-23-122"><a id="__codelineno-23-122" name="__codelineno-23-122" href="#__codelineno-23-122"></a>            type: int
+</span><span id="__span-23-123"><a id="__codelineno-23-123" name="__codelineno-23-123" href="#__codelineno-23-123"></a>
+</span><span id="__span-23-124"><a id="__codelineno-23-124" name="__codelineno-23-124" href="#__codelineno-23-124"></a>        - virtual_chassis
+</span><span id="__span-23-125"><a id="__codelineno-23-125" name="__codelineno-23-125" href="#__codelineno-23-125"></a>            Virtual chassis the device will be assigned to
+</span><span id="__span-23-126"><a id="__codelineno-23-126" name="__codelineno-23-126" href="#__codelineno-23-126"></a>            [Default: (null)]
+</span><span id="__span-23-127"><a id="__codelineno-23-127" name="__codelineno-23-127" href="#__codelineno-23-127"></a>            type: raw
+</span><span id="__span-23-128"><a id="__codelineno-23-128" name="__codelineno-23-128" href="#__codelineno-23-128"></a>
+</span><span id="__span-23-129"><a id="__codelineno-23-129" name="__codelineno-23-129" href="#__codelineno-23-129"></a>= netbox_token
+</span><span id="__span-23-130"><a id="__codelineno-23-130" name="__codelineno-23-130" href="#__codelineno-23-130"></a>        The token created within Netbox to authorize API access
+</span><span id="__span-23-131"><a id="__codelineno-23-131" name="__codelineno-23-131" href="#__codelineno-23-131"></a>
+</span><span id="__span-23-132"><a id="__codelineno-23-132" name="__codelineno-23-132" href="#__codelineno-23-132"></a>        type: str
+</span><span id="__span-23-133"><a id="__codelineno-23-133" name="__codelineno-23-133" href="#__codelineno-23-133"></a>
+</span><span id="__span-23-134"><a id="__codelineno-23-134" name="__codelineno-23-134" href="#__codelineno-23-134"></a>= netbox_url
+</span><span id="__span-23-135"><a id="__codelineno-23-135" name="__codelineno-23-135" href="#__codelineno-23-135"></a>        URL of the Netbox instance resolvable by Ansible control host
+</span><span id="__span-23-136"><a id="__codelineno-23-136" name="__codelineno-23-136" href="#__codelineno-23-136"></a>
+</span><span id="__span-23-137"><a id="__codelineno-23-137" name="__codelineno-23-137" href="#__codelineno-23-137"></a>        type: str
+</span><span id="__span-23-138"><a id="__codelineno-23-138" name="__codelineno-23-138" href="#__codelineno-23-138"></a>
+</span><span id="__span-23-139"><a id="__codelineno-23-139" name="__codelineno-23-139" href="#__codelineno-23-139"></a>- query_params
+</span><span id="__span-23-140"><a id="__codelineno-23-140" name="__codelineno-23-140" href="#__codelineno-23-140"></a>        This can be used to override the specified values in
+</span><span id="__span-23-141"><a id="__codelineno-23-141" name="__codelineno-23-141" href="#__codelineno-23-141"></a>        ALLOWED_QUERY_PARAMS that is defined
+</span><span id="__span-23-142"><a id="__codelineno-23-142" name="__codelineno-23-142" href="#__codelineno-23-142"></a>        in plugins/module_utils/netbox_utils.py and provides control
+</span><span id="__span-23-143"><a id="__codelineno-23-143" name="__codelineno-23-143" href="#__codelineno-23-143"></a>        to users on what may make
+</span><span id="__span-23-144"><a id="__codelineno-23-144" name="__codelineno-23-144" href="#__codelineno-23-144"></a>        an object unique in their environment.
+</span><span id="__span-23-145"><a id="__codelineno-23-145" name="__codelineno-23-145" href="#__codelineno-23-145"></a>        [Default: (null)]
+</span><span id="__span-23-146"><a id="__codelineno-23-146" name="__codelineno-23-146" href="#__codelineno-23-146"></a>        elements: str
+</span><span id="__span-23-147"><a id="__codelineno-23-147" name="__codelineno-23-147" href="#__codelineno-23-147"></a>        type: list
+</span><span id="__span-23-148"><a id="__codelineno-23-148" name="__codelineno-23-148" href="#__codelineno-23-148"></a>
+</span><span id="__span-23-149"><a id="__codelineno-23-149" name="__codelineno-23-149" href="#__codelineno-23-149"></a>- state
+</span><span id="__span-23-150"><a id="__codelineno-23-150" name="__codelineno-23-150" href="#__codelineno-23-150"></a>        Use `present&#39; or `absent&#39; for adding or removing.
+</span><span id="__span-23-151"><a id="__codelineno-23-151" name="__codelineno-23-151" href="#__codelineno-23-151"></a>        (Choices: absent, present)[Default: present]
+</span><span id="__span-23-152"><a id="__codelineno-23-152" name="__codelineno-23-152" href="#__codelineno-23-152"></a>        type: str
+</span><span id="__span-23-153"><a id="__codelineno-23-153" name="__codelineno-23-153" href="#__codelineno-23-153"></a>
+</span><span id="__span-23-154"><a id="__codelineno-23-154" name="__codelineno-23-154" href="#__codelineno-23-154"></a>- validate_certs
+</span><span id="__span-23-155"><a id="__codelineno-23-155" name="__codelineno-23-155" href="#__codelineno-23-155"></a>        If `no&#39;, SSL certificates will not be validated. This should
+</span><span id="__span-23-156"><a id="__codelineno-23-156" name="__codelineno-23-156" href="#__codelineno-23-156"></a>        only be used on personally controlled sites using self-signed
+</span><span id="__span-23-157"><a id="__codelineno-23-157" name="__codelineno-23-157" href="#__codelineno-23-157"></a>        certificates.
+</span><span id="__span-23-158"><a id="__codelineno-23-158" name="__codelineno-23-158" href="#__codelineno-23-158"></a>        [Default: True]
+</span><span id="__span-23-159"><a id="__codelineno-23-159" name="__codelineno-23-159" href="#__codelineno-23-159"></a>        type: raw
+</span><span id="__span-23-160"><a id="__codelineno-23-160" name="__codelineno-23-160" href="#__codelineno-23-160"></a>
+</span><span id="__span-23-161"><a id="__codelineno-23-161" name="__codelineno-23-161" href="#__codelineno-23-161"></a>
+</span><span id="__span-23-162"><a id="__codelineno-23-162" name="__codelineno-23-162" href="#__codelineno-23-162"></a>NOTES:
+</span><span id="__span-23-163"><a id="__codelineno-23-163" name="__codelineno-23-163" href="#__codelineno-23-163"></a>      * Tags should be defined as a YAML list
+</span><span id="__span-23-164"><a id="__codelineno-23-164" name="__codelineno-23-164" href="#__codelineno-23-164"></a>      * This should be ran with connection `local&#39; and hosts
+</span><span id="__span-23-165"><a id="__codelineno-23-165" name="__codelineno-23-165" href="#__codelineno-23-165"></a>        `localhost&#39;
+</span><span id="__span-23-166"><a id="__codelineno-23-166" name="__codelineno-23-166" href="#__codelineno-23-166"></a>
+</span><span id="__span-23-167"><a id="__codelineno-23-167" name="__codelineno-23-167" href="#__codelineno-23-167"></a>
+</span><span id="__span-23-168"><a id="__codelineno-23-168" name="__codelineno-23-168" href="#__codelineno-23-168"></a>REQUIREMENTS:  pynetbox
+</span><span id="__span-23-169"><a id="__codelineno-23-169" name="__codelineno-23-169" href="#__codelineno-23-169"></a>
+</span><span id="__span-23-170"><a id="__codelineno-23-170" name="__codelineno-23-170" href="#__codelineno-23-170"></a>AUTHOR: Mikhail Yohman (@FragmentedPacket), David Gomez (@amb1s1)
+</span><span id="__span-23-171"><a id="__codelineno-23-171" name="__codelineno-23-171" href="#__codelineno-23-171"></a>
+</span><span id="__span-23-172"><a id="__codelineno-23-172" name="__codelineno-23-172" href="#__codelineno-23-172"></a>METADATA:
+</span><span id="__span-23-173"><a id="__codelineno-23-173" name="__codelineno-23-173" href="#__codelineno-23-173"></a>  metadata_version: &#39;1.1&#39;
+</span><span id="__span-23-174"><a id="__codelineno-23-174" name="__codelineno-23-174" href="#__codelineno-23-174"></a>  status:
+</span><span id="__span-23-175"><a id="__codelineno-23-175" name="__codelineno-23-175" href="#__codelineno-23-175"></a>  - preview
+</span><span id="__span-23-176"><a id="__codelineno-23-176" name="__codelineno-23-176" href="#__codelineno-23-176"></a>  supported_by: community
+</span><span id="__span-23-177"><a id="__codelineno-23-177" name="__codelineno-23-177" href="#__codelineno-23-177"></a>
+</span><span id="__span-23-178"><a id="__codelineno-23-178" name="__codelineno-23-178" href="#__codelineno-23-178"></a>
+</span><span id="__span-23-179"><a id="__codelineno-23-179" name="__codelineno-23-179" href="#__codelineno-23-179"></a>VERSION_ADDED_COLLECTION: netbox.netbox
+</span><span id="__span-23-180"><a id="__codelineno-23-180" name="__codelineno-23-180" href="#__codelineno-23-180"></a>
+</span><span id="__span-23-181"><a id="__codelineno-23-181" name="__codelineno-23-181" href="#__codelineno-23-181"></a>EXAMPLES:
+</span><span id="__span-23-182"><a id="__codelineno-23-182" name="__codelineno-23-182" href="#__codelineno-23-182"></a>
+</span><span id="__span-23-183"><a id="__codelineno-23-183" name="__codelineno-23-183" href="#__codelineno-23-183"></a>- name: &quot;Test Netbox modules&quot;
+</span><span id="__span-23-184"><a id="__codelineno-23-184" name="__codelineno-23-184" href="#__codelineno-23-184"></a>  connection: local
+</span><span id="__span-23-185"><a id="__codelineno-23-185" name="__codelineno-23-185" href="#__codelineno-23-185"></a>  hosts: localhost
+</span><span id="__span-23-186"><a id="__codelineno-23-186" name="__codelineno-23-186" href="#__codelineno-23-186"></a>  gather_facts: False
+</span><span id="__span-23-187"><a id="__codelineno-23-187" name="__codelineno-23-187" href="#__codelineno-23-187"></a>
+</span><span id="__span-23-188"><a id="__codelineno-23-188" name="__codelineno-23-188" href="#__codelineno-23-188"></a>  tasks:
+</span><span id="__span-23-189"><a id="__codelineno-23-189" name="__codelineno-23-189" href="#__codelineno-23-189"></a>    - name: Create device within Netbox with only required information
+</span><span id="__span-23-190"><a id="__codelineno-23-190" name="__codelineno-23-190" href="#__codelineno-23-190"></a>      netbox_device:
+</span><span id="__span-23-191"><a id="__codelineno-23-191" name="__codelineno-23-191" href="#__codelineno-23-191"></a>        netbox_url: http://netbox.local
+</span><span id="__span-23-192"><a id="__codelineno-23-192" name="__codelineno-23-192" href="#__codelineno-23-192"></a>        netbox_token: thisIsMyToken
+</span><span id="__span-23-193"><a id="__codelineno-23-193" name="__codelineno-23-193" href="#__codelineno-23-193"></a>        data:
+</span><span id="__span-23-194"><a id="__codelineno-23-194" name="__codelineno-23-194" href="#__codelineno-23-194"></a>          name: Test Device
+</span><span id="__span-23-195"><a id="__codelineno-23-195" name="__codelineno-23-195" href="#__codelineno-23-195"></a>          device_type: C9410R
+</span><span id="__span-23-196"><a id="__codelineno-23-196" name="__codelineno-23-196" href="#__codelineno-23-196"></a>          device_role: Core Switch
+</span><span id="__span-23-197"><a id="__codelineno-23-197" name="__codelineno-23-197" href="#__codelineno-23-197"></a>          site: Main
+</span><span id="__span-23-198"><a id="__codelineno-23-198" name="__codelineno-23-198" href="#__codelineno-23-198"></a>        state: present
+</span><span id="__span-23-199"><a id="__codelineno-23-199" name="__codelineno-23-199" href="#__codelineno-23-199"></a>
+</span><span id="__span-23-200"><a id="__codelineno-23-200" name="__codelineno-23-200" href="#__codelineno-23-200"></a>    - name: Create device within Netbox with empty string name to generate UUID
+</span><span id="__span-23-201"><a id="__codelineno-23-201" name="__codelineno-23-201" href="#__codelineno-23-201"></a>      netbox_device:
+</span><span id="__span-23-202"><a id="__codelineno-23-202" name="__codelineno-23-202" href="#__codelineno-23-202"></a>        netbox_url: http://netbox.local
+</span><span id="__span-23-203"><a id="__codelineno-23-203" name="__codelineno-23-203" href="#__codelineno-23-203"></a>        netbox_token: thisIsMyToken
+</span><span id="__span-23-204"><a id="__codelineno-23-204" name="__codelineno-23-204" href="#__codelineno-23-204"></a>        data:
+</span><span id="__span-23-205"><a id="__codelineno-23-205" name="__codelineno-23-205" href="#__codelineno-23-205"></a>          name: &quot;&quot;
+</span><span id="__span-23-206"><a id="__codelineno-23-206" name="__codelineno-23-206" href="#__codelineno-23-206"></a>          device_type: C9410R
+</span><span id="__span-23-207"><a id="__codelineno-23-207" name="__codelineno-23-207" href="#__codelineno-23-207"></a>          device_role: Core Switch
+</span><span id="__span-23-208"><a id="__codelineno-23-208" name="__codelineno-23-208" href="#__codelineno-23-208"></a>          site: Main
+</span><span id="__span-23-209"><a id="__codelineno-23-209" name="__codelineno-23-209" href="#__codelineno-23-209"></a>        state: present
+</span><span id="__span-23-210"><a id="__codelineno-23-210" name="__codelineno-23-210" href="#__codelineno-23-210"></a>
+</span><span id="__span-23-211"><a id="__codelineno-23-211" name="__codelineno-23-211" href="#__codelineno-23-211"></a>    - name: Delete device within netbox
+</span><span id="__span-23-212"><a id="__codelineno-23-212" name="__codelineno-23-212" href="#__codelineno-23-212"></a>      netbox_device:
+</span><span id="__span-23-213"><a id="__codelineno-23-213" name="__codelineno-23-213" href="#__codelineno-23-213"></a>        netbox_url: http://netbox.local
+</span><span id="__span-23-214"><a id="__codelineno-23-214" name="__codelineno-23-214" href="#__codelineno-23-214"></a>        netbox_token: thisIsMyToken
+</span><span id="__span-23-215"><a id="__codelineno-23-215" name="__codelineno-23-215" href="#__codelineno-23-215"></a>        data:
+</span><span id="__span-23-216"><a id="__codelineno-23-216" name="__codelineno-23-216" href="#__codelineno-23-216"></a>          name: Test Device
+</span><span id="__span-23-217"><a id="__codelineno-23-217" name="__codelineno-23-217" href="#__codelineno-23-217"></a>        state: absent
+</span><span id="__span-23-218"><a id="__codelineno-23-218" name="__codelineno-23-218" href="#__codelineno-23-218"></a>
+</span><span id="__span-23-219"><a id="__codelineno-23-219" name="__codelineno-23-219" href="#__codelineno-23-219"></a>    - name: Create device with tags
+</span><span id="__span-23-220"><a id="__codelineno-23-220" name="__codelineno-23-220" href="#__codelineno-23-220"></a>      netbox_device:
+</span><span id="__span-23-221"><a id="__codelineno-23-221" name="__codelineno-23-221" href="#__codelineno-23-221"></a>        netbox_url: http://netbox.local
+</span><span id="__span-23-222"><a id="__codelineno-23-222" name="__codelineno-23-222" href="#__codelineno-23-222"></a>        netbox_token: thisIsMyToken
+</span><span id="__span-23-223"><a id="__codelineno-23-223" name="__codelineno-23-223" href="#__codelineno-23-223"></a>        data:
+</span><span id="__span-23-224"><a id="__codelineno-23-224" name="__codelineno-23-224" href="#__codelineno-23-224"></a>          name: Another Test Device
+</span><span id="__span-23-225"><a id="__codelineno-23-225" name="__codelineno-23-225" href="#__codelineno-23-225"></a>          device_type: C9410R
+</span><span id="__span-23-226"><a id="__codelineno-23-226" name="__codelineno-23-226" href="#__codelineno-23-226"></a>          device_role: Core Switch
+</span><span id="__span-23-227"><a id="__codelineno-23-227" name="__codelineno-23-227" href="#__codelineno-23-227"></a>          site: Main
+</span><span id="__span-23-228"><a id="__codelineno-23-228" name="__codelineno-23-228" href="#__codelineno-23-228"></a>          local_context_data:
+</span><span id="__span-23-229"><a id="__codelineno-23-229" name="__codelineno-23-229" href="#__codelineno-23-229"></a>            bgp: &quot;65000&quot;
+</span><span id="__span-23-230"><a id="__codelineno-23-230" name="__codelineno-23-230" href="#__codelineno-23-230"></a>          tags:
+</span><span id="__span-23-231"><a id="__codelineno-23-231" name="__codelineno-23-231" href="#__codelineno-23-231"></a>            - Schnozzberry
+</span><span id="__span-23-232"><a id="__codelineno-23-232" name="__codelineno-23-232" href="#__codelineno-23-232"></a>        state: present
+</span><span id="__span-23-233"><a id="__codelineno-23-233" name="__codelineno-23-233" href="#__codelineno-23-233"></a>
+</span><span id="__span-23-234"><a id="__codelineno-23-234" name="__codelineno-23-234" href="#__codelineno-23-234"></a>    - name: Update the rack and position of an existing device
+</span><span id="__span-23-235"><a id="__codelineno-23-235" name="__codelineno-23-235" href="#__codelineno-23-235"></a>      netbox_device:
+</span><span id="__span-23-236"><a id="__codelineno-23-236" name="__codelineno-23-236" href="#__codelineno-23-236"></a>        netbox_url: http://netbox.local
+</span><span id="__span-23-237"><a id="__codelineno-23-237" name="__codelineno-23-237" href="#__codelineno-23-237"></a>        netbox_token: thisIsMyToken
+</span><span id="__span-23-238"><a id="__codelineno-23-238" name="__codelineno-23-238" href="#__codelineno-23-238"></a>        data:
+</span><span id="__span-23-239"><a id="__codelineno-23-239" name="__codelineno-23-239" href="#__codelineno-23-239"></a>          name: Test Device
+</span><span id="__span-23-240"><a id="__codelineno-23-240" name="__codelineno-23-240" href="#__codelineno-23-240"></a>          rack: Test Rack
+</span><span id="__span-23-241"><a id="__codelineno-23-241" name="__codelineno-23-241" href="#__codelineno-23-241"></a>          position: 10
+</span><span id="__span-23-242"><a id="__codelineno-23-242" name="__codelineno-23-242" href="#__codelineno-23-242"></a>          face: Front
+</span><span id="__span-23-243"><a id="__codelineno-23-243" name="__codelineno-23-243" href="#__codelineno-23-243"></a>        state: present
+</span><span id="__span-23-244"><a id="__codelineno-23-244" name="__codelineno-23-244" href="#__codelineno-23-244"></a>
+</span><span id="__span-23-245"><a id="__codelineno-23-245" name="__codelineno-23-245" href="#__codelineno-23-245"></a>
+</span><span id="__span-23-246"><a id="__codelineno-23-246" name="__codelineno-23-246" href="#__codelineno-23-246"></a>RETURN VALUES:
+</span><span id="__span-23-247"><a id="__codelineno-23-247" name="__codelineno-23-247" href="#__codelineno-23-247"></a>- device
+</span><span id="__span-23-248"><a id="__codelineno-23-248" name="__codelineno-23-248" href="#__codelineno-23-248"></a>        Serialized object as created or already existent within Netbox
+</span><span id="__span-23-249"><a id="__codelineno-23-249" name="__codelineno-23-249" href="#__codelineno-23-249"></a>
+</span><span id="__span-23-250"><a id="__codelineno-23-250" name="__codelineno-23-250" href="#__codelineno-23-250"></a>        returned: success (when `state=present&#39;)
+</span><span id="__span-23-251"><a id="__codelineno-23-251" name="__codelineno-23-251" href="#__codelineno-23-251"></a>        type: dict
+</span><span id="__span-23-252"><a id="__codelineno-23-252" name="__codelineno-23-252" href="#__codelineno-23-252"></a>
+</span><span id="__span-23-253"><a id="__codelineno-23-253" name="__codelineno-23-253" href="#__codelineno-23-253"></a>- msg
+</span><span id="__span-23-254"><a id="__codelineno-23-254" name="__codelineno-23-254" href="#__codelineno-23-254"></a>        Message indicating failure or info about what has been
+</span><span id="__span-23-255"><a id="__codelineno-23-255" name="__codelineno-23-255" href="#__codelineno-23-255"></a>        achieved
+</span><span id="__span-23-256"><a id="__codelineno-23-256" name="__codelineno-23-256" href="#__codelineno-23-256"></a>
+</span><span id="__span-23-257"><a id="__codelineno-23-257" name="__codelineno-23-257" href="#__codelineno-23-257"></a>        returned: always
+</span><span id="__span-23-258"><a id="__codelineno-23-258" name="__codelineno-23-258" href="#__codelineno-23-258"></a>        type: str
+</span></code></pre></div>
+<h3 id="summary"><a class="toclink" href="../../../../collection_install/#summary">Summary</a></h3>
+<p>Overall the process for getting going with this collection is two steps, of installing the Python dependency and installing the collection via Ansible Galaxy. With these done, you are on your way to using the NetBox Ansible Collection in your environment.</p>
+<h3 id="up-next"><a class="toclink" href="../../../../collection_install/#up-next">Up Next</a></h3>
+<ul>
+<li><a href="https://www.josh-v.com/netbox_ansible_collection/netbox-ansible-inventory_plugin/">Ansible Inventory</a></li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/22228848" alt="Josh VanDeraa">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2020-11-22 00:00:00">November 22, 2020</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../ansible/" class="md-meta__link">ansible</a>, 
+              <a href="../../../cisco/" class="md-meta__link">cisco</a>, 
+              <a href="../../" class="md-meta__link">netbox</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="ansible-netbox-getting-next-prefix-ip"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/">Ansible + NetBox: Getting Next Prefix / IP</a></h2>
+<p>This originates from a conversation had on Twitter about how to get the IP Prefix information from an IPAM tool, specifically   NetBox using Ansible. There are a couple of methodologies to go through, and I had originally started down the path of using the URI module. Which could be done. The more elegant solution is to use the NetBox Ansible Collections to handle the logic for you! Let’s take a look.</p>
+<p>Thank you to @ttl255 for the inspiration to the journey with the Collection!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using <a href="https://www.nautobot.com">Nautobot</a> due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.</p>
+</div>
+<blockquote>
+<p>The final playbook will be posted at the very bottom.</p>
+</blockquote>
+<h3 id="setup"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#setup">Setup</a></h3>
+<p>The NetBox environment for this is NetBox 2.9.9. I have not tested with previous versions, but believe that this will work with 2.8.x as well. The Ansible execution environment is Ansible 2.9.15. This is making use of the Ansible NetBox Collections using the FQCN for the NetBox modules and <strong>NOT</strong> the core modules.  </p>
+<p>The first thing to note with this is that there are two variables in the environment to help this. They are the URL and TOKEN. This is good practice to help pass this through without much changes. The primary prefix at the top of the code should likely also move into the environment so that it can be changed.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>NETBOX_URL
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>NETBOX_TOKEN
+</span></code></pre></div>
+<p>The lab device that will be having the configuration updated is the edge router of my GNS3 lab. This had one more interface available on it for me to change and rather than change things up significantly, I just used this device.</p>
+<h3 id="scenario"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#scenario">Scenario</a></h3>
+<p>To get the next available Prefix from NetBox, and assign the IP address to the interface on the router. Success criteria for this scenario include:  </p>
+<ol>
+<li>Allocate a /24 network prefix within NetBox for use</li>
+<li>Allocate the first usable (192.0.2.0/24 would be 192.0.2.1) as allocated within NetBox</li>
+<li>Add the IP address configuration to the router interface GigabitEthernet0/3</li>
+<li>Add the network to area 0 of the OSPF configuration</li>
+</ol>
+<p>The device has already been created in NetBox with all of the necessary interfaces. A separate post will be created around adding devices to NetBox. To get started on this I suggest taking a look at a YouTube video that I did for the Ansible Minneapolis Meetup - <a href="https://www.youtube.com/watch?v=GyQf5F0gr3w">https://www.youtube.com/watch?v=GyQf5F0gr3w</a> and the corresponding [GitHub repo]</p>
+<h3 id="netbox-prefix-allocation"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#netbox-prefix-allocation">NetBox Prefix Allocation</a></h3>
+<p>Here are the start the NetBox prefix allocation only has a single prefix defined at the start. Only 10.21.0.0/16, which is going to be the parent prefix.</p>
+<p><img alt="Empty NetBox Prefix Overview" src="/images/2020/11/netbox_prefix_overview_empty.png" /></p>
+<p>We can see that there are no children prefixes and the current allocation is 0.</p>
+<p><img alt="Empty NetBox Prefix" src="/images/2020/11/netbox_prefix_empty.png" /></p>
+<h3 id="creating-a-prefix-within-netbox"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#creating-a-prefix-within-netbox">Creating a Prefix within NetBox</a></h3>
+<p>The first step is to assign another prefix within NetBox. To do this the following task is used:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">“10 - GET NEW PREFIX FROM NETBOX {{ primary_prefix }}”</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="nt">netbox.netbox.netbox_prefix</span><span class="p">:</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="nt">netbox_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">“{{ lookup(‘env’, ‘NETBOX_URL’) }}”</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nt">netbox_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">“{{ lookup(‘env’, ‘NETBOX_TOKEN’) }}”</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">        </span><span class="nt">parent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">“{{ primary_prefix }}”</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="nt">prefix_length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">    </span><span class="w w-Error">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">      </span><span class="nt">first_available</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prefix_info</span>
+</span></code></pre></div>
+<p>This task is going to take from the parent prefix and allocate a prefix of length 24. This states to take the first available prefix. Executing the playbook we are building with the <code>-vv</code> option and the <code>stdout_callback=yaml</code> in the ansible.cfg file you can see the output:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nt">changed</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">rtr-edge</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">=&gt; changed=true</span><span class="w"> </span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">msg</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prefix 10.21.5.0/24 created</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">prefix</span><span class="p p-Indicator">:</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2020-11-22&#39;</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">    </span><span class="nt">custom_fields</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="w">    </span><span class="nt">is_pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="w">    </span><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2020-11-22T15:57:13.641224Z&#39;</span>
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="w">    </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.21.5.0/24</span>
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="w">    </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="w">    </span><span class="nt">site</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="w">    </span><span class="nt">tenant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://netbox.josh-v.com/api/ipam/prefixes/25/</span>
+</span><span id="__span-38-18"><a id="__codelineno-38-18" name="__codelineno-38-18" href="#__codelineno-38-18"></a><span class="w">    </span><span class="nt">vlan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-38-19"><a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a><span class="w">    </span><span class="nt">vrf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span></code></pre></div>
+<p>This response when registered will provide with the Prefix ID, prefix itself, and any additional items that may have been set for your NetBox environment. After running this a few times and this demo being the sixth execution this is now what the NetBox environment looks like for prefixes:</p>
+<p><img alt="NetBox with 6 prefixes" src="/images/2020/11/netbox_with_prefixes.png" /></p>
+<h3 id="ip-address-allocation"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#ip-address-allocation">IP Address Allocation</a></h3>
+<p>After getting the first task to allocate the prefix, next up is to assign the IP address from the prefix. This task allocates an IP address from the prefix that was just previously allocated.</p>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
+<span class="normal"><a href="#__codelineno-39-2">2</a></span>
+<span class="normal"><a href="#__codelineno-39-3">3</a></span>
+<span class="normal"><a href="#__codelineno-39-4">4</a></span>
+<span class="normal"><a href="#__codelineno-39-5">5</a></span>
+<span class="normal"><a href="#__codelineno-39-6">6</a></span>
+<span class="normal"><a href="#__codelineno-39-7">7</a></span>
+<span class="normal"><a href="#__codelineno-39-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;20</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ALLOCATE</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">FOR</span><span class="nv"> </span><span class="s">THE</span><span class="nv"> </span><span class="s">ROUTER</span><span class="nv"> </span><span class="s">INTERFACE&quot;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="w">  </span><span class="nt">netbox.netbox.netbox_ip_address</span><span class="p">:</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="w">    </span><span class="nt">netbox_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_URL&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="w">    </span><span class="nt">netbox_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_TOKEN&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="w">    </span><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6"></a><span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">prefix_info[&#39;prefix&#39;][&#39;prefix&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ip_address_info</span>
+</span></code></pre></div></td></tr></table></div>
+<p>On line 6 you see that the prefix gathered is mentioned via the variable. This is taken from the output that was seen from the NetBox Prefix allocation.</p>
+<p>This then looks like this for the output:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nt">changed</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">rtr-edge</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">=&gt; changed=true</span><span class="w"> </span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">ip_address</span><span class="p p-Indicator">:</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.21.5.1/24</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="nt">assigned_object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">    </span><span class="nt">assigned_object_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">    </span><span class="nt">assigned_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">    </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2020-11-22&#39;</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="w">    </span><span class="nt">custom_fields</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="w">    </span><span class="nt">dns_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">23</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a><span class="w">    </span><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2020-11-22T15:57:14.833379Z&#39;</span>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="w">    </span><span class="nt">nat_inside</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">    </span><span class="nt">nat_outside</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a><span class="w">    </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a><span class="w">    </span><span class="nt">tenant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://netbox.josh-v.com/api/ipam/ip-addresses/23/</span>
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a><span class="w">    </span><span class="nt">vrf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a><span class="w w-Error">  </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ip_address 10.21.5.1/24 created</span>
+</span></code></pre></div>
+<p>Taking a look at the NetBox Prefix View for the 10.21.5.0/24 network this is what you see:</p>
+<p><img alt="NetBox 10.21.5.0/24 prefix" src="/images/2020/11/netbox_prefix_view.png" /></p>
+<p>You can see that there is a single IP address allocated.</p>
+<h3 id="variable-shortening"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#variable-shortening">Variable Shortening</a></h3>
+<p>The next task in the Playbook is to shorten some of the variables. This is purely for visualization purposes. In order to not have long lines in the coming tasks, the following was done to create shorter line lengths:</p>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span>
+<span class="normal"><a href="#__codelineno-41-2">2</a></span>
+<span class="normal"><a href="#__codelineno-41-3">3</a></span>
+<span class="normal"><a href="#__codelineno-41-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;30</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">SET</span><span class="nv"> </span><span class="s">FACTS</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">ASSIGN</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">CISCO</span><span class="nv"> </span><span class="s">IOS</span><span class="nv"> </span><span class="s">ROUTER&quot;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="w">  </span><span class="nt">set_fact</span><span class="p">:</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="w">    </span><span class="nt">ip_address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;ip&#39;)</span><span class="nv">  </span><span class="s">}}&quot;</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="w">    </span><span class="nt">netmask</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;netmask&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="apply-the-cisco-configuration"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#apply-the-cisco-configuration">Apply the Cisco Configuration</a></h3>
+<p>Now that there is an IP address and prefix available, and assigned within NetBox, the next step is to add the configuration to the device. Since this is primarily a focus on the NetBox side of things this will be short.</p>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-42-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-42-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-42-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-42-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-42-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-42-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-42-10">10</a></span>
+<span class="normal"><a href="#__codelineno-42-11">11</a></span>
+<span class="normal"><a href="#__codelineno-42-12">12</a></span>
+<span class="normal"><a href="#__codelineno-42-13">13</a></span>
+<span class="normal"><a href="#__codelineno-42-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="w">    </span><span class="c1"># DEPLOY THE INFORMATION TO THE ROUTER</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;100</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ADD</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">INFORMATION</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">THE</span><span class="nv"> </span><span class="s">ROUTER&quot;</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="w">      </span><span class="nt">ios_config</span><span class="p">:</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="w">        </span><span class="nt">parents</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;interface</span><span class="nv"> </span><span class="s">GigabitEthernet0/3&quot;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="w">        </span><span class="nt">lines</span><span class="p">:</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ip</span><span class="nv"> </span><span class="s">address</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ip_address</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">netmask</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="w">        </span><span class="nt">save_when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changed</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8"></a>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;110</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ADD</span><span class="nv"> </span><span class="s">ROUTING</span><span class="nv"> </span><span class="s">CONFIGURATION&quot;</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10"></a><span class="w">      </span><span class="nt">ios_config</span><span class="p">:</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11"></a><span class="w">        </span><span class="nt">parents</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;router</span><span class="nv"> </span><span class="s">ospf</span><span class="nv"> </span><span class="s">1&quot;</span>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12"></a><span class="w">        </span><span class="nt">lines</span><span class="p">:</span>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;network</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;network&#39;)</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">netmask</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">area</span><span class="nv"> </span><span class="s">0&quot;</span>
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14"></a><span class="w">        </span><span class="nt">save_when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changed</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Lines 2-7 are the applying of the configuration to the interface to be used. Lines 9-14 are used to add the network statement to OSPF for the prefix. With this done the interface is now configured and routing is setup.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="l l-Scalar l-Scalar-Plain">TASK [100 - ADD IP ADDRESS INFORMATION TO THE ROUTER] ****************************************************************************************************************</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="l l-Scalar l-Scalar-Plain">changed</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">rtr-edge</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">=&gt; changed=true</span><span class="w"> </span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">ansible_facts</span><span class="p p-Indicator">:</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="nt">discovered_interpreter_python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/bin/python</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w w-Error">  </span><span class="nt">banners</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="w">  </span><span class="nt">commands</span><span class="p">:</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interface GigabitEthernet0/3</span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ip address 10.21.5.1 255.255.255.0</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a><span class="w">  </span><span class="nt">updates</span><span class="p">:</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interface GigabitEthernet0/3</span>
+</span><span id="__span-43-11"><a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ip address 10.21.5.1 255.255.255.0</span>
+</span><span id="__span-43-12"><a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a>
+</span><span id="__span-43-13"><a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a><span class="l l-Scalar l-Scalar-Plain">TASK [110 - ADD ROUTING CONFIGURATION] *******************************************************************************************************************************</span>
+</span><span id="__span-43-14"><a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a><span class="nt">changed</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">rtr-edge</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">=&gt; changed=true</span><span class="w"> </span>
+</span><span id="__span-43-15"><a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">banners</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-43-16"><a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a><span class="w">  </span><span class="nt">commands</span><span class="p">:</span>
+</span><span id="__span-43-17"><a id="__codelineno-43-17" name="__codelineno-43-17" href="#__codelineno-43-17"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">router ospf 1</span>
+</span><span id="__span-43-18"><a id="__codelineno-43-18" name="__codelineno-43-18" href="#__codelineno-43-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">network 10.21.5.0 255.255.255.0 area 0</span>
+</span><span id="__span-43-19"><a id="__codelineno-43-19" name="__codelineno-43-19" href="#__codelineno-43-19"></a><span class="w">  </span><span class="nt">updates</span><span class="p">:</span>
+</span><span id="__span-43-20"><a id="__codelineno-43-20" name="__codelineno-43-20" href="#__codelineno-43-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">router ospf 1</span>
+</span><span id="__span-43-21"><a id="__codelineno-43-21" name="__codelineno-43-21" href="#__codelineno-43-21"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">network 10.21.5.0 255.255.255.0 area 0</span>
+</span></code></pre></div>
+<h3 id="production-ready"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#production-ready">Production Ready</a></h3>
+<p>This is a quick demo and has some hand holding that needs to be done for it. There does need to be some Atomic handling added yet to make this a rock solid playbook. In a future post I will also cover how to simplify the save_when feature to help speed things up as well. This right now will save the configuration on each change. This should get simplified down to a single save execution.</p>
+<h3 id="final-playbook"><a class="toclink" href="../../../../netbox_ansible_allocate_prefix_ipaddress/#final-playbook">Final Playbook</a></h3>
+<p>Here is what the final playbook looks like at the moment, again not completely production ready, but is a good starting point.</p>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-44-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-44-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-44-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-44-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-44-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-44-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-44-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-44-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-44-10">10</a></span>
+<span class="normal"><a href="#__codelineno-44-11">11</a></span>
+<span class="normal"><a href="#__codelineno-44-12">12</a></span>
+<span class="normal"><a href="#__codelineno-44-13">13</a></span>
+<span class="normal"><a href="#__codelineno-44-14">14</a></span>
+<span class="normal"><a href="#__codelineno-44-15">15</a></span>
+<span class="normal"><a href="#__codelineno-44-16">16</a></span>
+<span class="normal"><a href="#__codelineno-44-17">17</a></span>
+<span class="normal"><a href="#__codelineno-44-18">18</a></span>
+<span class="normal"><a href="#__codelineno-44-19">19</a></span>
+<span class="normal"><a href="#__codelineno-44-20">20</a></span>
+<span class="normal"><a href="#__codelineno-44-21">21</a></span>
+<span class="normal"><a href="#__codelineno-44-22">22</a></span>
+<span class="normal"><a href="#__codelineno-44-23">23</a></span>
+<span class="normal"><a href="#__codelineno-44-24">24</a></span>
+<span class="normal"><a href="#__codelineno-44-25">25</a></span>
+<span class="normal"><a href="#__codelineno-44-26">26</a></span>
+<span class="normal"><a href="#__codelineno-44-27">27</a></span>
+<span class="normal"><a href="#__codelineno-44-28">28</a></span>
+<span class="normal"><a href="#__codelineno-44-29">29</a></span>
+<span class="normal"><a href="#__codelineno-44-30">30</a></span>
+<span class="normal"><a href="#__codelineno-44-31">31</a></span>
+<span class="normal"><a href="#__codelineno-44-32">32</a></span>
+<span class="normal"><a href="#__codelineno-44-33">33</a></span>
+<span class="normal"><a href="#__codelineno-44-34">34</a></span>
+<span class="normal"><a href="#__codelineno-44-35">35</a></span>
+<span class="normal"><a href="#__codelineno-44-36">36</a></span>
+<span class="normal"><a href="#__codelineno-44-37">37</a></span>
+<span class="normal"><a href="#__codelineno-44-38">38</a></span>
+<span class="normal"><a href="#__codelineno-44-39">39</a></span>
+<span class="normal"><a href="#__codelineno-44-40">40</a></span>
+<span class="normal"><a href="#__codelineno-44-41">41</a></span>
+<span class="normal"><a href="#__codelineno-44-42">42</a></span>
+<span class="normal"><a href="#__codelineno-44-43">43</a></span>
+<span class="normal"><a href="#__codelineno-44-44">44</a></span>
+<span class="normal"><a href="#__codelineno-44-45">45</a></span>
+<span class="normal"><a href="#__codelineno-44-46">46</a></span>
+<span class="normal"><a href="#__codelineno-44-47">47</a></span>
+<span class="normal"><a href="#__codelineno-44-48">48</a></span>
+<span class="normal"><a href="#__codelineno-44-49">49</a></span>
+<span class="normal"><a href="#__codelineno-44-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="nn">---</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PLAY</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ASSIGN</span><span class="nv"> </span><span class="s">PREFIXES</span><span class="nv"> </span><span class="s">FOR</span><span class="nv"> </span><span class="s">HOST&quot;</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">network_cli</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rtr-edge</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7"></a><span class="w">    </span><span class="nt">primary_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.21.0.0/16&quot;</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LOCALHOST</span><span class="nv"> </span><span class="s">BLOCK&quot;</span>
+</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10"></a><span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11"></a><span class="w">      </span><span class="nt">block</span><span class="p">:</span>
+</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">GET</span><span class="nv"> </span><span class="s">NEW</span><span class="nv"> </span><span class="s">PREFIX</span><span class="nv"> </span><span class="s">FROM</span><span class="nv"> </span><span class="s">NETBOX</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">primary_prefix</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13"></a><span class="w">          </span><span class="nt">netbox.netbox.netbox_prefix</span><span class="p">:</span>
+</span><span id="__span-44-14"><a id="__codelineno-44-14" name="__codelineno-44-14"></a><span class="w">            </span><span class="nt">netbox_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_URL&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-15"><a id="__codelineno-44-15" name="__codelineno-44-15"></a><span class="w">            </span><span class="nt">netbox_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_TOKEN&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-16"><a id="__codelineno-44-16" name="__codelineno-44-16"></a><span class="w">            </span><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-44-17"><a id="__codelineno-44-17" name="__codelineno-44-17"></a><span class="w">              </span><span class="nt">parent</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">primary_prefix</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-18"><a id="__codelineno-44-18" name="__codelineno-44-18"></a><span class="w">              </span><span class="nt">prefix_length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24</span>
+</span><span id="__span-44-19"><a id="__codelineno-44-19" name="__codelineno-44-19"></a><span class="w">            </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+</span><span id="__span-44-20"><a id="__codelineno-44-20" name="__codelineno-44-20"></a><span class="w">            </span><span class="nt">first_available</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+</span><span id="__span-44-21"><a id="__codelineno-44-21" name="__codelineno-44-21"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prefix_info</span>
+</span><span id="__span-44-22"><a id="__codelineno-44-22" name="__codelineno-44-22"></a>
+</span><span id="__span-44-23"><a id="__codelineno-44-23" name="__codelineno-44-23"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;20</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ALLOCATE</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">FOR</span><span class="nv"> </span><span class="s">THE</span><span class="nv"> </span><span class="s">ROUTER</span><span class="nv"> </span><span class="s">INTERFACE&quot;</span>
+</span><span id="__span-44-24"><a id="__codelineno-44-24" name="__codelineno-44-24"></a><span class="w">          </span><span class="nt">netbox.netbox.netbox_ip_address</span><span class="p">:</span>
+</span><span id="__span-44-25"><a id="__codelineno-44-25" name="__codelineno-44-25"></a><span class="w">            </span><span class="nt">netbox_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_URL&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-26"><a id="__codelineno-44-26" name="__codelineno-44-26"></a><span class="w">            </span><span class="nt">netbox_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,</span><span class="nv"> </span><span class="s">&#39;NETBOX_TOKEN&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-27"><a id="__codelineno-44-27" name="__codelineno-44-27"></a><span class="w">            </span><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-44-28"><a id="__codelineno-44-28" name="__codelineno-44-28"></a><span class="w">              </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">prefix_info[&#39;prefix&#39;][&#39;prefix&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-29"><a id="__codelineno-44-29" name="__codelineno-44-29"></a><span class="w">            </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
+</span><span id="__span-44-30"><a id="__codelineno-44-30" name="__codelineno-44-30"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ip_address_info</span>
+</span><span id="__span-44-31"><a id="__codelineno-44-31" name="__codelineno-44-31"></a>
+</span><span id="__span-44-32"><a id="__codelineno-44-32" name="__codelineno-44-32"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;30</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">SET</span><span class="nv"> </span><span class="s">FACTS</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">ASSIGN</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">CISCO</span><span class="nv"> </span><span class="s">IOS</span><span class="nv"> </span><span class="s">ROUTER&quot;</span>
+</span><span id="__span-44-33"><a id="__codelineno-44-33" name="__codelineno-44-33"></a><span class="w">          </span><span class="nt">set_fact</span><span class="p">:</span>
+</span><span id="__span-44-34"><a id="__codelineno-44-34" name="__codelineno-44-34"></a><span class="w">            </span><span class="nt">ip_address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;ip&#39;)</span><span class="nv">  </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-35"><a id="__codelineno-44-35" name="__codelineno-44-35"></a><span class="w">            </span><span class="nt">netmask</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;netmask&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-36"><a id="__codelineno-44-36" name="__codelineno-44-36"></a>
+</span><span id="__span-44-37"><a id="__codelineno-44-37" name="__codelineno-44-37"></a><span class="w">    </span><span class="c1"># DEPLOY THE INFORMATION TO THE ROUTER</span>
+</span><span id="__span-44-38"><a id="__codelineno-44-38" name="__codelineno-44-38"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;100</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ADD</span><span class="nv"> </span><span class="s">IP</span><span class="nv"> </span><span class="s">ADDRESS</span><span class="nv"> </span><span class="s">INFORMATION</span><span class="nv"> </span><span class="s">TO</span><span class="nv"> </span><span class="s">THE</span><span class="nv"> </span><span class="s">ROUTER&quot;</span>
+</span><span id="__span-44-39"><a id="__codelineno-44-39" name="__codelineno-44-39"></a><span class="w">      </span><span class="nt">ios_config</span><span class="p">:</span>
+</span><span id="__span-44-40"><a id="__codelineno-44-40" name="__codelineno-44-40"></a><span class="w">        </span><span class="nt">parents</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;interface</span><span class="nv"> </span><span class="s">GigabitEthernet0/3&quot;</span>
+</span><span id="__span-44-41"><a id="__codelineno-44-41" name="__codelineno-44-41"></a><span class="w">        </span><span class="nt">lines</span><span class="p">:</span>
+</span><span id="__span-44-42"><a id="__codelineno-44-42" name="__codelineno-44-42"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ip</span><span class="nv"> </span><span class="s">address</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ip_address</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">netmask</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</span><span id="__span-44-43"><a id="__codelineno-44-43" name="__codelineno-44-43"></a><span class="w">        </span><span class="nt">save_when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changed</span>
+</span><span id="__span-44-44"><a id="__codelineno-44-44" name="__codelineno-44-44"></a>
+</span><span id="__span-44-45"><a id="__codelineno-44-45" name="__codelineno-44-45"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;110</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">ADD</span><span class="nv"> </span><span class="s">ROUTING</span><span class="nv"> </span><span class="s">CONFIGURATION&quot;</span>
+</span><span id="__span-44-46"><a id="__codelineno-44-46" name="__codelineno-44-46"></a><span class="w">      </span><span class="nt">ios_config</span><span class="p">:</span>
+</span><span id="__span-44-47"><a id="__codelineno-44-47" name="__codelineno-44-47"></a><span class="w">        </span><span class="nt">parents</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;router</span><span class="nv"> </span><span class="s">ospf</span><span class="nv"> </span><span class="s">1&quot;</span>
+</span><span id="__span-44-48"><a id="__codelineno-44-48" name="__codelineno-44-48"></a><span class="w">        </span><span class="nt">lines</span><span class="p">:</span>
+</span><span id="__span-44-49"><a id="__codelineno-44-49" name="__codelineno-44-49"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;network</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ip_address_info[&#39;ip_address&#39;][&#39;address&#39;]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;network&#39;)</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">netmask</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">area</span><span class="nv"> </span><span class="s">0&quot;</span>
+</span><span id="__span-44-50"><a id="__codelineno-44-50" name="__codelineno-44-50"></a><span class="w">        </span><span class="nt">save_when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changed</span>
+</span></code></pre></div></td></tr></table></div>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span>
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../../nautobot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: nautobot">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                nautobot
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../netdevops/" class="md-footer__link md-footer__link--next" aria-label="Next: netdevops">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                netdevops
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2024 Josh VanDeraa – <a href="#__consent">Change cookie settings</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jvanderaa" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/josh-vanderaa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/vanderaaj" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@jvanderaa" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "content.code.copy", "content.action.view", "content.tabs.link", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
