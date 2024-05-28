@@ -16,6 +16,8 @@ Earlier this month I was able to hit the _publish_ button on a new book - Open S
 
 The book is published on [LeanPub](https://leanpub.com/opensourcenetworkmanagement), which is a publish early, publish often marketplace. The book is digital only, with PDF, ePub, and mobi formats available. Currently the book is indicating 80% completeness, with most of the technical content in place already! There are mainly soft edits in this early version.
 
+<!-- more -->
+
 It has been a while since I have put some content out on my blog site. Why? Well, this book is the reason why. The time that I would have been making some content here, I have been putting into making the book. This will change. I will be putting out a few more posts upcoming.
 
 ## Tools At Launch

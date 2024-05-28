@@ -13,27 +13,15 @@ title: Discontiguous Masks
 tags: ["network design", "segmentation"]
 ---
 
-Discontiguous masks are something that is going to be somewhat historic within the network design
-toolbox. It is basically a methodology of looking at particular bits of a network/host definition.
-The big thing to recall is that as a packet crosses a network device it does so within a packet. The
-packet is nothing more than a stream of bits. Within the packet header there are bits that define
-the source network address and the destination network address. This is where discontiguous masks
-come into play. With a system that can leverage discontiguous masks, you can access information
-about any part of the network bits, not just starting reading and then stopping (or vice versa) when
-you look at a bit boundry masking only.
+Discontiguous masks are something that is going to be somewhat historic within the network design toolbox. It is basically a methodology of looking at particular bits of a network/host definition. The big thing to recall is that as a packet crosses a network device it does so within a packet. The packet is nothing more than a stream of bits. Within the packet header there are bits that define the source network address and the destination network address. This is where discontiguous masks come into play. With a system that can leverage discontiguous masks, you can access information about any part of the network bits, not just starting reading and then stopping (or vice versa) when you look at a bit boundry masking only.
 
-This is a originally posted from my previous blog here 
-[Previous Post](https://connectforall.blogspot.com/2011/06/discontiguous-masks.html). I plan to give
-this a complete re-write when I have the opportunity.
+<!-- more -->
+
+This is a originally posted from my previous blog here  [Previous Post](https://connectforall.blogspot.com/2011/06/discontiguous-masks.html). I plan to give this a complete re-write when I have the opportunity.
 
 ## Original post
 
-Simply put, discontiguous masks are those that are represented by a potentially alternating sets of
-1s and 0s within a mask (subnet/standard mask or wild card). This does not really apply to a subnet
-mask as you have a network portion of the address, and then the host portion, so everything is
-contiguous. The primary place that you will see this is in Access Control Lists or ACLs (for more
-info on ACLs, here is a quick link to a Wikipedia article. This may be a topic later on within this
-blog http://en.wikipedia.org/wiki/Standard_Access_Control_List).  
+Simply put, discontiguous masks are those that are represented by a potentially alternating sets of 1s and 0s within a mask (subnet/standard mask or wild card). This does not really apply to a subnet mask as you have a network portion of the address, and then the host portion, so everything is contiguous. The primary place that you will see this is in Access Control Lists or ACLs (for more info on ACLs, here is a quick link to a Wikipedia article. This may be a topic later on within this blog http://en.wikipedia.org/wiki/Standard_Access_Control_List).  
 
 The first two use cases that these come in handy for are for Quality of Service ACLs and
 Security/Firewall ACLs. There are many more uses out there, but these are the two primary ones that

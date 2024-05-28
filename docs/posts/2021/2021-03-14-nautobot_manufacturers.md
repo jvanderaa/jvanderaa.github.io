@@ -17,6 +17,8 @@ toc: true
 ---
 Adding your manufacturers via code is the easy way to get started with your Nautobot devices. Immediately after adding Sites, the next thing to get going when using Nautobot as your Source of Truth is to add in Manufacturers. These are just that, who makes the gear that you use. For this demonstration you will see adding just a few manufacturers. I'm not necessarily picking on any vendors and who should or shouldn't be here. It is just what my background brings.
 
+<!-- more -->
+
 ## Module Documentation
 
 * [Read the Docs](https://nautobot-ansible.readthedocs.io/en/latest/plugins/manufacturer_module.html)

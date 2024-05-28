@@ -21,6 +21,8 @@ This post is going to give information on how to install the collection as it ma
 
 If you were a user of the NetBox Ansible Collection previously, you will notice a few differences. The first big difference in the modules is that there is no preface of nautobot_ before each module. Since this Collection is developed after Ansible 2.10 they are using the FQCN (Fully Qualified Collection Name), there is no longer the need to prefix the name to the module name. So where there was a netbox_device before it will now be just device, underneath the FQCN of `networktocode.nautobot.device` as an example.  
 
+<!-- more -->
+
 ## Installation
 
 Installation is done via Ansible Galaxy. It is recommended to have the latest version of the collection when working on it as there are updates happening routinely. There is a **Python requirement** with many the modules of the [pynautobot](https://pynautobot.readthedocs.io) Python package.  

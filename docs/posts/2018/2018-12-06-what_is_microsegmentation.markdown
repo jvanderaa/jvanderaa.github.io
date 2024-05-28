@@ -19,6 +19,8 @@ In a recent podcast there was some discussion that it sounded like the term **Mi
 was being used where it was really traditional **segmentation**. So I thought I would put out a few
 thoughts on this front.
 
+<!-- more -->
+
 ## What is Segmnentation in Networking
 
 Segmentation is a methodology to create separatet _zones_ of sorts of various traffic types. Various

@@ -28,6 +28,9 @@ status.
 During this post I will relate the Ansible data structures/formats to that of Python. So the terms
 will be dictionary (hashes) and lists (lists).
 
+<!-- more -->
+
+
 **Playbook Design Process**
 
 1. Make sure that I can connect to the devices with a simple show command

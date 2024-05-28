@@ -18,6 +18,8 @@ One of the best features of [Nautobot](https://nautobot.readthedocs.io/en/stable
 
 Nautobot supplies an [API endpoint](https://nautobot.readthedocs.io/en/stable/additional-features/jobs/#via-the-api) to start execution of jobs. The big deal about why you would want to do this inside of Nautobot (even if you do not have any other data inside of Nautobot, but you should add data, it is a perk) is that you get an authentication mechanism with the Nautobot token setup and a logging mechanism. With Nautobot user accounts you can create tokens that will handle the API authentication. This is helpful that you do not need to add that into your own Flask, FastAPI, or Django application yourself. This is the same for the logging mechanism. Every job execution provides a log of the execution and the result.
 
+<!-- more -->
+
 In this post I'm going to walk you through adding an API endpoint using the Git synchronization capabilities of Nautobot. This will provide a mechanism to add users to a Meraki organization. This is meant as an example. You can definitely look to leverage this in your own Nautobot install as well.
 
 ## Creating Your Job

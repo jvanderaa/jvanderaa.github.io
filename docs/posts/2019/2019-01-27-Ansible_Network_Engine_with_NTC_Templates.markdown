@@ -24,6 +24,8 @@ sidebar:
 In this post we will talk about primarily three components that will work together to get structured
 data out of the command line of a Cisco device. The three pieces are:
 
+<!-- more -->
+
 - [Ansible Network Engine](https://github.com/ansible-network/network-engine)  
 - [Google's TextFSM](https://github.com/google/textfsm)
 - [Network to Code Templates](https://github.com/networktocode/ntc-templates)

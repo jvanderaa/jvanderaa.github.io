@@ -17,6 +17,8 @@ This is the first post as I start to look at the NetBox Ansible Collection. This
 - ReadTheDocs: [https://netbox-ansible-collection.readthedocs.io/en/latest/](https://netbox-ansible-collection.readthedocs.io/en/latest/)
 - Galaxy Page: [https://galaxy.ansible.com/netbox/netbox](https://galaxy.ansible.com/netbox/netbox)  
 
+<!-- more -->
+
 !!! note
     This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 

@@ -21,6 +21,9 @@ on my journey of using Docker containers. Let me jump into the problem and why? 
 experiences with Docker, and the upcoming move to slim down Ansible and install Collections for
 most Network Automation modules, I thought it would be a good thing to get a write up done.
 
+<!-- more -->
+
+
 ## Problem
 
 From a Network Automation standpoint, there is much change still occurring in the tooling ecosystem.

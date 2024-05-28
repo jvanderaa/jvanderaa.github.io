@@ -18,6 +18,8 @@ At DevNet Create 2018 there is a video that was put together related to CI/CD in
 [DevNet Create Video](https://www.youtube.com/watch?v=LinGy8DGIJ8&index=19&list=WL&t=16s)  
 [Pete Lumbis CI/CD Info](https://gitlab.com/plumbis/cumulus-ci-cd)
 
+<!-- more -->
+
 With tools such as VIRL, EveNG, and GNS3, there should be a methodology to be able to put a network together to do testing. I have not yet put together the full pipeline, but is something that I'm very interested in getting built some day.
 
 Once a network engineer has a full tested pipeline, we can maybe finally get to doing changes with more confidence and more during normal hours.

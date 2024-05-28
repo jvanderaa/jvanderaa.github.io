@@ -14,6 +14,8 @@ This is a topic that I'm fairly opinionated on as of late is looking at what sho
 
 > For the case of this blog post, I am going to use the term playbook to represent the automation being run. This is yes an Ansible term, but also apply this as your automation run that is using Nornir or any other automation framework.
 
+<!-- more -->
+
 ## What Should Be In an Inventory
 
 When taking a look at inventories there are usually a lot of options of what to include in your inventory for network devices. This can include the interfaces, VLANs on the device, BGP ASN, and connection information. For me, the _only_ thing that should be in the inventory is **connection information**. All of the other items such as BGP ASN, Interface Names, and anything else should be on a playbook by playbook basis. 

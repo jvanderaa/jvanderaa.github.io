@@ -14,6 +14,8 @@ toc: true
 
 This week Cisco announced the DevNet Expert certification exam. This exam and certification is something that I have been looking forward to for a long while. Dating back to the announcement of the certifications that were being provided. This was announced at Cisco Live 2019 in San Diego. I had started to lose some hope that this would become a reality with how long of a delay from the initial announcement to the announcement of availability. But it is now here. So here we go.
 
+<!-- more -->
+
 ## DevNet Cert Requirements
 
 For me this is going to be just the lab that is required. I already have the DevNet Professional certification, which has the DevCor exam as a requirement. This exam is the first requirement for the Expert certification. The second part is the lab, which is what the next several months of prep will be for me.

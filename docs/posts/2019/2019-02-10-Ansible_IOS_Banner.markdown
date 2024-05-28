@@ -26,6 +26,8 @@ modifying the banner on an IOS device. There are multiple reasons to want to man
 on a Cisco device. We will leave those reasons to you and the organization that you are a part of
 for that. For now, we will take a real quick look at the module.
 
+<!-- more -->
+
 ## Module Documentation
 
 First, the module documentation page is

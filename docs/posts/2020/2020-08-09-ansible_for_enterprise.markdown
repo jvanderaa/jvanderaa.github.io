@@ -19,6 +19,9 @@ your network, server, and desktop automation tools, there is at least one automa
 work with just about your entire IT stack. In this I will take a high level overview of some of the
 features that are there for you to explore.
 
+<!-- more -->
+
+
 ## Ansible for Network Automation
 
 The first area that I will be brief on is from the network side of things. I am a long time network

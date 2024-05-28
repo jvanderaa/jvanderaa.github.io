@@ -15,6 +15,8 @@ toc: true
 
 There does not appear to be a complete set of documentation pieces available for setting up Prometheus on the Home Assistant platform. This post will take you along on my journey of setting up the Home Assistant to get metrics from it. The link for the documentation is a good start at getting Prometheus installed. [https://www.home-assistant.io/integrations/prometheus/](https://www.home-assistant.io/integrations/prometheus/)
 
+<!-- more -->
+
 ## Starting Prometheus
 
 1. Edit your `configuration.yaml` file

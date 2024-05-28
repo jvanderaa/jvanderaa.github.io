@@ -18,6 +18,9 @@ Today I'm going to walk through the newest part of my personal workflow for work
 Straight to the point, this is going to be using Apple Automator to quickly open your project that
 you wish to work on within VS Code, and presumably PyCharm as well.  
 
+<!-- more -->
+
+
 ## Problem
 
 So what is the problem that I'm trying to solve? I am one that generally likes the workspace concept

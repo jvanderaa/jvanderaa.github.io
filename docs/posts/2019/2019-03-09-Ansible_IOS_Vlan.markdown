@@ -23,6 +23,8 @@ Back to it finally. Going to take a look at the Ansible module **ios_vlan**. The
 to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2
 images. There are a few interesting quirks (as I will call it) within the parameters for the module.
 
+<!-- more -->
+
 ## Module Documentation
 
 First, the module documentation page is

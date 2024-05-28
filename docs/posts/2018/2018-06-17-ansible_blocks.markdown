@@ -12,6 +12,8 @@ One of the more interesting features that I have just come across within the Ans
 world is that of the `block`. I find this very helpful for both error handling, and also grouping
 tasks into logical separation.
 
+<!-- more -->
+
 ## Ansible Official Link
 
 [Ansible Docs: Block](https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html)

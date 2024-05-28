@@ -25,6 +25,8 @@ In this post I'm going to be taking a deeper dive into the new in Ansible 2.8
 module. This may be one of the more complex modules to date and I'll try to
 make it as simple as possible.  
 
+<!-- more -->
+
 For a reminder about the BGP protocol is that this is the predominate protocol
 that runs the Internet. It is used to peer up with other companies and is what
 helps to make the Internet great. This is a very powerful protocol, and has been
