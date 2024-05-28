@@ -94,7 +94,13 @@ plugins:
       categories_name: "🏷️ Categories"
       pagination_per_page: 8
   - glightbox
-  - rss
+  - rss:
+      match_path: posts/.*
+      date_from_meta:
+        as_creaation: date
+      categories:
+        - categories
+      comments_path: "#__comments"
   - search:
       lang: en
   - tags:
