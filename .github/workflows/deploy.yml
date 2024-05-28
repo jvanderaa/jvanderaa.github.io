@@ -34,8 +34,8 @@ jobs:
         run: |
           cp site/feed_rss_created.xml site/feed.xml
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+      - name: Configure credentials
+        run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Publish blog
+        run: mkdocs gh-deploy
