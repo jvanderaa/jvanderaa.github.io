@@ -11,6 +11,8 @@ toc: true
 
 So, if you are a returning user you notice something that is a little bit different. I have migrated my blog site to a new site generator and format. I am now using [mkdocs-material] blog them that was introduced in late 2022 to the platform. The migration was not too painful to make, but I'm feeling in a good place about it at this point. The blog has been on a journey so far. It started off with a Jekyll themed site which I liked. Then I decided to move onto something that has a little more development. So I moved into the land of Hugo.
 
+<!-- more -->
+
 ## Why the Change
 
 The idea of changing first crept into my mind because I was having a mild panic attack after attempting to publish my latest post and GitHub Actions was failing the build process. It turned out that the processing time to build the Hugo blog was just taking longer than the timeout that was default at 30 seconds. In fairness to me, this didn't even cross my mind that it would be an issue since on my home system that same build process would take under a second. So in the troubleshooting I thought, what if I moved my blog to mkdocs?
@@ -52,6 +54,6 @@ The last reason why I moved was that mkdocs is Python :fontawesome-brands-python
 
 Also a contributing factor is that @squidfunk has what looks like a pretty successful business in supporting mkdocs-material. 
 
-Until I can get my comment system back up and running. If you have some other thoughts, go ahead let me know on social media, which you can find the links to on the bottom of this page or on the home page.
+Let me know your thoughts.
 
 -Josh
