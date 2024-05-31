@@ -21,7 +21,6 @@ tasks accomplished within Ansible, providing many examples.
 ## Online Network Simulators (Free)
 
 [Online VIRL](https://developer.cisco.com/site/sandbox/)  
-[NRE Labs](https://labs.networkreliability.engineering/)  
 [YouTube Video Introducing VIRL free](https://www.youtube.com/watch?v=S0jfZLobFdU&list=WL&t=0s&index=31)
 
 ## Podcasts
@@ -42,10 +41,6 @@ Nicholos Russo having a conversation around Designing for DevOps
 
 ### Packet Pushers
 
-[Introducing NRE Labs](https://packetpushers.net/podcast/pq-158-introducing-nre-labs-for-network-automation-training)  
-NRE Labs is a site that I'm going to recommend frequently. It is a place to get started with
-tutorials about Network Automation. Go here for free and relevant learning!
-
 [Building a Network Automation Framework](https://packetpushers.net/podcast/weekly-show-402-building-a-network-automation-framework/) - [Ken Celenza](https://twitter.com/itdependsnet)
 A podcast about building automation frameworks. This is a long one, but excellent for what an
 automated environment will look like
@@ -53,19 +48,12 @@ automated environment will look like
 [The Source of Truth Shall Set You Free (To Automate)](https://packetpushers.net/podcast/heavy-networking-442-the-source-of-truth-shall-set-you-free-to-automate/)  
 Podcast of using Netbox, Grafana, Influx, and a modern company system
 
-### The Network Collective
-
-[Grassroots Automation](https://thenetworkcollective.com/2017/08/ep10-grassroots-automation/)  
-The Network Collective brings many contributors to the automation community to the table to discuss
-various technologies related to Network Automation.
-
 ## Automation/DevOps
 
 ### Blog Sites
 
-[Byrn Baker](https://blog.byrnbaker.me/)
+[Byrn Baker](https://blog.byrnbaker.me/)  
 [Nick Russo](http://njrusmc.net/) - [@nickrusso42518](https://twitter.com/nickrusso42518)  
-[Colin McCarthy](https://www.thenetwork.engineer) - [@Colinnation](https://twitter.com/Colinnation)  
 [Katherine McNamara](https://www.network-node.com/) - [@kmcnam1](https://twitter.com/kmcnam1)  
 [John Capobiano](https://www.automateyournetwork.ca/)  
 [Jason Edelman](http://jedelman.com/)  
@@ -76,6 +64,7 @@ various technologies related to Network Automation.
 
 [Building Dynamic Documentation Using Parser](https://github.com/ansible/workshops/tree/master/exercises/ansible_network/supplemental/3-1-parser)  
 [Genie Parsers](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers)
+
 ### JSON/YAML
 
 [David Barroso - JSON in Flat Format](https://github.com/dbarrosop/pycatj)
