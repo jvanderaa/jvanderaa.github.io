@@ -81,6 +81,7 @@ jobs:
       - name: Build documentation
         run: |
           mkdocs --version
+          tree
           python -m mkdocs build -s
           cp site/feed_rss_created.xml site/feed.xml
 
