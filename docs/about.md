@@ -24,41 +24,23 @@ In 2020 Cisco released the Cisco DevNet certification program. I am one of the f
 
 ## My Work
 
-### Book
+### Books
 
-During the pandemic, I thought what better way to get started than with writing a book about getting started with open source network tools. Get it on [LeanPub](https://leanpub.com/opensourcenetworkmanagement/)
+During the pandemic, I thought what better way to get started than with writing a book about getting started with open source network tools. Get it on [LeanPub](https://leanpub.com/opensourcenetworkmanagement/). See the [Open Source Network Management tab](book.md) for more.
 
-### Speaking Engagements
+2024 brought the release of two more books, published by Packt. The first released book [Network Automation with Nautobot](nautobot_book.md) introduces how to automate networks with the use of Nautobot. See the tab linked for more. 
 
-**2023 Internet2 Technology Exchange**  
-At Internet2's TechEx 2023 I gave an overview of Nautobot to the Network Automation community and introduced several of the core Nautobot Open Source Ecosystem Plugins such as Nautobot Golden Config, and the new configuration remediation capabilities built in.
-
-
-**2023 WWT Automation Day - Minneapolis**  
-In this speaking engagement I had the opportunity to talk about Nautobot as the Open Source Network Automation and SOT applications. I gave an overview of what Nautobot brings to the table and incorporated demos of using real world scripts to complete activities leveraging the Nautobot open source ecosystem.
-
-**2023 Summer MNNUG**  
-Introduction of Nautobot and the core functionality for the the audience. Drove attendance with the focus on Network Automation that saw individuals drive from 3 hours away!
-
-**2022 NANOG86**  
-In 2022 I had the opportunity to complete my first NANOG talk, on automating circuit maintenance notifications. This section will outline my continued source of talks:
-
-- NANOG86 - [Automating Circuit Maintenance Notifications](https://www.youtube.com/watch?v=m6bOFnY3jQE)
-
-**2021 Ansible Meetup**  
-[Minneapolis Ansible Meetup January 2021 - Ansible Records Ansible - ARA](https://www.youtube.com/watch?v=Cz3vw1Sv-B4)
-
-**2020 Interop**  
-[Interop Network Automation CICD](https://www.youtube.com/watch?v=0ucaw6I99eY)
-
-**2020 Ansible Meetup**
-- [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
+The second book in 2024 is Modern Network Observability, which provides a hands-on approach to using open source tools for network observability in 2024.
 
 ### Podcasts
 
 - Packet Pushers - [Ansible or Terraform](https://packetpushers.net/ansible-or-terraform-choose-one/)
 - Network Automation Nerds - [Interview Part 1](https://podcast.networkautomationnerds.com/1864201/12167008-033-interview-with-josh-vanderaa-part-1)
 - Network Automation Nerds - [Interview Part 2](https://podcast.networkautomationnerds.com/1864201/12167016-034-interview-with-josh-vanderaa-part-2)
+
+## Speaking Engagements
+
+[timeline right(./docs/speaking_engagements.yml)]
 
 ### Ansible Content
 
@@ -90,3 +72,5 @@ In 2019 I worked to develop a Network Automation Course with Ansible for Packet 
 2021 - Cisco Champion
 
 ![Cisco Champion](/images/cisco_champ_logo_blue.png)
+
+

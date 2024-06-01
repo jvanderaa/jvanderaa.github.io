@@ -7,6 +7,7 @@ repo_url: https://github.com/jvanderaa/jvanderaa.github.io
 
 extra_css:
   - assets/extra.css
+  - assets/neoteroi.css
 extra:
   analytics:
     provider: google
@@ -70,9 +71,10 @@ theme:
         icon: material/brightness-7
         name: Switch to light mode
 markdown_extensions:
+  - admonition
   - attr_list
   - md_in_html
-  - admonition
+  - neoteroi.timeline
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
