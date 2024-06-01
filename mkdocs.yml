@@ -5,6 +5,8 @@ site_url: https://josh-v.com/
 repo_name: jvanderaa/jvanderaa.github.io
 repo_url: https://github.com/jvanderaa/jvanderaa.github.io
 
+extra_css:
+  - assets/extra.css
 extra:
   analytics:
     provider: google
@@ -116,3 +118,5 @@ nav:
   - "📖 Book: OSS Net Mgmt": book.md
   - "📖 Nautobot Book": nautobot_book.md
   - "🔗 Links": links.md
+hooks:
+  - hooks/socialmedia.py

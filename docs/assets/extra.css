@@ -1,0 +1,41 @@
+/* docs/assets/extra.css */
+.custom-share-button {
+    display: inline-block;
+    font-size: 1.1em;
+    /* Adjust the font size */
+    padding: 0.3em 0.6em;
+    /* Adjust the padding */
+    border: px2rem(2px) solid currentcolor;
+    /* Add a border */
+    border-radius: 0.15em;
+    /* Make the corners slightly rounded */
+    background-color: #f8f9fa;
+    /* Background color */
+    color: var(--md-primary-fg-color);
+    /* Text color */
+    text-decoration: none;
+    /* Remove underline from links */
+    margin: 0.2em;
+    /* Add some margin between buttons */
+
+    // Primary button
+        &--primary {
+            color: var(--md-primary-bg-color);
+            background-color: var(--md-primary-fg-color);
+            border-color: var(--md-primary-fg-color);
+        }
+    
+        // Button on focus/hover
+        &:is(:focus, :hover) {
+            color: var(--md-accent-bg-color);
+            background-color: var(--md-accent-fg-color);
+            border-color: var(--md-accent-fg-color);
+        }
+}
+
+/* .custom-share-button:hover {
+    background-color: orange;
+    /* Change background color on hover */
+    color: #ffffff;
+    /* Change text color on hover */
+} */
