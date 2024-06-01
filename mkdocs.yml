@@ -120,5 +120,6 @@ nav:
   - "📖 Book: OSS Net Mgmt": book.md
   - "📖 Nautobot Book": nautobot_book.md
   - "🔗 Links": links.md
+  - "🏷️ Tags": tags.md
 hooks:
   - hooks/socialmedia.py
