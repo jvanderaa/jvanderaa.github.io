@@ -9,6 +9,8 @@ categories:
   - redux
 title: "Redux: WAN Design"
 toc: true
+tags:
+  - redux
 ---
 
 In this post, we'll dive into WAN design and address a common question that I was provided with in the 2000s: "My home internet costs only $35 per month. Why do we spend $xxx per month per circuit?"
