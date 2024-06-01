@@ -119,4 +119,4 @@ nav:
   - "📖 Nautobot Book": nautobot_book.md
   - "🔗 Links": links.md
 hooks:
-  - hooks/socialmedia.py
+  - scripts/socialmedia.py
