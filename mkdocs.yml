@@ -1,7 +1,6 @@
 site_name: Josh VanDeraa
 site_author: Josh VanDeraa
 site_url: https://josh-v.com/
-dev_addr: "0.0.0.0:8000"
 
 repo_name: jvanderaa/jvanderaa.github.io
 repo_url: https://github.com/jvanderaa/jvanderaa.github.io
