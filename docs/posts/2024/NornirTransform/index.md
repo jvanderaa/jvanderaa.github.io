@@ -1,7 +1,7 @@
 ---
 authors: [jvanderaa]
 comments: true
-date: 2024-06-02
+date: 2024-06-04
 slug: nornir-transform-3
 categories:
 - automation
