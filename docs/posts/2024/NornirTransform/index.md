@@ -24,6 +24,10 @@ I'm going to highlight the aspect of extending data, particularly through a `sec
 
 One of the first method we will explore is adding data such as a network device username from the environment. This way you do not need anything other than a command line (Linux/Mac is covered here) to the shell, which is exactly where many run their Nornir applications from. If you would like more on setting environment variables, check out the [Twilio blog post](https://www.twilio.com/en-us/blog/how-to-set-environment-variables-html) that dives in more.
 
+!!! note "Use Existing In Nornir Utils If Looking For Environment Variables"
+    Added 2024-06-06:  
+    The use of environment variables in this case is meant to show as an example. The [nornir-utils](https://github.com/nornir-automation/nornir_utils) project has a more production ready version of this same thing. Look to use that if using Environment variables - https://github.com/nornir-automation/nornir_utils/blob/master/nornir_utils/plugins/inventory/transform_functions.py. You should look to use a secrets management system if you have one available.
+
 !!! note "Python packaging environment"
     For this post I will be using Python Poetry to handle the packaging within the demo. Python Poetry is the environment that I'm most familiar with on using for package management at this time.
 
