@@ -6,7 +6,7 @@ authors = ["Josh VanDeraa <josh@josh-v.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 mkdocs-material = "^9.5.24"
 mkdocs-glightbox = "^0.4.0"
 mkdocs-rss-plugin = "^1.12.2"
