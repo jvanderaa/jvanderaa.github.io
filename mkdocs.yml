@@ -106,7 +106,7 @@ plugins:
   - rss:
       match_path: posts/.*
       date_from_meta:
-        as_creaation: date
+        as_creation: date
       categories:
         - categories
       comments_path: "#__comments"
