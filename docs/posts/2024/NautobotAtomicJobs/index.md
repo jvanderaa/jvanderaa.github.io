@@ -8,6 +8,8 @@ categories:
 - network_automation
 title: "Nautobot: Atomic Jobs"
 toc: true
+tags:
+- nautobot
 ---
 
 In the first release of Nautobot all of the Jobs were Atomic by default. This was from the previous focus of the legacy source application that assumed that scripts/reports would only be run on the data locally, so by that nature, the jobs should be atomic. As more and more Jobs started to interact with other systems, it became apparent that there needed to be a control mechanism provided (as I understand). So the introduction of a context manager and decorator was brought to the table to provide the same previous functionality while changing of the default behavior in Nautobot 2.x+.
