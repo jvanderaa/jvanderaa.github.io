@@ -20,22 +20,22 @@ This may be my favorite post within the realm of what is possible as I write thi
 
 ## The Task At Hand: Converting Management System
 
-As part of the process to better manage the wireless infrastructure, it was determined that we needed to migrate management systems as a first step to the process before adding any additional infrastructure to account for the expected capacity needs. The deployment of additional capacity would be required to help provide consistent wireless experience for guests throughout the store. The wireless profile of where guest mobile devices would be used was a little different than the every day store operations wireless needs.
+To better manage the wireless infrastructure, we needed to migrate management systems as a first step before adding any additional infrastructure to meet the expected capacity needs. The deployment aimed to ensure a consistent wireless experience for guests throughout the store. The wireless profile for guest mobile devices differed from everyday store operations.
 
-What was needed was to get access points to join a new wireless management system, effectively a code upgrade would be needed. At which point it would go through the discovery process to join a wireless controller. We decided to convert one store at a time and would convert the wireless system in small batches to migrate seamlessly over to the new system. To accomplish this we partnered with a team that built out a database system that would track the migration to completion, verifying that all the steps that were needed were completed. As part of this database, the system provided all of the necessary commands to complete the activity in a copy and paste fashion. So the process looked like:
+The goal was to get access points to join a new wireless management system, effectively requiring a code upgrade. The process involved converting one store at a time and migrating the wireless system in small batches to ensure seamless transition. We partnered with a team that built a database system to track the migration, verifying all necessary steps were completed. The process was as follows:
 
-1. Migration technician would log into the database
-2. Initialize the migration based on the schedule
-3. Start the process on say 3 access points, none of which were in the same area of the retail environment. I don't remember how many access points at a time were done. Just that we would separate it out so that no one area of the site would be completely offline.
-4. Have the remote AP join a staging controller that received all of the new access points join it
-5. Apply the configuration to the wireless AP, including the final controller destination
-6. Have the AP move to the new controller, and verify functionality
+1. Migration technician logs into the database.
+2. Initializes the migration based on the schedule.
+3. Starts the process on a few access points, ensuring no area of the retail environment is completely offline.
+4. The remote AP joins a staging controller that receives all new access points.
+5. Applies the configuration to the wireless AP, including the final controller destination.
+6. The AP moves to the new controller, and functionality is verified.
 
-This process worked out well and completed the activity required to move into the next stages of providing Guest WiFi throughout the entire environment.
+This process worked well and paved the way for the next stages of providing Guest WiFi throughout the entire environment.
 
 ## How I Would Accomplish This in 2024
 
-The overall process worked great, I don't think that I would change too much to the process for those requirements. It was a cost effective way to provide wireless out to a large retail environment. But, I would absolutely automate the process a bit further. The concept of using the database for the inventory is wise. It is the foundation of building good network automation. Let's break this apart into more sections of what I would do differently. The phases that I would look at are now:
+The overall process was effective, but I would automate it further. Using a database for inventory is foundational for good network automation. The phases I would focus on are now:
 
 * Data Gathering
 * Migration
@@ -43,7 +43,7 @@ The overall process worked great, I don't think that I would change too much to 
 
 ### Data Gathering
 
-I would look for a way to get the data from original management system if it was available and put it into Nautobot as my vendor agnostic source of truth. Why? Well, this will set up for future success if needing to make other migrations without having to rely on a system that may have its own path. I would attempt to build out the following data points and the why I would need it:
+I would gather data from the original management system and put it into Nautobot as a vendor-agnostic source of truth. This sets up future success for other migrations without relying on a specific system. If these data points were not available from the original management system, I would write some automation to gather the data points. Key data points include:
 
 | Data Point | Why Needed? |
 | ---------- | ----------- |
@@ -51,13 +51,11 @@ I would look for a way to get the data from original management system if it was
 | Neighbor Interface | Needed for recovery of services if necessary |
 | Current Clients | Needed for **verification** of services at the end |
 
-There are two data points of what is needed. The MAC address is a pretty self evident item as it is what identifies the physical unit to the network.
+The MAC address is essential for device identification. For the neighbor interface, I would build out the switches in Nautobot with corresponding interface names and cable connections. I would avoid unnecessary details like cable length or color unless needed for the automation task.
 
-For the neighbor interface I would build out the switches inside of Nautobot with the corresponding interface names. I would then build the cable connection to the device. From there, that is all that I would build out. Nautobot provides for the capability to also put data points such as cable length, color of cable and so on into the database. I would **not** do this. Why? I don't need it for anything. I know that I can come back and gather that data later if it was ever needed. But from the task at hand for the automation did I need this? No. So I'm not going to worry about that data point.
+Gathering additional diagnostic data, such as the number of wireless clients and their MAC addresses, would help verify the services.
 
-As a starting point, additional diagnostic data about the environment would be gathered and recorded for verification. Things such as the number of wireless clients on the network and what their MAC addresses are. This would provide the proper verification that the services were working.
-
-With the data available inside of Nautobot, I can now start a process to make the migration.
+With data available in Nautobot, I can start the migration process.
 
 ### Migration
 
