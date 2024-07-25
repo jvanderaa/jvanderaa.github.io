@@ -81,6 +81,9 @@ Now that these processes have been built out, I would look to arm the operations
 
 ## Summary
 
-Overall the process to migrate from one architecture to another architecture over a decade ago went well. There was the start of a source of truth strategy that I look back and that I missed that opportunity on. There may have been a few times that the data gathered during that migration effort was used, but not in what it should look like to make that data available as needed like there is today with something like Nautobot. The human side of the conversion would need to be looked at a little bit further as well. How errors would be handled and escalated as necessary. But by putting the automation in the hands of the system, consistency of the migration would ensure quality and full completion. Thoughts?
+Overall the process to migrate from one architecture to another architecture over a decade ago went well. There was the start of a source of truth strategy that I look back and that I missed that opportunity on. There may have been a few times that the data gathered during that migration effort was used, but not in what it should look like to make that data available as needed like there is today with something like Nautobot. The human side of the conversion would need to be looked at a little bit further as well. How errors would be handled and escalated as necessary. But by putting the automation in the hands of the system, consistency of the migration would ensure quality and full completion.
 
+### The Best Part
+
+The Best Part for me? I got to design and implement something very similar. I'm very proud of this execution and where that application has gone. Read more about the [case study on the Network to Code website](https://networktocode.com/study/major-chain-of-convenience-stores-streamlines-hardware-refresh-for-over-900-locations-quickly-and-consistently-with-network-automation/) 
 -Josh
