@@ -37,3 +37,7 @@ This book is intended for all network engineering roles such as network analysts
 ## Get it today!
 
 [:simple-amazon: Amazon](https://a.co/d/1SDM5EM){ .md-button}
+
+## Thank You
+
+I want to express a thank you to [David Flores](https://x.com/davidban77) and [Christian Adell](https://www.amazon.com/Christian-Adell/e/B0D1522M67/ref=aufs_dp_fta_an_dsk) for including me in the writing of the book. It has been one heck of a journey that we have been on together writing this and an exciting topic to be able to share with the rest of the Network Engineering community.
