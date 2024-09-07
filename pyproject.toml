@@ -1,19 +1,12 @@
-[tool.poetry]
-name = "joshv-blog"
-version = "1.1.0"
-description = "New Blog Working..."
-authors = ["Josh VanDeraa <josh@josh-v.com>"]
+[project]
+name = "jvanderaa-github-io"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-package-mode = true
-
-[tool.poetry.dependencies]
-python = "^3.10"
-mkdocs-material = "^9.5.24"
-mkdocs-glightbox = "^0.4.0"
-mkdocs-rss-plugin = "^1.12.2"
-neoteroi-mkdocs = "^1.0.5"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs-glightbox>=0.4.0",
+    "mkdocs-material>=9.5.34",
+    "mkdocs-rss-plugin>=1.15.0",
+    "neoteroi-mkdocs>=1.1.0",
+]

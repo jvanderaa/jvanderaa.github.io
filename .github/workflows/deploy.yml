@@ -27,6 +27,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
+
+      - name: Install dependencies
+        run: |
+          uv sync
+
+      - name: Build MkDocs site
+        run: |
+          uv pip compile pyproject.toml -o requirements.txt
+
       - name: Set up Python runtime
         uses: actions/setup-python@v5
         with:
