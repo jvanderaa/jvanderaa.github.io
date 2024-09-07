@@ -118,6 +118,7 @@ nav:
   - index.md
   - "👤 About": about.md
   - "📖 Book: OSS Net Mgmt": book.md
+  - "📖 Modern Network Observability": observability.md
   - "📖 Nautobot Book": nautobot_book.md
   - "🔗 Links": links.md
   - "🏷️ Tags": tags.md
