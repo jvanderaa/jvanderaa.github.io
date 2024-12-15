@@ -1,3 +1,3 @@
-# Josh-V.com
+# Josh VanDeraa Blog Site
 
-The home blog and website of [Josh VanDeraa](https://josh-v.com).
+Definition of the blog site.

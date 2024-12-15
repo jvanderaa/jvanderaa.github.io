@@ -10,3 +10,6 @@ dependencies = [
     "mkdocs-rss-plugin>=1.15.0",
     "neoteroi-mkdocs>=1.1.0",
 ]
+
+[tool.setuptools]
+py-modules = []
