@@ -7,7 +7,7 @@ categories:
 - linux
 - containerlab
 - lab
-title: "Containerlab - Exploding"
+title: "Containerlab - Popularity Exploding"
 toc: true
 ---
 
