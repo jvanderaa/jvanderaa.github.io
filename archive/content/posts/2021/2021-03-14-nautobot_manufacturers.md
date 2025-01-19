@@ -72,7 +72,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Here is the before:
 
-![Nautobot Manufacturers Before](/images/2021/nautobot_no_manufacturers.png)
+![Nautobot Manufacturers Before](../../images/2021/nautobot_no_manufacturers.png)
 
 ### Example - Execution
 
@@ -238,7 +238,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 Now you see all of them showing up in Nautobot.
 
-![Nautobot Manufacturers After](/images/2021/nautobot_manufacturers.png)
+![Nautobot Manufacturers After](../../images/2021/nautobot_manufacturers.png)
 
 ## Summary
 

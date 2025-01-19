@@ -44,7 +44,7 @@ The Netflix subscription is the basic HD level. I have not done that study of wh
 
 Here is the bandwidth graphs. I will try to pretty up the graphics a little more in a future post.
 
-![Graph from LibreNMS](/images/2019/12/disney_plus_bandwidth.png)  
+![Graph from LibreNMS](../../images/2019/12/disney_plus_bandwidth.png)  
 
 The two spikes up to the red line (95th percentile) on the top side of 0 Mbps are the two times that Disney+ was in use. Definitely some good amount of usage there. If you see the other couple of early morning spikes, that is Netflix to an iPad in use. There are some other general streams of data that happen throughout the day as the family jumps in and out of some other streaming services. But nothing close to the Disney+ numbers.  
 

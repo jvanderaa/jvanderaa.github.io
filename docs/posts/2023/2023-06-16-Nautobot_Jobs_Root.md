@@ -96,13 +96,13 @@ At this point, you can exit out and then execute `nautobot-server post_upgrade` 
 
 Then going into the UI menu of Jobs >>> Jobs you get the following result with the Job Enabled column having a red X on it.
 
-![Nautobot Job, Not Enabled](/images/2023/nautobot_jobs_just_show.png)
+![Nautobot Job, Not Enabled](../../images/2023/nautobot_jobs_just_show.png)
 
 To enable the Job for execution, take a look at the docs here on the [Nautobot Docs page](https://docs.nautobot.com/projects/core/en/stable/additional-features/jobs/?h=jobs#enabling-jobs-for-running) for enabling a Job.
 
 When you execute the Job for a device, you now get a basic "Hello World" execution. You can see the result with the device name displayed.
 
-![Nautobot Bare Job](/images/2023/nautobot_jobs_bare_run.png)
+![Nautobot Bare Job](../../images/2023/nautobot_jobs_bare_run.png)
 
 ### Get the Device Information From Nautobot
 
@@ -183,7 +183,7 @@ When connecting to a network device in a multi-vendor environment there are a fe
 
 Now when you go to execute the job, you are able to get the `show version` output from the device to the screen. Take a look at the example:
 
-![Nautobot Job Show Run Output](/images/2023/nautobot_jobs_show_run_output.png)
+![Nautobot Job Show Run Output](../../images/2023/nautobot_jobs_show_run_output.png)
 
 ## Summary
 

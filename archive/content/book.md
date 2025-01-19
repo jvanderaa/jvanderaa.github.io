@@ -4,7 +4,7 @@ date: 2023-06-13T20:43:31-05:00
 draft: false
 ---
 
-![Open Source Network Management Cover](/images/open-source-network-management.png)
+![Open Source Network Management Cover](images/open-source-network-management.png)
 
 I have created a book that is all about getting started with open source tools. [Open Source Network Management](https://leanpub.com/opensourcenetworkmanagement), a book about getting started with using open source tools to manage your network environment. This book guides one along the way of _installing_, _initial configuration_, and basic ways to use the tools. All these are done with installing on a single virtual machine or on an Intel NUC system.
 

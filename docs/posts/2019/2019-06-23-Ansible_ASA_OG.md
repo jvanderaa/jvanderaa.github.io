@@ -74,7 +74,7 @@ policy management using Ansible.
 So the lab looks very much the same at the moment as some of the other posts,
 which is below:  
 
-![LabDesign](/images/2019/01/lab_design.png)  
+![LabDesign](../../images/2019/01/lab_design.png)  
 
 Sample goals:  
 - Create an object group for internal addresses (RFC1918)

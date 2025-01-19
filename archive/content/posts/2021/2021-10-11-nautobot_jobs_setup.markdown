@@ -51,10 +51,10 @@ The `jobs` directory is required. This allows for the Git data source to have mu
 
 Navigate to **Extensibility** -> **Git Repositories**. Select **+ Add** button on the upper right of the section. Fill in the information, with the required fields in bold. If user authentication is required for the Git repository (such as a private repo), then you need to use a Personal Access Token (PAT). Once you click **Create** a synchronization will occur that will sync the jobs from the Repo. Navigate to the **Extensibility** -> **Jobs** section. You will now see the jobs included on the page.
 
-![Nautobot Base](/images//2021/nautobot_jobs_base_page.png)  
-![Nautobot Git Repos](/images//2021/nautobot_jobs_git_repos.png)  
-![Nautobot Add Git Repo](/images//2021/nautobot_jobs_add_git_repo.png)  
-![Nautobot Jobs Summary](/images//2021/nautobot_jobs_summary.png)  
+![Nautobot Base](../../images/2021/nautobot_jobs_base_page.png)  
+![Nautobot Git Repos](../../images/2021/nautobot_jobs_git_repos.png)  
+![Nautobot Add Git Repo](../../images/2021/nautobot_jobs_add_git_repo.png)  
+![Nautobot Jobs Summary](../../images/2021/nautobot_jobs_summary.png)  
 
 > For the Meraki Users jobs that are being setup, I am using two environment variables to control the environment. `MERAKI_DASHBOARD_API_KEY` for the API key to use to talk to the Meraki Dashboard. `NAUTOBOT_JOB_MERAKI_EMAIL_VALIDATION_REGEX` which is the regex string to do validation on email within the form. This defaults to allowing all if not set.
 

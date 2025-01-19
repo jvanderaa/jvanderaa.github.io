@@ -30,7 +30,7 @@ extra:
     - icon: fontawesome/brands/mastodon
       link: https://fosstodon.org/@jvanderaa
 copyright: >
-  Copyright &copy; 2018 - 2024 Josh VanDeraa –
+  Copyright &copy; 2018 - 2025 Josh VanDeraa –
   <a href="#__consent">Change cookie settings</a>
 theme:
   custom_dir: docs/overrides
@@ -101,7 +101,7 @@ plugins:
       categories_toc: false
       archive_name: "📚 Posts"
       categories_name: "🏷️ Categories"
-      pagination_per_page: 8
+      pagination_per_page: 20
   - glightbox
   - rss:
       match_path: posts/.*

@@ -101,7 +101,7 @@ First if you are following along with the examples thus far, I made a new site h
 
 Before the execution there are no devices within Nautobot:
 
-![Nautobot Without Devices](/images/2021/nautobot_no_devices.png)
+![Nautobot Without Devices](../../images/2021/nautobot_no_devices.png)
 
 This execution shows that all of the device types are added.
 
@@ -337,7 +337,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 After the execution and notice that the module is idempotent, the two devices shown are all set to be added.
 
-![Nautobot Devices](/images/2021/nautobot_devices.png)
+![Nautobot Devices](../../images/2021/nautobot_devices.png)
 
 ## Summary
 

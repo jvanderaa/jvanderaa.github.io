@@ -32,7 +32,7 @@ What about different sites? Well, these should all be within groups within the o
 
 ## A Look At Inventories
 
-![Inventory Actions](/images//2022/inventory_actions.png)
+![Inventory Actions](../../images/2022/inventory_actions.png)
 
 Looking at the graphic above where there are 4 playbooks that you currently have. With an automation framework, your inventory should be the same inventory for each of the playbook activities. Whether it is for an OS version check, checking or configuring BGP neighbors, or configuring access interfaces. Of those examples, only the changing of the access interface playbook would need to know what the interfaces are. So to have the interfaces live in the inventory, especially if the inventory is gathered at run time, is causing unnecessary data gathering that may get in the way of automation.
 

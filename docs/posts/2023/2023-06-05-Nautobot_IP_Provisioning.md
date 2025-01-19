@@ -143,7 +143,7 @@ The looping condition from Task 200 to keep going through the playbook allows fo
 
 Before the first execution, here is what Nautobot looks like without an address assigned:
 
-![Nautobot no addresses](/images/2023/nautobot_no_ipaddresses.png)
+![Nautobot no addresses](../../images/2023/nautobot_no_ipaddresses.png)
 
 The first execution of the playbook you get the following result:
 
@@ -237,7 +237,7 @@ localhost                  : ok=11   changed=1    unreachable=0    failed=0    s
 
 You can see on the first run of TASK 310 that the task has been skipped because there was not an available address (I purposely assigned addresses to fill up the first IP prefix space). The second loop through there was an IP address assigned and created. Then the last iteration skipped since the IP address was already assigned. Looking in the Nautobot UI, you now see an IP address assigned by the automation.
 
-![Nautobot 1 IP address](/images/2023/nautobot_one_ip_address.png)
+![Nautobot 1 IP address](../../images/2023/nautobot_one_ip_address.png)
 
 ## Summary
 

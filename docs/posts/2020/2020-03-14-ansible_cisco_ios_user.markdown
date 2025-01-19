@@ -141,7 +141,7 @@ r1                         : ok=3    changed=2    unreachable=0    failed=0    s
 
 ```
 
-![Playbook1 Execution](/images/2020/03/add_user_with_key_mask.gif)
+![Playbook1 Execution](../../images/2020/03/add_user_with_key_mask.gif)
 
 On execution one can see that the commands pushed in the debug task including setting up an IP SSH
 keypair, setting a username of joshv, and setting the key hash. Then Ansible exits to what is
@@ -271,7 +271,7 @@ r1                         : ok=3    changed=2    unreachable=0    failed=0    s
 > SSH Key with the credential, you will need to remove the user account with running the same taskk
 > 2 times. This is filed under issue https://github.com/ansible/ansible/issues/68238
 
-![Playbook2 Execution](/images/2020/03/removing_user_with_key.gif)
+![Playbook2 Execution](../../images/2020/03/removing_user_with_key.gif)
 
 Executing the module a second time you get the full removal of the user account.
 
@@ -393,7 +393,7 @@ r1                         : ok=3    changed=2    unreachable=0    failed=0    s
 
 ```
 
-![Playbook2 Execution](/images/2020/03/add_user_with_pass.gif)
+![Playbook2 Execution](../../images/2020/03/add_user_with_pass.gif)
 
 ## Summary
 

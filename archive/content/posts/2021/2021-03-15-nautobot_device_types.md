@@ -98,7 +98,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 This execution shows that all of the device types are added. Before the execution Nautobot does not have any device types.
 
-![Nautobot no device types](/images/2021/nautobot_no_device_types.png)
+![Nautobot no device types](../../images/2021/nautobot_no_device_types.png)
 
 ```yaml
 josh-v@60a6498959f8:~$ ansible-playbook add_device_types.yml -vv
@@ -264,7 +264,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 At this point the device types are now available inside of the UI.
 
-![Nautobot Device Types](/images/2021/nautobot_device_types.png)  
+![Nautobot Device Types](../../images/2021/nautobot_device_types.png)  
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
