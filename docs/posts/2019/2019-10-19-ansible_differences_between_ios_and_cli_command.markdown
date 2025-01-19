@@ -140,7 +140,7 @@ r1                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 ```
 
-![IOS Command Single](/images/2019/10/blog-ios_single.gif)
+![IOS Command Single](../../images/2019/10/blog-ios_single.gif)
 
 There are four items returned, with the first two primarily being "standard" Ansible returns for
 `changed` and `failed`. There is then:
@@ -203,7 +203,7 @@ r1                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 ```
 
-![CLI Command Single](/images/2019/10/blog-cli_single.gif)
+![CLI Command Single](../../images/2019/10/blog-cli_single.gif)
 
 The big difference here is that the **stdout** part of the response is of type string, and not of a
 type list like `ios_command`. Take a look at line number 11 where **stdout** is. Immediately
@@ -278,7 +278,7 @@ r1                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 ```
 
-![IOS Command Multiple](/images/2019/10/blog-ios_multiple.gif)
+![IOS Command Multiple](../../images/2019/10/blog-ios_multiple.gif)
 
 This is where you start to see that there are multiple list items in the response. Taking a look at
 line number 11 we still have the `[` of the list showing at the end, then line 12 ends in a comma,
@@ -391,7 +391,7 @@ r1                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 ```
 
-![CLI Command Multiple](/images/2019/10/blog-cli_multiple-looping.gif)
+![CLI Command Multiple](../../images/2019/10/blog-cli_multiple-looping.gif)
 
 In this execution we now have to get at the information within the results section. You do however
 also get the command in the output, as well as some other module arguments, which can be handy! To

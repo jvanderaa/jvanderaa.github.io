@@ -78,7 +78,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Here is the before:
 
-![NetBox Manufacturers Before](/images/2020/12/manufacturers_before.png)
+![NetBox Manufacturers Before](../../images/2020/12/manufacturers_before.png)
 
 ### Example - Execution
 
@@ -105,7 +105,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 Now you see all of them showing up in NetBox.
 
-![NetBox Manufacturers After](/images/2020/12/manufacturers_after.png)
+![NetBox Manufacturers After](../../images/2020/12/manufacturers_after.png)
 
 ## Summary
 

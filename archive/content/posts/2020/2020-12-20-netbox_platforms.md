@@ -126,11 +126,11 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 Now you see all of them showing up in NetBox.
 
-![NetBox Platforms After](/images/2020/12/platforms.png)
+![NetBox Platforms After](../../images/2020/12/platforms.png)
 
 When editing the Cisco platform you see the result visually.
 
-![NetBox Platform Edit Screen](/images/2020/12/platform_specific.png)
+![NetBox Platform Edit Screen](../../images/2020/12/platform_specific.png)
 
 ## Summary
 

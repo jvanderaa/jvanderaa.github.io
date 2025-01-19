@@ -91,4 +91,4 @@ In 2019 I worked to develop a Network Automation Course with Ansible for Packet 
 
 2021 - Cisco Champion
 
-![Cisco Champion](/images/cisco_champ_logo_blue.png)
+![Cisco Champion](images/cisco_champ_logo_blue.png)

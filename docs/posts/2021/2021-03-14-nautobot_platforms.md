@@ -83,7 +83,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Before the execution there are no platforms showing in Nautobot.
 
-![Nautobot No Platforms](/images/2021/nautobot_no_platforms.png)
+![Nautobot No Platforms](../../images/2021/nautobot_no_platforms.png)
 
 ### Example - Execution
 
@@ -180,7 +180,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 Now you see all of the defined platforms showing up in Nautobot.
 
-![NetBox Platforms After](/images/2021/nautobot_platforms.png)
+![NetBox Platforms After](../../images/2021/nautobot_platforms.png)
 
 ### Example - Idempotency
 

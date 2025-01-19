@@ -52,11 +52,11 @@ The device has already been created in NetBox with all of the necessary interfac
 
 Here are the start the NetBox prefix allocation only has a single prefix defined at the start. Only 10.21.0.0/16, which is going to be the parent prefix.
 
-![Empty NetBox Prefix Overview](/images/2020/11/netbox_prefix_overview_empty.png)
+![Empty NetBox Prefix Overview](../../images/2020/11/netbox_prefix_overview_empty.png)
 
 We can see that there are no children prefixes and the current allocation is 0.
 
-![Empty NetBox Prefix](/images/2020/11/netbox_prefix_empty.png)
+![Empty NetBox Prefix](../../images/2020/11/netbox_prefix_empty.png)
 
 ## Creating a Prefix within NetBox
 
@@ -103,7 +103,7 @@ changed: [rtr-edge] => changed=true
 
 This response when registered will provide with the Prefix ID, prefix itself, and any additional items that may have been set for your NetBox environment. After running this a few times and this demo being the sixth execution this is now what the NetBox environment looks like for prefixes:
 
-![NetBox with 6 prefixes](/images/2020/11/netbox_with_prefixes.png)
+![NetBox with 6 prefixes](../../images/2020/11/netbox_with_prefixes.png)
 
 ## IP Address Allocation
 
@@ -153,7 +153,7 @@ changed: [rtr-edge] => changed=true
 
 Taking a look at the NetBox Prefix View for the 10.21.5.0/24 network this is what you see:
 
-![NetBox 10.21.5.0/24 prefix](/images/2020/11/netbox_prefix_view.png)
+![NetBox 10.21.5.0/24 prefix](../../images/2020/11/netbox_prefix_view.png)
 
 You can see that there is a single IP address allocated.
 

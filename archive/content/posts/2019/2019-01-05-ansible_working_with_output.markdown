@@ -44,7 +44,7 @@ First I will just give a quick diagram of the lab environment. This is simulated
 [EVE-NG](https://www.eve-ng.net). I will be accessing the devices via a management network to show
 various things.
 
-![LabDesign](/images/2019/01/lab_design.png)
+![LabDesign](../../images/2019/01/lab_design.png)
 
 I am going to connect to just Cisco IOS and Cisco ASA virtual images for this. That can extend as
 well to any other platform using the standard

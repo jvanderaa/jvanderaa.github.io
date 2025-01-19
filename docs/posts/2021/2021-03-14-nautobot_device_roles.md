@@ -73,7 +73,7 @@ device_roles:
 
 Running the playbook on the roles are going to be straight to the point. Before the execution Nautobot's UI shows no device roles:
 
-![Nautobot no device role](/images/2021/nautobot_no_device_roles.png)
+![Nautobot no device role](../../images/2021/nautobot_no_device_roles.png)
 
 ```yaml
 
@@ -263,7 +263,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 After completion of this you will have the device roles are now available to be assigned to devices. Taking a look the UI now has the data:
 
-![Nautobot Device Roles](/images/2021/nautobot_device_roles.png)
+![Nautobot Device Roles](../../images/2021/nautobot_device_roles.png)
 
 ## Summary
 

@@ -16,11 +16,11 @@ Self re-taught network/automation engineer. I've primarily been digging around w
 
 In 2020 Cisco released the Cisco DevNet certification program. I am one of the first 500 individuals to achieve a Cisco DevNet certification, with passing first the DevNet Associate exam. Later I followed up that certification with the DevNet Professional certification as well.
 
-![DevNet Cert Badges](/images/cisco_certs.png)
-<!-- ![DevNet Professional](/images/cisco-certified-devnet-professional.png)
-![DevNet 500](/images/devnet-500.png)
-![DevNet Associate](/images/cisco-certified-devnet-associate.png)
-![DevNet Class of 2020](/images/devnet-class-of-2020.png) -->
+![DevNet Cert Badges](images/cisco_certs.png)
+<!-- ![DevNet Professional](images/cisco-certified-devnet-professional.png)
+![DevNet 500](images/devnet-500.png)
+![DevNet Associate](images/cisco-certified-devnet-associate.png)
+![DevNet Class of 2020](images/devnet-class-of-2020.png) -->
 
 ## My Work
 
@@ -71,6 +71,6 @@ In 2019 I worked to develop a Network Automation Course with Ansible for Packet 
 
 2021 - Cisco Champion
 
-![Cisco Champion](/images/cisco_champ_logo_blue.png)
+![Cisco Champion](images/cisco_champ_logo_blue.png)
 
 

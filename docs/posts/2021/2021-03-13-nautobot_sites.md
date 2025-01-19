@@ -296,7 +296,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 In here we see that there was the single task showing **ok** and no tasks in the other sections of the play recap. The Nautobot sites page looks like:
 
-![Nautobot Sites](/images/2021/nautobot_sites.png)
+![Nautobot Sites](../../images/2021/nautobot_sites.png)
 
 ### Removing a site
 

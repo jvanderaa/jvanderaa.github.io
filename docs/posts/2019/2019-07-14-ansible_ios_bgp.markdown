@@ -84,7 +84,7 @@ environment which allows me to leverage Ansible from my machine as the control
 machine. R3 and R4 will be on the edge of the enterprise network, with R5
 originating some routes via EIGRP to the routers on R3 and R4.  
 
-![BGPLabDesign](/images/2019/07/lab_for_bgp.png)  
+![BGPLabDesign](../../images/2019/07/lab_for_bgp.png)  
 
 ### Networks
 

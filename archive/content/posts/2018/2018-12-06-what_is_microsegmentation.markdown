@@ -37,7 +37,7 @@ within a segment, creating a micro-segmentation effort.
 
 ## In Practice
 
-![SegmentDrawing](/images/2018/12/segments.png)
+![SegmentDrawing](../../images/2018/12/segments.png)
 
 | Source Host | Destination Host | Able to apply policy - Segmentation | Able to apply policy - Micro Segmentation |
 | ----------- | ---------------- | :---------------------------------: | :---------------------------------------: |

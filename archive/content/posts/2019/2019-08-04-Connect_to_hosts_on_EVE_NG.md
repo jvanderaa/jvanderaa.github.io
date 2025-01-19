@@ -90,7 +90,7 @@ Network** to the project. I make sure that it is set to:
 * Name/Prefix: Internet (Be creative if you wish)
 * Type: **bridge**
 
-![EVE-NG Bridge Net](/images/2019/07/eveng_add_bridge_net.png)  
+![EVE-NG Bridge Net](../../images/2019/07/eveng_add_bridge_net.png)  
 The type of **bridge** is what we are looking for to enable the connectivity.  
 
 ### Connecting your router
@@ -98,7 +98,7 @@ The type of **bridge** is what we are looking for to enable the connectivity.
 First thing you need to do within EVE-NG is to add a router and connect it to
 your _Outside_ network. I've done so as shown here:
 
-![EVE-NG Router Host](/images/2019/07/eveng_add_bridge_host.png)  
+![EVE-NG Router Host](../../images/2019/07/eveng_add_bridge_host.png)  
 
 Then the configuration on this Cisco edge device I have configured the following
 on the interface that has been connected to the outside.
