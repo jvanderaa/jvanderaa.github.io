@@ -35,9 +35,9 @@ def on_page_markdown(markdown, **kwargs):
     page_title = urllib.parse.quote(page.title+'\n')
 
     return markdown + dedent(f"""\n
-    [Share on :simple-linkedin:]({linkedin_sharer}?url={page_url}){{ .custom-share-button }}
+    [Share on :fontawesome-brands-linkedin-in:]({linkedin_sharer}?url={page_url}){{ .custom-share-button }}
     [Share on :simple-x:]({x_intent}?text={page_title}&url={page_url}){{ .custom-share-button }}
     [Share on :simple-facebook:]({fb_sharer}?u={page_url}){{ .custom-share-button }}
-    [Share on :simple-mastodon:]({mastodon_share}?url={page_url}){{ .custom-share-button }}
-    [Share on :simple-bluesky:]({bluesky_share}?text={page_url}){{ .custom-share-button }}
+    [Share on :fontawesome-brands-mastodon:]({mastodon_share}?url={page_url}){{ .custom-share-button }}
+    [Share on :fontawesome-brands-bluesky:]({bluesky_share}?text={page_url}){{ .custom-share-button }}
     """)
