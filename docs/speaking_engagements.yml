@@ -1,4 +1,14 @@
 ---
+- title: 2025 MNNUG Spring Event
+  sub_title: 2025-Q2
+  icon: ':material-rocket-launch-outline:'
+  content: |
+    At the MNNUG 2025 Spring event I was the keynote speaker talking about getting started with automation. Highlighting the journey that the source of truth has been on and what to look to do in order to get started with automating multi-vendor networks in an intelligent way.
+- title: 2024 Internet2 Technology Exchange
+  sub_title: 2024-Q4
+  icon: ':material-rocket-launch-outline:'
+  content: |
+    At Internet2's TechEx 2024 I talked alongside Shannon Byrnes about how to get started with Network Automation. Get going, and focus on what you can control.
 - title: 2023 Internet2 Technology Exchange
   sub_title: 2023-Q3
   icon: ':material-rocket-launch-outline:'
