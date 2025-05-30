@@ -112,8 +112,7 @@ plugins:
       comments_path: "#__comments"
   - search:
       lang: en
-  - tags:
-      tags_file: tags.md
+  - tags
 nav:
   - index.md
   - "👤 About": about.md
