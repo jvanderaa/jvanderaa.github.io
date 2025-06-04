@@ -15,7 +15,7 @@ This post is will provide a brief overview of how port binding works in Linux. T
 
 ## Showing Listening Ports
 
-In Linux you can view all ports that are being listened on by using the `netstat`  or `ss` commands. his is useful for identifying active ports and their associated services. My preference in 2024 is to use the `ss` command, which, [according to Linux.com](https://www.linux.com/topic/networking/introduction-ss-command/), is a more modern version of the `netstat`.
+In Linux you can view all ports that are being listened on by using the `netstat`  or `ss` commands. This is useful for identifying active ports and their associated services. My preference in 2024 is to use the `ss` command, which, [according to Linux.com](https://www.linux.com/topic/networking/introduction-ss-command/), is a more modern version of the `netstat`.
 
 > The ss command-line utility can display stats for the likes of PACKET, TCP, UDP, DCCP, RAW, and Unix domain sockets. The replacement for netstat is easier to use (compare the man pages to get an immediate idea of how much easier ss is). With ss, you get very detailed information about how your Linux machine is communicating with other machines, networks, and services; details about network connections, networking protocol statistics, and Linux socket connections. With this information in hand, you can much more easily troubleshoot various networking issues.
 
