@@ -45,7 +45,7 @@ Nautobot is uniquely positioned to really drive forward with both Network Automa
 
 ### The Challenge of Data Population
 
-One of the biggest challenges that I have seen over the years is worrying about populating "bad" data into the SoT. This is something that definitely needs to be addressed, but without addressing it at point in the near future this risk of continuing to have bad data (technical debt) about the network is going to continue to expand. My advice here is to just ^^get started^^, getting the data for the use cases that you are looking for. Don't get into a situation where you are prematurely optimizing the environment.
+One of the biggest challenges that I have seen over the years is worrying about populating "bad" data into the SoT. This is something that definitely needs to be addressed, but without addressing it at some point in the near future this risk of continuing to have bad data (technical debt) about the network is going to continue to expand. My advice here is to just ^^get started^^, getting the data for the use cases that you are looking for. Don't get into a situation where you are prematurely optimizing the environment.
 
 ??? note "Premature Optimization"
     As defined by Gemini (2025-06-03)
@@ -53,7 +53,7 @@ One of the biggest challenges that I have seen over the years is worrying about 
 
 ### Nautobot Jobs
 
-Nautobot Jobs are going to be a big part in my opinion of providing guardrails to AI within an organization. With using Nautobot Jobs, since they are directly connected with the SOT, you now have a set of predefined jobs that receive input from an AI tool. With the Jobs execution you then get:
+Nautobot Jobs are going to be a big part in my opinion of providing guardrails to AI within an organization. With Nautobot Jobs, since they are directly connected with the SOT, you now have a set of predefined jobs that receive input from an AI tool. With the Jobs execution you then get:
 
 - Logging of Job execution, providing the time stamp of who/what system initiated and the job logging of what was executed.
 - RBAC control of what can be executed, by which departments.
