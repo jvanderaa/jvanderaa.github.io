@@ -62,6 +62,6 @@ jobs:
           cp public/index.xml public/feed.xml
           awk '{sub(/<title>Josh VanDeraa</, "<title>Josh-V<")}1' public/feed.xml > temp.txt && mv temp.txt public/feed.xml
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
