@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "Slack Power Keyboard"
 date: 2023-11-18
 categories:

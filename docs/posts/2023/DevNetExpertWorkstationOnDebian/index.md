@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "DevNet Expert Workstation On Debian"
 date: 2023-08-23
 categories:

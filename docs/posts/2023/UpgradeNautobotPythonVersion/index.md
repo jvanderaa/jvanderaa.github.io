@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "Upgrade Nautobot Python Version in Virtual Machine"
 slug: upgrade-nautobot-python-virtual-machine
 date: 2023-08-14
