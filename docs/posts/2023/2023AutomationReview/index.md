@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "2023 Automation Review: Top 3"
 date: 2023-12-15
 categories:

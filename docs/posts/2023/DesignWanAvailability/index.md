@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "Designing WAN Availability"
 date: 2023-09-02
 categories:

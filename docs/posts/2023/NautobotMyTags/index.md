@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "Nautobot: How I Use Tags For VMs"
 date: 2023-09-26
 categories:

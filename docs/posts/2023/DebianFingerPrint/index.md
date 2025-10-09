@@ -1,5 +1,6 @@
 ---
 authors: [jvanderaa]
+comments: true
 title: "Debian Finger Print Login"
 date: 2023-08-19
 categories:
