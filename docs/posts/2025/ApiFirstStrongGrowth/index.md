@@ -23,6 +23,8 @@ Recently, a discussion on the internal Slack at [Network to Code](https://networ
 6. Anyone who doesn’t do this will be fired.
 7. Thank you; have a nice day!
 
+<!-- more -->
+
 ## Introduction
 
 When I first started drafting this post, I centered on the idea of supporting a "Services First" strategy strictly through API services. While that is the most common starting point, as I reviewed the mandate, I noticed the explicit inclusion of **Pub/Sub** (Publish-Subscribe) as a valid communication option. This is something I completely agree with; there are many solid Pub/Sub systems available today, such as Kafka, NATS, and MQTT.
