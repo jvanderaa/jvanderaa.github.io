@@ -5,6 +5,11 @@ site_url: https://josh-v.com/
 repo_name: jvanderaa/jvanderaa.github.io
 repo_url: https://github.com/jvanderaa/jvanderaa.github.io
 
+# For dev to be able to watch directory changes
+watch:
+  - docs
+  - mkdocs.yml
+  
 extra_css:
   - assets/extra.css
   - assets/neoteroi.css
