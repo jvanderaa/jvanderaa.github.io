@@ -66,7 +66,7 @@ ansible-doc networktocode.nautobot.device
 
 If the module is not installed properly you will see, with a key in on the first line
 
-```shell linenums="1"
+```shell {linenos=true}
 $ ansible-doc networktocode.nautobot.device
 [WARNING]: module networktocode.nautobot.device not found in:
 /root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules:/usr/local/lib/python3.7/site-packages/ansible/modules

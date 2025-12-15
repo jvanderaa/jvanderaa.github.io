@@ -92,7 +92,7 @@ that is connected to.
 
 Here is the output from connecting to a single device:
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -167,7 +167,7 @@ This will be shown with the updated playbook (a second debug has been added):
 
 This now yields this output:
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Test of connectivity] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -245,7 +245,7 @@ multiple commands in a single task. Updating the playbook to be this:
 
 Which now yields:
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -358,7 +358,7 @@ playbook. I also added another DNS provider to test my pings to in order to show
 
 This now has the output of the ping test to 1.1.1.1 in the output.
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Test command outputs] ****************************************************
 
 ~~~~ PLAY OUTPUT TRUNCATED FOR BREVITY ~~~~~
@@ -384,7 +384,7 @@ You can also loop over the output of the commands as well. I added in some more 
 that will show how you can loop over all of the commands you issued. In a future post we will
 discuss on how to debug through using `with_items`.
 
-```yaml linenums="1"
+```yaml {linenos=true}
     - name: SYS >> DEBUG to see loop
       debug:
         msg: "{{ item }}"
@@ -394,7 +394,7 @@ discuss on how to debug through using `with_items`.
 We want to get to each of the `stdout` outputs. I've added `with_items` and we have a new variable
 of `item` that we reference in the message. We now get the following output related to that task:
 
-```bash linenums="1"
+```bash {linenos=true}
 TASK [SYS >> DEBUG to see loop] ************************************************
 ok: [rtr01] => (item=Building configuration...
 
@@ -485,7 +485,7 @@ Here is the final playbook
 
 Final Run Output
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************

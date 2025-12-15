@@ -75,7 +75,7 @@ To verify what I had seen previously, I test a `ping 1.1.1.1` to see if there is
 
 Taking a look at the network connections I run the command `ip add` and I get the following output, where the interface name is highlighted on line 8.
 
-```bash hl_lines="8"
+```bash {hl_lines=["8"]}
 (main) expert@expert-cws:~$ ip add
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -94,7 +94,7 @@ Taking a look at the network connections I run the command `ip add` and I get th
 
 On this same host, showing the netplan with the command `cat /etc/netplan/00-cws-dhcp-config.yaml` (tab complete after `/etc/netplan` gets you the file name) you can see that on line 6 that the default workstation interface name has `ens3` rather than the `enp1s0` that you saw on the previous command:
 
-```yaml hl_lines="6"
+```yaml {hl_lines=["6"]}
 # Configure ens160 for DHCP
 network:
     version: 2

@@ -21,7 +21,7 @@ In the first release of Nautobot all of the Jobs were Atomic by default. This wa
 
 Let's take a look at using an example Job that will create 3 location types and 3 locations, 1 of each of those types. I will purposely put an error in the data to demonstrate the atomic nature. The file structure looks like the following for my sandbox environment, which was generated from the Nautobot App Cookiecutter:
 
-```bash linenums="1" title="Tree output of file structure"
+```bash {linenos=true, title="Tree output of file structure"}
 sandbox/
 ├── app-config-schema.json
 ├── __init__.py
@@ -38,7 +38,7 @@ sandbox/
 
 First the `__init__.py` file contains the registration information for the Jobs. The `register_jobs()` function on line 6 is what will register the jobs. It takes in the list of Jobs that are exploded out with the `*jobs` call.
 
-```python linenums="1" title="jobs/__init__.py"
+```python {linenos=true, title="jobs/__init__.py"}
 """Jobs definition."""
 from nautobot.apps.jobs import register_jobs
 from .demo_jobs import CreateSites
@@ -51,7 +51,7 @@ register_jobs(*jobs)
 
 The job itself as you could make out will be in the `demo_jobs.py` file. For demonstration purposes, I will be putting the data right into the file. For a more production like environment, you would likely have a file that gets fed to the job. For this you will see that I have added `slug` to two of the locations defined on lines 44-49. These lines are highlighted.
 
-```python linenums="1" title="jobs/demo_jobs.py" hl_lines="46-48"
+```python {linenos=true, hl_lines=["46-48"], title="jobs/demo_jobs.py"}
 """Demonstration of Jobs."""
 from nautobot.apps.jobs import Job
 from nautobot.dcim.models import LocationType, Location
@@ -132,7 +132,7 @@ But the objects will stay created as shown below.
 
 Let's add some better logging on the job here to report an error. 
 
-```python linenums="1" title="Updated job code" hl_lines="2 71-73"
+```python {linenos=true, hl_lines=["2 71-73"], title="Updated job code"}
 """Demonstration of Jobs."""
 from django.core.exceptions import FieldError
 
@@ -220,7 +220,7 @@ Let's look at making this atomic in nature so that all of the objects are create
 
 The code below fixes just one of the lines to remove slug from the data that is being fed in. This way we can demonstrate that we will only still see the single site and get the Atomic nature. That line change is on line 50. The highlighted lines show the two changes necessary to make the Nautobot Job an atomic job.
 
-```python linenums="1" title="Final Job with Atomic Transaction" hl_lines="2 23"
+```python {linenos=true, hl_lines=["2 23"], title="Final Job with Atomic Transaction"}
 """Demonstration of Jobs."""
 from django.core.exceptions import FieldError
 from django.db import transaction

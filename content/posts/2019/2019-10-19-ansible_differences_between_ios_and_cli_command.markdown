@@ -89,7 +89,7 @@ taking a look at NTP associations lately.
 
 Here is what the task portion of the playbook looks like with a single command.  
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 tasks:
@@ -108,7 +108,7 @@ tasks:
 
 The output from this is as follows assuming an NTP association to the cloudflare NTP servers:  
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Using ios_command for a single command] **********************************************
@@ -175,7 +175,7 @@ tasks:
 
 The command output looks awfully similar now in recent versions of Ansible.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Using cli_command for a single command] ****************************************************************************
@@ -242,7 +242,7 @@ and saved to a variable named `command_output`.
 
 Let's take a look at how this looks now:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Using ios_command for a single command] ****************************************************************************
@@ -326,7 +326,7 @@ using a loop, so let's take a look below:
 
 The output:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Using cli_command for a single command] ****************************************************************************

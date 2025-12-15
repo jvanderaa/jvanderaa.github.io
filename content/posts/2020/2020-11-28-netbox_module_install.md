@@ -80,7 +80,7 @@ ansible-doc netbox.netbox.netbox_device
 
 If the module is not installed properly you will see, with a key in on the first line
 
-```shell linenums="1"
+```shell {linenos=true}
 [WARNING]: module netbox.netbox.netbox_inventory not found in:
 ~/.local/lib/python3.7/site-packages/ansible/modules
 ```

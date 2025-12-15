@@ -103,7 +103,7 @@ from a text perspective. There will however be the modules on the
 [Github](https://github.com/jvanderaa/ansible-using_ios) page, and in a follow
 on subsequent video demonstration of the playbook.
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
 - name: "PLAY 1: Get Configuration Backup to verify connectivity"
@@ -126,7 +126,7 @@ go.
 This is more just to show where we are and that there is nothing configured for
 BGP on R3.
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
 R3#show run | sec bgp
@@ -208,7 +208,7 @@ Line 37: The operation style from Merge, Replace, Override or Delete
 
 ##### Playbook iBGP - Execution
 
-```bash linenums="1"
+```bash {linenos=true}
 - name: "PLAY 1: Setup iBGP Peer to R4"
     - name: "TASK 1: Setup iBGP Peer"
     - name: "TASK 2: Debug output"
@@ -224,7 +224,7 @@ Before the change there are no neighbors established. On the console there is
 an immediate neighbor established on the iBGP side of things with this
 configuration.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Setup iBGP Peer to R4] *******************************************
@@ -281,7 +281,7 @@ information onto the single task of creating a full BGP configuration.
 First let's take a look at the BGP table on the router at this time, there is
 only one neighbor:  
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
 BGP router identifier 10.0.0.3, local AS number 65500
@@ -374,7 +374,7 @@ The module also activates the neighbor.
 <iframe width="853" height="480" src="https://www.youtube.com/embed/haevkbppxmI?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
   
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: Setup iBGP Peer to R4] *******************************************
@@ -415,7 +415,7 @@ kipped=0    rescued=0    ignored=0
 Taking a look at the BGP table, we now have 2 neighbors formed instead of just
 the one.  
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 BGP router identifier 10.0.0.3, local AS number 65500

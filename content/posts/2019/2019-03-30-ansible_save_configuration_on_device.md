@@ -119,7 +119,7 @@ that was done as the Ansible Playbook was being executed.
 
 **Playbook Execution - IOS**
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -144,7 +144,7 @@ rtr02                      : ok=2    changed=1    unreachable=0    failed=0
 
 **GRUB Output - IOS**
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 *Mar 30 16:51:15.832: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
@@ -158,7 +158,7 @@ rtr02                      : ok=2    changed=1    unreachable=0    failed=0
 Here the output is minimal, with the output reporting success as our only method to know that the
 configuration was in fact saved.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -296,7 +296,7 @@ Here is the playbook
 
 When looking at the startup configuration on the router this is what we have:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 router02#show start | i hostname
@@ -314,7 +314,7 @@ We see that the configuration was updated with the command:
 hostname rtr02
 ```
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -346,7 +346,7 @@ rtr02                      : ok=2    changed=1    unreachable=0    failed=0
 
 After the execution we have the startup configuration with the new name, just as we expected
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 rtr02#show start | i hostname
@@ -360,7 +360,7 @@ hostname rtr02
 I'm going to run the same playbook once again, to show that the module has the smarts to not change
 the configuration since it is set. Note the **changed** output is set to _false_.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -395,7 +395,7 @@ Once again, I have the NXOS device hostname set to something different than we w
 The startup configuration has the hostname of `nxos_switch1` but the Ansible inventory has the name
 `nxos01` for the inventory_name. 
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 nxos_switch1# show start | i hostname
@@ -433,7 +433,7 @@ THe playbook now looks like this:
 
 Just as before we have the hostname change to match that of the Ansible inventory. 
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -463,7 +463,7 @@ nxos01                     : ok=2    changed=1    unreachable=0    failed=0
 
 The show start shows that the startup configuration was changed.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 nxos01# show start | i hostname

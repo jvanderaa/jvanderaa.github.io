@@ -104,7 +104,7 @@ Running the playbook on the roles are going to be straight to the point.
 
 This execution shows that all of the device types are added.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@588715249c44:~$ ansible-playbook add_device_role.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -129,7 +129,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@588715249c44:~$ ansible-playbook add_device_role.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available

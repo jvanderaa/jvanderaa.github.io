@@ -17,9 +17,8 @@ params:
 
 Within Nautobot there are many ways to be able to get the Nautobot environment running. Environment variables are used quite a bit in the Docker environment following best practice principles set forth in the [12 Factor App](https://12factor.net/). The use of environment variables is helpful for working through the various stages of an application to production. The installation instructions leverage a single environment variable `NAUTOBOT_ROOT` and that is set in the SystemD files shown below.
 
-<!--more-->
 
-```no-highlight linenums="1",hl_lines="10"
+```text {linenos=true, hl_lines=[10]}
 /etc/systemd/system/nautobot.service
 [Unit]
 Description=Nautobot WSGI Service
@@ -94,7 +93,7 @@ The last step in using the `.env` file that was created is to now reference that
 sudo vi /etc/systemd/system/nautobot.service
 ```
 
-```systemd hl_lines="11"
+```ini {hl_lines=[11]}
 # /etc/systemd/system/nautobot.service
 [Unit]
 Description=Nautobot WSGI Service
@@ -139,7 +138,7 @@ sudo systemctl daemon-reload
 
 Now there are variables in the file that by default do not get loaded. If you try to run `source /opt/nautobot/.env` then you will not have the proper format to load these. As the Nautobot user, modify the `/opt/nautobot/.bashrc` file, adding the following to the end of the file (from this [gist](https://gist.github.com/mihow/9c7f559807069a03e302605691f85572)). The highlighted line the `.env` file should match what you name the file.
 
-```bash hl_lines="2"
+```bash {hl_lines=["2"]}
 set -o allexport
 source /opt/nautobot/.env
 set +o allexport

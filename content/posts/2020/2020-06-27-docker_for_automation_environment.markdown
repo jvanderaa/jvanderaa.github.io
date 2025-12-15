@@ -128,7 +128,7 @@ Python and Ansible Galaxy. So to this effort, here are those two files with a fe
 
 #### requirements.txt
 
-```toml linenums="1"
+```toml {linenos=true}
 ansible-base
 ```
 
@@ -200,7 +200,7 @@ cli:
 First in my container image list I have no containers (I just pruned them all, and they are now all
 deleted with the command `docker system prune -a`):
 
-```bash linenums="1"
+```bash {linenos=true}
 
 $ docker image ls       
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -211,7 +211,7 @@ With no containers, I execute the command from the `Makefile` of `make build`. T
 all of the layers, run the apt installations, pip install, and galaxy install. The output is below
 with many of the lines removed.
 
-```bash linenums="1"
+```bash {linenos=true}
 
 docker build -t jvanderaa/network_automation:2.0-rc2 . 
 Sending build context to Docker daemon   5.12kB
@@ -253,7 +253,7 @@ Because of the tags, I prefer to use the `Makefile` to execute my containers as 
 to the command line within the container by issuing `make cli` command. This will then take me to
 the root user prompt of my conatiner.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 $ make cli  
 docker run -it \

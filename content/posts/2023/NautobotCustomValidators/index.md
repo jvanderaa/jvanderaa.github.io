@@ -32,7 +32,7 @@ The goals that I have for this post:
 
 The Nautobot extensibility features are quite awesome. It is what makes Nautobot a platform worth investing in. The [Nautobot Custom Validators](https://docs.nautobot.com/projects/core/en/stable/plugins/development/#implementing-custom-validators) is no exception here. The example from the link previous is that a validator may set the requirement that every site must have a region:
 
-```python linenums="1"
+```python {linenos=true}
 # custom_validators.py
 from nautobot.apps.models import CustomValidator
 
@@ -59,7 +59,7 @@ More information about the details of this can be found on the link provided, in
 
 First the Flask application. In this instance, I am using the Flask extension Flask-RESTX to help in handling a REST API endpoint that I plan on extending in future iterations. After installing Flask and Flask-RESTX into a new Poetry virtual environment I built the following API endpoint that will check that the hostname is all lower case:
 
-```python linenums="1"
+```python {linenos=true}
 from flask import Flask
 from flask_restx import Api, Resource
 
@@ -114,7 +114,7 @@ Some manual tests of the Flask endpoint to verify that the data is working as ex
 
 #### Good Test
 
-```bash linenums="1"
+```bash
 curl localhost:5000/validate_name/ -d '{"proposed_name":"goodname"}' -X POST -H "Content-Type: application/json"
 ```
 
@@ -149,7 +149,7 @@ I have a "sandbox" Nautobot App that I use to do tests like this. It is its own 
 {{< /alert >}}
 The Nautobot Custom Validator is quite boring actually compared to the code that is put into the remote API. The code is the following and then I'll explain a few of the core parts:
 
-```python linenums="1"
+```python {linenos=true}
 """Custom validators."""
 import requests
 

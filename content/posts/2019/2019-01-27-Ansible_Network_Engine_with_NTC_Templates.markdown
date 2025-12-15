@@ -194,7 +194,7 @@ parsed.
 
 ### Sample Output
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Switch config] *******************************************************************************
 
 TASK [CLI >> Get CDP neighbors] ********************************************************************

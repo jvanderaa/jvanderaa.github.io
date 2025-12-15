@@ -271,7 +271,7 @@ At this point the device types are now available inside of the UI.
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@60a6498959f8:~$ ansible-playbook add_device_types.yml -vv
 ansible-playbook 2.10.6

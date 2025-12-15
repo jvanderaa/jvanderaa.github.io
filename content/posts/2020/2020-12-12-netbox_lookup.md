@@ -153,7 +153,7 @@ When taking a look at gathering sites the following task is used:
 
 Lines 1-3 are the collecting of data from NetBox itself. In my NetBox demo environment I currently have 4 sites. Instead of giving you the entire output that is quite long, below is that output. Note that there is a bunch of information available to you about each site here.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
    - key: 6
       value:
@@ -195,7 +195,7 @@ Lines 1-3 are the collecting of data from NetBox itself. In my NetBox demo envir
 
 I used json_query (which uses JMESPATH) to get just the site names. I see a future post on this coming in the future. The result of this gives me the output of just the four sites and not the rest of the data:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 ok: [localhost] => 
   msg:
@@ -226,7 +226,7 @@ You can then filter with the lookup plugin as well. In these two tasks I'm going
 
 The output from these two tasks where there is a single router device at the site Denver is then the following output with the single device on line 77.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [TASK 3: GET ROLE ROUTERS AT DEN SITE] **************************************************************************************************************************
   ansible_facts:
@@ -315,7 +315,7 @@ With this you are able to filter many things. To filter multiple sites, say you 
 
 > I am only showing a single device corresponding to MSP & DEN site.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
   ansible_facts:
     msp_den_devices:
@@ -394,7 +394,7 @@ With this you are able to filter many things. To filter multiple sites, say you 
 
 Here is the result of Task 6, which is the list of the devices:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [TASK 6: PRINT THE DEVICES AT DEN & MSP LOCATIONS] **************************************************************************************************************
 ok: [localhost] => 
@@ -434,7 +434,7 @@ One may say that I can just get the data from using the URI module from Ansible.
 
 Task 7 gets the data, and looking at the response data coming back we can see that there is a second page by the **next** field:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
   json:
     count: 3
@@ -447,7 +447,7 @@ Task 7 gets the data, and looking at the response data coming back we can see th
 
 Task 8 then confirms this for us:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
   msg:
   - 'Length of result on paginated response: 2'
@@ -460,7 +460,7 @@ This is where leveraging pynetbox under the hood and it handling the pagination 
 
 The result is handling the paging in the task and makes the life very easy to get data from NetBox with it!
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [TASK 10: PRINT THE DEVICES AT DEN LOCATION] ********************************************************************************************************************
 ok: [localhost] => 

@@ -44,7 +44,7 @@ You have probably seen this before, but for completeness sake I did get the outp
 banner. This has the default lab setup on the device. So we do get a banner, but I'm getting
 prompted for a Password as well.
 
-```shell linenums="1"
+```shell {linenos=true}
 
 
 ssh rtr-1
@@ -97,7 +97,7 @@ create an account on the same device but with my local computer account. Here is
 It is a single play playbook, with 2 tasks. Task 1 will add the local id_rsa public key to the IOS
 device. The final task is a play to save the configuration.
 
-```shell linenums="1"
+```shell {linenos=true}
 
 
 ansible-playbook working_with_ios_user-1.yml
@@ -150,7 +150,7 @@ expected to be the first level of config mode and sets username `joshv` without 
 Execution is pretty much what we would expect of adding a username to the device. Taking a look at
 if we get prompted when connecting to the device is a no, I do not.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 $ ssh rtr-1
@@ -180,7 +180,7 @@ Taking a look at the configuration in the router, it looks exactly as we would e
 only two users configured. The first being the one that Ansible uses to connect to this device. The
 second being the one we just reconfigured.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 rtr-1#show run | i username
@@ -228,7 +228,7 @@ remove all of what was created on the device.
 
 Execution looks extremely similar. Here it is:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************
@@ -275,7 +275,7 @@ r1                         : ok=3    changed=2    unreachable=0    failed=0    s
 
 Executing the module a second time you get the full removal of the user account.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************
@@ -356,7 +356,7 @@ condition is met.
 
 Here is the execution. Note that Ansible masks the password being set.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************

@@ -40,7 +40,7 @@ For this post I will be using Python Poetry to handle the packaging within the d
 {{< /alert >}}
 We will first set the environment variables that will be needed for the Nornir script.
 
-```bash title="Set Nautobot environment variables"
+```bash {title="Set Nautobot environment variables"}
 export NAUTOBOT_URL="https://demo.nautobot.com"  
 export NAUTOBOT_TOKEN="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 ```
@@ -65,7 +65,7 @@ Now that all of the environment variables are set for the Nautobot environment, 
 > nornir==3.4.1 ; python_version >= "3.9" and python_version < "4.0"
 > ```
 >
-```python linenums="1" title="explore-nornir-transform.py"
+```python {linenos=true, title="explore-nornir-transform.py"}
 """Testing file."""
 import os
 import urllib3
@@ -102,20 +102,20 @@ if __name__ == "__main__":
 
 When you run this script you will get the following output showing the length of the devices and the key list (as defined on line 43).
 
-```bash title="Set Environment Variables for Network Devices"
+```bash {title="Set Environment Variables for Network Devices"}
 export NET_USERNAME="my_username"
 export NET_PASSWORD="my_password"
 ```
 
 This just set the environment variables of `NET_USERNAME` and `NET_PASSWORD`. You can confirm this by executing:
 
-```bash title="Verify environment variables are set"
+```bash {title="Verify environment variables are set"}
 env | grep NET_
 ```
 
 Which will provide the output:
 
-```bash title="Output of env | grep NET_"
+```bash {title="Output of env | grep NET_"}
 ❯ env | grep NET_
 NET_USERNAME=my_username
 NET_PASSWORD=my_password
@@ -152,7 +152,7 @@ The function is more lines of documentation than the code itself. Assigning `hos
 
 The second step in this process is to add a section in the `pyproject.toml` file. This will be needed to help register the function to Nornir. Lines 13 & 14 are what are required for the Nornir plugin registration.
 
-```toml title="pyproject.toml" hl_lines="13-14" linenums="1"
+```toml {linenos=true, hl_lines=["13-14"], title="pyproject.toml"}
 [tool.poetry]
 name = "sandbox-python"
 version = "0.1.0"
@@ -188,7 +188,7 @@ TransformFunctionRegister.register("update_credentials", update_credentials)
 
 Here is the completed demo file:
 
-```py title="explore-nornir-transform.py" linenums="1" hl_lines="21"
+```py {linenos=true, hl_lines=["21"], title="explore-nornir-transform.py"}
 """Testing file."""
 import os
 import urllib3
@@ -243,7 +243,7 @@ if __name__ == "__main__":
 
 When this executes you get the following output:
 
-```bash title="explore-nornir-transform.py output" linenums="1"
+```bash {linenos=true, title="explore-nornir-transform.py output"}
 Hosts found: 27
 dict_keys(['ord01-dist-01', 'ord01-edge-01', 'ord01-edge-02', 'ord01-leaf-01', 'ord01-leaf-02', 'ord01-leaf-03', 'ord01-leaf-04', 'ord01-leaf-05', 'ord01-leaf-06', 'ord01-leaf-07', 'ord01-leaf-08', 'ord01-pdu-01', 'ord01-pdu-02', 'ord01-pdu-03', 'ord01-pdu-04', 'ord01-pdu-05', 'ord01-pdu-06', 'ord01-pdu-07', 'ord01-pdu-08', 'ord01-pdu-11', 'ord01-pdu-12', 'ord01-pdu-13', 'ord01-pdu-14', 'ord01-pdu-15', 'ord01-pdu-16', 'ord01-pdu-17', 'ord01-pdu-18'])
 my_username

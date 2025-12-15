@@ -86,7 +86,7 @@ Here is the before:
 
 Pretty short and sweet on this playbook. With having `Cisco` already present, you can see that the module is idempotent:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@d27199d82bfc:~$ ansible-playbook add_manufacturers.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available

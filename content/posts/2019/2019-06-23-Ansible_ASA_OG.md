@@ -85,7 +85,7 @@ Quad9)
 Let's tackle the first item. First to show the configuration on the ASA
 firewall for the object group:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 fw01# show object-group 
@@ -183,7 +183,7 @@ necessary.
 
 ##### Second Run
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -332,7 +332,7 @@ As expected, we get the new items added to the configuration. When we look at
 the before and after on the configuration of the ASA we now see that we have
 the second object group, exactly as we expected.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 fw01# show object-group
@@ -489,7 +489,7 @@ to the device creates the port object
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/X7mH-x9ui28?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -546,7 +546,7 @@ kipped=0    rescued=0    ignored=0
 
 And as we are use to seeing, we see the update on the ASA itself:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 fw01# show object-group
@@ -600,7 +600,7 @@ will NOT remove an entire object-group**.
 
 The firewall configuration has the following for object groups:  
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 object-group network RFC1918_Networks
@@ -656,7 +656,7 @@ task will take a look at another helpful state of **replace**.
 <iframe width="853" height="480" src="https://www.youtube.com/embed/ucKFWlirHjE?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -724,7 +724,7 @@ kipped=0    rescued=0    ignored=0
 Here we see that the port object that we asked to remove is gone. If there were
 other object items in the object-group they would still remain.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 fw01# show object-group

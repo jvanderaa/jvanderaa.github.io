@@ -125,7 +125,7 @@ test, no other particular reason.
 
 The Jinja2 template file that I am calling in this execution is the following:
 
-```bash linenums="1"
+```bash {linenos=true}
 interface Port-channel5
  switchport trunk allowed vlan 2,4,5
  switchport trunk encapsulation dot1q
@@ -165,7 +165,7 @@ Here is the playbook run with the CLI module:
 
 Output from this is:
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Switch config] *******************************************************************************
 
 TASK [CLI >> Configure Port channel] ***************************************************************
@@ -217,7 +217,7 @@ Moving to virtually the same playbook here:
 
 The resulting output also includes _banners_, _commands_, and _updates_.
 
-```bash linenums="1"
+```bash {linenos=true}
 PLAY [Switch config] ***********************************************************
 
 TASK [IOS >> Configure port channel] *******************************************

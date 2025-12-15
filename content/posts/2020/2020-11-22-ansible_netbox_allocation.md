@@ -112,7 +112,7 @@ This response when registered will provide with the Prefix ID, prefix itself, an
 
 After getting the first task to allocate the prefix, next up is to assign the IP address from the prefix. This task allocates an IP address from the prefix that was just previously allocated.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 - name: "20 - ALLOCATE IP ADDRESS FOR THE ROUTER INTERFACE"
   netbox.netbox.netbox_ip_address:
@@ -164,7 +164,7 @@ You can see that there is a single IP address allocated.
 
 The next task in the Playbook is to shorten some of the variables. This is purely for visualization purposes. In order to not have long lines in the coming tasks, the following was done to create shorter line lengths:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 - name: "30 - SET FACTS TO ASSIGN IP ADDRESS TO CISCO IOS ROUTER"
   set_fact:
@@ -177,7 +177,7 @@ The next task in the Playbook is to shorten some of the variables. This is purel
 
 Now that there is an IP address and prefix available, and assigned within NetBox, the next step is to add the configuration to the device. Since this is primarily a focus on the NetBox side of things this will be short.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
     # DEPLOY THE INFORMATION TO THE ROUTER
     - name: "100 - ADD IP ADDRESS INFORMATION TO THE ROUTER"
@@ -230,7 +230,7 @@ This is a quick demo and has some hand holding that needs to be done for it. The
 
 Here is what the final playbook looks like at the moment, again not completely production ready, but is a good starting point.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 ---
 - name: "PLAY 1 - ASSIGN PREFIXES FOR HOST"

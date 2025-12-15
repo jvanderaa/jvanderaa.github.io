@@ -212,7 +212,7 @@ query {
 
 Running that query generates the following error message:
 
-```no-highlight
+```text
 "message": "Fields \"sites\" conflict because they have differing arguments. Use different aliases on the fields to fetch both if this was intentional.",
 ```
 

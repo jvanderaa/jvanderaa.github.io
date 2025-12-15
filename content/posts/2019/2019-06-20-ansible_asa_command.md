@@ -37,7 +37,7 @@ Module documentation page can be found
 The device has bare basic configuration on it. Here we see that it has just a
 management IP address on it.
 
-``` cisco
+```cisco
 fw01# show int ip brie
 Interface                  IP-Address      OK? Method Status                Protocol
 GigabitEthernet0/0         unassigned      YES unset  administratively down up  

@@ -43,7 +43,7 @@ Here I'm executing `vim demo_jobs.py` from the `/opt/nautobot/jobs/` directory. 
 
 This will be a multiple step process. I like to debug the job along the way in order to know what I am working with. So the first iteration I include the following code to verify what is being sent in from the device form. Here is what the code looks like.
 
-```python linenums="1"
+```python {linenos=true}
 from django.conf import settings
 
 # Importing Nautobot DCIM device model in order to be able to choose what device I want to connect to
@@ -113,7 +113,7 @@ When you execute the Job for a device, you now get a basic "Hello World" executi
 
 The best way to get the information available within a Nautobot object is to work within the shell_plus environment. On your Nautobot server as the Nautobot user, enter the command `nautobot-server shell_plus`. This will bring you into an interactive shell, hopefully an iPython like environment. If you do not get an iPython shell and you are on a development host (not production), then you can do a pip install to get iPython installed (`pip install ipython`).
 
-```python linenums="1"
+```python {linenos=true}
 In [1]: mydevice = Device.objects.first()
 
 In [2]: mydevice.name
@@ -146,7 +146,7 @@ In the exploration with the shell, on lines 3 and 4 you see the verification tha
 
 The run method now looks like this:
 
-```python linenums="1"
+```python {linenos=true}
 import os
 
 # Used to convert NAPALM type to Netmiko type
@@ -201,7 +201,7 @@ Thanks for the read and Happy Automating!
 
 Here is the full code block:
 
-```python linenums="1"
+```python {linenos=true}
 import os
 from django.conf import settings
 

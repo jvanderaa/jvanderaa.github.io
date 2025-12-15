@@ -21,7 +21,7 @@ The default installation however did not get the same behavior as my previous Oh
 
 <!--more-->
 
-```bash linenums="1"
+```bash {linenos=true}
 poetry init
 ls
 systemctl status nautobot

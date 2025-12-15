@@ -43,7 +43,7 @@ Exception: This build of python cannot create venvs without using symlinks
 
 This is coming from a pyenv set up that I've also been convinced to run (however, I'm not convinced). So the next step is instead of installing to `python3`, you install to the current minor version of Python:
 
-```bash 
+```bash
 curl -sSL https://install.python-poetry.org | python3.10 -
 ```
 

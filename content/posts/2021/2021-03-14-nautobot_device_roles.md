@@ -102,7 +102,7 @@ Running the playbook on the roles are going to be straight to the point. Before 
 
 This execution shows that all of the device types are added.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@a6339c74e30d:~$ ansible-playbook add_device_role.yml -vv
 ansible-playbook 2.10.6

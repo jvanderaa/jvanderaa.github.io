@@ -108,7 +108,7 @@ Before the execution there are no devices within Nautobot:
 
 This execution shows that all of the device types are added.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@1297da6292df:~$ ansible-playbook add_devices.yml -vv
 ansible-playbook 2.10.6
@@ -223,7 +223,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 josh-v@1297da6292df:~$ ansible-playbook add_devices.yml -vv
 ansible-playbook 2.10.6

@@ -56,7 +56,7 @@ Take a look at the [documentation](https://netbox-ansible-collection.readthedocs
 
 The point of these posts are to show examples and get you started. So let's get started. At the beginning of this there are going to be four sites that we can check out with the query function:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [05 - QUERY SITES] **********************************************************************************************************************************************
   ansible_facts:
@@ -122,7 +122,7 @@ Running the following playbook multiple times will show that the module itself i
 
 The output below is from a second run. The sites for the current NetBox demo was originally deployed with this.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 ok: [localhost] => changed=false 
@@ -207,7 +207,7 @@ sites:
 
 With the new location, the Ansible Playbook is executed and we see a new site is added:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 ok: [localhost] => changed=false 
@@ -352,7 +352,7 @@ The result of the playbook shows that we had the site at the beginning, then we 
 
 > When removing a site, you do need to make sure that all of the corresponding devices and other relationships are gone from the site. NetBox will not allow you to remove a site without it being empty first.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 task path: /local/add_sites.yml:7

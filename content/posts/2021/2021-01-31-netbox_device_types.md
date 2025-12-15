@@ -103,7 +103,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 This execution shows that all of the device types are added.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 josh-v@d27199d82bfc:~$ ansible-playbook add_devices.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
@@ -124,7 +124,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 josh-v@d27199d82bfc:~$ ansible-playbook add_devices.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'

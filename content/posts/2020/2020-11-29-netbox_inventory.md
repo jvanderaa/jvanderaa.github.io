@@ -100,7 +100,7 @@ config_context: false
 
 When executing the inventory `ansible-inventory -i netbox_inventory.yml`. This example the file name is netbox_inventory.yml. This is completely arbitrary. You can name the inventory any file you wish. Most likely you should name it something that relates to the inventory you are creating. The result of the inventory gives the following:
 
-```json linenums="1"
+```json {linenos=true}
 {
     "_meta": {
         "hostvars": {
@@ -200,7 +200,7 @@ group_by:
 
 This now yields the following:
 
-```json linenums="1"
+```json {linenos=true}
 {
     "all": {
         "children": [
@@ -273,7 +273,7 @@ query_filters:
 
 Looking at just the platforms_cisco_ios grouping, there is now a single device.
 
-```json linenums="1"
+```json {linenos=true}
     "platforms_cisco_ios": {
         "hosts": [
             "dcrtr001"
@@ -289,7 +289,7 @@ query_filters:
   - status: "offline"
 ```
 
-```json linenums="1"
+```json {linenos=true}
     "platforms_cisco_ios": {
         "hosts": [
             "dcrtr001",
@@ -327,7 +327,7 @@ compose:
 
 With this modification the output shows the following hostvars with the groups unchanged. Notice specifically line 3 that there is now the *ansible_network_os* is set to *ios*, which will match the Ansible Network OS that Ansible will use. I just make sure that the slug for the Platform name matches that of the primary automation system.
 
-```json linenums="1"
+```json {linenos=true}
 "dcrtr001": {
     "ansible_host": "192.0.2.10",
     "ansible_network_os": "ios",

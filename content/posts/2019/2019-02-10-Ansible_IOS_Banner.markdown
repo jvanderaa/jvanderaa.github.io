@@ -39,7 +39,7 @@ I'm starting out with no banner on the page of my system as evident from this lo
 
 **Cisco Router Login**
 
-```bash linenums="1"
+```bash {linenos=true}
 Escape character is '^]'.
 
 Username: 
@@ -69,7 +69,7 @@ I now have the following banner showing up on the login to the Cisco device over
 
 **Banner on Router**
 
-```bash linenums="1"
+```bash {linenos=true}
 Quick banner, this device is being managed by Ansible.
 ```
 
@@ -78,7 +78,7 @@ Quick banner, this device is being managed by Ansible.
 Let's take a look at the output of the `ios_banner` module when saved to a variable. We get the
 following output to the screen:
 
-```bash linenums="1"
+```bash {linenos=true}
 TASK [DEBUG >> Output] *********************************************************
 ok: [rtr01] => {
     "msg": {
@@ -123,7 +123,7 @@ is something that would carry over between languages/tools that are using YAML a
 
 This has successfully added a multiple line banner to the configuration:
 
-```bash linenums="1"
+```bash {linenos=true}
 TASK [IOS >> Set banner to single login] ***************************************
 changed: [rtr01]
 
@@ -142,7 +142,7 @@ ng changes at your own risk!\n@"
 
 A quick look at the configuration itself in IOS:
 
-```bash linenums="1"
+```bash {linenos=true}
 !
 banner login ^C
 ===This device is being managed by Ansible===
@@ -185,7 +185,7 @@ Notice the changes on line 3 below has been changed from the banner `login` to t
 ```
 
 **Output**
-```bash linenums="1"
+```bash {linenos=true}
 TASK [IOS >> Set banner to single login] ***************************************
 changed: [rtr01] => (item=motd)
 ok: [rtr01] => (item=login)

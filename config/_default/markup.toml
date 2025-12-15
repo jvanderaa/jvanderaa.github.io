@@ -5,10 +5,10 @@
 [highlight]
   codeFences = true
   guessSyntax = true
-  lineNos = true
+  lineNos = false
   lineNumbersInTable = true
   noClasses = false
-  style = "monokai"
+  style = "nord"
 
 [tableOfContents]
   startLevel = 1

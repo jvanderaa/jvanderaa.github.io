@@ -120,7 +120,7 @@ about the other parameters not provided.
 
 ```
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 "commands": [
@@ -162,7 +162,7 @@ shows that the only changes being made are to `GigabitEthernet0/3`. This is simi
 see in the overridden section. Overridden will configure every interface on the device vs replaced
 looks to only be handling the interface defined within the config parameter.
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
     "msg": {
@@ -250,7 +250,7 @@ This one was not completely obvious to me when originally looking at. But as I t
 come to find that this state is something to be **VERY** cautious with. In the testing, I had the
 following configuration on the devices:
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
 interface GigabitEthernet0/1
@@ -288,7 +288,7 @@ tasks to test the `Overridden` setting.
 
 The output shows that Ansible is going to erase the description lines:
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
 "commands": [
@@ -308,7 +308,7 @@ The next test I changed the MTU on `GigabitEthernet0/1` and `GigabitEthernet0/2`
 setting the description on a single interface. The results from running that playbook now show that
 the interface MTU is reset to default since it was not statically defined in the task.
 
-```bash linenums="1"
+```bash {linenos=true}
 
 
     "commands": [
@@ -392,7 +392,7 @@ new configuration of the tasks:
 With having multiple interfaces defined under the config as another list item you are able to get
 both of the interfaces configured with what you are looking to do.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
         "after": [
@@ -502,7 +502,7 @@ default in the module is currently (2020-01-26) set to enabled.
 When the configuration previously had an interface description and an MTU set, the following is
 the commands that are executed on just the single interface that is defined in the task:
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 "commands": [

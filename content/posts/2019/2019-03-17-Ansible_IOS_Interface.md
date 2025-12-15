@@ -92,7 +92,7 @@ switch itself.
 Before the change there is just the `media-type` and the `negotiation` set to auto. These are
 default out of the box.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 sw19#show run int gig0/1
@@ -152,7 +152,7 @@ end
 Here we see that the commands being sent to the device are to set the speed, duplex to full,
 interface description, and then shutting down the interface that was set to disabled.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -193,7 +193,7 @@ switch platform. I plan to open up a bug report on this soon. We see exactly wha
 configuration after the Ansible output. We see interface description configured on each interface,
 the interface shutdown or enabled. 
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 sw19#show run int gig0/1
@@ -230,7 +230,7 @@ In the second example of the playbook we will create additional Loopback address
 
 Here is the output of the `show ip int breif` of the switch before adding loopbacks.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 Interface              IP-Address      OK? Method Status                Protocol
@@ -286,7 +286,7 @@ loopbacks.
 I expect to see the configuration of just creating a loopback address. This is in fact what is seen
 upon executing the command.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -315,7 +315,7 @@ sw19                       : ok=2    changed=1    unreachable=0    failed=0
 
 Now on the switch as expected we see another Loopback address added.
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 sw19#show ip int brie
@@ -391,7 +391,7 @@ The commands sent to the device essentially are:
 This creates the interface that was not there previously and does not provide any other
 configuration.  
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
@@ -454,7 +454,7 @@ desired configuration (blank).
 
 **Pre-Configuration**
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 #show run int gig0/1
@@ -475,7 +475,7 @@ With no other parameters defined the module does nothing.
 
 **Play Execution**
 
-```yaml linenums="1"
+```yaml {linenos=true}
 
 
 PLAY [Switch config] ***********************************************************
