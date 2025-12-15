@@ -1,0 +1,16 @@
+{{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+  <div class="my-4 flex flex-wrap items-center">
+    <span class="mr-2 text-neutral-500 dark:text-neutral-400 font-bold">Tags:</span>
+    {{ range $taxonomy, $terms := .Site.Taxonomies }}
+      {{ if (gt (len ($.GetTerms $taxonomy)) 0) }}
+        {{ range $.GetTerms $taxonomy }}
+          <a
+            href="{{ .Permalink }}"
+            class="mx-1 my-1 rounded-md border border-neutral-200 px-2 py-1 text-sm hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+            >{{ .LinkTitle }}</a
+          >
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

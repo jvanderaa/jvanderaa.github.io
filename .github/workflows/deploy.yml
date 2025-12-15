@@ -1,112 +1,78 @@
-name: Build and Deploy
-run-name: "🚀[${{ github.workflow }}] - ${{ github.event.head_commit.message }}"
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Deploy Hugo site to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches:
       - main
+      - try_hugo_again
 
-concurrency:
-  group: ${{ github.workflow}}
-  cancel-in-progress: true
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
-env:
-  PYTHON_VERSION: 3.12
-
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
-  id-token: write
+  contents: read
   pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  build_and_deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-    environment: josh-v.com
-
+    env:
+      HUGO_VERSION: 0.152.2
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-
-      - name: Install dependencies
+      - name: Install Hugo CLI
         run: |
-          uv sync
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-      - name: Build MkDocs site
-        run: |
-          uv pip compile pyproject.toml -o requirements.txt
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
 
-      - name: Set up Python runtime
-        uses: actions/setup-python@v6
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-          cache-dependency-path: |
-            requirements.txt
+          submodules: recursive
+          fetch-depth: 0
 
-      - name: Debug
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
         run: |
-          env | sort -f
-          ls -lart
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ vars.BASE_URL || 'https://josh-v.com/' }}"
 
-      - name: Get pip cache dir
-        run: |
-          os_version=$(cat /etc/os-release | grep -i "version=" | cut -c9- | tr -d '"' | tr ' ' '_')
-          github_workflow_full_path="${GITHUB_WORKFLOW_REF%@*}"
-          python_full_version=$(python -c 'import platform; print(platform.python_version())')
-          node_major_version=$(node --version | cut -d'.' -f1 | tr -d 'v')
-          echo "os_version=$os_version" >> $GITHUB_ENV
-          echo "github_workflow_full_path=$github_workflow_full_path" >> $GITHUB_ENV
-          echo "python_full_version=$python_full_version" >> $GITHUB_ENV
-          echo "PIP_CACHE_DIR=$(pip cache dir)" >> $GITHUB_ENV
-
-      - name: cache pip
-        uses: actions/cache@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.pythonLocation }}
-          key: ${{ env.github_workflow_full_path}}-${{ env.os_version }}-${{ env.python_full_version }}-${{ env.node_major_version}}-${{ hashFiles('requirements.txt') }}
+          path: ./public
 
-      # - name: Set up build cache
-      #   uses: actions/cache/restore@v3
-      #   with:
-      #     key: mkdocs-material-${{ hashfiles('.cache/**') }}
-      #     path: .cache
-      #     restore-keys: |
-      #       mkdocs-material-
-
-      - name: Install dependencies
-        run: sudo apt-get install pngquant
-
-      - name: Install Python dependencies
-        run: |
-          pip install -U pip
-          pip install -U -r requirements.txt
-
-      - name: Build documentation
-        run: |
-          mkdocs --version
-          tree
-          python -m mkdocs build --strict
-          cp site/feed_rss_created.xml site/feed.xml
-
-      # - name: Adjust permissions
-      #   run: |
-      #     chmod -c -R +rX site/ | while read line; do
-      #       echo "::warning title=Invalid file permissions automatically fixed::$line"
-      #     done
-
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
-
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-
-      # - name: Save build cache
-      #   uses: actions/cache/save@v3
-      #   with:
-      #     key: mkdocs-material-${{ hashfiles('.cache/**') }}
-      #     path: .cache
