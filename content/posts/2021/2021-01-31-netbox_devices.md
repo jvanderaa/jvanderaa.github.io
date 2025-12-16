@@ -18,7 +18,7 @@ toc: true
 
 All of the work through the modules thus far in the series have brought us to what we all want to see. How to get or update device information inside of NetBox. Adding of sites, device types, device roles are required to get us to this point. Now you can see how to add a device to NetBox using the netbox.netbox.netbox_device module.  
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

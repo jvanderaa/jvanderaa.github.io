@@ -21,7 +21,7 @@ The NetBox lookup plugin is to **get information** out of NetBox for use within 
 
 > The recommended Jinja function to use with this lookup plugin is the `query` function. This tells Ansible that the result of the lookup should be a type list. The same behavior is also available by using the `lookup` function, in conjunction with the parameter `wantlist=true`. For this post we will use the `query` method.
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

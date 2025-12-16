@@ -17,7 +17,7 @@ This post dives into the [NetBox Ansible Content Collection](https://netbox-ansi
 - [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
 - [Ansible Guest Blog Post](https://www.ansible.com/blog/using-netbox-for-ansible-source-of-truth)
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

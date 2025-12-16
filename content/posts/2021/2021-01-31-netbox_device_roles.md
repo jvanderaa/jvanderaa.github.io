@@ -18,7 +18,7 @@ toc: true
 
 A device role is aptly named, the role of the device. This is likely to be something that is meaningful to your organization and could change. For example you may have the 3 tier system of Core, Distribution, and Access layer environments. These are just fine. So you would want to have the roles there to reflect this reality. You may have leaf-spine environments, there are two more roles. And in my past I have also had roles that would indicate that there are dedicated DMZ, WAN edge, Internet edge devices. So this is the place to set this.
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

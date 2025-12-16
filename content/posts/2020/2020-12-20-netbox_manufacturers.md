@@ -18,7 +18,7 @@ toc: true
 
 Adding your manufacturers via code is the easy way to get started with your NetBox devices. Immediately after adding Sites, the next thing to get going when using NetBox as your Source of Truth is to add in Manufacturers. These are just that, who makes the gear that you use. For this demonstration you will see adding just a few manufacturers. I'm not necessarily picking on any vendors and who should or shouldn't be here. It is just what my background brings.
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

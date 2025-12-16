@@ -37,11 +37,11 @@ What I'm going with are the following:
 | CPU Cooler   | DeepCool AK400                                | https://amzn.to/3rrpM6y |
 | GPU          | AISURIX Radeon RX 580                         | https://amzn.to/3Yf4B4a |
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 These are all affiliate links. I am not a big affiliate person today, but trying it out.
 {{< /alert >}}
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 I am making some minor updates based on changes that I had made in troubleshooting. I have swapped out what originally was an ASUS Prime B760M motherboard for a Gigabyte B765M DS3H AX. This provides additional networking capabilities (Wifi/Bluetooth and 2.5 Gbps NIC) and an additional M.2 slot. I have also swapped out the GPU and will stick with the new GPU at this point.
 {{< /alert >}} 
 ### Processor

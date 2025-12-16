@@ -19,7 +19,7 @@ For this post, I've created a new Rocky 8 Virtual Machine to be the host. See th
 
 > I originally thought just doing a DNF update on the host that I would be able to use Python 3.8 or something of that nature. I was wrong. Running the DNF update put Python3.11 on the host. So now it is on to removing Python3.11 and move to 3.8 for this post. I completed this step with a `sudo dnf install python3.8`
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 It is a strong recommendation to not have to follow this process. In that you should be looking to be using infrastructure that can be destroyed and recreated. Such as with Docker containers or having the build process to be able to replace virtual machines as needed.
 {{< /alert >}}
 

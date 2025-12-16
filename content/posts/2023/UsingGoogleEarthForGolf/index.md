@@ -62,7 +62,7 @@ Now that there are some yardages off the tee, comes the part that you don't get 
 
 ![Elevation Info Panel](elevation_info_panel.png)
 
-{{< alert "comment" >}}
+{{< alert "circle-info" >}}
 The USGA app itself also offers green books that have much more details slopes on them. There is an annual cost for this green book and I am one that is supporting technology innovations by the USGA. I'm glad to show interest and pay them a bit of revenue in order to continue to develop technology advances for golf. [Android](https://play.google.com/store/apps/details?id=com.advancedmobile.android.ghin&hl=en_US&gl=US) [Apple](https://apps.apple.com/us/app/ghin/id491796218)
 {{< /alert >}}
 

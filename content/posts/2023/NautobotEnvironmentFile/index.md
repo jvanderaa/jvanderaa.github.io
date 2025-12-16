@@ -118,7 +118,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 It is important to note that there are no quotes/double quotes around the file path. If you put these in, there will be issues. I had invested a fair bit of time the first time troubleshooting why my environment variables are not loading.
 {{< /alert >}}
 

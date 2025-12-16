@@ -18,7 +18,7 @@ toc: true
 
 A device type is the next piece in the NetBox Device onboarding requirements. The device type corresponds to the model number of the hardware (or virtual machine). This is where you are able to template out devices during their creation. So if you have a console port on a device type, that console port will be created when you create the device. However, **there is NOT** a relationship built between the device type and the device. If the device type gets updated after the device is created, the device itself is **not** updated. 
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
 {{< /alert >}}
 

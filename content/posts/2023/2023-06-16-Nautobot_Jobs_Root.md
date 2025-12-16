@@ -169,7 +169,7 @@ from netutils.lib_mapper import NAPALM_LIB_MAPPER
 
 On line 1 of the above example, the `import os` was added to get the environment variables to get the credential to connect to the device. This could be set, or you may want to use another method.
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 This is an example only. Environment variables have some considerations with that go along with them. There are also methods to work with the Nautobot Secrets providers that would be of better consideration here. But those were not added for the example of what it is that I'm trying to show in this post, how to connect and execute Netmiko Python scripts against a network device.
 {{< /alert >}}
 

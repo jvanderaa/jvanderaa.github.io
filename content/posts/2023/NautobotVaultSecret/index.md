@@ -43,7 +43,7 @@ The last part you need within your Nautobot secret is the Key itself. So in the 
 
 ![Vault Keys](/images/2023/vault_net_device_overview.png)
 
-{{< alert >}}
+{{< alert "circle-info" >}}
 It's worth noting that each key in the vault secret is its own entity. That being that you will need to set up a Nautobot Secrets Group to pair the username and password together. **You need to set up a secret for both a username and password** if you are having a username/password combination that is often the case.
 {{< /alert >}}
 

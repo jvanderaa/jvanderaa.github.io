@@ -30,7 +30,7 @@ The issue at hand was there was an issue with a particular firewall system that 
 ![RPC connections through firewall](fw_traffic.png)
 </figure>
 
-{{< alert "info" >}}
+{{< alert "circle-info" >}}
 I forget the details about how it was diagnosed as an issue and made its way to the firewall as the culprit. But that is not important.
 
 {{< /alert >}}

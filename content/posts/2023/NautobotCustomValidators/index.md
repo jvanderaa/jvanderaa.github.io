@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
 {{< /highlight >}}
 
-{{< alert "comment" >}}
+{{< alert "circle-info" >}}
 Lines 17 & 18 are just the debugging code that will print out to the console the details to help understand what is coming in.
 {{< /alert >}}
 
