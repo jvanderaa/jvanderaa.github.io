@@ -1,18 +1,23 @@
 ---
+author: Josh VanDeraa
 toc: true
-date: 2019-06-20
+date: 2019-06-20 07:00:00+00:00
 layout: single
 slug: ansible-asa-command
 title: Ansible ASA Command Module
-categories:
-- ansible
-- cisco
-- asa
+comments: true
+# collections:
+#   - Cisco
+#   - Ansible
+# categories:
+#   - Ansible
+#   - Cisco Automation
+tags:
+  - ansible
+  - cisco
+  - asa
 sidebar:
   nav: ansible
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Today will be a touch shorter post, but it is good to be back at it. In this
@@ -20,8 +25,6 @@ post I will be taking a quick look around at the asa_command module, as we start
 down the path with looking at the ASA modules in Ansible. This is spurned on a
 little bit by Ansible 2.8 coming out with an Object Group specific module. I
 will be looking into that further in a future post.
-
-<!--more-->
 
 For the set of posts regarding the ASA, we will be starting with a pretty bare
 configuration on the device. We will have just a management IP address and the
@@ -37,7 +40,7 @@ Module documentation page can be found
 The device has bare basic configuration on it. Here we see that it has just a
 management IP address on it.
 
-```cisco
+``` cisco
 fw01# show int ip brie
 Interface                  IP-Address      OK? Method Status                Protocol
 GigabitEthernet0/0         unassigned      YES unset  administratively down up  
@@ -104,12 +107,16 @@ TASK 3 we see that the device is able to successfully ping Google DNS
 
 These are the tasks that are to be run via the playbook broken out:
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 cat asa_command_demo.yml | grep TASK
     - name: "TASK 1: Read output from ASA"
     - name: "TASK 2: Print output of show interfaces"
     - name: "TASK 3: Print output of pinging Google DNS"
-```
+
+
+{{< /highlight>}}
 
 #### Playbook Run
 
@@ -117,7 +124,9 @@ Execution of the playbook:
 
 To see a video of this on Youtube - [https://youtu.be/Wk-3Zg08oSw](https://youtu.be/Wk-3Zg08oSw)
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 PLAY [ASA Command Output] *********************************************************************
 
 TASK [TASK 1: Read output from ASA] ***********************************************************
@@ -146,7 +155,9 @@ ok: [asa1] => {
 
 PLAY RECAP ************************************************************************************
 asa1                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-```
+
+
+{{< /highlight>}}
 
 #### Access Multiple Commands
 

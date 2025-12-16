@@ -1,21 +1,26 @@
 ---
+author: Josh VanDeraa
 toc: true
-date: 2019-03-30
+date: 2019-03-30 07:00:00+00:00
 layout: single
 slug: ansible-saving-cisco-configs-ios
 title: Ansible Saving Cisco Configs to NVRAM with Cisco Specific Modules
-categories:
-- ansible
-- cisco
-- cisco_ios
-- cisco_wlc
-- cisco_nxos
-- saving_config
+comments: true
+# collections:
+#   - Cisco
+#   - Ansible
+# categories:
+#   - Ansible
+#   - Cisco Automation
+tags:
+  - ansible
+  - cisco
+  - cisco_ios
+  - cisco_wlc
+  - cisco_nxos
+  - saving_config
 sidebar:
   nav: ansible
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Today I'm going to take a look at a method to be able to save the configuration of a Cisco device to
@@ -24,8 +29,6 @@ during an Ansible Playbook to NVRAM. There are options to save the configuration
 within the modules such as **ios_config** or **cli_config**, however, this can slow down the
 execution of your playbook.
 
-<!--more-->
-
 First I will take a look at saving the configuration within its own task just for saving
 configuration. This is how I have many of my playbooks as I'm executing several tasks, breaking them
 out. I then have a dedicated task that will save the configuration. I do this for speed of the
@@ -33,8 +36,6 @@ playbook execution. If there are multiple changes on tasks and each one of the t
 configuration, then there will be some significant time spent saving the configuration multiple
 times. In this I will take a look at the copy command execution, but also, the trick I like to use
 of the config module and just **save_when** parameter.
-
-<!--more-->
 
 The second methodology I will take a look at is the saving the configuration within the task itself,
 using the **save_when** parameter. This is something that I use when I have simple playbooks, with
@@ -119,7 +120,7 @@ that was done as the Ansible Playbook was being executed.
 
 **Playbook Execution - IOS**
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -139,26 +140,26 @@ PLAY RECAP *********************************************************************
 rtr02                      : ok=2    changed=1    unreachable=0    failed=0  
 
 
-```
+{{< /highlight>}}
 
 
 **GRUB Output - IOS**
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 *Mar 30 16:51:15.832: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
 *Mar 30 16:51:16.446: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully
 
 
-```
+{{< /highlight>}}
 
 **NXOS Execution**
 
 Here the output is minimal, with the output reporting success as our only method to know that the
 configuration was in fact saved.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -178,7 +179,7 @@ PLAY RECAP *********************************************************************
 nxos01                     : ok=2    changed=1    unreachable=0    failed=0 
 
 
-```
+{{< /highlight>}}
 
 
 #### Method with IOS_Command
@@ -296,14 +297,14 @@ Here is the playbook
 
 When looking at the startup configuration on the router this is what we have:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 router02#show start | i hostname
 hostname router02
 
 
-```
+{{< /highlight>}}
 
 
 #### Playbook Execution
@@ -314,7 +315,7 @@ We see that the configuration was updated with the command:
 hostname rtr02
 ```
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -342,25 +343,25 @@ rtr02                      : ok=2    changed=1    unreachable=0    failed=0
 
 
 
-```
+{{< /highlight>}}
 
 After the execution we have the startup configuration with the new name, just as we expected
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 rtr02#show start | i hostname
 hostname rtr02
 
 
-```
+{{< /highlight>}}
 
 #### Second Execution of the ios_config module
 
 I'm going to run the same playbook once again, to show that the module has the smarts to not change
 the configuration since it is set. Note the **changed** output is set to _false_.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -380,7 +381,7 @@ PLAY RECAP *********************************************************************
 rtr02                      : ok=2    changed=0    unreachable=0    failed=0  
 
 
-```
+{{< /highlight>}}
 
 
 ### nxos_config save_when Parameter
@@ -395,14 +396,14 @@ Once again, I have the NXOS device hostname set to something different than we w
 The startup configuration has the hostname of `nxos_switch1` but the Ansible inventory has the name
 `nxos01` for the inventory_name. 
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 nxos_switch1# show start | i hostname
 hostname nxos_switch1
 
 
-```
+{{< /highlight>}}
 
 THe playbook now looks like this:
 
@@ -433,7 +434,7 @@ THe playbook now looks like this:
 
 Just as before we have the hostname change to match that of the Ansible inventory. 
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -459,18 +460,18 @@ PLAY RECAP *********************************************************************
 nxos01                     : ok=2    changed=1    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}
 
 The show start shows that the startup configuration was changed.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 nxos01# show start | i hostname
 hostname nxos_switch1
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 

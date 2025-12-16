@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-01-27
+date: 2019-01-27 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-network-engine-ntc-templates
@@ -23,8 +23,6 @@ sidebar:
 
 In this post we will talk about primarily three components that will work together to get structured
 data out of the command line of a Cisco device. The three pieces are:
-
-<!-- more -->
 
 - [Ansible Network Engine](https://github.com/ansible-network/network-engine)  
 - [Google's TextFSM](https://github.com/google/textfsm)
@@ -194,7 +192,7 @@ parsed.
 
 ### Sample Output
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Switch config] *******************************************************************************
 
 TASK [CLI >> Get CDP neighbors] ********************************************************************
@@ -232,7 +230,7 @@ ok: [sw01] => {
 
 PLAY RECAP *****************************************************************************************
 sw01                       : ok=3    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 
 ## Summary

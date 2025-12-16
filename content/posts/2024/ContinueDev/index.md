@@ -42,13 +42,13 @@ Ollama extends its accessibility across the three major platforms: Linux, MacOS,
 
 In my case, I repurposed my [Dev Workstation](https://josh-v.com/desktop-build-2023/), augmenting it with a more powerful graphics card. While my original setup sufficed for non-intensive tasks, the surging prominence of AI prompted this strategic investment. Initiating Ollama via the provided shell script proved effortless. Subsequently, I configured Ollama for network accessibility, enabling its utilization across my local development environment, spanning both my primary development machine and other devices I leverage for coding endeavors.
 
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 **Exposing Ollama to the Local Network**
 
 I'll be covering this in another blog post soon, the next one up after this!
 
 {{< /alert >}}
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 **What is Ollama?**
 
 If you are looking for more of what Ollama is, perhaps the best route is to review the [NetworkChuck YouTube video](https://www.youtube.com/watch?v=Wjrdr0NU4Sk) on it. The short story is that Ollama helps to provide LLM capabilities locally. I combine it with [Open WebUI](https://openwebui.com/) to get the same LLM experience that you get with ChatGPT locally.
@@ -149,7 +149,7 @@ The JSON snippet for the custom command is:
 
 When using the Continue chat (on the right of the VS Code browser), you can use slash commands to execute the various prompt. For example, to run the test command on the selected code, you would type `/test`. When this executed the system provided a test that would provide Python Unittest output. While Unittest is great, I prefer to use pytest myself from a readability perspective and output readability. So I created a second chat command, pytest, that would be the same command as seen above in pytest format.
 
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 **Where is the toolbar?**
 
 In my VS Code, the right hand toolbar was missing. I could not find the Continue plugin anywhere. It was within the Secondary Side Bar. To show the secondary toolbar, use the View menu on VS code. In the Linux version of the app, it is nested in View > Appearance.

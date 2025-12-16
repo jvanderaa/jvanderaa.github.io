@@ -1,6 +1,6 @@
 ---
-authors: [jvanderaa]
-date: 2021-09-14
+author: Josh VanDeraa
+date: 2021-09-14 07:00:00+00:00
 layout: single
 comments: true
 slug: book-open-source-network-management
@@ -15,8 +15,6 @@ toc: true
 Earlier this month I was able to hit the _publish_ button on a new book - Open Source Network Management. The book dives into getting started with several open source network management tools. It is meant as a guide to help further your experience with using and installing open source tools, all on a single VM/host. The size of the host is meant to have minimal capital investment, in the way of a single NUC or a minimal VM deployed on a hypervisor in your environment.  
 
 The book is published on [LeanPub](https://leanpub.com/opensourcenetworkmanagement), which is a publish early, publish often marketplace. The book is digital only, with PDF, ePub, and mobi formats available. Currently the book is indicating 80% completeness, with most of the technical content in place already! There are mainly soft edits in this early version.
-
-<!-- more -->
 
 It has been a while since I have put some content out on my blog site. Why? Well, this book is the reason why. The time that I would have been making some content here, I have been putting into making the book. This will change. I will be putting out a few more posts upcoming.
 

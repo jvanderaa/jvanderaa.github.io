@@ -1,30 +1,25 @@
 ---
-date: 2020-12-13
+author: Josh VanDeraa
+date: 2020-12-13 06:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-sites
-title: 'NetBox Ansible Collection: Site Module'
+title: "NetBox Ansible Collection: Site Module"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 This post dives into the [NetBox Ansible Content Collection](https://netbox-ansible-collection.readthedocs.io/en/latest/) module to create/update a [Site](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/modules/netbox_site/netbox.netbox.netbox_site_module.html). As I start into this series on looking at the modules that create/update/delete data from NetBox, the question that I keep asking myself is should I be looking at the modules that are creating/updating/deleting items? The reason that I ask this to myself is because I am a firm believer that automation should be coming from NetBox as its Source of Truth (SoT). You can hear/read plenty more about these thoughts on posts and videos here:
 
 - [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
 - [Ansible Guest Blog Post](https://www.ansible.com/blog/using-netbox-for-ansible-source-of-truth)
 
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
 {{< /alert >}}
-<!--more-->
-
 
 When it comes to creating and deleting sites in NetBox, this one is an easy one. In my opinion this is a **yes it should be**. Most likely an IT tool is not the tool that will be the Source of Truth as it comes to physical sites. So this module in particualr that should be looked at and put into production use with Ansible.
 
@@ -56,7 +51,7 @@ Take a look at the [documentation](https://netbox-ansible-collection.readthedocs
 
 The point of these posts are to show examples and get you started. So let's get started. At the beginning of this there are going to be four sites that we can check out with the query function:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [05 - QUERY SITES] **********************************************************************************************************************************************
   ansible_facts:
@@ -67,7 +62,7 @@ TASK [05 - QUERY SITES] ********************************************************
     - PDX
 
 
-```
+{{< /highlight>}}
 
 The data here instead of coming from a system of record that has sites will come from a YAML file. So the first step would be to look at getting data from a data source that has sites. This could be a CRM tool if you were a MSP, or any other tooling that has your sites. Here is what the data would look like:
 
@@ -122,7 +117,7 @@ Running the following playbook multiple times will show that the module itself i
 
 The output below is from a second run. The sites for the current NetBox demo was originally deployed with this.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 ok: [localhost] => changed=false 
@@ -171,7 +166,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 In here we see that there were two tasks that showed **ok** and no tasks in the other sections of the play recap.
 
@@ -207,7 +202,7 @@ sites:
 
 With the new location, the Ansible Playbook is executed and we see a new site is added:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 ok: [localhost] => changed=false 
@@ -264,7 +259,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 Taking a look at line 45 in this last execution you see the message **site MCO created**. This shows that it as created and there was a task that showed chagned in the play recap.
 
@@ -352,7 +347,7 @@ The result of the playbook shows that we had the site at the beginning, then we 
 
 > When removing a site, you do need to make sure that all of the corresponding devices and other relationships are gone from the site. NetBox will not allow you to remove a site without it being empty first.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [05 - QUERY SITES] **********************************************************************************************
 task path: /local/add_sites.yml:7
@@ -441,7 +436,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 

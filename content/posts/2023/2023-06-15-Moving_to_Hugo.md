@@ -1,18 +1,14 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-06-15
 slug: moving-to-hugo
-categories:
-- blog
+tags: ["blog"]
 title: Moving to Hugo
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 In this post I dive into more about my migration of the blog site to Hugo static content system. I will dive into primarily the why and how during this post. This also dives into the few changes that I had to make in order to make the change over from a Jekyll site to the Hugo site.
-
-<!--more-->
 
 ## Why Migrate?
 

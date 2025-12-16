@@ -1,20 +1,19 @@
 ---
-date: 2021-03-28
+author: Josh VanDeraa
+date: 2021-03-28 08:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-devices
-title: 'Nautobot Ansible Collection: Devices'
+title: "Nautobot Ansible Collection: Devices"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 All of the work through the modules thus far in the series have brought us to what we all want to see. How to get or update device information inside of Nautobot. Adding of sites, device types, device roles are required to get us to this point. Now you can see how to add a device to Nautobot using the networktocode.nautobot.device module.  
@@ -30,8 +29,6 @@ There are many optional parameters for the module specifically. I encourage you 
 An important caveat for me is that this is something that should be done with rarity. Only when truly adding a device to Nautobot, in a programmatic way this should be used. I **do not** advocate for running this module constantly based on your devices. The idea is to get Nautobot to be your source of truth about devices, not to have devices be the source of truth and updating Nautobot.  
 
 So where do I see this being run? I do absolutely see it being a part of a pipeline or a service portal. The idea being that the service portal has a request for a new site to be turned up. That in turn kicks off an Ansible Playbook that will make the necessary updates to Nautobot, and is done in a consistent manor.
-
-<!--more-->
 
 ## Module Documentation
 
@@ -104,11 +101,11 @@ First if you are following along with the examples thus far, I made a new site h
 
 Before the execution there are no devices within Nautobot:
 
-![Nautobot Without Devices](/images/2021/nautobot_no_devices.png)
+![Nautobot Without Devices](../../images/2021/nautobot_no_devices.png)
 
 This execution shows that all of the device types are added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@1297da6292df:~$ ansible-playbook add_devices.yml -vv
 ansible-playbook 2.10.6
@@ -219,11 +216,11 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@1297da6292df:~$ ansible-playbook add_devices.yml -vv
 ansible-playbook 2.10.6
@@ -334,13 +331,13 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 ### Post Execution
 
 After the execution and notice that the module is idempotent, the two devices shown are all set to be added.
 
-![Nautobot Devices](/images/2021/nautobot_devices.png)
+![Nautobot Devices](../../images/2021/nautobot_devices.png)
 
 ## Summary
 

@@ -1,24 +1,20 @@
 ---
-date: 2021-03-13
+author: Josh VanDeraa
+date: 2021-03-13 06:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-sites
-title: 'Nautobot Ansible Collection: Site Module'
+title: "Nautobot Ansible Collection: Site Module"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 This post dives into the [Nautobot Ansible Content Collection](https://nautobot-ansible.readthedocs.io/en/latest/) sites module to create/update a [Site](https://nautobot-ansible.readthedocs.io/en/latest/plugins/site_module.html). This series for the beginning will be a clone of what I had done previously with NetBox. So some of the language will be very similar. 
 
 When it comes to creating and deleting sites in Nautobot, the question of should I be using Ansible to do this? In my opinion this is a **yes it should be**. Most likely an IT tool is not the tool that will be the Source of Truth as it comes to physical sites involved in an organization. So this module in particular that should be looked at and put into production use with Ansible.
-
-<!--more-->
 
 ## Environment
 
@@ -298,7 +294,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 In here we see that there was the single task showing **ok** and no tasks in the other sections of the play recap. The Nautobot sites page looks like:
 
-![Nautobot Sites](/images/2021/nautobot_sites.png)
+![Nautobot Sites](../../images/2021/nautobot_sites.png)
 
 ### Removing a site
 

@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-10-20
+date: 2019-10-20 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-cli-vs-ios-command
@@ -25,8 +25,6 @@ In an earlier [post](https://josh-v.com/blog/2019/01/12/ansible-cli-vs-ios-high-
 covered the differences between `ios_config` and  `cli_config`. However I did not cover what the
 difference was between `ios_command` and `cli_command`. Most of the items covered there remain the
 same. So this will be a post that mostly gets straight to it and sees what the difference is.  
-
-<!-- more -->
 
 > A reminder that I am also putting playbooks used here out on Github. You can find this at:
 > https://github.com/jvanderaa/ansible-using_ios
@@ -89,7 +87,7 @@ taking a look at NTP associations lately.
 
 Here is what the task portion of the playbook looks like with a single command.  
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 tasks:
@@ -104,11 +102,11 @@ tasks:
       msg: "{{ command_output }}"
 
 
-```}
+{{< /highlight>}}}
 
 The output from this is as follows assuming an NTP association to the cloudflare NTP servers:  
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Using ios_command for a single command] **********************************************
@@ -138,9 +136,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![IOS Command Single](/images/2019/10/blog-ios_single.gif)
+![IOS Command Single](../../images/2019/10/blog-ios_single.gif)
 
 There are four items returned, with the first two primarily being "standard" Ansible returns for
 `changed` and `failed`. There is then:
@@ -175,7 +173,7 @@ tasks:
 
 The command output looks awfully similar now in recent versions of Ansible.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Using cli_command for a single command] ****************************************************************************
@@ -201,9 +199,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![CLI Command Single](/images/2019/10/blog-cli_single.gif)
+![CLI Command Single](../../images/2019/10/blog-cli_single.gif)
 
 The big difference here is that the **stdout** part of the response is of type string, and not of a
 type list like `ios_command`. Take a look at line number 11 where **stdout** is. Immediately
@@ -242,7 +240,7 @@ and saved to a variable named `command_output`.
 
 Let's take a look at how this looks now:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Using ios_command for a single command] ****************************************************************************
@@ -276,9 +274,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![IOS Command Multiple](/images/2019/10/blog-ios_multiple.gif)
+![IOS Command Multiple](../../images/2019/10/blog-ios_multiple.gif)
 
 This is where you start to see that there are multiple list items in the response. Taking a look at
 line number 11 we still have the `[` of the list showing at the end, then line 12 ends in a comma,
@@ -326,7 +324,7 @@ using a loop, so let's take a look below:
 
 The output:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Using cli_command for a single command] ****************************************************************************
@@ -389,9 +387,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![CLI Command Multiple](/images/2019/10/blog-cli_multiple-looping.gif)
+![CLI Command Multiple](../../images/2019/10/blog-cli_multiple-looping.gif)
 
 In this execution we now have to get at the information within the results section. You do however
 also get the command in the output, as well as some other module arguments, which can be handy! To

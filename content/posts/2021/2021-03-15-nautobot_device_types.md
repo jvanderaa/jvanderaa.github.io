@@ -1,25 +1,22 @@
 ---
-date: 2021-03-15
+author: Josh VanDeraa
+date: 2021-03-15 06:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-device-types
-title: 'Nautobot Ansible Collection: Device Types'
+title: "Nautobot Ansible Collection: Device Types"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 A device type is the next piece in the Nautobot Device onboarding requirements. The device type corresponds to the model number of the hardware (or virtual machine). This is where you are able to template out devices during their creation. So if you have a console port on a device type, that console port will be created when you create the device. However, **there is NOT** a relationship built between the device type and the device. If the device type gets updated after the device is created, the device itself is **not** updated. 
-
-<!--more-->
 
 ## Module Documentation
 
@@ -101,7 +98,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 This execution shows that all of the device types are added. Before the execution Nautobot does not have any device types.
 
-![Nautobot no device types](/images/2021/nautobot_no_device_types.png)
+![Nautobot no device types](../../images/2021/nautobot_no_device_types.png)
 
 ```yaml
 josh-v@60a6498959f8:~$ ansible-playbook add_device_types.yml -vv
@@ -267,11 +264,11 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 At this point the device types are now available inside of the UI.
 
-![Nautobot Device Types](/images/2021/nautobot_device_types.png)  
+![Nautobot Device Types](../../images/2021/nautobot_device_types.png)  
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@60a6498959f8:~$ ansible-playbook add_device_types.yml -vv
 ansible-playbook 2.10.6
@@ -439,7 +436,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 After completion of this you will have the device types (hardware models) available for you to assign to devices (coming up next).
 

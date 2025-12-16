@@ -1,23 +1,18 @@
 ---
-title: Designing WAN Availability
+author: Josh VanDeraa
+title: "Designing WAN Availability"
 date: 2023-09-02
-categories:
-- network_design
-- wan
+tags:
+  - network_design
+  - wan
 draft: false
 coverAlt: Roads shown
-coverCaption: 'Photo by <a href="https://unsplash.com/@radek_blackseven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Radek
-  Kilijanek</a> on <a href="https://unsplash.com/photos/JQT6xXS16dg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@radek_blackseven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Radek Kilijanek</a> on <a href="https://unsplash.com/photos/JQT6xXS16dg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ---
 
 One of my hot topics in my past that I haven't seen written about often is the calculation of WAN availability and what the design is built for. There is often the number of 9's whether that is 5 9s or 3 9s or otherwise, where do you start? Well, in the past the [post by EventHelix.com](https://www.eventhelix.com/fault-handling/system-reliability-availability/) outlines system reliability. It talks about designing systems in parallel and in serial. What does that mean. Well, I am going to take the system availability and bring it into the Wide Area Network, which really could be brought to any environment that has a system uptime requirement as a way to calculate and validate the dollars that you are requesting. I am hoping that this will help you to be able to answer questions such as "What if we added another service provider?" or "What if we changed out hardware for a smaller/larger hardware choice?".
-
-<!--more-->
 
 ## The Nines
 
@@ -65,11 +60,10 @@ Where `Ax` is the availability of component x (first circuit) and `Ay` is the av
 
 Let's start with some designs as a way to calculate the expected availability of a WAN environment. For the device types, I am going to use various Meraki devices as a method to help show since there is a post that is publicly available of what the MTBF is for the devices. Take a look [here](https://community.meraki.com/t5/Wireless-LAN/MTBF-MR74-and-MR53/m-p/50833#M7771) for the numbers that are posted (into a table below). 
 
-{{< alert "warning" >}}
+{{< alert "triangle-exclamation" >}}
 One assumption that does also need to be taken into account is power as well. That will be the one component that needs to get calculated in that for the sake of the blog we will assume will be 100% availability.
-
-
 {{< /alert >}}
+
 | Device | MTBF |
 | ------ | ---- |
 | MR42 | 450,000h |
@@ -138,11 +132,10 @@ Now you can see that the layers have expanded here significantly. There are now 
 | 99.99937%              | 99.5%                                       | 99.95%            | 99.9975%                          | 99%                         | 99.99874%             | 99.9925% (39 minutes) |
 
 
-{{< alert "warning" >}}
+{{< alert "triangle-exclamation" >}}
 This shows that the availability number here is slightly worse than what you may get from having multiple back ups earlier above. This is where the network architecture also needs to take into account the criticality of the path. If this is the design for a single site to single site it may not be optimal (depending on the service profile).
-
-
 {{< /alert >}}
+
 ## Summary
 
 When it comes to WAN design, there are multiple options and methods to design your Wide Area Network. You are able to put together calculations to be able to affirm that you have the right design to meet the business requirements for the WAN. The next challenge is then to get the appropriate uptime metric as often you may get "The WAN needs to be online all of the time". At this point you can put together general costs of providing the services at different service levels. This has been one of my favorite topics over the years and wanted to share. Hope that some may have found this helpful in articulating WAN design and costs!

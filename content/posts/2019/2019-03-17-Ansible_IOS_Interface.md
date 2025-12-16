@@ -1,18 +1,23 @@
 ---
+author: Josh VanDeraa
 toc: true
-date: 2019-03-17
+date: 2019-03-17 07:00:00+00:00
 layout: single
 slug: ansible-cisco-ios-interface
 title: Ansible Cisco IOS Interface Module
-categories:
-- ansible
-- cisco
-- ios_interface
+comments: true
+# collections:
+#   - Cisco
+#   - Ansible
+# categories:
+#   - Ansible
+#   - Cisco Automation
+tags:
+  - ansible
+  - cisco
+  - ios_interface
 sidebar:
   nav: ansible
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Update: `ios_interface` is to be deprecated as of Ansible 2.13  
@@ -22,9 +27,6 @@ configure individual interfaces on a Cisco IOS device. The documentation for the
 [here](https://docs.ansible.com/ansible/latest/modules/ios_interface_module.html).
 In this module I did have to dig into the actual Python file, and that is located
 [here](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/modules/network/ios/ios_interfaces.py).  
-
-<!--more-->
-
 
 > Edit: Had to update the link due to the change in Ansible coming in 2.10. I have hard linked to
 > the IOS Interfaces module.
@@ -92,7 +94,7 @@ switch itself.
 Before the change there is just the `media-type` and the `negotiation` set to auto. These are
 default out of the box.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 sw19#show run int gig0/1
@@ -116,7 +118,7 @@ interface GigabitEthernet0/2
 end
 
 
-```
+{{< /highlight>}}
 
 #### Playbook
 
@@ -152,7 +154,7 @@ end
 Here we see that the commands being sent to the device are to set the speed, duplex to full,
 interface description, and then shutting down the interface that was set to disabled.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -183,7 +185,7 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}
 
 #### Post Execution Configuration
 
@@ -193,7 +195,7 @@ switch platform. I plan to open up a bug report on this soon. We see exactly wha
 configuration after the Ansible output. We see interface description configured on each interface,
 the interface shutdown or enabled. 
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 sw19#show run int gig0/1
@@ -220,7 +222,7 @@ interface GigabitEthernet0/2
 end
 
 
-```
+{{< /highlight>}}
 
 ## Creating a Loopback Interface
 
@@ -230,7 +232,7 @@ In the second example of the playbook we will create additional Loopback address
 
 Here is the output of the `show ip int breif` of the switch before adding loopbacks.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 Interface              IP-Address      OK? Method Status                Protocol
@@ -248,7 +250,7 @@ Port-channel6          unassigned      YES unset  down                  down
 Vlan2                  172.16.1.2      YES manual up                    up   
 
 
-```
+{{< /highlight>}}
 
 Here we only see one loopback address, Loopback0.
 
@@ -286,7 +288,7 @@ loopbacks.
 I expect to see the configuration of just creating a loopback address. This is in fact what is seen
 upon executing the command.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -309,13 +311,13 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0  
 
 
-```
+{{< /highlight>}}
 
 ### Switch Post Run
 
 Now on the switch as expected we see another Loopback address added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 sw19#show ip int brie
@@ -335,7 +337,7 @@ Port-channel6          unassigned      YES unset  down                  down
 Vlan2                  172.16.1.2      YES manual up                    up   
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 
@@ -391,7 +393,7 @@ The commands sent to the device essentially are:
 This creates the interface that was not there previously and does not provide any other
 configuration.  
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -414,7 +416,7 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}
 
 ### Task with only the required Parameters (GigabitEthernet0/1)
 
@@ -454,7 +456,7 @@ desired configuration (blank).
 
 **Pre-Configuration**
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 #show run int gig0/1
@@ -468,14 +470,14 @@ interface GigabitEthernet0/1
 end
 
 
-```
+{{< /highlight>}}
 
 There are no pieces that need to be configured, so the output from the playbook execution is below.
 With no other parameters defined the module does nothing.
 
 **Play Execution**
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -496,4 +498,4 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=0    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}

@@ -1,24 +1,19 @@
 ---
-title: 'Nautobot: How I Use Tags For VMs'
+author: Josh VanDeraa
+title: "Nautobot: How I Use Tags For VMs"
 date: 2023-09-26
-categories:
-- nautobot
-- automation
-- tags
+tags:
+  - nautobot
+  - automation
+  - tags
 draft: false
 coverAlt: Tags
-coverCaption: 'Photo by <a href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Angèle
-  Kamp</a> on <a href="https://unsplash.com/photos/KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Angèle Kamp</a> on <a href="https://unsplash.com/photos/KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ---
 
 In my home environment I am leveraging Nautobot as my source of truth. This is for the network, which is probably not all that interesting in my home environment, and my virtual machines. Why am I tracking my virtual machines in Nautobot? Simple, to help automate them. I think that this is a clever methodology to help use tags and to get automation working within the environment. This same type of thing may be applicable to your network environment as well.
-
-<!--more-->
 
 ## My VM Environment
 
@@ -49,11 +44,10 @@ How would I look to apply this process to networking? I would absolutely look to
 * AAA=RadiusSystemA
 * AAA=TacacsSystemA
 
-{{< alert "info" >}}
+{{< alert "circle-info" >}}
 When I make these tags I also change the slug away from the default value. Changing `=` which will be no space/character in the slugify to be a `__` double underscore.
-
-
 {{< /alert >}}
+
 By leveraging tags you can filter for devices/virtual machines and allow for customization as of the automation that is being deployed. So that you can define in your automation that devices should all be part of a monitoring system. But what if you want to take the device out of monitoring for an extended period of time? Well, you can just change the tag. Or if you want to apply a custom policy, apply a tag to the object and then in the automation check to see if the tag exists.
 
 ## Next Step: Automation

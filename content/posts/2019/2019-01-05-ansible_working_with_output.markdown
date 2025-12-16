@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-01-05
+date: 2019-01-05 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-output-work
@@ -28,9 +28,6 @@ status.
 During this post I will relate the Ansible data structures/formats to that of Python. So the terms
 will be dictionary (hashes) and lists (lists).
 
-<!-- more -->
-
-
 **Playbook Design Process**
 
 1. Make sure that I can connect to the devices with a simple show command
@@ -47,7 +44,7 @@ First I will just give a quick diagram of the lab environment. This is simulated
 [EVE-NG](https://www.eve-ng.net). I will be accessing the devices via a management network to show
 various things.
 
-![LabDesign](/images/2019/01/lab_design.png)
+![LabDesign](../../images/2019/01/lab_design.png)
 
 I am going to connect to just Cisco IOS and Cisco ASA virtual images for this. That can extend as
 well to any other platform using the standard
@@ -92,7 +89,7 @@ that is connected to.
 
 Here is the output from connecting to a single device:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -123,7 +120,7 @@ nterface Loopback0\n ip address 10.100.100.1 255.255.255.255\nend"
 
 PLAY RECAP *********************************************************************
 rtr01                      : ok=2    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 As we look at the output, the task itself creates the part `"msg":` This itself shows the output
 dictionary. This has several `keys:` and `values`. Breaking down each of the keys and values in the
@@ -167,7 +164,7 @@ This will be shown with the updated playbook (a second debug has been added):
 
 This now yields this output:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Test of connectivity] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -204,7 +201,7 @@ terface Loopback0\n ip address 10.100.100.1 255.255.255.255\nend"
 
 PLAY RECAP *********************************************************************
 rtr01                      : ok=3    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 ### Why Lists?
 
@@ -245,7 +242,7 @@ multiple commands in a single task. Updating the playbook to be this:
 
 Which now yields:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -299,7 +296,7 @@ g/max = 41/108/260 ms"
 
 PLAY RECAP *********************************************************************
 rtr01                      : ok=4    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 We can now see how you may get at particular command outputs, while running multiple commands during
 one task on the device. From what I can tell, these commands are run sequentially, and not with
@@ -358,7 +355,7 @@ playbook. I also added another DNS provider to test my pings to in order to show
 
 This now has the output of the ping test to 1.1.1.1 in the output.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Test command outputs] ****************************************************
 
 ~~~~ PLAY OUTPUT TRUNCATED FOR BREVITY ~~~~~
@@ -376,7 +373,7 @@ g/max = 63/108/236 ms"
 PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0
 rtr01                      : ok=4    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 ## Looping over the output
 
@@ -384,17 +381,17 @@ You can also loop over the output of the commands as well. I added in some more 
 that will show how you can loop over all of the commands you issued. In a future post we will
 discuss on how to debug through using `with_items`.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
     - name: SYS >> DEBUG to see loop
       debug:
         msg: "{{ item }}"
       with_items: "{{ show_commands['stdout'] }}"
-```
+{{< /highlight>}}
 
 We want to get to each of the `stdout` outputs. I've added `with_items` and we have a new variable
 of `item` that we reference in the message. We now get the following output related to that task:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 TASK [SYS >> DEBUG to see loop] ************************************************
 ok: [rtr01] => (item=Building configuration...
 
@@ -428,7 +425,7 @@ Success rate is 100 percent (20/20), round-trip min/avg/max = 82/108/217 ms) =>
 0.1 \n!!!!!!!!!!!!!!!!!!!!\nSuccess rate is 100 percent (20/20), round-trip min
 /avg/max = 82/108/217 ms"
 }
-```
+{{< /highlight>}}
 
 ## Final Run
 
@@ -485,7 +482,7 @@ Here is the final playbook
 
 Final Run Output
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Test command outputs] ****************************************************
 
 TASK [IOS >> Show commands] ****************************************************
@@ -601,6 +598,6 @@ g/max = 82/108/217 ms"
 PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0
 rtr01                      : ok=5    changed=0    unreachable=0    failed=0
-```
+{{< /highlight>}}
 
 Hope that this has been helpful!

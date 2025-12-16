@@ -1,26 +1,21 @@
 ---
-date: 2021-03-14
+author: Josh VanDeraa
+date: 2021-03-14 08:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-device-roles
-title: 'Nautobot Ansible Collection: Device Roles'
+title: "Nautobot Ansible Collection: Device Roles"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 A device role is aptly named, the role of the device. This is likely to be something that is meaningful to your organization and could change. For example you may have the 3 tier system of Core, Distribution, and Access layer environments. These are just fine. So you would want to have the roles there to reflect this reality. You may have leaf-spine environments, there are two more roles. And in my past I have also had roles that would indicate that there are dedicated DMZ, WAN edge, Internet edge devices. So this is the place to set this.
-
-<!--more-->
-
 
 ## Module Documentation
 
@@ -75,7 +70,7 @@ device_roles:
 
 Running the playbook on the roles are going to be straight to the point. Before the execution Nautobot's UI shows no device roles:
 
-![Nautobot no device role](/images/2021/nautobot_no_device_roles.png)
+![Nautobot no device role](../../images/2021/nautobot_no_device_roles.png)
 
 ```yaml
 
@@ -102,7 +97,7 @@ Running the playbook on the roles are going to be straight to the point. Before 
 
 This execution shows that all of the device types are added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@a6339c74e30d:~$ ansible-playbook add_device_role.yml -vv
 ansible-playbook 2.10.6
@@ -261,11 +256,11 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 After completion of this you will have the device roles are now available to be assigned to devices. Taking a look the UI now has the data:
 
-![Nautobot Device Roles](/images/2021/nautobot_device_roles.png)
+![Nautobot Device Roles](../../images/2021/nautobot_device_roles.png)
 
 ## Summary
 

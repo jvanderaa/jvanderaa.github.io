@@ -1,19 +1,16 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-06-29
 slug: nornir-brief
-categories:
+tags:
 - programming
 - poetry
 title: Poetry Fix
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 The Python [Poetry](https://python-poetry.org/) is our go to package management system thus far, you can see that in all of the Python projects that Network to Code open sources, such as [Nautobot](https://docs.nautobot.com/projects/core/en/stable/), [pyntc](https://pyntc.readthedocs.io/en/latest/user/lib_overview/), [network-importer](https://github.com/networktocode/network-importer), and [NTC-Templates](https://github.com/networktocode/ntc-templates). Lately though, I've been having some challenges when my HomeBrew updates happen and my system Python gets updated. I've been able to recover with the help of the same few pages I land on from my Google searches. But since I've done this twice now, I'm using this post to document the fix as much as for myself, but for anyone else that may come across Poetry issues.
-
-<!--more-->
 
 ## The Issue
 
@@ -29,10 +26,10 @@ With this error, I made the mistake (maybe) of just removing `poetry` by finding
 
 The proper way that I'm finding to fix this is to run the Poetry uninstall scripts, which are found on the Poetry [docs](https://python-poetry.org/docs/).
 
-```bash
+{{< highlight bash >}}
 curl -sSL https://install.python-poetry.org | python3 - --uninstall
 curl -sSL https://install.python-poetry.org | POETRY_UNINSTALL=1 python3 -
-```
+{{< /highlight >}}
 
 Once it is removed, you try to re-install Poetry, but then you get the following symlinks issue:
 
@@ -43,9 +40,9 @@ Exception: This build of python cannot create venvs without using symlinks
 
 This is coming from a pyenv set up that I've also been convinced to run (however, I'm not convinced). So the next step is instead of installing to `python3`, you install to the current minor version of Python:
 
-```bash
+{{< highlight bash >}}
 curl -sSL https://install.python-poetry.org | python3.10 -
-```
+{{< /highlight >}}
 
 ## My Preferred Set Up For Various Versions of Python
 

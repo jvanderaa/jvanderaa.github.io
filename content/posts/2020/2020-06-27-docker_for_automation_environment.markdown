@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2020-06-27
+date: 2020-06-27 07:00:00+00:00
 layout: single
 comments: true
 slug: docker_for_automation_environment_ansible_210
@@ -20,9 +20,6 @@ was always intimidated too much so to even get started. I am glad that I did get
 on my journey of using Docker containers. Let me jump into the problem and why? Couple the recent
 experiences with Docker, and the upcoming move to slim down Ansible and install Collections for
 most Network Automation modules, I thought it would be a good thing to get a write up done.
-
-<!-- more -->
-
 
 ## Problem
 
@@ -128,9 +125,11 @@ Python and Ansible Galaxy. So to this effort, here are those two files with a fe
 
 #### requirements.txt
 
-```toml {linenos=true}
+{{< highlight toml "linenos=table" >}}
+
 ansible-base
-```
+
+{{< /highlight>}}
 
 The only Python package going to install this for is `ansible-base` which will install the current
 beta versions of Ansible Base 2.10.
@@ -200,18 +199,18 @@ cli:
 First in my container image list I have no containers (I just pruned them all, and they are now all
 deleted with the command `docker system prune -a`):
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 $ docker image ls       
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 
-```
+{{< /highlight>}}
 
 With no containers, I execute the command from the `Makefile` of `make build`. This will download
 all of the layers, run the apt installations, pip install, and galaxy install. The output is below
 with many of the lines removed.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 docker build -t jvanderaa/network_automation:2.0-rc2 . 
 Sending build context to Docker daemon   5.12kB
@@ -243,7 +242,7 @@ Removing intermediate container 94ca0bb3f3c9
 Successfully built 0805ddb1719f
 Successfully tagged jvanderaa/network_automation:2.0-rc2
 
-```
+{{< /highlight>}}
 
 If you have followed along, congratulations, you have created your first Docker Image. This is what
 will be used to create additional containers, which are a copy of the image, but a whole separate
@@ -253,7 +252,7 @@ Because of the tags, I prefer to use the `Makefile` to execute my containers as 
 to the command line within the container by issuing `make cli` command. This will then take me to
 the root user prompt of my conatiner.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 $ make cli  
 docker run -it \
@@ -268,7 +267,7 @@ Collection        Version
 ansible.netcommon 1.0.0  
 cisco.asa         1.0.0  
 
-```
+{{< /highlight>}}
 
 Inside of the container I execute the command `ansible-galaxy collection list`. This now shows me
 that there are two collections installed:

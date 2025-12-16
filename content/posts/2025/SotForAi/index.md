@@ -48,10 +48,11 @@ Nautobot is uniquely positioned to really drive forward with both Network Automa
 
 One of the biggest challenges that I have seen over the years is worrying about populating "bad" data into the SoT. This is something that definitely needs to be addressed, but without addressing it at some point in the near future this risk of continuing to have bad data (technical debt) about the network is going to continue to expand. My advice here is to just ^^get started^^, getting the data for the use cases that you are looking for. Don't get into a situation where you are prematurely optimizing the environment.
 
-> [!NOTE]- Premature Optimization
+{{< alert "circle-info" >}}
+**Premature Optimization**
 > As defined by Gemini (2025-06-03)
-> > This is a very common phrase in software development. It refers to optimizing a part of the system before it's clear that it's a bottleneck or even necessary. Spending excessive time fetching data you might need later perfectly fits this description. The full quote often cited is "Premature optimization is the root of all evil" (or at least most of it) in programming – Donald Knuth.
->
+> This is a very common phrase in software development. It refers to optimizing a part of the system before it's clear that it's a bottleneck or even necessary. Spending excessive time fetching data you might need later perfectly fits this description. The full quote often cited is "Premature optimization is the root of all evil" (or at least most of it) in programming – Donald Knuth.
+{{< /alert >}}
 ### Nautobot Jobs
 
 Nautobot Jobs are going to be a big part in my opinion of providing guardrails to AI within an organization. With Nautobot Jobs, since they are directly connected with the SOT, you now have a set of predefined jobs that receive input from an AI tool. With the Jobs execution you then get:
@@ -71,5 +72,7 @@ At ONUG, Network to Code announced NautobotGPT. NautobotGPT is a GPT that offers
 - Provide access to proven Nautobot Jobs via Retrieval Augmented Generation (RAG), with content curated by Network to Code.
 - Enable reading data from Nautobot for use within an agent-based framework.
 
-> [!NOTE]- AI Editorial Assistance
-> This blog post had editing assistance from Google Gemini.
+{{< alert "circle-info" >}}
+**AI Editorial Assistance**
+This blog post had editing assistance from Google Gemini.
+{{< /alert >}}

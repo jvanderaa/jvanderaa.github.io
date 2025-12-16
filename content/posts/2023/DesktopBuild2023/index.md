@@ -1,20 +1,15 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-07-09
 slug: desktop-build-2023
-categories:
-- automation
-- nautobot
-- devnet
+tags: ["automation", "nautobot", "devnet"]
 title: Desktop Build 2023
 toc: true
 coverAlt: Desktop Build 2023
-coverCaption: 'Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu
-  Mohanan</a> on <a href="https://unsplash.com/s/photos/computer-chip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu Mohanan</a> on <a href="https://unsplash.com/s/photos/computer-chip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-  '
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Here I'm going to dive into what I'm planning to build out for my next desktop here in 2023. Prime Day is nearly upon us, and I'm anticipating (but do not know for sure) that prices on some of the gear that I'm looking for will be available at a good price. I'm also looking to build out a bigger system in order to run some intense VMs up coming.
@@ -26,8 +21,6 @@ My goals:
   - Debian 12
   - POP OS
   - Linux Mint
-
-<!--more-->
 
 ## The System
 
@@ -44,15 +37,13 @@ What I'm going with are the following:
 | CPU Cooler   | DeepCool AK400                                | https://amzn.to/3rrpM6y |
 | GPU          | AISURIX Radeon RX 580                         | https://amzn.to/3Yf4B4a |
 
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 These are all affiliate links. I am not a big affiliate person today, but trying it out.
-
-
 {{< /alert >}}
-{{< alert "neutral" >}}
+
+{{< alert "circle-info" >}}
 I am making some minor updates based on changes that I had made in troubleshooting. I have swapped out what originally was an ASUS Prime B760M motherboard for a Gigabyte B765M DS3H AX. This provides additional networking capabilities (Wifi/Bluetooth and 2.5 Gbps NIC) and an additional M.2 slot. I have also swapped out the GPU and will stick with the new GPU at this point.
-
-{{< /alert >}}
+{{< /alert >}} 
 ### Processor
 
 I was in between the i5 and i7-12700K processor for this. As I look at my systems though, I don't really ever touch the CPU and looking at Passmark on power usage, the i7 (as expected) has a higher TDP, at which point for the amount of idle time that I do expect on the system I stuck with the i5-12600K. It has plenty of speed, and should support what I'm looking to do no issue.

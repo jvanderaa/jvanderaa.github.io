@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-01-12
+date: 2019-01-12 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-cli-vs-ios-high-level
@@ -22,8 +22,6 @@ tags:
 This is a post that I'm going to review some of the differences between the ios_config module and
 the new cli_config module within Ansible networking. I became interested in the module after a
 recent discussion between the two. I have decided to take a look at the differences between the two.
-
-<!-- more -->
 
 This is not an under the hood look at the modules. This has already been covered very well (and
 with better graphics than I can produce) here at the
@@ -125,13 +123,13 @@ test, no other particular reason.
 
 The Jinja2 template file that I am calling in this execution is the following:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 interface Port-channel5
  switchport trunk allowed vlan 2,4,5
  switchport trunk encapsulation dot1q
  switchport mode trunk
  spanning-tree portfast edge trunk
-```
+{{< /highlight>}}
 
 Here is the playbook run with the CLI module:
 
@@ -165,7 +163,7 @@ Here is the playbook run with the CLI module:
 
 Output from this is:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Switch config] *******************************************************************************
 
 TASK [CLI >> Configure Port channel] ***************************************************************
@@ -182,7 +180,7 @@ ok: [sw01] => (item={'failed': False, u'changed': True}) => {
 PLAY RECAP *****************************************************************************************
 sw01                       : ok=2    changed=1    unreachable=0    failed=0
 
-```
+{{< /highlight>}}
 
 Moving to virtually the same playbook here:
 
@@ -217,7 +215,7 @@ Moving to virtually the same playbook here:
 
 The resulting output also includes _banners_, _commands_, and _updates_.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 PLAY [Switch config] ***********************************************************
 
 TASK [IOS >> Configure port channel] *******************************************
@@ -246,5 +244,5 @@ ace Port-channel5', u'switchport trunk allowed vlan 2,4,6'], u'banners': {}}) =>
 PLAY RECAP *********************************************************************
 sw01                       : ok=2    changed=1    unreachable=0    failed=0
 
-```
+{{< /highlight>}}
 

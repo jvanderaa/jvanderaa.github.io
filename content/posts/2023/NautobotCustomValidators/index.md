@@ -1,22 +1,14 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-07-05
 slug: nautobot-remote-validation
-categories:
-- automation
-- nautobot
-- security
-- devnet
-- flask
+tags: ["automation", "nautobot", "security", "devnet", "flask"]
 title: Nautobot Remote Validation
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 In this post I'm going to dive into a bit more on the Nautobot custom validators. This is a powerful validation tool that will allow for you to write your own validation capability, including in this demonstration on how to complete a validation against a remote API endpoint. The custom validators are a part of the Nautobot App extension capability. This allows for custom code to be written to validate data upon the `clean()` method being called, which is used in the majority of API calls and form inputs of Nautobot.
-
-<!--more-->
 
 I will look to accomplish four different objectives in this post from my point of view. This will help to get some targeted experiences with what I believe the DevNet Expert exam has in mind for Web Services, working with Flask. In my day to day I deal more so within the Django Web Framework to build web applications that are part of the Nautobot ecosystem. So the need to write some Flask applications is a good way to branch out some.
 
@@ -32,7 +24,7 @@ The goals that I have for this post:
 
 The Nautobot extensibility features are quite awesome. It is what makes Nautobot a platform worth investing in. The [Nautobot Custom Validators](https://docs.nautobot.com/projects/core/en/stable/plugins/development/#implementing-custom-validators) is no exception here. The example from the link previous is that a validator may set the requirement that every site must have a region:
 
-```python {linenos=true}
+{{< highlight python "linenos=table" >}}
 # custom_validators.py
 from nautobot.apps.models import CustomValidator
 
@@ -51,7 +43,7 @@ class SiteValidator(CustomValidator):
 
 
 custom_validators = [SiteValidator]
-```
+{{< /highlight >}}
 
 More information about the details of this can be found on the link provided, including the most up to date information on writing custom validators.
 
@@ -59,7 +51,7 @@ More information about the details of this can be found on the link provided, in
 
 First the Flask application. In this instance, I am using the Flask extension Flask-RESTX to help in handling a REST API endpoint that I plan on extending in future iterations. After installing Flask and Flask-RESTX into a new Poetry virtual environment I built the following API endpoint that will check that the hostname is all lower case:
 
-```python {linenos=true}
+{{< highlight python "linenos=table" >}}
 from flask import Flask
 from flask_restx import Api, Resource
 
@@ -101,22 +93,21 @@ class HelloWorld(Resource):
 if __name__ == "__main__":
     app.run(debug=True)
 
-```
+{{< /highlight >}}
 
-{{< alert "neutral" >}}
+{{< alert "circle-info" >}}
 Lines 17 & 18 are just the debugging code that will print out to the console the details to help understand what is coming in.
-
-
 {{< /alert >}}
+
 ### Testing Flask Endpoints (Manual)
 
 Some manual tests of the Flask endpoint to verify that the data is working as expected get the following results.
 
 #### Good Test
 
-```bash
+{{< highlight bash >}}
 curl localhost:5000/validate_name/ -d '{"proposed_name":"goodname"}' -X POST -H "Content-Type: application/json"
-```
+{{< /highlight >}}
 
 The response:
 
@@ -127,9 +118,9 @@ The response:
 
 #### Bad Test
 
-```bash
+{{< highlight bash >}}
 curl localhost:5000/validate_name/ -d '{"proposed_name":"Badname01"}' -X POST -H "Content-Type: application/json"
-```
+{{< /highlight >}}
 
     {
         "valid": false,
@@ -142,14 +133,13 @@ In working with an endpoint, it is imperative from a backwards compatibility per
 
 ## Nautobot Custom Validator
 
-{{< alert "info" >}}
+{{< alert "circle-info" >}}
 I have a "sandbox" Nautobot App that I use to do tests like this. It is its own standalone plugin that I have built from the structure that built many of the Network to Code sponsored Nautobot Apps. You may want to build a Sandbox app for yourself to work from as well.
-
-
 {{< /alert >}}
+
 The Nautobot Custom Validator is quite boring actually compared to the code that is put into the remote API. The code is the following and then I'll explain a few of the core parts:
 
-```python {linenos=true}
+{{< highlight python "linenos=table" >}}
 """Custom validators."""
 import requests
 
@@ -174,7 +164,7 @@ class DeviceValidator(CustomValidator):
 
 custom_validators = [DeviceValidator]
 
-```
+{{< /highlight >}}
 
 The validator is going to make an API request out and Python Requests is the best library for single threaded requests, so that is imported. If you do not have the Requests module in your Nautobot environment, you need to make sure to add the Python Requests library to the pip install in the Nautobot environment.
 

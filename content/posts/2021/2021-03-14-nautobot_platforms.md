@@ -1,25 +1,21 @@
 ---
-date: 2021-03-14
+author: Josh VanDeraa
+date: 2021-03-14 07:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-platforms
-title: 'Nautobot Ansible Collection: Platforms'
+title: "Nautobot Ansible Collection: Platforms"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 Platforms are an optional item when adding devices into Nautobot. The platform is the OS that you are going to be using. Most often this is used to help identify which driver your automation platform is going to be using. Specifically the slug of the platform is what needs to match. So in the terms of Ansible (since we are using Ansible to populate Nautobot), you will want to set Cisco IOS devices to **ios**. By having the slug match the automation platform name you have that information in your inventory. For these reasons I strongly recommend setting the Platform for devices.
-
-<!--more-->
 
 ## Module Documentation
 
@@ -85,7 +81,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Before the execution there are no platforms showing in Nautobot.
 
-![Nautobot No Platforms](/images/2021/nautobot_no_platforms.png)
+![Nautobot No Platforms](../../images/2021/nautobot_no_platforms.png)
 
 ### Example - Execution
 
@@ -182,7 +178,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 Now you see all of the defined platforms showing up in Nautobot.
 
-![NetBox Platforms After](/images/2021/nautobot_platforms.png)
+![NetBox Platforms After](../../images/2021/nautobot_platforms.png)
 
 ### Example - Idempotency
 
