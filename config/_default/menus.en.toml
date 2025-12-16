@@ -96,3 +96,12 @@
     icon = "x-twitter"
     showName = false
     target = "_blank"
+
+[[footer]]
+  name = "Blue Sky"
+  url = "https://bsky.app/profile/joshv.me"
+  weight = 77
+  [footer.params]
+    icon = "bluesky"
+    showName = false
+    target = "_blank"

@@ -16,8 +16,8 @@ enableImageLazyLoading = true
   recentLimit = 10
 
 [header]
-  # logo = "rsz_vanderaa_headshot.png"
-  # logoDark = "rsz_vanderaa_headshot.png"
+  logo = "router.png"
+  logoDark = "router.png"
   layout = "basic"
   showTitle = true
 
