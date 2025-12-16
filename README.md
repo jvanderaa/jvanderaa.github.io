@@ -1,21 +1,41 @@
 # Josh VanDeraa Blog Site
 
-Definition of the blog site.
+Personal blog site migrated to Hugo with the Congo theme.
 
 ## Development
 
-### Creating a New Post
+### Prerequisites
 
-To create a new blog post, run the `create_post.py` script from the root of the repository:
+- [Hugo Extended](https://gohugo.io/installation/) (v0.120.0+ recommended)
+- Go (for modules)
+
+### Setup
+
+Clone the repository with submodules to ensure the theme is installed:
 
 ```bash
-python3 create_post.py
+git clone --recurse-submodules https://github.com/jvanderaa/jvanderaa.github.io.git
+cd jvanderaa.github.io
 ```
 
-This interactive script will:
-1. Prompt you for the **Title**.
-2. Prompt for **Tags** (comma-separated).
-3. Generate the directory structure and file path based on the current year and a pascal-cased version of the title.
-4. Create the `index.md` file with the appropriate frontmatter (Authors, Date, Categories, etc.).
+If you already cloned it without submodules:
 
-Once run, you can find your new post in `docs/posts/<YYYY>/<Title>/index.md`.
+```bash
+git submodule update --init --recursive
+```
+
+### Running Locally
+
+Start the local development server:
+
+```bash
+hugo server
+```
+
+The site will be available at http://localhost:1313.
+
+### Creating a New Post
+
+```bash
+hugo new content content/posts/YYYY/YourTitle/index.md
+```

@@ -1,0 +1,127 @@
+baseURL = "https://josh-v.com/"
+languageCode = "en-us"
+title = "Josh VanDeraa"
+theme = ["congo", "hugo-admonitions"]
+[pagination]
+  pagerSize = 20
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  # Congo Configuration
+  colorScheme = "slate" # Dark mode default
+  defaultTheme = "dark"
+  enableSearch = true
+
+  [params.header]
+    layout = "hybrid"
+    showTitle = true
+  
+  # Author
+  [params.author]
+    name = "Josh VanDeraa"
+    image = "assets/router.png" # Need to check if this image exists in static/assets
+    headshot = "assets/router.png"
+    # links...
+
+  # Appearance
+  showAppearanceWidget = true
+
+  [params.homepage]
+    layout = "profile"
+    showRecent = true
+    recentLimit = 8
+    showMoreLink = true
+    cardView = false
+
+
+
+
+
+  [params.list]
+    showBreadcrumbs = true
+    showSummary = true
+    showTableOfContents = true
+    showTaxonomies = false
+    groupByYear = true
+    paginationWidth = 1
+
+  # Giscus Comments
+  showComments = true
+  [params.giscus]
+    repo = "jvanderaa/jvanderaa.github.io"
+    repoId = "R_kgDOJuZTvA"
+    category = "Announcements"
+    categoryId = "DIC_kwDOJuZTvM4CYqB6"
+    mapping = "pathname"
+    theme = "preferred_color_scheme"
+    reactionsEnabled = true
+    emitMetadata = false
+    lang = "en"
+    loading = "lazy"
+
+  # Footer
+  [params.footer]
+    copyright = "© 2018 - 2025 Josh VanDeraa"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "👤 About"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "book"
+    name = "📖 Book: OSS Net Mgmt"
+    url = "/book/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "observability"
+    name = "📖 Modern Network Observability"
+    url = "/observability/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "nautobot_book"
+    name = "📖 Nautobot Book"
+    url = "/nautobot_book/"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "links"
+    name = "🔗 Links"
+    url = "/links/"
+    weight = 50
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "🏷️ Tags"
+    url = "/tags/"
+    weight = 60
+
+  [params.article]
+    showDate = true
+    showDateUpdated = true
+    showAuthor = true
+    showBreadcrumbs = true
+    showTaxonomies = true
+    showWordCount = true
+    showReadingTime = true
+[outputs]
+  home = ["HTML", "RSS", "RSS_UPDATED", "JSON"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed_rss_created"
+
+[outputFormats.RSS_UPDATED]
+  mediaType = "application/rss+xml"
+  baseName = "feed_rss_updated"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"

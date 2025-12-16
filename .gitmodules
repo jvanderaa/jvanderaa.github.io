@@ -2,3 +2,6 @@
 	path = themes/congo
 	url = https://github.com/jpanther/congo.git
 	branch = stable
+[submodule "themes/hugo-admonitions"]
+	path = themes/hugo-admonitions
+	url = https://github.com/KKKZOZ/hugo-admonitions

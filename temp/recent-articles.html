@@ -1,0 +1,27 @@
+{{ if .Site.Params.homepage.showRecent | default false }}
+  <h2 class="mt-8 text-2xl font-extrabold">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+  
+  {{/* Get all regular pages in main sections */}}
+  {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+  
+  {{/* Use Paginator with limit if provided, else default */}}
+  {{ $limit := .Site.Params.homepage.recentLimit | default 10 }}
+  
+  {{/* Pagination logic */}}
+  {{ $paginator := .Paginate $pages $limit }}
+  
+  {{/* Render Groups */}}
+  {{ range $paginator.Pages.GroupByDate "2006" }}
+    <h3 class="mt-8 text-xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+      {{ .Key }}
+    </h3>
+    <hr class="w-36 border-dotted border-neutral-400" />
+    {{ range .Pages }}
+      {{ partial "article-link.html" . }}
+    {{ end }}
+  {{ end }}
+  
+  {{/* Pagination Buttons */}}
+  {{ partial "pagination.html" . }}
+
+{{ end }}

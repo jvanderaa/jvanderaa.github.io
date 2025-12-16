@@ -1,0 +1,44 @@
+---
+authors: [jvanderaa]
+date: 2021-09-14
+layout: single
+comments: true
+slug: book-open-source-network-management
+title: "New Book - Open Source Network Management"
+tags:
+  - book
+  - opensource
+  - networkmanagment
+toc: true
+---
+
+Earlier this month I was able to hit the _publish_ button on a new book - Open Source Network Management. The book dives into getting started with several open source network management tools. It is meant as a guide to help further your experience with using and installing open source tools, all on a single VM/host. The size of the host is meant to have minimal capital investment, in the way of a single NUC or a minimal VM deployed on a hypervisor in your environment.  
+
+The book is published on [LeanPub](https://leanpub.com/opensourcenetworkmanagement), which is a publish early, publish often marketplace. The book is digital only, with PDF, ePub, and mobi formats available. Currently the book is indicating 80% completeness, with most of the technical content in place already! There are mainly soft edits in this early version.
+
+<!-- more -->
+
+It has been a while since I have put some content out on my blog site. Why? Well, this book is the reason why. The time that I would have been making some content here, I have been putting into making the book. This will change. I will be putting out a few more posts upcoming.
+
+## Tools At Launch
+
+There are several open source tools that are covered. Starting out with installing Docker Community Edition (CE), then adding Docker Compose files to handle installation of the tools. After the Docker Compose is up, there is also a basic configuration to get up and running, actually using the project. Such as how to use the [Nautobot Device Onboarding](https://github.com/nautobot/nautobot-plugin-device-onboarding) and [Network Importer](https://github.com/networktocode/network-importer/) projects to get data into Nautobot. Or how to create a secrets vault to store your sensitive data, and then reference that data in other places. The current tool list includes:
+
+* Nautobot (Source of Truth)
+* Hashicorp Vault (Secrets Management)
+* Telegraf (Metrics Gathering)
+* Prometheus (Metrics Storage and Alerting)
+* Grafana (Metrics Visualization)
+* NGINX (Web Server/Reverse Proxy)
+
+With these components in place a modern network management stack can be put into place, with minimal investment.
+
+### Tool Selection
+
+These tools are all light weight tools that have the capability to be running on a single host to get up and running. Yet, after being light weight all will be able to **scale** out to meet the needs of some of the largest networks.
+
+## Thank You
+
+Hopefully the content in the book is helpful! It was an enjoyable time to put it together.
+
+-Josh

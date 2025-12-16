@@ -1,0 +1,27 @@
+# config/_default/config.toml
+
+baseURL = "https://josh-v.com"
+languageCode = "en"
+googleAnalytics = "G-QCDLSTK9K6"
+theme = ["congo", "hugo-admonitions"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[pagination]
+  pagerSize = 20
+
+[permalinks]
+  posts = "/:title"
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed_rss_created"
+
+[outputFormats.RSS_UPDATED]
+  mediaType = "application/rss+xml"
+  baseName = "feed_rss_updated"
+
+[outputs]
+  home = ["HTML", "RSS", "RSS_UPDATED", "JSON"]

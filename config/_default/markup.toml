@@ -1,0 +1,15 @@
+[goldmark]
+[goldmark.renderer]
+  unsafe = true
+
+[highlight]
+  codeFences = true
+  guessSyntax = true
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = false
+  style = "nord"
+
+[tableOfContents]
+  startLevel = 1
+  endLevel = 4
