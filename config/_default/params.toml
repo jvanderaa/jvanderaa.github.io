@@ -9,6 +9,7 @@ enableSearch = true
 enableCodeCopy = true
 mainSections = ["posts"]
 enableImageLazyLoading = true
+enableQuicklink = true
 
 [homepage]
   layout = "profile" # valid options: page, profile, custom
@@ -18,7 +19,7 @@ enableImageLazyLoading = true
 [header]
   logo = "router.png"
   logoDark = "router.png"
-  layout = "basic"
+  layout = "hybrid"
   showTitle = true
 
 [article]
