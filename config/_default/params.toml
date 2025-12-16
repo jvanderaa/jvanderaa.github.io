@@ -38,7 +38,7 @@ enableQuicklink = true
   showTaxonomies = true
   showWordCount = true
   showComments = true
-  sharingLinks = ["mastodon", "linkedin", "reddit", "twitter", "pinterest",  "email", "facebook"]
+  sharingLinks = ["bluesky", "mastodon", "linkedin", "reddit", "twitter", "pinterest",  "email", "facebook"]
 
 [list]
   showBreadcrumbs = true
