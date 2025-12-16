@@ -71,3 +71,47 @@
 /* GenericStrong */ .chroma .gs { font-weight:bold }
 /* GenericSubheading */ .chroma .gu { color:#88c0d0;font-weight:bold }
 /* GenericTraceback */ .chroma .gt { color:#bf616a }
+
+/* Copy Code Button Styling */
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    background: transparent;
+    border: none;
+    color: #ff9800; /* Orange color */
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    z-index: 10;
+}
+
+.copy-button:hover {
+    opacity: 1;
+    color: #f57c00; /* Darker orange on hover */
+}
+
+.copy-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+    display: block;
+}
+
+.copy-button.copied {
+    color: #4caf50; /* Green for success */
+}
+
+/* Ensure container has relative positioning for absolute button */
+.highlight-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* Adjust highlight block to not overlap button if needed */
+.highlight > div, 
+.highlight > pre {
+    border-radius: 0.5rem;
+}
+
