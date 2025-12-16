@@ -13,7 +13,7 @@ theme = ["congo", "hugo-admonitions"]
   pagerSize = 20
 
 [permalinks]
-  posts = "/:title"
+  posts = "/:slug"
 
 [outputFormats.RSS]
   mediaType = "application/rss+xml"
