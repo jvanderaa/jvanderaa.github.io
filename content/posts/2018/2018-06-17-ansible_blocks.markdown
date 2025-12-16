@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2018-06-07
+date: 2018-06-07 07:00:00+00:00
 layout: single
 slug: ansible-blocks
 comments: true
@@ -11,8 +11,6 @@ tags: ["ansible"]
 One of the more interesting features that I have just come across within the Ansible automation
 world is that of the `block`. I find this very helpful for both error handling, and also grouping
 tasks into logical separation.
-
-<!-- more -->
 
 ## Ansible Official Link
 

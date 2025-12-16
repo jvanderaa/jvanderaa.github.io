@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2020-01-26
+date: 2020-01-26 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-cisco-ios-interfaces-module
@@ -28,8 +28,6 @@ investigated further, I had found that there are many more modules that are bein
 this post I will take a closer look at the differences between the `ios_interface` and `ios_vlan`
 modules that I had written posts on last year and what their new counter parts look like. And in the
 end the post had quite a bit of good detail about the module. I think you will like what is here.  
-
-<!-- more -->
 
 > Previous Posts
 >
@@ -120,7 +118,7 @@ about the other parameters not provided.
 
 ```
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 "commands": [
@@ -128,7 +126,7 @@ about the other parameters not provided.
     "description Configured by Ansible"
 
 
-```
+{{< /highlight>}}
 
 #### State: Replaced
 
@@ -162,7 +160,7 @@ shows that the only changes being made are to `GigabitEthernet0/3`. This is simi
 see in the overridden section. Overridden will configure every interface on the device vs replaced
 looks to only be handling the interface defined within the config parameter.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
     "msg": {
@@ -242,7 +240,7 @@ looks to only be handling the interface defined within the config parameter.
             "description Configured by Ansible"
 
 
-```
+{{< /highlight>}}
 
 #### State: Overridden
 
@@ -250,7 +248,7 @@ This one was not completely obvious to me when originally looking at. But as I t
 come to find that this state is something to be **VERY** cautious with. In the testing, I had the
 following configuration on the devices:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
 interface GigabitEthernet0/1
@@ -261,7 +259,7 @@ interface GigabitEthernet0/2
  description PRODUCTION
 
 
-```
+{{< /highlight>}}
 
 You can see that there are configurations applied to the description. I then created these playbook
 tasks to test the `Overridden` setting.
@@ -288,7 +286,7 @@ tasks to test the `Overridden` setting.
 
 The output shows that Ansible is going to erase the description lines:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
 "commands": [
@@ -298,7 +296,7 @@ The output shows that Ansible is going to erase the description lines:
     "no description"
 
 
-```
+{{< /highlight>}}
 
 This indicates that Ansible will default settings that are not specifically defined within the
 module.
@@ -308,7 +306,7 @@ The next test I changed the MTU on `GigabitEthernet0/1` and `GigabitEthernet0/2`
 setting the description on a single interface. The results from running that playbook now show that
 the interface MTU is reset to default since it was not statically defined in the task.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
     "commands": [
@@ -321,7 +319,7 @@ the interface MTU is reset to default since it was not statically defined in the
 ],
 
 
-```
+{{< /highlight>}}
 
 ##### State: Overridden - Loop
 
@@ -392,7 +390,7 @@ new configuration of the tasks:
 With having multiple interfaces defined under the config as another list item you are able to get
 both of the interfaces configured with what you are looking to do.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
         "after": [
@@ -467,7 +465,7 @@ both of the interfaces configured with what you are looking to do.
             "description Configured by Ansible"
 
 
-```
+{{< /highlight>}}
 
 You now see within the _commands_ key that both of hte interfaces are configured by Ansible. At this
 point with both interfaces being defined in the config parameter, you get both of the interfaces
@@ -502,7 +500,7 @@ default in the module is currently (2020-01-26) set to enabled.
 When the configuration previously had an interface description and an MTU set, the following is
 the commands that are executed on just the single interface that is defined in the task:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 "commands": [
@@ -511,4 +509,4 @@ the commands that are executed on just the single interface that is defined in t
     "no mtu"
 
 
-```
+{{< /highlight>}}

@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-03-09
+date: 2019-03-09 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-ios-vlan
@@ -23,8 +23,6 @@ Back to it finally. Going to take a look at the Ansible module **ios_vlan**. The
 to provide a declarative module for managing VLANs on IOS devices. In this I will be using IOSv-L2
 images. There are a few interesting quirks (as I will call it) within the parameters for the module.
 
-<!-- more -->
-
 ## Module Documentation
 
 First, the module documentation page is
@@ -38,7 +36,7 @@ Starting out the switch is pretty bare as it relates to the number of VLANs. The
 on the switch that has an uplink to the edge (of the lab) router. The base VLANs are the only other
 ones on the device:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 #show vlan
 
@@ -69,7 +67,7 @@ Primary Secondary Type              Ports
 ------- --------- ----------------- ------------------------------------------
 
 
-```
+{{< /highlight>}}
 
 ### Building the Play
 
@@ -119,7 +117,7 @@ is the way to go with a task. First attempt at seeing what it does, the followin
 When executing it came across an error that gave some more insight that was not portrayed on the
 module definition page.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 ansible-playbook output_test.yml -i ./lab_hosts
 
@@ -132,7 +130,7 @@ fatal: [sw19]: FAILED! => {"changed": false, "msg": "parameters are mutually exc
 PLAY RECAP *********************************************************************
 sw19                       : ok=0    changed=0    unreachable=0    failed=1   
 
-```
+{{< /highlight>}}
 
 Modifying the playbook with the fatal error message out. It now looks like this:
 
@@ -165,7 +163,7 @@ Modifying the playbook with the fatal error message out. It now looks like this:
 This will now deploy in aggregate all of the VLANs that are being defined in the list of
 dictionaries. Looking at the output this is what is now on the switch:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 #show vlan
 
@@ -198,7 +196,7 @@ Primary Secondary Type              Ports
 ------- --------- ----------------- ------------------------------------------
 
 
-```
+{{< /highlight>}}
 
 ## Changing the VLANs on the device
 
@@ -232,7 +230,7 @@ Removing a VLAN that is not supposed to be on the device is incredibly simple wi
 
 The resulting play execution shows that the VLAN is removed from the command output.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -255,7 +253,7 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}
 
 ### Adding a VLAN and assigning to Interface
 
@@ -298,7 +296,7 @@ access port. With the output from the execution the module registers each of the
 being issued to the switch. This shows the VLAN is first created, then goes into the interface
 assigned as a parameter. Lastly it sets that interface to being an access interface in the VLAN.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -325,7 +323,7 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0   
 
 
-```
+{{< /highlight>}}
 
 ### IOS_VLAN - Purge Parameter
 
@@ -338,7 +336,7 @@ a play/task and stays configured that way. If some rogue actor has added a VLAN,
 know. So for this next test, I went and created three manual VLANs on the switch for VLANs 10, 13,
 and 100. 
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 VLAN Name                             Status    Ports
@@ -380,7 +378,7 @@ Primary Secondary Type              Ports
 ------- --------- ----------------- ------------------------------------------
 
 
-```
+{{< /highlight>}}
 
 #### Play Setup - Purge VLANs
 
@@ -420,7 +418,7 @@ I did have to run the playbook twice as the bug that I found did not run properl
 > 2.7.5 to use the _purge_ function, you **must** use the keyword **yes** instead of _true_. If you
 > use _true_ the purge function will not work.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [Switch config] ***********************************************************
@@ -453,11 +451,11 @@ PLAY RECAP *********************************************************************
 sw19                       : ok=2    changed=1    unreachable=0    failed=0  
 
 
-```
+{{< /highlight>}}
 
 #### Resulting VLAN Configuration
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 #show vlan
@@ -492,7 +490,7 @@ Primary Secondary Type              Ports
 ------- --------- ----------------- ------------------------------------------
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 

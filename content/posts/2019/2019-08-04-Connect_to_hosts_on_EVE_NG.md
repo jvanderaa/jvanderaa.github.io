@@ -1,27 +1,29 @@
 ---
+author: Josh VanDeraa
 toc: true
-date: 2019-08-04
+date: 2019-08-04 07:00:00+00:00
 layout: single
 slug: eveng-for-autoamtion-practice-and-testing
 title: EVE-NG for Automation Practice and Testing
-categories:
-- eveng
-- ansible
-- network simulation
-- netdevops
+comments: true
+# collections:
+#   - Cisco
+#   - Ansible
+# categories:
+#     - Ansible
+tags:
+  - eveng
+  - ansible
+  - network simulation
+  - netdevops
 sidebar:
   nav: ansible
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 As I restarted looking at how I'm continuing my education on the Network
 Automation and certification realm I asked the question "How are you simulating
 your network environment?" At the same time there has been thought on the idea
 of leveraging cloud resources to gain experience there.  
-
-<!--more-->
 
 First requirement for me is that whatever tool/simulation set that I use it has
 to work. That being said, I need to be able to generate configurations, connect
@@ -88,7 +90,7 @@ Network** to the project. I make sure that it is set to:
 * Name/Prefix: Internet (Be creative if you wish)
 * Type: **bridge**
 
-![EVE-NG Bridge Net](/images/2019/07/eveng_add_bridge_net.png)  
+![EVE-NG Bridge Net](../../images/2019/07/eveng_add_bridge_net.png)  
 The type of **bridge** is what we are looking for to enable the connectivity.  
 
 ### Connecting your router
@@ -96,19 +98,23 @@ The type of **bridge** is what we are looking for to enable the connectivity.
 First thing you need to do within EVE-NG is to add a router and connect it to
 your _Outside_ network. I've done so as shown here:
 
-![EVE-NG Router Host](/images/2019/07/eveng_add_bridge_host.png)  
+![EVE-NG Router Host](../../images/2019/07/eveng_add_bridge_host.png)  
 
 Then the configuration on this Cisco edge device I have configured the following
 on the interface that has been connected to the outside.
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 interface GigabitEthernet0/0
  ip address dhcp
  duplex full
  speed 1000
  media-type rj45
 end
-```
+
+
+{{< /highlight>}}
 
 This allows the device to come online and get a network address. If you wanted
 to prescribe what address it is in a static fashion, that is something you can

@@ -1,39 +1,29 @@
 ---
-date: 2020-11-29
+author: Josh VanDeraa
+date: 2020-11-29 08:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-inventory_plugin
-title: 'NetBox Ansible Collection: Inventory - Starting Out'
+title: "NetBox Ansible Collection: Inventory - Starting Out"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 The documentation can be found on [ReadTheDocs](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/inventory/nb_inventory/netbox.netbox.nb_inventory_inventory.html). This is going to be starting out with the basics of the plugin and getting some sample output and to show how to form groups to be used.
 
-<!--more-->
-
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
-
 {{< /alert >}}
+
 > This particular plugin **DOES NOT** require pynetbox to be used. 
 
 Late addition: You can see a corresponding video on YouTube:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;">
-  <iframe src="https://www.youtube.com/embed/3NRbIpH5G5Q" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          frameborder="0" 
-          allowfullscreen>
-  </iframe>
-</div>
+{{< youtube 3NRbIpH5G5Q >}}
 
 ## Purpose
 
@@ -100,7 +90,7 @@ config_context: false
 
 When executing the inventory `ansible-inventory -i netbox_inventory.yml`. This example the file name is netbox_inventory.yml. This is completely arbitrary. You can name the inventory any file you wish. Most likely you should name it something that relates to the inventory you are creating. The result of the inventory gives the following:
 
-```json {linenos=true}
+{{< highlight json "linenos=table" >}}
 {
     "_meta": {
         "hostvars": {
@@ -175,7 +165,7 @@ When executing the inventory `ansible-inventory -i netbox_inventory.yml`. This e
         ]
     }
 }
-```
+{{< /highlight>}}
 
 In this output, you get several components made available. First take notice on lines 62-74 at the bottom. This gives the groupings that will be made available. Since this is the basic query with no groupings defined, there is a single group of _ungrouped_. This is a child of the _all_ group. Which allows only hosts defined as all or the specific hostname.  
 
@@ -200,7 +190,7 @@ group_by:
 
 This now yields the following:
 
-```json {linenos=true}
+{{< highlight json "linenos=table" >}}
 {
     "all": {
         "children": [
@@ -240,7 +230,7 @@ This now yields the following:
         ]
     }
 }
-```
+{{< /highlight>}}
 
 > This filtered out the hostvars as these are not changing.
 
@@ -273,13 +263,13 @@ query_filters:
 
 Looking at just the platforms_cisco_ios grouping, there is now a single device.
 
-```json {linenos=true}
+{{< highlight json "linenos=table" >}}
     "platforms_cisco_ios": {
         "hosts": [
             "dcrtr001"
         ]
     },
-```
+{{< /highlight>}}
 
 You can add additional queries to the query_filters key, such that status is listed twice. Once we add the second status then both devices show up again:
 
@@ -289,14 +279,14 @@ query_filters:
   - status: "offline"
 ```
 
-```json {linenos=true}
+{{< highlight json "linenos=table" >}}
     "platforms_cisco_ios": {
         "hosts": [
             "dcrtr001",
             "wanrtr002"
         ]
     },
-```
+{{< /highlight>}}
 
 ## Adding Variables
 
@@ -327,7 +317,7 @@ compose:
 
 With this modification the output shows the following hostvars with the groups unchanged. Notice specifically line 3 that there is now the *ansible_network_os* is set to *ios*, which will match the Ansible Network OS that Ansible will use. I just make sure that the slug for the Platform name matches that of the primary automation system.
 
-```json {linenos=true}
+{{< highlight json "linenos=table" >}}
 "dcrtr001": {
     "ansible_host": "192.0.2.10",
     "ansible_network_os": "ios",
@@ -360,7 +350,7 @@ With this modification the output shows the following hostvars with the groups u
         "virtual"
     ]
 },
-```
+{{< /highlight>}}
 
 ## Summary
 

@@ -1,6 +1,6 @@
 ---
-authors: [jvanderaa]
-date: 2020-11-18
+author: Josh VanDeraa
+date: 2020-11-18 07:00:00+00:00
 layout: single
 comments: true
 slug: blog_update_v2
@@ -16,8 +16,6 @@ toc: true
 
 I've changed a few things on the site. Sorry about that! URLs have changed. Over the past week or so I have been working through making some what originally were small updates to the blog, that turned into a little too much effort. I was hoping to add a little bit of polish to the site while keeping the content in place. Earlier in 2020, maybe even back in 2019 I had become aware of Hashnode from the posts of [David Flores - aka NetPanda](https://twitter.com/davidban77) who is on the Hashnode side at [https://davidban77.hashnode.dev/](https://davidban77.hashnode.dev/). I liked many things that the blogging site has to offer. From a very quick up and running, to having a strong start of a
 community.
-
-<!-- more -->
 
 ## Hashnode Trial
 

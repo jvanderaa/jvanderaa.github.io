@@ -1,19 +1,24 @@
 ---
+author: Josh VanDeraa
 toc: true
-date: 2019-06-23
+date: 2019-06-23 07:00:00+00:00
 layout: single
 slug: ansible-asa-og
 title: Ansible ASA OG Module
-categories:
-- cisco
-- ansible
-- asa
-- asa_og
+comments: true
+# collections:
+#   - Cisco
+#   - Ansible
+# categories:
+#   - Ansible
+#   - Cisco Automation
+tags:
+  - cisco
+  - ansible
+  - asa
+  - asa_og
 sidebar:
   nav: ansible
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Today we are taking a look at the newest module out for Cisco ASA Ansible
@@ -21,8 +26,6 @@ module - [asa_og](https://docs.ansible.com/ansible/latest/modules/asa_og_module.
 This one is particularly exciting for the configurations that are being managed
 heavily with Object Groups on firewalls. I'm particularly excited to review the
 **asa_og** module, time to dig in.  
-
-<!--more-->
 
 **New** in this post is the finished playbooks being added to Github. I'm hoping
 that this may be helpful and I am uploading the contents to Github for more to
@@ -69,7 +72,7 @@ policy management using Ansible.
 So the lab looks very much the same at the moment as some of the other posts,
 which is below:  
 
-![LabDesign](/images/2019/01/lab_design.png)  
+![LabDesign](../../images/2019/01/lab_design.png)  
 
 Sample goals:  
 - Create an object group for internal addresses (RFC1918)
@@ -85,14 +88,14 @@ Quad9)
 Let's tackle the first item. First to show the configuration on the ASA
 firewall for the object group:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 fw01# show object-group 
 fw01# show run | i RFC 1918
 
 
-```
+{{< /highlight>}}
 
 We see that there is not the object group that is desired to be there.  
 
@@ -151,7 +154,9 @@ fact that the device was changed.
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/PKTEWZG85G0?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 PLAY [ASA OG Working] **********************************************************
 
 TASK [TASK 1: Set RFC1918 Object Group] ****************************************
@@ -175,7 +180,9 @@ ok: [asa1] => {
 PLAY RECAP *********************************************************************
 asa1                       : ok=2    changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
-```
+
+
+{{< /highlight>}}
 
 Re-running the playbook again, we see that the module is idempotent. Being that
 we can safely run this continuously and not have any changes unless they are
@@ -183,7 +190,7 @@ necessary.
 
 ##### Second Run
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -205,7 +212,7 @@ asa1                       : ok=2    changed=0    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 ### Adding onto the previous playbook to add the second group
 
@@ -286,7 +293,9 @@ executed on the device
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/mOiixwviHFk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 PLAY [ASA OG Working] **********************************************************
 
 TASK [TASK 1: Set RFC1918 Object Group] ****************************************
@@ -324,7 +333,9 @@ ok: [asa1] => {
 
 PLAY RECAP **************************************************************************
 asa1                       : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-```
+
+
+{{< /highlight>}}
 
 ##### Playbook Results on ASA
 
@@ -332,7 +343,7 @@ As expected, we get the new items added to the configuration. When we look at
 the before and after on the configuration of the ASA we now see that we have
 the second object group, exactly as we expected.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 fw01# show object-group
@@ -359,7 +370,7 @@ object-group network EXTERNAL_DNS_NTP
  network-object host 208.67.220.220
 
 
-```
+{{< /highlight>}}
 
 ### Adding on the Port Group
 
@@ -489,7 +500,7 @@ to the device creates the port object
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/X7mH-x9ui28?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -540,13 +551,13 @@ asa1                       : ok=6    changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 ##### Changes on the ASA
 
 And as we are use to seeing, we see the update on the ASA itself:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 fw01# show object-group
@@ -583,7 +594,7 @@ object-group service SVC_OBJ_DNS_NTP udp
  port-object eq ntp
 
 
-```
+{{< /highlight>}}
 
 ### Removing groups
 
@@ -600,7 +611,7 @@ will NOT remove an entire object-group**.
 
 The firewall configuration has the following for object groups:  
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 object-group network RFC1918_Networks
@@ -624,7 +635,7 @@ object-group service DNS_ONLY udp
  port-object eq domain
 
 
-```
+{{< /highlight>}}
 
 #### Task Created - Absent state
 
@@ -656,7 +667,7 @@ task will take a look at another helpful state of **replace**.
 <iframe width="853" height="480" src="https://www.youtube.com/embed/ucKFWlirHjE?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [ASA OG Working] **********************************************************
@@ -717,14 +728,14 @@ asa1                       : ok=8    changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 ##### Firewall After
 
 Here we see that the port object that we asked to remove is gone. If there were
 other object items in the object-group they would still remain.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 fw01# show object-group
@@ -770,7 +781,7 @@ object-group service DNS_ONLY udp
  description: DNS ports
 
 
-```
+{{< /highlight>}}
 
 ### State: Replace
 
@@ -827,7 +838,9 @@ Let's get right to looking at the execution based on the summary above.
 Here we see that the object group **SVC_OBJ_DNS_NTP** has a lot more entries
 than one should expect.  
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 fw01# show object-group
 object-group network RFC1918_Networks
  description: RFC1918 Local Networks
@@ -849,7 +862,9 @@ object-group service SVC_OBJ_DNS_NTP udp
  port-object eq 5353
  port-object eq 553
  port-object eq 353
-```
+
+
+{{< /highlight>}}
 
 ##### Replace - Full Playbook
 
@@ -965,7 +980,9 @@ bunch of extra items
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/HARqtDKc0MM?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
-```bash
+{{< highlight bash "linenos=table" >}}
+
+
 PLAY [ASA OG Working] **********************************************************
 
 TASK [TASK 1: Set RFC1918 Object Group] ****************************************
@@ -1038,7 +1055,9 @@ ok: [asa1] => {
 PLAY RECAP *********************************************************************
 asa1                       : ok=10   changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
-```
+
+
+{{< /highlight>}}
 
 ## Summary
 

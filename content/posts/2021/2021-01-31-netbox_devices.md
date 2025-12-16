@@ -1,29 +1,26 @@
 ---
-date: 2021-01-31
+author: Josh VanDeraa
+date: 2021-01-31 08:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-devices
-title: 'NetBox Ansible Collection: Devices'
+title: "NetBox Ansible Collection: Devices"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 All of the work through the modules thus far in the series have brought us to what we all want to see. How to get or update device information inside of NetBox. Adding of sites, device types, device roles are required to get us to this point. Now you can see how to add a device to NetBox using the netbox.netbox.netbox_device module.  
 
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
 {{< /alert >}}
-<!--more-->
 
 There are many optional parameters for the module specifically. I encourage you to take a look at the module documentaation (linked below) in order to get a good sense of all of the options available. The required parameters for a device that is present are:
 
@@ -105,7 +102,7 @@ First if you are following along with the examples thus far, I made a new site h
 
 This execution shows that all of the device types are added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@588715249c44:~$ ansible-playbook add_devices.yml
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -121,11 +118,11 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
 
 
-```
+{{< /highlight>}}
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@588715249c44:~$ ansible-playbook add_devices.yml
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -141,7 +138,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 Now that you have some devices, you can start to do a little bit more with your NetBox environment. This playbook purposely did not add more information about the device yet, such as the serial number, interfaces, or IP addressing. This is all information that you can add more about the device as well using Ansible Facts and Resource Modules to continue to develop your source of truth. More likely to come in the future, or you can check out the content on GitHub and YouTube referenced above for immediate reference.
 

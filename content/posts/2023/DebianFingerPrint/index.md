@@ -1,24 +1,18 @@
 ---
-title: Debian Finger Print Login
+author: Josh VanDeraa
+title: "Debian Finger Print Login"
 date: 2023-08-19
-categories:
-- debian
-- linux
-- authentication
+tags:
+  - debian
+  - linux
+  - authentication
 draft: false
 coverAlt: Finger print high tech
-coverCaption: 'Photo by <a href="https://unsplash.com/@georgeprentzas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">George
-  Prentzas</a> on <a href="https://unsplash.com/photos/SRFG7iwktDk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@georgeprentzas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">George Prentzas</a> on <a href="https://unsplash.com/photos/SRFG7iwktDk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 
 As a long time MacBook user and of recent years on the M1 using the TouchID system that allows for fingerprint authentication, this is something that I wanted to get to work pretty quickly for myself. I had tried a couple of different options to get fingerprint reading to work. Through the 3 methods, I finally have one that works, and I figured it would be worth the share.
-
-<!--more-->
 
 ## Attempted Routes
 

@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2018-11-22
+date: 2018-11-22 07:00:00+00:00
 layout: single
 title: Getting Started with the Blog
 comments: true
@@ -15,8 +15,6 @@ tags: ["blog"]
 Why this post? Because I decided to change the style of how I was hosting my blog. Before I had decided to just host the blog on something that was easy to get to and update. I could have kept on blogging there, but I found making blog posts a little bit more difficult than what I wanted to. I also wanted to learn some of the `new` ways of doing things within networking technologies.
 
 With this, I decided to bring my blog over to a static site generator. I'm not doing anything significantly crazy with a blog site, other than hopefully creating some useful content. So static site generation brought me over to Github.
-
-<!-- more -->
 
 ## What I wanted to accomplish
 

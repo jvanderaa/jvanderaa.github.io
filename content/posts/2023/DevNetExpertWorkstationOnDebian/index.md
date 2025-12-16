@@ -1,24 +1,19 @@
 ---
-title: DevNet Expert Workstation On Debian
+author: Josh VanDeraa
+title: "DevNet Expert Workstation On Debian"
 date: 2023-08-23
-categories:
-- devnet
-- expert
-- automation
+tags:
+  - devnet
+  - expert
+  - automation
 draft: false
 coverAlt: Code
-coverCaption: 'Photo by <a href="https://unsplash.com/@gamell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joan
-  Gamell</a> on <a href="https://unsplash.com/photos/ZS67i1HLllo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@gamell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joan Gamell</a> on <a href="https://unsplash.com/photos/ZS67i1HLllo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ---
 
 As part of my journey of using my Debian based Dev Workstation, as well as my studies towards completion of the DevNet Expert, I wanted to get up and running with the [DevNet Workstation](https://learningnetwork.cisco.com/s/article/devnet-expert-equipment-and-software-list) example that would help to become familiar with the environment that would be found at the live exam. There were a few small quirks along the way, so I thought I would go ahead and create a post about how to get started.
-
-<!--more-->
 
 ## Getting Started
 
@@ -36,11 +31,10 @@ The first part of the process is to get the qcow2 file downloaded from the [Equi
 
 Once downloaded, then you can create a new VM, I will be using [Virtual Machine Manager](https://virt-manager.org/) as a UI to the KVM system. I won't dive into deep details of the under the hood of what is going on, but get into how I am able to get the host available and online.
 
-{{< alert "info" >}}
+{{< alert "circle-info">}}
 I recommend taking a look at [Chris Titus's Tech blog](https://christitus.com/vm-setup-in-linux/) (and likely his YouTube video associated with it) for getting Qemu/KVM and Virtual Machine Manager going.
-
-
 {{< /alert >}}
+
 ### Import the Image to a New VM
 
 Now the fun part, which is pretty quick to get going. From the base VMM screen, select new on the upper left hand corner.
@@ -75,7 +69,7 @@ To verify what I had seen previously, I test a `ping 1.1.1.1` to see if there is
 
 Taking a look at the network connections I run the command `ip add` and I get the following output, where the interface name is highlighted on line 8.
 
-```bash {hl_lines=["8"]}
+```bash {linenos="table",hl_lines=[8]}
 (main) expert@expert-cws:~$ ip add
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -94,7 +88,7 @@ Taking a look at the network connections I run the command `ip add` and I get th
 
 On this same host, showing the netplan with the command `cat /etc/netplan/00-cws-dhcp-config.yaml` (tab complete after `/etc/netplan` gets you the file name) you can see that on line 6 that the default workstation interface name has `ens3` rather than the `enp1s0` that you saw on the previous command:
 
-```yaml {hl_lines=["6"]}
+```yaml {linenos="table",hl_lines=[6]}
 # Configure ens160 for DHCP
 network:
     version: 2

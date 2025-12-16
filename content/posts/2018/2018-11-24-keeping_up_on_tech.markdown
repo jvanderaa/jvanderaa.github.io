@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2018-11-24
+date: 2018-11-24 07:00:00+00:00
 layout: single
 slug: keeping-up-on-tech
 comments: true
@@ -16,8 +16,6 @@ tags: ["learning", "productivity"]
 Life always gets busy. That is one thing that you always hear about. I am definitely in that boat as well that things are getting busy. With this in mind, I have never felt better about my ability to learn new things in the field. I do a few things that I feel are probably unique that I should share. 
 
 The first opportunity that has never been more capable of doing is to listen to podcasts. The commuting time to/from work is a tremendous opportunity. I leverage three podcasts as my primary learning mechanism these days. 
-
-<!-- more -->
 
 ## Podcasts
 

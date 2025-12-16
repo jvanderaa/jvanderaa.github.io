@@ -1,22 +1,19 @@
 ---
-date: 2020-12-12
+author: Josh VanDeraa
+date: 2020-12-12 08:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-lookup-plugin
-title: 'NetBox Ansible Collection: Lookup Plugin'
+title: "NetBox Ansible Collection: Lookup Plugin"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 The NetBox lookup plugin is to **get information** out of NetBox for use within Ansible. This uses [pynetbox](https://github.com/digitalocean/pynetbox) to query the NetBox API for the information requested. On top of being helpful in gathering data from NetBox (when it is not your inventory source), but it is extremely helpful in larger NetBox deployments when compared to using the URI module as well. If you wish to use NetBox as your inventory source, you should definitely read my previous post on getting started with the [NetBox Inventory Plugin](https://josh-v.com/netbox_ansible_collection/netbox-ansible-inventory_plugin/).
 
-<!--more-->
 
 - [Read the Docs](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/lookup/nb_lookup/netbox.netbox.nb_lookup_lookup.html)
 - [GitHub Source File](https://github.com/netbox-community/ansible_modules/blob/devel/plugins/lookup/nb_lookup.py)
@@ -24,11 +21,10 @@ The NetBox lookup plugin is to **get information** out of NetBox for use within 
 
 > The recommended Jinja function to use with this lookup plugin is the `query` function. This tells Ansible that the result of the lookup should be a type list. The same behavior is also available by using the `lookup` function, in conjunction with the parameter `wantlist=true`. For this post we will use the `query` method.
 
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
-
 {{< /alert >}}
+
 ## Methodology
 
 My methodology for gathering this information is that the plugin is looking to get the Django application (Sites, Devices, IPAM)
@@ -153,7 +149,7 @@ When taking a look at gathering sites the following task is used:
 
 Lines 1-3 are the collecting of data from NetBox itself. In my NetBox demo environment I currently have 4 sites. Instead of giving you the entire output that is quite long, below is that output. Note that there is a bunch of information available to you about each site here.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
    - key: 6
       value:
@@ -189,13 +185,13 @@ Lines 1-3 are the collecting of data from NetBox itself. In my NetBox demo envir
         virtualmachine_count: null
         vlan_count: null
 
-```
+{{< /highlight>}}
 
 #### Gathering Sites: TASK 2 Output - Getting Just the Site Names
 
 I used json_query (which uses JMESPATH) to get just the site names. I see a future post on this coming in the future. The result of this gives me the output of just the four sites and not the rest of the data:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 ok: [localhost] => 
   msg:
@@ -205,7 +201,7 @@ ok: [localhost] =>
   - PDX
 
 
-```
+{{< /highlight>}}
 
 ### Get Devices - Filtered to a single site
 
@@ -226,7 +222,7 @@ You can then filter with the lookup plugin as well. In these two tasks I'm going
 
 The output from these two tasks where there is a single router device at the site Denver is then the following output with the single device on line 77.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [TASK 3: GET ROLE ROUTERS AT DEN SITE] **************************************************************************************************************************
   ansible_facts:
@@ -307,7 +303,7 @@ ok: [localhost] =>
   - den-wan01
 
 
-```
+{{< /highlight>}}
 
 #### Searching Multiple Locations
 
@@ -315,7 +311,7 @@ With this you are able to filter many things. To filter multiple sites, say you 
 
 > I am only showing a single device corresponding to MSP & DEN site.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
   ansible_facts:
     msp_den_devices:
@@ -390,11 +386,11 @@ With this you are able to filter many things. To filter multiple sites, say you 
         virtual_chassis: null
 
 
-```
+{{< /highlight>}}
 
 Here is the result of Task 6, which is the list of the devices:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [TASK 6: PRINT THE DEVICES AT DEN & MSP LOCATIONS] **************************************************************************************************************
 ok: [localhost] => 
@@ -407,7 +403,7 @@ ok: [localhost] =>
   - msp-wan01
 
 
-```
+{{< /highlight>}}
 
 ## Working With Large Data Sets
 
@@ -434,7 +430,7 @@ One may say that I can just get the data from using the URI module from Ansible.
 
 Task 7 gets the data, and looking at the response data coming back we can see that there is a second page by the **next** field:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
   json:
     count: 3
@@ -443,24 +439,24 @@ Task 7 gets the data, and looking at the response data coming back we can see th
     results:
 
 
-```
+{{< /highlight>}}
 
 Task 8 then confirms this for us:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
   msg:
   - 'Length of result on paginated response: 2'
   - 'Total results (if no paging): 3'
 
 
-```
+{{< /highlight>}}
 
 This is where leveraging pynetbox under the hood and it handling the pagination will be helpful. Some day there may be an Ansible module that handles API calls and combines the results on multiple responses. But today one would need to add a fair amount of logic handling into a Playbook execution to handle pagination.  
 
 The result is handling the paging in the task and makes the life very easy to get data from NetBox with it!
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 TASK [TASK 10: PRINT THE DEVICES AT DEN LOCATION] ********************************************************************************************************************
 ok: [localhost] => 
@@ -469,7 +465,7 @@ ok: [localhost] =>
   - den-dist02
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 

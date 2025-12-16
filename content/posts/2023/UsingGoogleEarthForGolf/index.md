@@ -1,24 +1,19 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-08-05
 slug: google-earth-golf
-categories:
+tags:
 - golf
 - earth
 title: Using Google Earth for Golf
 toc: true
 coverAlt: Workstation Troubleshooting 2023
-coverCaption: 'Photo by <a href="https://unsplash.com/@coloradohiker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Allan
-  Nygren</a> on <a href="https://unsplash.com/photos/-xvKQuNtOhI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@coloradohiker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Allan Nygren</a> on <a href="https://unsplash.com/photos/-xvKQuNtOhI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 
 I'm going to diverge a small bit from the straight network automation space that I have blogged about primarily and dive a small bit into the world of using Google Earth to help prepare for your golf game. Upcoming, I'm playing in a Minnesota Golf event at two courses in late August. I'm going to put together a green book for myself and figure this would be a great topic to touch on how I'm going about this activity.
-
-<!--more-->
 
 ## Requirements
 
@@ -67,11 +62,10 @@ Now that there are some yardages off the tee, comes the part that you don't get 
 
 ![Elevation Info Panel](elevation_info_panel.png)
 
-{{< alert "neutral" >}}
+{{< alert "comment" >}}
 The USGA app itself also offers green books that have much more details slopes on them. There is an annual cost for this green book and I am one that is supporting technology innovations by the USGA. I'm glad to show interest and pay them a bit of revenue in order to continue to develop technology advances for golf. [Android](https://play.google.com/store/apps/details?id=com.advancedmobile.android.ghin&hl=en_US&gl=US) [Apple](https://apps.apple.com/us/app/ghin/id491796218)
-
-
 {{< /alert >}}
+
 Off of the tee is where you are likely to need this, as well as understanding various points along the way. So this way you know if you are hitting into an elevated green or not. Elevation changes do generally impact the distance that clubs go. So I'm taking the elevation at the tee box, the general fairway/rough areas, and since I've done this for the green book I then know if I'm going to be uphill or downhill to the hole.
 
 All of these are manually entered into the GIMP editor. I'm using one color for yardages to the obstacles and another for the elevation numbers. I'm also going to put the two measurement points with an X to make sure to know where the two measurements are sourced from.

@@ -1,22 +1,19 @@
 ---
-date: 2020-11-21
+author: Josh VanDeraa
+date: 2020-11-21 07:00:00+00:00
 layout: single
+comments: true
 slug: homeassistant-prometheus
 title: Home Assistant Prometheus Exporting Setup
 collections:
-- homeassistant
-categories:
+  - homeassistant
+tags:
 - homeassistant
 - prometheus
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 There does not appear to be a complete set of documentation pieces available for setting up Prometheus on the Home Assistant platform. This post will take you along on my journey of setting up the Home Assistant to get metrics from it. The link for the documentation is a good start at getting Prometheus installed. [https://www.home-assistant.io/integrations/prometheus/](https://www.home-assistant.io/integrations/prometheus/)
-
-<!--more-->
 
 ## Starting Prometheus
 

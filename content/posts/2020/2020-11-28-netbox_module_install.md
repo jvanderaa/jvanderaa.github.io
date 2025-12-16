@@ -1,43 +1,32 @@
 ---
-date: 2020-11-28
+author: Josh VanDeraa
+date: 2020-11-28 07:00:00+00:00
 layout: single
+comments: true
 slug: collection_install
-title: 'NetBox Ansible Collection: Installation'
+title: "NetBox Ansible Collection: Installation"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 This is the first post as I start to look at the NetBox Ansible Collection. This is an impressive collection with modules for several of the NetBox applications, a query plugin, and an inventory plugin. This will take a deeper dive into several of the components of the **inventory plugin**, but not all of the options. The documentation for all of the collection can be found at:
 
 - ReadTheDocs: [https://netbox-ansible-collection.readthedocs.io/en/latest/](https://netbox-ansible-collection.readthedocs.io/en/latest/)
 - Galaxy Page: [https://galaxy.ansible.com/netbox/netbox](https://galaxy.ansible.com/netbox/netbox)  
 
-<!--more-->
-
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
-
 {{< /alert >}}
+
 This post is going to give information on how to install the collection as it may be applicable to every post in the series (as they get posted).
 
 (Update 2020-12-05)
 The corresponding YouTube video is here:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;">
-  <iframe src="https://www.youtube.com/embed/KjGwNRoBYU0" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          frameborder="0" 
-          allowfullscreen>
-  </iframe>
-</div>
+{{< youtube KjGwNRoBYU0 >}}
 
 ## Installation
 
@@ -80,10 +69,10 @@ ansible-doc netbox.netbox.netbox_device
 
 If the module is not installed properly you will see, with a key in on the first line
 
-```shell {linenos=true}
+{{< highlight shell "linenos=table" >}}
 [WARNING]: module netbox.netbox.netbox_inventory not found in:
 ~/.local/lib/python3.7/site-packages/ansible/modules
-```
+{{< /highlight>}}
 The output when I sent the stdout to a file is:
 
 ```

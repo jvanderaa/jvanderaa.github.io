@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2018-12-08
+date: 2018-12-08 07:00:00+00:00
 layout: single
 slug: microsegmentation
 comments: true
@@ -18,8 +18,6 @@ tags: ["network design"]
 In a recent podcast there was some discussion that it sounded like the term **Micro Segmentation**
 was being used where it was really traditional **segmentation**. So I thought I would put out a few
 thoughts on this front.
-
-<!-- more -->
 
 ## What is Segmnentation in Networking
 
@@ -39,7 +37,7 @@ within a segment, creating a micro-segmentation effort.
 
 ## In Practice
 
-![SegmentDrawing](/images/2018/12/segments.png)
+![SegmentDrawing](../../images/2018/12/segments.png)
 
 | Source Host | Destination Host | Able to apply policy - Segmentation | Able to apply policy - Micro Segmentation |
 | ----------- | ---------------- | :---------------------------------: | :---------------------------------------: |

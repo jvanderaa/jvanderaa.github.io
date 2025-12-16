@@ -1,34 +1,28 @@
 ---
-title: Upgrade Nautobot Python Version in Virtual Machine
+author: Josh VanDeraa
+title: "Upgrade Nautobot Python Version in Virtual Machine"
 slug: upgrade-nautobot-python-virtual-machine
 date: 2023-08-14
-categories:
-- nautobot
-- automation
+tags:
+  - nautobot
+  - automation
 draft: false
 coverAlt: Heavy machinery for road work
-coverCaption: 'Photo by <a href="https://unsplash.com/@luandmario?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria
-  Lupan</a> on <a href="https://unsplash.com/photos/XeRqsvi9qBc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@luandmario?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Lupan</a> on <a href="https://unsplash.com/photos/XeRqsvi9qBc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ---
 
 One observation lately is that Python is moving along quickly with new versions and new EOLs. Along with needing to make these updates, the applications that Python uses will also need to be moving along. Nautobot is my favorite, and in my opinion the best SOT platform available in the open source ecosystem today. So let's dive into the updating of the Python version.
 
 For this post, I've created a new Rocky 8 Virtual Machine to be the host. See the note below for the reasoning. This will start off with a Nautobot [install](https://docs.nautobot.com/projects/core/en/stable/installation/) from the Nautobot docs. I won't dive into all of that, assume that is the starting point with a fresh Nautobot application.
 
-<!--more-->
-
 > I originally thought just doing a DNF update on the host that I would be able to use Python 3.8 or something of that nature. I was wrong. Running the DNF update put Python3.11 on the host. So now it is on to removing Python3.11 and move to 3.8 for this post. I completed this step with a `sudo dnf install python3.8`
 
-{{< alert "neutral" >}}
+{{< alert >}}
 It is a strong recommendation to not have to follow this process. In that you should be looking to be using infrastructure that can be destroyed and recreated. Such as with Docker containers or having the build process to be able to replace virtual machines as needed.
-
-
 {{< /alert >}}
+
 ## My Original Challenges With Upgrading Python
 
 Going back a few years I had the experience that was terribly painful to update Python versions on RHEL 7 and its derivatives. All of the documentation that I had found required to install Python from source, that you were not able to use DNF/YUM to just get the latest version of Python. Thankfully since RHEL8 and its derivatives, it is much simpler. Now DNF just is able to install and off we go.

@@ -1,6 +1,6 @@
 ---
-authors: [jvanderaa]
-date: 2021-10-13
+author: Josh VanDeraa
+date: 2021-10-13 07:00:00+00:00
 layout: single
 comments: true
 slug: devnet-expert-starting-point
@@ -13,8 +13,6 @@ toc: true
 ---
 
 This week Cisco announced the DevNet Expert certification exam. This exam and certification is something that I have been looking forward to for a long while. Dating back to the announcement of the certifications that were being provided. This was announced at Cisco Live 2019 in San Diego. I had started to lose some hope that this would become a reality with how long of a delay from the initial announcement to the announcement of availability. But it is now here. So here we go.
-
-<!-- more -->
 
 ## DevNet Cert Requirements
 

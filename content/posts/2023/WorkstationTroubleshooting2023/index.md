@@ -1,23 +1,18 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-07-29
 slug: workstation-troubleshooting-2023
-categories:
-- automation
+tags: ["automation"]
 title: Workstation Troubleshooting 2023
 toc: true
 coverAlt: Workstation Troubleshooting 2023
-coverCaption: 'Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu
-  Mohanan</a> on <a href="https://unsplash.com/s/photos/computer-chip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu Mohanan</a> on <a href="https://unsplash.com/s/photos/computer-chip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-  '
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 In my [previous post](https://josh-v.com/desktop-build-2023/) I wrote about a workstation that I was working on building. It took an incredibly long time to get up and into a stable environment. But I have finally accomplished stability (hoping to not jinx it here with the post). I went through a fair bit of troubleshooting to get to this point.
-
-<!--more-->
 
 ## Symptom
 

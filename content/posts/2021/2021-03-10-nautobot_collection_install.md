@@ -1,19 +1,17 @@
 ---
-date: 2021-03-10
+author: Josh VanDeraa
+date: 2021-03-10 07:00:00+00:00
 layout: single
+comments: true
 slug: collection_install
-title: 'Nautobot Ansible Collection: Installation'
+title: "Nautobot Ansible Collection: Installation"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 This is the first post as I shift into taking a closer look at the Nautobot Ansible Collection. The collection includes many of the needed modules to effectively manage your Nautobot environment. If  This will take a deeper dive into several of the components of the **inventory plugin**, but not all of the options. The documentation for all of the collection can be found at:
 
 - ReadTheDocs: [https://nautobot-ansible.readthedocs.io](https://nautobot-ansible.readthedocs.io)
@@ -22,8 +20,6 @@ This is the first post as I shift into taking a closer look at the Nautobot Ansi
 This post is going to give information on how to install the collection as it may be applicable to every post in the series (as they get posted).  
 
 If you were a user of the NetBox Ansible Collection previously, you will notice a few differences. The first big difference in the modules is that there is no preface of nautobot_ before each module. Since this Collection is developed after Ansible 2.10 they are using the FQCN (Fully Qualified Collection Name), there is no longer the need to prefix the name to the module name. So where there was a netbox_device before it will now be just device, underneath the FQCN of `networktocode.nautobot.device` as an example.  
-
-<!--more-->
 
 ## Installation
 
@@ -66,11 +62,11 @@ ansible-doc networktocode.nautobot.device
 
 If the module is not installed properly you will see, with a key in on the first line
 
-```shell {linenos=true}
+{{< highlight shell "linenos=table" >}}
 $ ansible-doc networktocode.nautobot.device
 [WARNING]: module networktocode.nautobot.device not found in:
 /root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules:/usr/local/lib/python3.7/site-packages/ansible/modules
-```
+{{< /highlight>}}
 
 When the collection is installed properly you will see the following output with the command:
 

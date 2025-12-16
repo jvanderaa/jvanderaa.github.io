@@ -1,29 +1,26 @@
 ---
-date: 2021-01-31
+author: Josh VanDeraa
+date: 2021-01-31 06:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-device-roles
-title: 'NetBox Ansible Collection: Device Roles'
+title: "NetBox Ansible Collection: Device Roles"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 A device role is aptly named, the role of the device. This is likely to be something that is meaningful to your organization and could change. For example you may have the 3 tier system of Core, Distribution, and Access layer environments. These are just fine. So you would want to have the roles there to reflect this reality. You may have leaf-spine environments, there are two more roles. And in my past I have also had roles that would indicate that there are dedicated DMZ, WAN edge, Internet edge devices. So this is the place to set this.
 
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
 {{< /alert >}}
-<!--more-->
 
 ## Module Documentation
 
@@ -104,7 +101,7 @@ Running the playbook on the roles are going to be straight to the point.
 
 This execution shows that all of the device types are added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@588715249c44:~$ ansible-playbook add_device_role.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -125,11 +122,11 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@588715249c44:~$ ansible-playbook add_device_role.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -150,7 +147,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 After completion of this you will have the device roles are now available to be assigned out.
 

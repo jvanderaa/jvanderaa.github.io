@@ -1,24 +1,19 @@
 ---
-title: Nautobot Environment File
+author: Josh VanDeraa
+title: "Nautobot Environment File"
 date: 2023-08-17
-categories:
-- nautobot
-- automation
+tags:
+  - nautobot
+  - automation
 draft: false
 coverAlt: The Environment
-coverCaption: 'Photo by <a href="https://unsplash.com/@tibrewalpratik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pratik
-  Tibrewal</a> on <a href="https://unsplash.com/photos/P5keEjqg6zM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  '
-author: jvanderaa
-params:
-  showComments: true
+coverCaption: |
+  Photo by <a href="https://unsplash.com/@tibrewalpratik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pratik Tibrewal</a> on <a href="https://unsplash.com/photos/P5keEjqg6zM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 
-Within Nautobot there are many ways to be able to get the Nautobot environment running. Environment variables are used quite a bit in the Docker environment following best practice principles set forth in the [12 Factor App](https://12factor.net/). The use of environment variables is helpful for working through the various stages of an application to production. The installation instructions leverage a single environment variable `NAUTOBOT_ROOT` and that is set in the SystemD files shown below.
+Within Nautobot there are many ways to be able to get the Nautobot environment running. Environment variables are used quite a bit in the Docker environment following best practice principles set forth in the [12 Factor App](https://12factor.net/). The use of environment variables is helpful for working through the various stages of an application to production. The installation instructions leverage a single environment variable `NAUTOBOT_ROOT` and that is set in the SystemD files shown below:
 
-
-```text {linenos=true, hl_lines=[10]}
+```systemd {linenos=table,hl_lines=[10]}
 /etc/systemd/system/nautobot.service
 [Unit]
 Description=Nautobot WSGI Service
@@ -93,7 +88,7 @@ The last step in using the `.env` file that was created is to now reference that
 sudo vi /etc/systemd/system/nautobot.service
 ```
 
-```ini {hl_lines=[11]}
+```systemd {linenos=table,hl_lines=[11]}
 # /etc/systemd/system/nautobot.service
 [Unit]
 Description=Nautobot WSGI Service
@@ -123,11 +118,10 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
-{{< alert "neutral" >}}
+{{< alert >}}
 It is important to note that there are no quotes/double quotes around the file path. If you put these in, there will be issues. I had invested a fair bit of time the first time troubleshooting why my environment variables are not loading.
-
-
 {{< /alert >}}
+
 Once all of the files have been updated, you should complete a daemon reload:
 
 ```bash
@@ -138,7 +132,7 @@ sudo systemctl daemon-reload
 
 Now there are variables in the file that by default do not get loaded. If you try to run `source /opt/nautobot/.env` then you will not have the proper format to load these. As the Nautobot user, modify the `/opt/nautobot/.bashrc` file, adding the following to the end of the file (from this [gist](https://gist.github.com/mihow/9c7f559807069a03e302605691f85572)). The highlighted line the `.env` file should match what you name the file.
 
-```bash {hl_lines=["2"]}
+```bash {linenos=table,hl_lines=[2]}
 set -o allexport
 source /opt/nautobot/.env
 set +o allexport

@@ -1,19 +1,20 @@
 ---
+author: Josh VanDeraa
+comments: true
 date: 2023-07-05
 slug: slack-canvas
-categories:
+tags:
 - slack
 - productivity
 title: Slack Canvas
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
-Newly released (at some point anyway) is Slack Canvas, what looks to be a little bit of on demand wiki, collaboration space, and possibly (based on marketing materials) workflow organizer. This came to light as a "pop up" when I went into a Slack window on my mobile. Being a curious person and someone that is willing to try out new things I jumped right in.
+{{< badge >}}
+Hot Take:
+{{< /badge >}}
 
-<!--more-->
+Newly released (at some point anyway) is Slack Canvas, what looks to be a little bit of on demand wiki, collaboration space, and possibly (based on marketing materials) workflow organizer. This came to light as a "pop up" when I went into a Slack window on my mobile. Being a curious person and someone that is willing to try out new things I jumped right in.
 
 ## The Take
 

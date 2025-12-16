@@ -1,31 +1,27 @@
 ---
-date: 2020-12-20
+author: Josh VanDeraa
+date: 2020-12-20 06:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-manufacturers
-title: 'NetBox Ansible Collection: Manufacturers'
+title: "NetBox Ansible Collection: Manufacturers"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 Adding your manufacturers via code is the easy way to get started with your NetBox devices. Immediately after adding Sites, the next thing to get going when using NetBox as your Source of Truth is to add in Manufacturers. These are just that, who makes the gear that you use. For this demonstration you will see adding just a few manufacturers. I'm not necessarily picking on any vendors and who should or shouldn't be here. It is just what my background brings.
 
-<!--more-->
-
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
-
 {{< /alert >}}
+
 ## Module Documentation
 
 * [Read the Docs](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/netbox_manufacturer_module.html)
@@ -80,13 +76,13 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Here is the before:
 
-![NetBox Manufacturers Before](/images/2020/12/manufacturers_before.png)
+![NetBox Manufacturers Before](../../images/2020/12/manufacturers_before.png)
 
 ### Example - Execution
 
 Pretty short and sweet on this playbook. With having `Cisco` already present, you can see that the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 josh-v@d27199d82bfc:~$ ansible-playbook add_manufacturers.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -103,11 +99,11 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
-```
+{{< /highlight>}}
 
 Now you see all of them showing up in NetBox.
 
-![NetBox Manufacturers After](/images/2020/12/manufacturers_after.png)
+![NetBox Manufacturers After](../../images/2020/12/manufacturers_after.png)
 
 ## Summary
 

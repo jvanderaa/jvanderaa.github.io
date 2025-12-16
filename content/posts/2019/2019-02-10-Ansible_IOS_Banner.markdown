@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-02-10
+date: 2019-02-10 07:00:00+00:00
 layout: single
 slug: ansible-ios-banner
 title: Ansible IOS Banner
@@ -26,8 +26,6 @@ modifying the banner on an IOS device. There are multiple reasons to want to man
 on a Cisco device. We will leave those reasons to you and the organization that you are a part of
 for that. For now, we will take a real quick look at the module.
 
-<!-- more -->
-
 ## Module Documentation
 
 First, the module documentation page is
@@ -39,12 +37,12 @@ I'm starting out with no banner on the page of my system as evident from this lo
 
 **Cisco Router Login**
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table">}}
 Escape character is '^]'.
 
 Username: 
 
-```
+{{< /highlight>}}
 
 ### IOS Banner Play / tasks
 
@@ -69,16 +67,16 @@ I now have the following banner showing up on the login to the Cisco device over
 
 **Banner on Router**
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table">}}
 Quick banner, this device is being managed by Ansible.
-```
+{{< /highlight>}}
 
 ### Output of ios_banner
 
 Let's take a look at the output of the `ios_banner` module when saved to a variable. We get the
 following output to the screen:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 TASK [DEBUG >> Output] *********************************************************
 ok: [rtr01] => {
     "msg": {
@@ -89,7 +87,7 @@ ok: [rtr01] => {
         "failed": false
     }
 }
-```
+{{< /highlight>}}
 
 There are three "outputs" to the variable. Changed, commands, and failed. 
 
@@ -123,7 +121,7 @@ is something that would carry over between languages/tools that are using YAML a
 
 This has successfully added a multiple line banner to the configuration:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 TASK [IOS >> Set banner to single login] ***************************************
 changed: [rtr01]
 
@@ -138,18 +136,18 @@ ng changes at your own risk!\n@"
         "failed": false
     }
 }
-```
+{{< /highlight>}}
 
 A quick look at the configuration itself in IOS:
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table">}}
 !
 banner login ^C
 ===This device is being managed by Ansible===
 Making changes at your own risk!
 ^C
 !
-```
+{{< /highlight>}}
 
 This automatically puts the `^C` as the character delineation for you, as that was not something
 that was specified within the module itself.
@@ -185,7 +183,7 @@ Notice the changes on line 3 below has been changed from the banner `login` to t
 ```
 
 **Output**
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 TASK [IOS >> Set banner to single login] ***************************************
 changed: [rtr01] => (item=motd)
 ok: [rtr01] => (item=login)
@@ -286,7 +284,7 @@ ok: [rtr01] => {
     }
 }
 
-```
+{{< /highlight>}}
 
 ## Summary
 

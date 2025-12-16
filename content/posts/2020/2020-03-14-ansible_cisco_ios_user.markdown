@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2020-03-14
+date: 2020-03-14 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible-cisco-ios-user
@@ -35,16 +35,13 @@ that gets encrypted when on the device, or you can set a hashed_password with th
 its corresponding value. And as expected with a module for setting user accounts you can also set
 the privilege level for which the user account uses.
 
-<!-- more -->
-
-
 ## SSH Before Setting Up SSH Keys
 
 You have probably seen this before, but for completeness sake I did get the output of the SSH login
 banner. This has the default lab setup on the device. So we do get a banner, but I'm getting
 prompted for a Password as well.
 
-```shell {linenos=true}
+{{< highlight shell "linenos=table" >}}
 
 
 ssh rtr-1
@@ -67,7 +64,7 @@ Are you sure you want to continue connecting (yes/no)? yes
 
 
 
-```
+{{< /highlight>}}
 
 ## Adding SSH Key Users
 
@@ -97,7 +94,7 @@ create an account on the same device but with my local computer account. Here is
 It is a single play playbook, with 2 tasks. Task 1 will add the local id_rsa public key to the IOS
 device. The final task is a play to save the configuration.
 
-```shell {linenos=true}
+{{< highlight shell "linenos=table" >}}
 
 
 ansible-playbook working_with_ios_user-1.yml
@@ -139,9 +136,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![Playbook1 Execution](/images/2020/03/add_user_with_key_mask.gif)
+![Playbook1 Execution](../../images/2020/03/add_user_with_key_mask.gif)
 
 On execution one can see that the commands pushed in the debug task including setting up an IP SSH
 keypair, setting a username of joshv, and setting the key hash. Then Ansible exits to what is
@@ -150,7 +147,7 @@ expected to be the first level of config mode and sets username `joshv` without 
 Execution is pretty much what we would expect of adding a username to the device. Taking a look at
 if we get prompted when connecting to the device is a no, I do not.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 $ ssh rtr-1
@@ -174,13 +171,13 @@ $ ssh rtr-1
 rtr-1#
 
 
-```
+{{< /highlight>}}
 
 Taking a look at the configuration in the router, it looks exactly as we would expect. There are
 only two users configured. The first being the one that Ansible uses to connect to this device. The
 second being the one we just reconfigured.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 rtr-1#show run | i username
@@ -189,7 +186,7 @@ username joshv nopassword
   username joshv
 
 
-```
+{{< /highlight>}}
 
 On the output you see that there is the username `joshv` multiple times. One is in the generic
 username section that was created with the command `username joshv nopassword` and then another time
@@ -228,7 +225,7 @@ remove all of what was created on the device.
 
 Execution looks extremely similar. Here it is:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************
@@ -265,17 +262,17 @@ PLAY RECAP *********************************************************************
 r1                         : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 > In writing of this I did find what I would consider a bug within Ansilbe's ios_user. If you use an
 > SSH Key with the credential, you will need to remove the user account with running the same taskk
 > 2 times. This is filed under issue https://github.com/ansible/ansible/issues/68238
 
-![Playbook2 Execution](/images/2020/03/removing_user_with_key.gif)
+![Playbook2 Execution](../../images/2020/03/removing_user_with_key.gif)
 
 Executing the module a second time you get the full removal of the user account.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************
@@ -315,7 +312,7 @@ PLAY RECAP *********************************************************************
 r1                         : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 ## Setting Username and Password - No Key
 
@@ -356,7 +353,7 @@ condition is met.
 
 Here is the execution. Note that Ansible masks the password being set.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: WORKING WITH IOS USER MODULE] ****************************************************
@@ -391,9 +388,9 @@ PLAY RECAP *********************************************************************
 r1                         : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
-![Playbook2 Execution](/images/2020/03/add_user_with_pass.gif)
+![Playbook2 Execution](../../images/2020/03/add_user_with_pass.gif)
 
 ## Summary
 

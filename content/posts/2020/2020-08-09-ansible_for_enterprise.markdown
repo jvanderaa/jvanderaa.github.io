@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2020-08-11
+date: 2020-08-11 07:00:00+00:00
 layout: single
 comments: true
 slug: ansible_for_enterprise
@@ -18,9 +18,6 @@ automate components across the entire Enterprise IT stacks. Rather than having t
 your network, server, and desktop automation tools, there is at least one automation tool that will
 work with just about your entire IT stack. In this I will take a high level overview of some of the
 features that are there for you to explore.
-
-<!-- more -->
-
 
 ## Ansible for Network Automation
 

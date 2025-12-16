@@ -1,25 +1,21 @@
 ---
-date: 2021-03-14
+author: Josh VanDeraa
+date: 2021-03-14 06:00:00+00:00
 layout: single
+comments: true
 slug: nautobot-ansible-manufacturers
-title: 'Nautobot Ansible Collection: Manufacturers'
+title: "Nautobot Ansible Collection: Manufacturers"
 collections:
-- nautobot_ansible_collection
-categories:
+  - nautobot_ansible_collection
+tags:
 - nautobot
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 Adding your manufacturers via code is the easy way to get started with your Nautobot devices. Immediately after adding Sites, the next thing to get going when using Nautobot as your Source of Truth is to add in Manufacturers. These are just that, who makes the gear that you use. For this demonstration you will see adding just a few manufacturers. I'm not necessarily picking on any vendors and who should or shouldn't be here. It is just what my background brings.
-
-<!--more-->
 
 ## Module Documentation
 
@@ -76,7 +72,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 Here is the before:
 
-![Nautobot Manufacturers Before](/images/2021/nautobot_no_manufacturers.png)
+![Nautobot Manufacturers Before](../../images/2021/nautobot_no_manufacturers.png)
 
 ### Example - Execution
 
@@ -242,7 +238,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0    s
 
 Now you see all of them showing up in Nautobot.
 
-![Nautobot Manufacturers After](/images/2021/nautobot_manufacturers.png)
+![Nautobot Manufacturers After](../../images/2021/nautobot_manufacturers.png)
 
 ## Summary
 

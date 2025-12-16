@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2020-06-21
+date: 2020-06-21 07:00:00+00:00
 layout: single
 comments: true
 slug: apple_automator
@@ -18,9 +18,6 @@ Today I'm going to walk through the newest part of my personal workflow for work
 Straight to the point, this is going to be using Apple Automator to quickly open your project that
 you wish to work on within VS Code, and presumably PyCharm as well.  
 
-<!-- more -->
-
-
 ## Problem
 
 So what is the problem that I'm trying to solve? I am one that generally likes the workspace concept
@@ -28,7 +25,7 @@ within VS Code, but I don't like having to maintain workspace files. I have foun
 difficult to maintain and keep organized. To that end I have found that there is an option to
 install VS Code shortcut into your OS path from the command pallet (cmd-P), and `path`.
 
-![VS Code Path](/images/2020/vscode-path.png)
+![VS Code Path](../../images/2020/vscode-path.png)
 
 Once this is installed, you can issue at a terminal (or iTerm2) prompt the command `code .` and this
 will bring up VS Code from the folder that you are currently working on.  
@@ -109,7 +106,7 @@ The next change I needed to do on the Run Shell Script module of Automator was t
 
 This now looks like the following from an Automator application:  
 
-![Automator](/images/2020/automator-complete.png)
+![Automator](../../images/2020/automator-complete.png)
 
 ### Keyboard Shortcuts
 
@@ -122,7 +119,7 @@ Last thing to do is to assign a keyboard shortcut to your automation.
 5. Find the name of your document that you created in Automator
 6. Assign a keyboard shortcut, I'm using `CMD-Shift-'` for mine
 
-![Shortcut](/images/2020/shortcuts.png)  
+![Shortcut](../../images/2020/shortcuts.png)  
 
 Now when I select the keyboard shortcut, I get a visual prompt of the folders in the project folder
 specified. And when I select the project and **OK** I am then taken to either a new VS Code window

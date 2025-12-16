@@ -1,7 +1,7 @@
 ---
-authors: [jvanderaa]
+author: Josh VanDeraa
 toc: true
-date: 2019-07-13
+date: 2019-07-13 07:00:00+00:00
 layout: single
 slug: ansible-ios-bgp-module
 title: Ansible IOS BGP Module
@@ -24,8 +24,6 @@ In this post I'm going to be taking a deeper dive into the new in Ansible 2.8
 [IOS BGP](https://docs.ansible.com/ansible/2.8/modules/ios_bgp_module.html)
 module. This may be one of the more complex modules to date and I'll try to
 make it as simple as possible.  
-
-<!-- more -->
 
 For a reminder about the BGP protocol is that this is the predominate protocol
 that runs the Internet. It is used to peer up with other companies and is what
@@ -84,7 +82,7 @@ environment which allows me to leverage Ansible from my machine as the control
 machine. R3 and R4 will be on the edge of the enterprise network, with R5
 originating some routes via EIGRP to the routers on R3 and R4.  
 
-![BGPLabDesign](/images/2019/07/lab_for_bgp.png)  
+![BGPLabDesign](../../images/2019/07/lab_for_bgp.png)  
 
 ### Networks
 
@@ -103,7 +101,7 @@ from a text perspective. There will however be the modules on the
 [Github](https://github.com/jvanderaa/ansible-using_ios) page, and in a follow
 on subsequent video demonstration of the playbook.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
 - name: "PLAY 1: Get Configuration Backup to verify connectivity"
@@ -114,7 +112,7 @@ on subsequent video demonstration of the playbook.
     - name: "TASK 1: Setup BGP Peers"
 
 
-```
+{{< /highlight>}}
 
 This is going to walk through getting R3 to eBGP peer with R2 as a 3rd party
 connection, and to R4 as an iBGP peer for internal BGP. This will not work with
@@ -126,14 +124,14 @@ go.
 This is more just to show where we are and that there is nothing configured for
 BGP on R3.
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
 R3#show run | sec bgp
 R3#
 
 
-```
+{{< /highlight>}}
 
 #### First BGP Neighbor
 
@@ -208,11 +206,11 @@ Line 37: The operation style from Merge, Replace, Override or Delete
 
 ##### Playbook iBGP - Execution
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 - name: "PLAY 1: Setup iBGP Peer to R4"
     - name: "TASK 1: Setup iBGP Peer"
     - name: "TASK 2: Debug output"
-```
+{{< /highlight>}}
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/pqIDnPkiyiE?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -224,7 +222,7 @@ Before the change there are no neighbors established. On the console there is
 an immediate neighbor established on the iBGP side of things with this
 configuration.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Setup iBGP Peer to R4] *******************************************
@@ -261,7 +259,7 @@ r3                         : ok=2    changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 Pretty straight to the point, that we have a complete BGP configuration getting
 deployed. A second run of the playbook _should_ be idempotent, however, when
@@ -281,7 +279,7 @@ information onto the single task of creating a full BGP configuration.
 First let's take a look at the BGP table on the router at this time, there is
 only one neighbor:  
 
-```bash {linenos=true}
+{{< highlight bash "linenos=table" >}}
 
 
 BGP router identifier 10.0.0.3, local AS number 65500
@@ -299,7 +297,7 @@ Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State
 198.51.100.2    4        65500   37400      63    37404    0    0 00:13:39       11
 
 
-```
+{{< /highlight>}}
 
 THe playbook is now:
 
@@ -374,7 +372,7 @@ The module also activates the neighbor.
 <iframe width="853" height="480" src="https://www.youtube.com/embed/haevkbppxmI?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
   
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 PLAY [PLAY 1: Setup iBGP Peer to R4] *******************************************
@@ -410,12 +408,12 @@ r3                         : ok=2    changed=1    unreachable=0    failed=0    s
 kipped=0    rescued=0    ignored=0
 
 
-```
+{{< /highlight>}}
 
 Taking a look at the BGP table, we now have 2 neighbors formed instead of just
 the one.  
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 
 BGP router identifier 10.0.0.3, local AS number 65500
@@ -434,7 +432,7 @@ Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State
 198.51.100.2    4        65500   57996      99    58006    0    0 00:21:06       11
 
 
-```
+{{< /highlight>}}
 
 ## Summary
 

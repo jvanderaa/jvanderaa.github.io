@@ -1,22 +1,18 @@
 ---
-date: 2022-05-07
+author: Josh VanDeraa
+comments: true
+date: "2022-05-07T07:00:00Z"
 slug: automation-inventory
-categories:
+tags:
 - automation
 - ansible
 - nornir
 title: Automation Inventory
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
-
 This is a topic that I'm fairly opinionated on as of late is looking at what should be maintained within an inventory and the strategy of how to set up the inventory. 
 
 > For the case of this blog post, I am going to use the term playbook to represent the automation being run. This is yes an Ansible term, but also apply this as your automation run that is using Nornir or any other automation framework.
-
-<!--more-->
 
 ## What Should Be In an Inventory
 
@@ -34,7 +30,7 @@ What about different sites? Well, these should all be within groups within the o
 
 ## A Look At Inventories
 
-![Inventory Actions](/images/2022/inventory_actions.png)
+![Inventory Actions](/images//2022/inventory_actions.png)
 
 Looking at the graphic above where there are 4 playbooks that you currently have. With an automation framework, your inventory should be the same inventory for each of the playbook activities. Whether it is for an OS version check, checking or configuring BGP neighbors, or configuring access interfaces. Of those examples, only the changing of the access interface playbook would need to know what the interfaces are. So to have the interfaces live in the inventory, especially if the inventory is gathered at run time, is causing unnecessary data gathering that may get in the way of automation.
 

@@ -1,29 +1,26 @@
 ---
-date: 2021-01-31
+author: Josh VanDeraa
+date: 2021-01-31 06:00:00+00:00
 layout: single
+comments: true
 slug: netbox-ansible-device-types
-title: 'NetBox Ansible Collection: Device Types'
+title: "NetBox Ansible Collection: Device Types"
 collections:
-- netbox_ansible_collection
-categories:
+  - netbox_ansible_collection
+tags:
 - netbox
 - ansible
 - cisco
 - arista
 - juniper
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 A device type is the next piece in the NetBox Device onboarding requirements. The device type corresponds to the model number of the hardware (or virtual machine). This is where you are able to template out devices during their creation. So if you have a console port on a device type, that console port will be created when you create the device. However, **there is NOT** a relationship built between the device type and the device. If the device type gets updated after the device is created, the device itself is **not** updated. 
 
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
 {{< /alert >}}
-<!--more-->
 
 ## Module Documentation
 
@@ -103,7 +100,7 @@ Getting started I already have a Cisco manufacturer included from a different de
 
 This execution shows that all of the device types are added.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 josh-v@d27199d82bfc:~$ ansible-playbook add_devices.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
@@ -120,11 +117,11 @@ changed: [localhost] => (item={'model': 'vEOS', 'manufacturer': 'Arista', 'slug'
 PLAY RECAP *******************************************************************************************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  
 
-```
+{{< /highlight>}}
 
 The second execution of playbook shows that with these three settings the module is idempotent:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 josh-v@d27199d82bfc:~$ ansible-playbook add_devices.yml 
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
@@ -141,7 +138,7 @@ ok: [localhost] => (item={'model': 'vEOS', 'manufacturer': 'Arista', 'slug': 've
 PLAY RECAP *******************************************************************************************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
-```
+{{< /highlight>}}
 
 After completion of this you will have the device types (hardware models) available for you to assign to devices (coming up next).
 

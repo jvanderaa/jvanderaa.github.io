@@ -1,29 +1,26 @@
 ---
-date: 2020-11-22
+author: Josh VanDeraa
+date: 2020-11-22 07:00:00+00:00
 layout: single
+comments: true
 slug: netbox_ansible_allocate_prefix_ipaddress
-title: 'Ansible + NetBox: Getting Next Prefix / IP'
-categories:
-- ansible
-- cisco
-- netbox
+title: "Ansible + NetBox: Getting Next Prefix / IP"
+tags:
+  - ansible
+  - cisco
+  - netbox
 toc: true
 sidebar:
   nav: netbox
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 This originates from a conversation had on Twitter about how to get the IP Prefix information from an IPAM tool, specifically	NetBox using Ansible. There are a couple of methodologies to go through, and I had originally started down the path of using the URI module. Which could be done. The more elegant solution is to use the NetBox Ansible Collections to handle the logic for you! Let’s take a look.
 
 Thank you to @ttl255 for the inspiration to the journey with the Collection!
 
-{{< alert "neutral" >}}
+{{< alert >}}
 This post was created when NetBox was an open source project used often in my automation framework. I have moved on to using [Nautobot](https://www.nautobot.com) due to the project vision and providing a methodology that will drive network automation forward further. You may want to take a look at it yourself.
-
 {{< /alert >}}
-<!--more-->
 
 > The final playbook will be posted at the very bottom.
 
@@ -55,11 +52,11 @@ The device has already been created in NetBox with all of the necessary interfac
 
 Here are the start the NetBox prefix allocation only has a single prefix defined at the start. Only 10.21.0.0/16, which is going to be the parent prefix.
 
-![Empty NetBox Prefix Overview](/images/2020/11/netbox_prefix_overview_empty.png)
+![Empty NetBox Prefix Overview](../../images/2020/11/netbox_prefix_overview_empty.png)
 
 We can see that there are no children prefixes and the current allocation is 0.
 
-![Empty NetBox Prefix](/images/2020/11/netbox_prefix_empty.png)
+![Empty NetBox Prefix](../../images/2020/11/netbox_prefix_empty.png)
 
 ## Creating a Prefix within NetBox
 
@@ -106,13 +103,13 @@ changed: [rtr-edge] => changed=true
 
 This response when registered will provide with the Prefix ID, prefix itself, and any additional items that may have been set for your NetBox environment. After running this a few times and this demo being the sixth execution this is now what the NetBox environment looks like for prefixes:
 
-![NetBox with 6 prefixes](/images/2020/11/netbox_with_prefixes.png)
+![NetBox with 6 prefixes](../../images/2020/11/netbox_with_prefixes.png)
 
 ## IP Address Allocation
 
 After getting the first task to allocate the prefix, next up is to assign the IP address from the prefix. This task allocates an IP address from the prefix that was just previously allocated.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 - name: "20 - ALLOCATE IP ADDRESS FOR THE ROUTER INTERFACE"
   netbox.netbox.netbox_ip_address:
@@ -123,7 +120,7 @@ After getting the first task to allocate the prefix, next up is to assign the IP
     state: new
   register: ip_address_info
 
-```
+{{< /highlight>}}
 
 On line 6 you see that the prefix gathered is mentioned via the variable. This is taken from the output that was seen from the NetBox Prefix allocation.
 
@@ -156,7 +153,7 @@ changed: [rtr-edge] => changed=true
 
 Taking a look at the NetBox Prefix View for the 10.21.5.0/24 network this is what you see:
 
-![NetBox 10.21.5.0/24 prefix](/images/2020/11/netbox_prefix_view.png)
+![NetBox 10.21.5.0/24 prefix](../../images/2020/11/netbox_prefix_view.png)
 
 You can see that there is a single IP address allocated.
 
@@ -164,20 +161,20 @@ You can see that there is a single IP address allocated.
 
 The next task in the Playbook is to shorten some of the variables. This is purely for visualization purposes. In order to not have long lines in the coming tasks, the following was done to create shorter line lengths:
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 - name: "30 - SET FACTS TO ASSIGN IP ADDRESS TO CISCO IOS ROUTER"
   set_fact:
     ip_address: "{{ ip_address_info['ip_address']['address'] | ipaddr('ip')  }}"
     netmask: "{{ ip_address_info['ip_address']['address'] | ipaddr('netmask') }}"
 
-```
+{{< /highlight>}}
 
 ## Apply the Cisco Configuration
 
 Now that there is an IP address and prefix available, and assigned within NetBox, the next step is to add the configuration to the device. Since this is primarily a focus on the NetBox side of things this will be short.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
     # DEPLOY THE INFORMATION TO THE ROUTER
     - name: "100 - ADD IP ADDRESS INFORMATION TO THE ROUTER"
@@ -194,7 +191,7 @@ Now that there is an IP address and prefix available, and assigned within NetBox
           - "network {{ ip_address_info['ip_address']['address'] | ipaddr('network') }} {{ netmask }} area 0"
         save_when: changed
 
-```
+{{< /highlight>}}
 
 Lines 2-7 are the applying of the configuration to the interface to be used. Lines 9-14 are used to add the network statement to OSPF for the prefix. With this done the interface is now configured and routing is setup.
 
@@ -230,7 +227,7 @@ This is a quick demo and has some hand holding that needs to be done for it. The
 
 Here is what the final playbook looks like at the moment, again not completely production ready, but is a good starting point.
 
-```yaml {linenos=true}
+{{< highlight yaml "linenos=table" >}}
 
 ---
 - name: "PLAY 1 - ASSIGN PREFIXES FOR HOST"
@@ -284,4 +281,4 @@ Here is what the final playbook looks like at the moment, again not completely p
         save_when: changed
 
 
-```
+{{< /highlight>}}

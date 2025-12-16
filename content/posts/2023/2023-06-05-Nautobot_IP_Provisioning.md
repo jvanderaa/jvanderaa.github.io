@@ -1,22 +1,19 @@
 ---
-date: 2023-06-05
+author: Josh VanDeraa
+comments: true
+date: "2023-06-05T07:00:00Z"
 slug: nautobot-ip-provisioning
-categories:
+tags:
 - automation
 - ansible
 - nautobot
 title: Nautobot IP Provisioning
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 One of the great things about building an enterprise system, is being able to get systems to work cohesively amongst themselves to bring a complete solution. One of the workflows that is often required in a static IP address environment is the need to provide static IP addresses to hosts on a network segment. When using an IPAM (IP Address Management) solution such as Nautobot, the APIs and SDKs/modules made available for use in automation workflows is paramount to having the cohesion to make a seamless IT system. 
 
 In this post I will be diving into the use of Nautobot as the IPAM. Using Ansible and the Nautobot modules, I will then show how you can get the next available IP address and assign it for use to the next VM. There will likely need to be some minor tweaks for use in your system.
-
-<!--more-->
 
 ## Nautobot Setup
 

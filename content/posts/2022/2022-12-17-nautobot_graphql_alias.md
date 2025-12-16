@@ -1,7 +1,9 @@
 ---
-date: 2022-12-17
+author: Josh VanDeraa
+comments: true
+date: "2022-12-17T07:00:00Z"
 slug: graphql-aliasing
-categories:
+tags:
 - automation
 - python
 - graphql
@@ -9,9 +11,6 @@ categories:
 - meraki
 title: GraphQL - Aliasing
 toc: true
-author: jvanderaa
-params:
-  showComments: true
 ---
 
 One of the features that I find myself using periodically that I think is underrated as far as using GraphQL is its ability to alias return keys in the response. This can be extremely helpful for developers writing applications, as it allows them to have the API response with the keys they are looking for. I have found this feature particularly useful when working on applications like Meraki and Nautobot together. In Nautobot a place is typically defined as the key `site`. In the Meraki world this is commonly set up as a `network`. Without GraphQL's alias feature, the developer would need to translate this data over.
@@ -22,8 +21,6 @@ Let's explore two scenarios where a developer might choose to alias the response
 - Response from multiple queries
 
 I will demonstrate the capabilities of these scenarios using the Nautobot demo instance at https://demo.nautobot.com. For each of these, make sure that you have logged in already before going to the GraphiQL page.
-
-<!--more-->
 
 ## Base GraphQL Query
 
@@ -212,7 +209,7 @@ query {
 
 Running that query generates the following error message:
 
-```text
+```no-highlight
 "message": "Fields \"sites\" conflict because they have differing arguments. Use different aliases on the fields to fetch both if this was intentional.",
 ```
 
