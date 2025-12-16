@@ -26,9 +26,10 @@ enableQuicklink = true
   showDate = true
   showDateUpdated = true
   showAuthor = true
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showDraftLabel = true
-  showEdit = false
+  showEdit = true
+  editURL = "https://github.com/jvanderaa/jvanderaa.github.io/edit/main/content/"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
@@ -44,6 +45,7 @@ enableQuicklink = true
   showBreadcrumbs = true
   showSummary = true
   showTableOfContents = true
+  showTaxonomies = true
   groupByYear = true
 
 [footer]

@@ -4,12 +4,14 @@ languageName = "English"
 weight = 1
 
 title = "Josh VanDeraa"
+copyright = "Copyright © 2025 Josh VanDeraa. All rights reserved."
 
 [params]
   isoCode = "en"
   displayName = "EN"
   description = "Network automation, networking, Python, and GoLang"
   rtl = false
+  dateFormat = "2006-01-02"
 
 [params.author]
   name = "Josh VanDeraa"
@@ -21,5 +23,6 @@ title = "Josh VanDeraa"
     { mastodon = "https://fosstodon.org/@jvanderaa/"},
     { x-twitter = "https://twitter.com/vanderaaj" },
     { github = "https://github.com/jvanderaa"},
-    { bluesky = "https://bsky.app/profile/joshv.me" }
+    { bluesky = "https://bsky.app/profile/joshv.me" },
+    { slack = "https://networktocode.slack.com/archives/D53RCGS3V"}
   ]

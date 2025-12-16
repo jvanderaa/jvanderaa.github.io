@@ -2,9 +2,11 @@
 title: Books
 date: 2023-06-13
 draft: false
+type: "page"
 hide:
 - navigation
 - footer
+- title
 ---
 
 # Books
