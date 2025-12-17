@@ -5,6 +5,8 @@ date: 2025-12-16
 tags:
   - blog
 draft: false
+summary: >
+    I'm back over to Hugo for my blog content using the Congo theme. Why? Come take a look.
 coverAlt: Alternative Cover Art Words
 coverCaption: |
     Photo by <a href="https://unsplash.com/@jack_anstey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jack Anstey</a> on <a href="https://unsplash.com/photos/aerial-photography-of-road-zS4lUqLEiNA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
