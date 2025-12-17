@@ -13,8 +13,8 @@ coverCaption: |
 
 Within Nautobot there are many ways to be able to get the Nautobot environment running. Environment variables are used quite a bit in the Docker environment following best practice principles set forth in the [12 Factor App](https://12factor.net/). The use of environment variables is helpful for working through the various stages of an application to production. The installation instructions leverage a single environment variable `NAUTOBOT_ROOT` and that is set in the SystemD files shown below:
 
-```systemd {linenos=table,hl_lines=[10]}
-/etc/systemd/system/nautobot.service
+```systemd {title="SystemD File",linenos=table,hl_lines=[10]}
+#/etc/systemd/system/nautobot.service
 [Unit]
 Description=Nautobot WSGI Service
 Documentation=https://docs.nautobot.com/projects/core/en/stable/
