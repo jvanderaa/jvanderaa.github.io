@@ -36,7 +36,7 @@ LISTEN   0         128       [::]:22              [::]:*
 
 > [!NOTE]- Generated with AI
 > Instead of leveraging a local system that would show the ports listening on my network, I asked ChatGPT to generate a list of ports that are being listened to on a Linux host showing the output of `ss -ltn`
->
+
 The port number, located to the right of the colon, represents the port being listened to. For example, in `0.0.0.0:80`, the `0.0.0.0` denotes the listening address, while `:80` specifies the port number. In the column `Peer Address:Port` shows what peer addresses are allowed to connect to the port that is being listened on. The `Local Address:Port` is the primary area of concern that this post will be diving into.
 
 ### IPv4 Port Listening
@@ -61,5 +61,5 @@ In summary I hope you have learned a bit more about how to view and manage ports
 
 > [!NOTE]- AI Editorial Assistance
 > This blog post had editing assistance from Google Gemini Advanced - 2024-09-21. The structure of the post was not altered and no significant content was added by the editing.
->
+
 -Josh
