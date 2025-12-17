@@ -1,0 +1,10 @@
+{{- $title := .Attributes.title -}}
+{{- /* Hugo already parses linenos, hl_lines, etc. into .Options, so use that as base */ -}}
+{{- $options := .Options -}}
+
+<div class="code-block-wrapper">
+  {{- if $title -}}
+    <div class="code-block-title">{{ $title | markdownify }}</div>
+  {{- end -}}
+  {{- transform.Highlight .Inner .Type $options -}}
+</div>
