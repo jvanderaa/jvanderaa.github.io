@@ -1,15 +1,21 @@
 ---
 date: 2025-12-13
-slug: services-first-strong-growth
+# slug: services-first-strong-growth
 categories:
 - automation
 title: Services First - A Reminder of Strong Growth
+summary: >
+  This post explores why the "Amazon API Mandate" remains relevant for modern network automation. It highlights how adopting a "Services First" strategy—using APIs and Pub/Sub systems like Nautobot—can transform CLI-based workflows into scalable, robust services.
 toc: true
 tags:
   - api
   - services
   - strategy
 author: jvanderaa
+coverAlt: Alternative Cover Art Words
+coverCaption: |
+    Photo by <a href="https://unsplash.com/@jakubzerdzicki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jakub Żerdzicki</a> on <a href="https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-desk-ynllMMWBdi0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 params:
   showComments: true
 ---
@@ -23,8 +29,6 @@ Recently, a discussion on the internal Slack at [Network to Code](https://networ
 5. All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.
 6. Anyone who doesn’t do this will be fired.
 7. Thank you; have a nice day!
-
-<!--more-->
 
 ## Introduction
 
