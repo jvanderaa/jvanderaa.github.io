@@ -3,7 +3,8 @@
 baseURL = "https://josh-v.com"
 languageCode = "en"
 googleAnalytics = "G-QCDLSTK9K6"
-theme = ["congo", "hugo-admonitions"]
+# Theme is now managed via Hugo modules in module.toml
+# theme = ["congo", "hugo-admonitions"]
 
 [taxonomies]
   tag = "tags"
