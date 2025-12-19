@@ -143,6 +143,45 @@ uv tool install poetry
 
 With that Poetry is now installed.
 
+### Cookiecutter Installation
+
+Also as part of the installation in order to get started easily with creating Nautobot Apps is the use of Python [CookieCutter](). The tool installs in a snap with UV, taking less than half a second to install everything:
+
+```bash {title="Install Cookiecutter"}
+uv tool install cookiecutter
+```
+
+> [!EXAMPLE]+ Output during the install of Cookiecutter
+>
+> ❯ uv tool install cookiecutter
+> Resolved 22 packages in 230ms
+> Prepared 12 packages in 116ms
+> Installed 22 packages in 27ms
+> + arrow==1.4.0
+> + binaryornot==0.4.4
+> + certifi==2025.11.12
+> + chardet==5.2.0
+> + charset-normalizer==3.4.4
+> + click==8.3.1
+> + cookiecutter==2.6.0
+> + idna==3.11
+> + jinja2==3.1.6
+> + markdown-it-py==4.0.0
+> + markupsafe==3.0.3
+> + mdurl==0.1.2
+> + pygments==2.19.2
+> + python-dateutil==2.9.0.post0
+> + python-slugify==8.0.4
+> + pyyaml==6.0.3
+> + requests==2.32.5
+> + rich==14.2.0
+> + six==1.17.0
+> + text-unidecode==1.3
+> + tzdata==2025.3
+> + urllib3==2.6.2
+> Installed 1 executable: cookiecutter
+> ```
+
 ### Python Versions
 
 The installation of different Python versions is just as easy. It's a `uv python install x.y` where `x`, `y`, and `z` are the version numbers. Such as 3.13. You can also specify the patch version as well.
