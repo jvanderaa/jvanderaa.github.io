@@ -1,0 +1,42 @@
+{{/* script */}}
+{{- if not (.Page.Scratch.Get "no-tab-script") -}}
+  {{- $js := resources.Get "js/tabs.js" -}}
+  <script src="{{ $js.RelPermalink }}"></script>
+{{- end -}}
+
+{{/* collect tab content */}}
+{{- $groupId := .Get "id" | default (printf "tabs-%d" .Ordinal) -}}
+{{- $tabsKey := printf "shortcode-tabs-%s" $groupId -}}
+{{- if not (.Page.Scratch.Get $tabsKey) -}}
+  {{- .Page.Scratch.Set $tabsKey (slice) -}}
+{{- end -}}
+{{- .Inner -}}
+{{- $tabs := .Page.Scratch.Get $tabsKey | default (slice) -}}
+
+{{/* markup */}}
+<div class="tab-container box">
+  <div class="tab-header">
+    {{- range $idx, $tab := $tabs -}}
+      <button
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-button {{ cond (eq $idx 0) "active" "" }}'
+        onclick="switchTab('{{ $groupId }}','{{ .name }}')">
+        {{ .name }}
+      </button>
+    {{- end -}}
+  </div>
+  <div class="tab-content">
+    {{- range $idx, $tab := $tabs -}}
+      <div
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-item {{ cond (eq $idx 0) "active" "" }}'>
+        {{ .content | safeHTML }}
+      </div>
+    {{- end -}}
+  </div>
+</div>
+
+{{- .Page.Scratch.Delete $tabsKey -}}
+{{- .Scratch.Delete "tabs" -}}
