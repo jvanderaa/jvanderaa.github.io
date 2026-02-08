@@ -1,0 +1,55 @@
+{{/* script */}}
+{{- if not (.Page.Scratch.Get "no-tab-script") -}}
+  {{- $js := resources.Get "js/tabs.js" -}}
+  <script src="{{ $js.RelPermalink }}"></script>
+  {{- .Page.Scratch.Set "no-tab-script" true -}}
+{{- end -}}
+
+{{/* collect tab content */}}
+{{- $groupId := .Get "id" | default (printf "tabs-%d" .Ordinal) -}}
+{{- $tabsKey := printf "shortcode-tabs-%s" $groupId -}}
+{{- if not (.Page.Scratch.Get $tabsKey) -}}
+  {{- .Page.Scratch.Set $tabsKey (slice) -}}
+{{- end -}}
+{{- .Inner -}}
+{{- $tabs := .Page.Scratch.Get $tabsKey | default (slice) -}}
+
+{{/* markup */}}
+<div class="tab-container box">
+  <div class="tab-header" role="tablist" aria-label="Content tabs">
+    {{- range $idx, $tab := $tabs -}}
+      {{- $tabId := printf "%s-tab-%d" $groupId $idx -}}
+      {{- $panelId := printf "%s-panel-%d" $groupId $idx -}}
+      <button
+        id="{{ $tabId }}"
+        role="tab"
+        aria-selected="{{ cond (eq $idx 0) "true" "false" }}"
+        aria-controls="{{ $panelId }}"
+        tabindex="{{ cond (eq $idx 0) "0" "-1" }}"
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-button {{ cond (eq $idx 0) "active" "" }}'>
+        {{ .name }}
+      </button>
+    {{- end -}}
+  </div>
+  <div class="tab-content">
+    {{- range $idx, $tab := $tabs -}}
+      {{- $tabId := printf "%s-tab-%d" $groupId $idx -}}
+      {{- $panelId := printf "%s-panel-%d" $groupId $idx -}}
+      <div
+        id="{{ $panelId }}"
+        role="tabpanel"
+        aria-labelledby="{{ $tabId }}"
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-item {{ cond (eq $idx 0) "active" "" }}'
+        {{ if ne $idx 0 }}hidden{{ end }}>
+        {{ .content }}
+      </div>
+    {{- end -}}
+  </div>
+</div>
+
+{{- .Page.Scratch.Delete $tabsKey -}}
+{{- .Scratch.Delete "tabs" -}}

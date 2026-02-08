@@ -227,6 +227,94 @@ html.dark .chroma .gs { font-weight:bold }
 html.dark .chroma .gu { color:#88c0d0;font-weight:bold }
 html.dark .chroma .gt { color:#bf616a }
 
+/* -------------------------------------------------------------------------- */
+/*                                   TABS                                     */
+/* -------------------------------------------------------------------------- */
+
+.tab-container {
+  margin: 1.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tab-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem 0.25rem 0;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-button {
+  padding: 0.5rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-weight: 600;
+  border-radius: 0.375rem 0.375rem 0 0;
+  cursor: pointer;
+}
+
+.tab-button:not(.active):hover {
+  color: #111827;
+}
+
+.tab-button.active {
+  color: #111827;
+  background: #ffffff;
+  box-shadow: 0 -1px 0 #ffffff inset, 0 1px 0 #e5e7eb inset;
+}
+
+.tab-content {
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.tab-item {
+  display: none;
+}
+
+.tab-item.active {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .tab-container,
+  html.dark .tab-container {
+    border-color: #374151;
+  }
+
+  html:not(.light) .tab-header,
+  html.dark .tab-header {
+    background: #111827;
+    border-color: #374151;
+  }
+
+  html:not(.light) .tab-button,
+  html.dark .tab-button {
+    color: #d1d5db;
+  }
+
+  html:not(.light) .tab-button:not(.active):hover,
+  html.dark .tab-button:not(.active):hover {
+    color: #f9fafb;
+  }
+
+  html:not(.light) .tab-button.active,
+  html.dark .tab-button.active {
+    background: #1f2937;
+    color: #f9fafb;
+    box-shadow: 0 -1px 0 #1f2937 inset, 0 1px 0 #374151 inset;
+  }
+
+  html:not(.light) .tab-content,
+  html.dark .tab-content {
+    background: #1f2937;
+  }
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                CODE BLOCK AUTHORS/TITLES                   */

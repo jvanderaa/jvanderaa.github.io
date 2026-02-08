@@ -1,0 +1,13 @@
+{{- if .Parent -}}
+  {{- $groupId := .Parent.Get "id" | default (printf "tabs-%d" .Parent.Ordinal) -}}
+  {{- $tabsKey := printf "shortcode-tabs-%s" $groupId -}}
+  {{- $name := trim (.Get "name") " " -}}
+  {{- $content := .Inner | markdownify -}}
+  {{- $tabEntry := dict "name" $name "content" $content -}}
+  {{- $existing := .Page.Scratch.Get $tabsKey -}}
+  {{- $existingType := printf "%T" $existing -}}
+  {{- if not (or (eq $existingType "[]interface {}") (eq $existingType "[]map[string]interface {}")) -}}
+    {{- .Page.Scratch.Set $tabsKey (slice) -}}
+  {{- end -}}
+  {{- .Page.Scratch.Add $tabsKey $tabEntry -}}
+{{- end -}}
