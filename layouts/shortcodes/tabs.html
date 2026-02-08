@@ -2,6 +2,7 @@
 {{- if not (.Page.Scratch.Get "no-tab-script") -}}
   {{- $js := resources.Get "js/tabs.js" -}}
   <script src="{{ $js.RelPermalink }}"></script>
+  {{- .Page.Scratch.Set "no-tab-script" true -}}
 {{- end -}}
 
 {{/* collect tab content */}}
@@ -32,7 +33,7 @@
         data-tab-item="{{ .name }}"
         data-tab-group="{{ $groupId }}"
         class='tab-item {{ cond (eq $idx 0) "active" "" }}'>
-        {{ .content | safeHTML }}
+        {{ .content }}
       </div>
     {{- end -}}
   </div>

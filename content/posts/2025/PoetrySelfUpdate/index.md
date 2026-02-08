@@ -1,8 +1,8 @@
 ---
-
+title: "Poetry Self Update"
+date: 2025-01-01T00:00:00Z
+draft: true
 ---
-
-
 ```
 ~/projects/nautobot-app-sandbox-app is 📦 v0.1.0 via 🐍 v3.12.8
 ❯ poetry self show plugins

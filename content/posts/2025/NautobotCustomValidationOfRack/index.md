@@ -94,7 +94,7 @@ For each of these steps, I'll make them expandable. Each of the steps after "bak
 - Running `poetry shell` to activate the virtual environment is recommended. I'm going to recommend otherwise to use the command `source .venv/bin/activate`. I have not had success installing the shell without it being installed in the system Python.
 > [!EXAMPLE]- source .venv/bin/activate output
 >
-> ```bash {title="psource .venv/bin/activate command output"}
+> ```bash {title="source .venv/bin/activate command output"}
 > ❯ source .venv/bin/activate
 > source /Users/joshv/projects/nautobot-app-sandbox-app/.venv/bin/activate
 > ```
