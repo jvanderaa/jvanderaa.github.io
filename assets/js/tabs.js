@@ -32,8 +32,10 @@
       
       if (isActive) {
         item.removeAttribute('hidden');
+        item.setAttribute('tabindex', '0');
       } else {
         item.setAttribute('hidden', '');
+        item.removeAttribute('tabindex');
       }
     });
   }

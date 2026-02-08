@@ -42,7 +42,7 @@
         id="{{ $panelId }}"
         role="tabpanel"
         aria-labelledby="{{ $tabId }}"
-        tabindex="0"
+        {{ if eq $idx 0 }}tabindex="0"{{ end }}
         data-tab-item="{{ .name }}"
         data-tab-group="{{ $groupId }}"
         class='tab-item {{ cond (eq $idx 0) "active" "" }}'
