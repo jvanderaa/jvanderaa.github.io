@@ -104,7 +104,12 @@
     });
   });
   
-  // Make switchTab globally available for inline onclick handlers
+  /**
+   * Global function to switch tabs programmatically.
+   * Exposed for compatibility with inline onclick handlers in the template.
+   * @param {string} groupId - The ID of the tab group
+   * @param {string} name - The name of the tab to switch to
+   */
   window.switchTab = function(groupId, name) {
     switchTabInternal(groupId, name, false);
   };
