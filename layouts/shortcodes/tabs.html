@@ -21,8 +21,7 @@
       <button
         data-tab-item="{{ .name }}"
         data-tab-group="{{ $groupId }}"
-        class='tab-button {{ cond (eq $idx 0) "active" "" }}'
-        onclick="switchTab('{{ $groupId }}','{{ .name }}')">
+        class='tab-button {{ cond (eq $idx 0) "active" "" }}'>
         {{ .name }}
       </button>
     {{- end -}}
