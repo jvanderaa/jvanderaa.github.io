@@ -28,7 +28,7 @@ My problem here was that I have some compute in my home that I would like to lev
 
 ## Solution
 
-First, I'm following the best practices that are being put out there by the folks at Anthropic of using a Planing session to build out what the plans are and then go build after. I started with the simple prompt that was able to get me a good amount of the way to what we would be looking for.
+First, I'm following the best practices that are being put out there by the folks at Anthropic of using a Planning session to build out what the plans are and then go build after. I started with the simple prompt that was able to get me a good amount of the way to what we would be looking for.
 
 ### First Prompt
 
