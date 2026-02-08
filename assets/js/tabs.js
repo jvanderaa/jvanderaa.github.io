@@ -7,7 +7,7 @@
     }
   }
 
-  function switchTab(groupId, name, focusTab) {
+  function switchTabInternal(groupId, name, focusTab) {
     const tabItems = document.querySelectorAll(
       `.tab-item[data-tab-group="${groupId}"]`
     );
@@ -32,10 +32,8 @@
       
       if (isActive) {
         item.removeAttribute('hidden');
-        item.setAttribute('tabindex', '0');
       } else {
         item.setAttribute('hidden', '');
-        item.removeAttribute('tabindex');
       }
     });
   }
@@ -73,7 +71,7 @@
     
     if (nextIndex !== -1) {
       const nextButton = tabButtons[nextIndex];
-      switchTab(groupId, nextButton.dataset.tabItem, true);
+      switchTabInternal(groupId, nextButton.dataset.tabItem, true);
     }
   }
 
@@ -91,7 +89,7 @@
           return;
         }
 
-        switchTab(groupId, name, false);
+        switchTabInternal(groupId, name, false);
       });
       
       button.addEventListener("keydown", function (event) {
@@ -108,6 +106,6 @@
   
   // Make switchTab globally available for inline onclick handlers
   window.switchTab = function(groupId, name) {
-    switchTab(groupId, name, false);
+    switchTabInternal(groupId, name, false);
   };
 })();
