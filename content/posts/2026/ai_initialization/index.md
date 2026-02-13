@@ -6,7 +6,7 @@ categories:
 - ai
 title: "AI: Initializing"
 summary: >
-  We are at an exciting time in the AI journey. The cycles moving through are moving at an incredible pace and it is here and ready.
+  I went from calling AI a 50/50 bet to burning through API credits in days. Here's what changed — from the Ralph Loop to OpenClaw to AI agent skills — and why I think we're at a pivotal point.
 toc: true
 tags:
   - ai
