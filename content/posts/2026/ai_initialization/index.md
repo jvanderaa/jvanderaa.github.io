@@ -1,5 +1,5 @@
 ---
-date: 2026-02-11
+date: 2026-02-12
 slug: welcome-ai-initializing
 categories:
 - automation
