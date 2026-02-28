@@ -13,12 +13,12 @@ tags:
 - strategy
 ---
 
-Recently, a discussion on the internal Slack at [Network to Code](https://networktocode.com) highlighted the "Amazon API Mandate" from 2002—a directive widely seen as transformative for Amazon. In the post (which can be found [here](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/)), the core tenet is clear: **All teams will henceforth expose their data and functionality through service interfaces.** Upon rereading this mandate, I was immediately reminded of why I am such a strong believer in this strategy. Let's take a deeper dive. First, the mandate included the following requirements:
+Recently, a discussion on the internal Slack at [Network to Code](https://networktocode.com) highlighted the "Amazon API Mandate" from 2002, a directive widely seen as transformative for Amazon. In the post (which can be found [here](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/)), the core tenet is clear: **All teams will henceforth expose their data and functionality through service interfaces.** Upon rereading this mandate, I was immediately reminded of why I am such a strong believer in this strategy. Let's take a deeper dive. First, the mandate included the following requirements:
 
 1. All teams will henceforth expose their data and functionality through service interfaces.
 2. Teams must communicate with each other through these interfaces.
 3. There will be no other form of interprocess communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only communication allowed is via service interface calls over the network.
-4. It doesn’t matter what technology they use. HTTP, Corba, Pubsub, custom protocols — doesn’t matter.
+4. It doesn’t matter what technology they use. HTTP, Corba, Pubsub, custom protocols, doesn’t matter.
 5. All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.
 6. Anyone who doesn’t do this will be fired.
 7. Thank you; have a nice day!
@@ -37,7 +37,7 @@ With Nautobot Jobs, it is incredibly easy to start creating your own API service
 
 The primary reason aligns with the mandate described above: it is a tried-and-true method for enabling services to be consumed by other teams.
 
-On top of that, Nautobot provides all the mechanisms needed to secure and authenticate these API services. Instead of writing an API service from scratch—where you must handle authentication, permissions, logging, and infrastructure—**you can get started right away with your business logic**.
+On top of that, Nautobot provides all the mechanisms needed to secure and authenticate these API services. Instead of writing an API service from scratch (where you must handle authentication, permissions, logging, and infrastructure), **you can get started right away with your business logic**.
 
 ## Pub/Sub and Nautobot
 
@@ -53,7 +53,7 @@ Interestingly, I still see direct database access used for interprocess communic
 
 ## Summary
 
-When taking the next step in your automation journey—beyond the initial automation of read-only workflows with network devices—I believe you should look into delivering services via APIs and Pub/Sub systems. This is a natural progression and provides a strong foundation for building a modern network automation strategy.
+When taking the next step in your automation journey (beyond the initial automation of read-only workflows with network devices), I believe you should look into delivering services via APIs and Pub/Sub systems. This is a natural progression and provides a strong foundation for building a modern network automation strategy.
 
 I'm going to dive into a few specific examples in future posts to show how you can take advantage of these strategies.
 

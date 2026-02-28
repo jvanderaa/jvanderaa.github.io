@@ -12,7 +12,7 @@ tags:
   - network_design
 ---
 
-It’s been a while since my last post — life and work have both been full. Today, I’m diving into one of the most quietly critical aspects of network design: **time synchronization**. Specifically, how to design NTP within an enterprise network and how to think about time zones when correlating logs.
+It’s been a while since my last post, life and work have both been full. Today, I’m diving into one of the most quietly critical aspects of network design: **time synchronization**. Specifically, how to design NTP within an enterprise network and how to think about time zones when correlating logs.
 
 We'll look at two main topics in this post: designing NTP (Network Time Protocol) and managing time zone display in logs. 
 
@@ -20,7 +20,7 @@ We'll look at two main topics in this post: designing NTP (Network Time Protocol
 
 ## Network Time Protocol (NTP)
 
-Network Time Protocol (NTP) keeps device clocks synchronized — a small detail that can have big operational consequences. Accurate time is essential for correlating logs, troubleshooting issues, and maintaining consistency across systems. In enterprise environments, having a common time source is vital. Whether investigating a cyber incident or reviewing footage from security cameras, synchronized time keeps all data sources in lockstep.
+Network Time Protocol (NTP) keeps device clocks synchronized, a small detail that can have big operational consequences. Accurate time is essential for correlating logs, troubleshooting issues, and maintaining consistency across systems. In enterprise environments, having a common time source is vital. Whether investigating a cyber incident or reviewing footage from security cameras, synchronized time keeps all data sources in lockstep.
 
 ??? note "Precision Time Protocol"
     For most organizations, second-level precision is sufficient. However, environments requiring microsecond accuracy may use [Precision Time Protocol (PTP)](https://en.wikipedia.org/wiki/Precision_Time_Protocol). I haven’t personally needed that level of precision yet, but it’s worth exploring if your use case demands it.
@@ -29,9 +29,9 @@ Network Time Protocol (NTP) keeps device clocks synchronized — a small detail 
 
 The first design decision is whether your organization should maintain its own time source. Common dedicated sources include:
 
-- **Satellite clocks** — synchronized via GPS signals  
-- **Radio signals** — received from regional broadcast time services  
-- **Atomic clocks** — the reference source behind most public and private time systems  
+- **Satellite clocks**: synchronized via GPS signals  
+- **Radio signals**: received from regional broadcast time services  
+- **Atomic clocks**: the reference source behind most public and private time systems  
 
 ???+ note "Hosted Time Sources"
     If you’re hosting your own time source, **monitor it regularly** with your observability platform to ensure it’s receiving valid signals rather than relying on its internal oscillator. These devices periodically sync with their upstream references while serving NTP requests to downstream systems.
@@ -45,14 +45,14 @@ A good starting point is the [NTP Pool Project](https://www.ntppool.org/en/), wh
 
 ### Design Considerations
 
-Once your primary time source is established, ensure all systems retrieve time from reliable, redundant servers. In most environments, I recommend **a primary and secondary NTP source** — both enterprise-wide and within each site (data center, campus, or branch). Typically, a **Layer 3 device** such as a router or core switch provides local NTP services.
+Once your primary time source is established, ensure all systems retrieve time from reliable, redundant servers. In most environments, I recommend **a primary and secondary NTP source**, both enterprise-wide and within each site (data center, campus, or branch). Typically, a **Layer 3 device** such as a router or core switch provides local NTP services.
 
 ???+ note "Windows Time Service (W32Time)"
     Microsoft Windows systems don’t use NTP directly. They rely on the **Windows Time Service (W32Time)**, which synchronizes through Active Directory. Ensure your AD servers synchronize from the same authoritative NTP source as the rest of the environment.
 
 #### Data Center Time
 
-In larger data centers, consider deploying dedicated NTP servers that synchronize with your enterprise’s primary and secondary sources. These servers then provide time to all other equipment — not just network gear, but also hosts, VMs, and monitoring systems.  
+In larger data centers, consider deploying dedicated NTP servers that synchronize with your enterprise’s primary and secondary sources. These servers then provide time to all other equipment, not just network gear, but also hosts, VMs, and monitoring systems.  
 Virtual machines should derive time from their hypervisors, which in turn should sync with the NTP servers.
 
 #### Campus Designs
@@ -65,7 +65,7 @@ At branch sites, especially those with limited infrastructure, a single router c
 
 ## UTC Versus Local Time Zone
 
-When it comes to log timestamps, this decision is often cultural as much as technical. Ideally, all systems should record logs in **UTC**. However, for organizations operating entirely within one region, using **local time** can improve usability — as long as everyone understands the offset.  
+When it comes to log timestamps, this decision is often cultural as much as technical. Ideally, all systems should record logs in **UTC**. However, for organizations operating entirely within one region, using **local time** can improve usability, as long as everyone understands the offset.  
 For distributed teams across multiple time zones, UTC is almost always the better choice for correlation and analysis.
 
 ## EST vs. EDT — They’re the Same, Right?
