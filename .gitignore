@@ -139,3 +139,4 @@ dmypy.json
 .pyright/
 
 # End of Python gitignore
+favicon-option-*.png
