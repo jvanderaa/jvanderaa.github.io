@@ -13,10 +13,8 @@
 
 [[main]]
   name = "Guides"
-  url = "https://guides.josh-v.com"
+  pageRef = "guides"
   weight = 5
-  [main.params]
-    target = "_blank"
 
 [[main]]
   name = "Blog"
