@@ -12,6 +12,13 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
+  name = "Guides"
+  url = "https://guides.josh-v.com"
+  weight = 5
+  [main.params]
+    target = "_blank"
+
+[[main]]
   name = "Blog"
   pageRef = "posts"
   weight = 10
