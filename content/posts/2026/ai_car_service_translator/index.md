@@ -30,7 +30,9 @@ A couple of months later the light came on again. At the direction from the serv
 
 With how much I'm in the AI world these days, I said to myself - let's send a note to Harry (my AI assistant built on [OpenClaw](https://openclaw.ai)) and ask him to decipher the repairs. This **worked spectacularly**, and that's what this post is all about.
 
-From the image of the repair notes, I asked: what do you know about this vehicle, what are the next steps, and should I be concerned?
+From the image of the repair notes, I asked: what do you know about this vehicle, what are the next steps, and should I be concerned?"
+
+![Redacted Chat with Harry](redacted_chat.png "Harry's response - vehicle details redacted for privacy")
 
 Harry first identified the vehicle, then came the research. He found that this is a common problem, with many owners reporting the same error code. Specifically, it appears to happen after a software update from a recall was applied, and in colder temperatures. Both of which were true for us. And that it does not appear to be a significant issue - but something we'll get taken care of at some point.
 
