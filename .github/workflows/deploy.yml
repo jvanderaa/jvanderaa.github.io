@@ -65,6 +65,11 @@ jobs:
             --minify \
             --baseURL "${{ vars.BASE_URL || 'https://josh-v.com/' }}"
 
+      - name: Copy RSS feed aliases
+        run: |
+          cp public/index.xml public/feed.xml
+          cp public/index.xml public/feed_rss_created.xml
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
