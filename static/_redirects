@@ -1,0 +1,3 @@
+# RSS feed aliases - serve index.xml content at legacy feed URLs
+/feed.xml /index.xml 200
+/feed_rss_created.xml /index.xml 200
