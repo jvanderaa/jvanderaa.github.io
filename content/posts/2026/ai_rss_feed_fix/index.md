@@ -7,15 +7,14 @@ categories:
 - openclaw
 title: "AI: The Quick RSS Feed Fix"
 summary: >
-  AI continues to help me take care of things that I have solved previously, but without having to have myself re-learn the exact details. I have solved RSS feed issues previously and understand how they work. Now I just want them to be working. So I turned to Harry to give a helping hand.
+  My RSS feeds broke during the Hugo migration. Instead of re-learning the details myself, I handed it to Harry. Here's how it got fixed.
 toc: true
 tags:
   - ai
   - harry
 author: jvanderaa
 coverAlt: AI assistant repairing broken RSS feed connections
-coverCaption: |
-    Photo by Harry - The AI Aide System
+coverCaption: ""
 params:
   showComments: true
 ---
@@ -34,19 +33,19 @@ Harry immediately dove in and started to take a look at the URLs that were given
 ![Recommendations provided by Harry](recommendations-light.png#light-mode "Harry presented a couple of recommendations.")
 ![Recommendations provided by Harry](recommendations-dark.png#dark-mode "Harry presented a couple of recommendations.")
 
-I actually audibled at this point to suggest that I wanted the pages to where they should be from a Hugo perspective, but also the pages that we had in the previous RSS feeds. At which point then Harry was off to the races.
+I pivoted at this point to suggest that I wanted the pages to where they should be from a Hugo perspective, but also the pages that we had in the previous RSS feeds. Harry was off to the races.
 
 ## Harry - The Fix
 
 After I opened up an [issue on GitHub](https://github.com/jvanderaa/jvanderaa.github.io/issues/265) with input from Harry. Harry was on it from there. Harry drafted a [PR](https://github.com/jvanderaa/jvanderaa.github.io/pull/266) for me to review. Once I approved the PR and merged, I passed that information along and Harry was then onto the verification stages.
 
-> [!NOTE]+ Why Harry Doing This Work
+> [!NOTE]+ Why Harry Is Doing This Work
 > I could have done all of this on my own with the assistance, but I am pushing to see what we could enable and become eventual full self servicing.
 
 The verification failed however. 
 
-![Verfication - Failed](first_verification-light.png#light-mode "Verification - Failed")
-![Verfication - Failed](first_verification-dark.png#dark-mode "Verification - Failed")
+![Verification - Failed](first_verification-light.png#light-mode "Verification - Failed")
+![Verification - Failed](first_verification-dark.png#dark-mode "Verification - Failed")
 
 With the new information there, we had some conversation that clarified that the blog is now moved away from GitHub Pages and hosted on Cloudflare Pages. With that in mind a new suggestion came in that I was not aware of, but using [Cloudflare Redirects](https://developers.cloudflare.com/rules/url-forwarding/). And with that a follow on PR was on the way.
 
@@ -60,7 +59,7 @@ After the follow on PR that put everything into place, we now have all of the fe
 
 ## Summary
 
-Things are continuing to evolve and grow with having Harry working on things alongside. There are still many unknowns. And are things perfect yet? Not quite there. It will continue to be an evolution. But at this point, Harry is there working along side me.
+The RSS feed is fixed, the redirects are in place, and Feedly is pulling articles again. Harry found the Cloudflare Redirects solution - something I hadn't considered. That's the kind of working alongside I'm after.
 
 >[!NOTE]- Why the name Harry?
 > This was one that I asked my kids to help me out with. At this point it was their choice and it's good to give a name/personality to work alongside.
