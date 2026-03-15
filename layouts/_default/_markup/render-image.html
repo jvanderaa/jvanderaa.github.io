@@ -1,0 +1,41 @@
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+{{- $class := "" -}}
+
+{{- if strings.HasSuffix $src "#light-mode" -}}
+  {{- $src = strings.TrimSuffix "#light-mode" $src -}}
+  {{- $class = "img-light-mode" -}}
+{{- else if strings.HasSuffix $src "#dark-mode" -}}
+  {{- $src = strings.TrimSuffix "#dark-mode" $src -}}
+  {{- $class = "img-dark-mode" -}}
+{{- end -}}
+
+{{- /* Inject CSS once per page */ -}}
+{{- if and $class (not (.Page.Store.Get "hugo-light-dark-images-css")) -}}
+  {{- .Page.Store.Set "hugo-light-dark-images-css" true -}}
+<style>
+figure.img-dark-mode{display:none}
+@media(prefers-color-scheme:dark){
+  html:not(.light) figure.img-light-mode{display:none}
+  html:not(.light) figure.img-dark-mode{display:block}
+}
+html.dark figure.img-light-mode{display:none}
+html.dark figure.img-dark-mode{display:block}
+html.light figure.img-dark-mode{display:none}
+html.light figure.img-light-mode{display:block}
+</style>
+{{- end -}}
+
+{{- if $class -}}
+<figure class="{{ $class }}">
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="mx-auto my-0 rounded-md">
+  {{- with $title }}<figcaption class="text-center">{{ . }}</figcaption>{{ end -}}
+</figure>
+{{- else -}}
+{{- /* Non-themed images: pass through as simple figure (Congo's hook won't run for these) */ -}}
+<figure>
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="mx-auto my-0 rounded-md">
+  {{- with $title }}<figcaption class="text-center">{{ . }}</figcaption>{{ end -}}
+</figure>
+{{- end -}}
