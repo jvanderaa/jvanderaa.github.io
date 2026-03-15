@@ -1,33 +1,6 @@
 /* Custom Syntax Highlighting: GitHub (Light) / Nord (Dark) */
 
-/* -------------------------------------------------------------------------- */
-/*                        LIGHT / DARK MODE IMAGES                            */
-/* -------------------------------------------------------------------------- */
-/*
- * Usage in markdown:
- *   ![Alt text](image_light.png#light-mode "Caption")
- *   ![Alt text](image_dark.png#dark-mode "Caption")
- *
- * Both images are rendered in HTML; CSS hides the one that doesn't match.
- * Supports: system preference AND Congo's JS toggle (html.dark / html.light).
- */
-
-/* Default (light mode): hide dark-mode figures */
-figure.img-dark-mode { display: none; }
-
-/* System dark mode preference (no manual override) */
-@media (prefers-color-scheme: dark) {
-  html:not(.light) figure.img-light-mode { display: none; }
-  html:not(.light) figure.img-dark-mode  { display: block; }
-}
-
-/* Congo JS toggle - dark */
-html.dark figure.img-light-mode { display: none; }
-html.dark figure.img-dark-mode  { display: block; }
-
-/* Congo JS toggle - explicit light (overrides system dark preference) */
-html.light figure.img-dark-mode  { display: none; }
-html.light figure.img-light-mode { display: block; }
+/* Light/dark image switching: handled by hugo-light-dark-images module */
 
 /* -------------------------------------------------------------------------- */
 /*                                LIGHT THEME (GitHub)                        */
