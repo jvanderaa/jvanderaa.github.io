@@ -1,0 +1,24 @@
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+{{- $class := "" -}}
+
+{{- if strings.HasSuffix $src "#light-mode" -}}
+  {{- $src = strings.TrimSuffix "#light-mode" $src -}}
+  {{- $class = "img-light-mode" -}}
+{{- else if strings.HasSuffix $src "#dark-mode" -}}
+  {{- $src = strings.TrimSuffix "#dark-mode" $src -}}
+  {{- $class = "img-dark-mode" -}}
+{{- end -}}
+
+{{- if $class -}}
+<figure class="{{ $class }}">
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- with $title }}<figcaption>{{ . }}</figcaption>{{ end -}}
+</figure>
+{{- else -}}
+<figure>
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- with $title }}<figcaption>{{ . }}</figcaption>{{ end -}}
+</figure>
+{{- end -}}
