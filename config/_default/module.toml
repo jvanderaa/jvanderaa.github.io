@@ -3,6 +3,3 @@ path = "github.com/jpanther/congo/v2"
 
 [[imports]]
 path = "github.com/KKKZOZ/hugo-admonitions"
-
-[[imports]]
-path = "github.com/jvanderaa/hugo-light-dark-images"

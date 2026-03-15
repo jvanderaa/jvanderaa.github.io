@@ -5,5 +5,4 @@ go 1.25.5
 require (
 	github.com/KKKZOZ/hugo-admonitions v0.11.0 // indirect
 	github.com/jpanther/congo/v2 v2.12.2 // indirect
-	github.com/jvanderaa/hugo-light-dark-images v0.1.2 // indirect
 )
