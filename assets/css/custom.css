@@ -1,6 +1,18 @@
 /* Custom Syntax Highlighting: GitHub (Light) / Nord (Dark) */
 
 /* -------------------------------------------------------------------------- */
+/*                        LIGHT / DARK MODE IMAGES                            */
+/* -------------------------------------------------------------------------- */
+/* Used with hugo-light-dark-images module + site-level render-image.html     */
+/* Syntax: ![alt](img_light.png#light-mode "caption")                         */
+/*         ![alt](img_dark.png#dark-mode "caption")                           */
+
+figure.img-dark-mode { display: none; }
+
+html.dark figure.img-light-mode { display: none; }
+html.dark figure.img-dark-mode  { display: block; }
+
+/* -------------------------------------------------------------------------- */
 /*                                LIGHT THEME (GitHub)                        */
 /* -------------------------------------------------------------------------- */
 
