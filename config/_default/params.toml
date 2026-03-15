@@ -17,8 +17,8 @@ enableQuicklink = true
   recentLimit = 10
 
 [header]
-  logo = "router.png"
-  logoDark = "router.png"
+  logo = "joshv_logo.png"
+  logoDark = "joshv_logo.png"
   layout = "hybrid"
   showTitle = true
 
