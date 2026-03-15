@@ -12,24 +12,29 @@
  * Supports: system preference AND Congo's JS toggle (html.dark / html.light).
  */
 
-/* Default (light mode): hide dark images */
-img[src$="#dark-mode"] {
-  display: none;
-}
+/* Default (light mode): hide dark images and their figure wrappers */
+img[src$="#dark-mode"]               { display: none; }
+figure:has(img[src$="#dark-mode"])   { display: none; }
 
 /* System dark mode preference (no manual override) */
 @media (prefers-color-scheme: dark) {
-  html:not(.light) img[src$="#light-mode"] { display: none; }
-  html:not(.light) img[src$="#dark-mode"]  { display: block; }
+  html:not(.light) img[src$="#light-mode"]             { display: none; }
+  html:not(.light) figure:has(img[src$="#light-mode"]) { display: none; }
+  html:not(.light) img[src$="#dark-mode"]              { display: block; }
+  html:not(.light) figure:has(img[src$="#dark-mode"])  { display: block; }
 }
 
 /* Congo JS toggle - dark */
-html.dark img[src$="#light-mode"] { display: none; }
-html.dark img[src$="#dark-mode"]  { display: block; }
+html.dark img[src$="#light-mode"]             { display: none; }
+html.dark figure:has(img[src$="#light-mode"]) { display: none; }
+html.dark img[src$="#dark-mode"]              { display: block; }
+html.dark figure:has(img[src$="#dark-mode"])  { display: block; }
 
 /* Congo JS toggle - explicit light (overrides system dark preference) */
-html.light img[src$="#dark-mode"]  { display: none; }
-html.light img[src$="#light-mode"] { display: block; }
+html.light img[src$="#dark-mode"]              { display: none; }
+html.light figure:has(img[src$="#dark-mode"])  { display: none; }
+html.light img[src$="#light-mode"]             { display: block; }
+html.light figure:has(img[src$="#light-mode"]) { display: block; }
 
 /* -------------------------------------------------------------------------- */
 /*                                LIGHT THEME (GitHub)                        */
