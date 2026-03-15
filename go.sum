@@ -4,3 +4,5 @@ github.com/jpanther/congo/v2 v2.12.2 h1:dr7oI/as+g+FJ6zVLZ3LSVOSRlsJjSsvTO6YP4zb
 github.com/jpanther/congo/v2 v2.12.2/go.mod h1:1S7DRoO1ZYS4YUdFd1LjTkdyjQwsjFWd8TqSfz3Jd+M=
 github.com/jvanderaa/hugo-light-dark-images v0.1.1 h1:FF22V1BdAxkBmgCCsbnxpDa40mRFe4MDEUa6octaQNo=
 github.com/jvanderaa/hugo-light-dark-images v0.1.1/go.mod h1:qpA3fw8s3xJYjUEsircQMUO6y5y7s3GMoPlt0bNmb1Y=
+github.com/jvanderaa/hugo-light-dark-images v0.1.2 h1:HHn7E8fBq+3VVyKgH2/fDj1xdeM+R1gBNdIhvBlbsqA=
+github.com/jvanderaa/hugo-light-dark-images v0.1.2/go.mod h1:qpA3fw8s3xJYjUEsircQMUO6y5y7s3GMoPlt0bNmb1Y=
