@@ -140,3 +140,4 @@ dmypy.json
 
 # End of Python gitignore
 favicon-option-*.png
+.DS_Store
