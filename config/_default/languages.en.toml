@@ -24,5 +24,6 @@ copyright = "Copyright © 2025 Josh VanDeraa. All rights reserved."
     { x-twitter = "https://twitter.com/vanderaaj" },
     { github = "https://github.com/jvanderaa"},
     { bluesky = "https://bsky.app/profile/joshv.me" },
-    { slack = "https://networktocode.slack.com/archives/D53RCGS3V"}
+    { slack = "https://networktocode.slack.com/archives/D53RCGS3V"},
+    { rss = "https://josh-v.com/index.xml" }
   ]
