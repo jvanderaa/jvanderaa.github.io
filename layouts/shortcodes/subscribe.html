@@ -1,0 +1,28 @@
+{{/* Buttondown subscribe form shortcode */}}
+{{ if .Site.Params.buttondown.username }}
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/{{ .Site.Params.buttondown.username }}"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.com/{{ .Site.Params.buttondown.username }}', 'popupwindow')"
+  class="not-prose flex flex-col gap-3 sm:flex-row sm:items-center"
+>
+  <input
+    type="email"
+    name="email"
+    placeholder="you@example.com"
+    required
+    class="flex-1 rounded-md border border-neutral-300 bg-neutral px-3 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral dark:placeholder-neutral-500"
+  />
+  <input type="hidden" value="1" name="embed" />
+  <button
+    type="submit"
+    class="rounded-md bg-primary-600 px-5 py-2 text-sm font-semibold text-white hover:bg-primary-700 focus:outline-none"
+  >
+    Subscribe
+  </button>
+</form>
+<p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">No spam. Unsubscribe any time.</p>
+{{ else }}
+<!-- Buttondown not configured: set [buttondown] username in params.toml -->
+{{ end }}

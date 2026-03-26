@@ -56,3 +56,8 @@ enableQuicklink = true
 
 [taxonomy]
   showTermCount = true
+
+# Email subscriptions via Buttondown
+# Sign up at https://buttondown.com, then set your username below
+# [buttondown]
+#   username = "your-buttondown-username"

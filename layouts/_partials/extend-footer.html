@@ -1,0 +1,36 @@
+{{/* Email subscribe form - powered by Buttondown */}}
+{{/* Replace YOUR_USERNAME below with your Buttondown username after signing up */}}
+{{ if .Site.Params.buttondown.username }}
+<div class="mt-8 border-t border-neutral-200 pt-8 dark:border-neutral-600 print:hidden">
+  <div class="mx-auto max-w-md text-center">
+    <p class="mb-3 text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+      Get new posts by email
+    </p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/{{ .Site.Params.buttondown.username }}"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/{{ .Site.Params.buttondown.username }}', 'popupwindow')"
+      class="flex flex-col gap-2 sm:flex-row sm:justify-center"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        class="rounded-md border border-neutral-300 bg-neutral px-3 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral dark:placeholder-neutral-500"
+      />
+      <input type="hidden" value="1" name="embed" />
+      <button
+        type="submit"
+        class="rounded-md bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 focus:outline-none"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+      No spam. Unsubscribe any time.
+    </p>
+  </div>
+</div>
+{{ end }}
