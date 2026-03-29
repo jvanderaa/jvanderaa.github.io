@@ -56,3 +56,8 @@ enableQuicklink = true
 
 [taxonomy]
   showTermCount = true
+
+# Email newsletter - Cloudflare Workers backend
+[newsletter]
+  enabled = true
+  endpoint = "https://blog-newsletter.bitter-frost-f4e5.workers.dev/subscribe"
