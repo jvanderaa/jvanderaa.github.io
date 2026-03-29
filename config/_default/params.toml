@@ -57,7 +57,7 @@ enableQuicklink = true
 [taxonomy]
   showTermCount = true
 
-# Email subscriptions via Buttondown
-# Sign up at https://buttondown.com, then set your username below
-# [buttondown]
-#   username = "your-buttondown-username"
+# Email newsletter - Cloudflare Workers backend
+[newsletter]
+  enabled = true
+  endpoint = "https://blog-newsletter.bitter-frost-f4e5.workers.dev/subscribe"
