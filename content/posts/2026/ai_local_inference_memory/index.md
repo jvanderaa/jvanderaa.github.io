@@ -6,7 +6,7 @@ categories:
 - ai
 title: "AI: Local Models Memory"
 summary: >
-  TODO: Update
+  I thought running multiple AI agents locally meant loading the model into memory once per agent. Turns out model weights are shared - only the KV-cache scales per request. Here's what I learned and how consolidating to a single model improved everything.
 toc: true
 tags:
   - ai
