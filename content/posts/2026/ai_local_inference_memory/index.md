@@ -42,7 +42,3 @@ The technology road is quite the journey. This might be a "yeah, you didn't know
 If I had this misunderstanding, there's a non-zero chance someone else does too. Hope this helps.
 
 -Josh
-
-The technology road is a road that is quite the journey. I'm learning new things all of the time. This one may have been a moment of "Yeah, you didn't know that?". Well, I did not know this and I have learned. I have migrated all of my sub-agents on to using the same local model now. And the performance out of both the original sub-agents that were using the model and the other agents that were using a bit smaller of a model is greatly improved. The system is more stable. And the best part is that I have learned something new. I just thought I would share with others. If I had the mis-understanding, then there is a non-zero chance that this may be new for someone else as well.
-
--Josh
