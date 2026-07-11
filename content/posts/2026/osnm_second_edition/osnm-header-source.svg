@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" font-family="Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A1B2A"/>
+      <stop offset="1" stop-color="#0C2033"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.62" cy="0.82" r="0.7">
+      <stop offset="0" stop-color="#12405E" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#12405E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="600" fill="url(#bg)"/>
+  <rect width="1600" height="600" fill="url(#glow)"/>
+
+  <!-- faint dot grid -->
+  <g fill="#1C3A52" opacity="0.5">
+    <!-- generated grid of dots -->
+    <g>
+      <!-- rows every 40px, cols every 40px; drawn sparsely via pattern -->
+    </g>
+  </g>
+  <rect width="1600" height="600" fill="url(#dots)"/>
+  <defs>
+    <pattern id="dots" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#173650" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- hairline top rule -->
+  <rect x="100" y="70" width="1400" height="1" fill="#1E4463"/>
+
+  <!-- eyebrow -->
+  <text x="100" y="112" fill="#5EEAD4" font-family="Menlo, monospace" font-size="19" letter-spacing="4.5">SELF-HOSTED ON A SINGLE NODE</text>
+
+  <!-- title -->
+  <text x="97" y="222" fill="#EAF4FF" font-weight="800" font-size="86" letter-spacing="-1.5">Open Source</text>
+  <text x="97" y="316" fill="#EAF4FF" font-weight="800" font-size="86" letter-spacing="-1.5">Network Management</text>
+
+  <!-- tagline -->
+  <text x="100" y="372" fill="#9FC1D8" font-size="25" font-weight="400">Install, configure, and operate your network with tools you own.</text>
+
+  <!-- ============ THE STACK LINE ============ -->
+  <!-- managed-network topology feeding the line -->
+  <g stroke="#2B5878" stroke-width="2" fill="#0C2033">
+    <line x1="150" y1="452" x2="250" y2="480"/>
+    <line x1="130" y1="512" x2="250" y2="480"/>
+    <line x1="205" y1="440" x2="250" y2="480"/>
+    <line x1="150" y1="452" x2="205" y2="440"/>
+    <line x1="150" y1="452" x2="130" y2="512"/>
+  </g>
+  <g fill="#123147" stroke="#3A6E92" stroke-width="2">
+    <circle cx="150" cy="452" r="7"/>
+    <circle cx="130" cy="512" r="7"/>
+    <circle cx="205" cy="440" r="7"/>
+  </g>
+  <text x="118" y="548" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="2">YOUR NETWORK</text>
+
+  <!-- main signal line -->
+  <line x1="250" y1="480" x2="1180" y2="480" stroke="url(#signal)" stroke-width="4" opacity="0.35" filter="url(#soft)"/>
+  <line x1="250" y1="480" x2="1180" y2="480" stroke="url(#signal)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- output sparkline (Grafana readout) -->
+  <path d="M1180 480 L1230 470 L1268 486 L1306 452 L1344 462 L1388 410" fill="none" stroke="#5EEAD4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1180 480 L1230 470 L1268 486 L1306 452 L1344 462 L1388 410 L1388 520 L1180 520 Z" fill="url(#spark)"/>
+  <circle cx="1388" cy="410" r="7" fill="#FBBF24"/>
+  <circle cx="1388" cy="410" r="13" fill="none" stroke="#FBBF24" stroke-width="1.5" opacity="0.5"/>
+  <text x="1414" y="415" fill="#F6C560" font-family="Menlo, monospace" font-size="13" letter-spacing="1">INSIGHT</text>
+
+  <!-- stations -->
+  <!-- helper: each = role label (y=414), tool name (y=440), node on line (y=480) -->
+
+  <!-- Telegraf : COLLECT -->
+  <text x="400" y="414" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="3">COLLECT</text>
+  <text x="400" y="440" text-anchor="middle" fill="#DCEBF7" font-family="Menlo, monospace" font-weight="700" font-size="21">Telegraf</text>
+  <circle cx="400" cy="480" r="13" fill="#0C2033" stroke="#38BDF8" stroke-width="3.5"/>
+  <circle cx="400" cy="480" r="4" fill="#38BDF8"/>
+
+  <!-- Nautobot : SOURCE OF TRUTH (amber) -->
+  <text x="650" y="414" text-anchor="middle" fill="#C79448" font-family="Menlo, monospace" font-size="12" letter-spacing="3">SOURCE OF TRUTH</text>
+  <text x="650" y="440" text-anchor="middle" fill="#FBE3AE" font-family="Menlo, monospace" font-weight="700" font-size="21">Nautobot</text>
+  <circle cx="650" cy="480" r="17" fill="#0C2033" stroke="#FBBF24" stroke-width="4"/>
+  <circle cx="650" cy="480" r="5.5" fill="#FBBF24"/>
+  <circle cx="650" cy="480" r="26" fill="none" stroke="#FBBF24" stroke-width="1.2" opacity="0.35"/>
+
+  <!-- Prometheus : STORE -->
+  <text x="900" y="414" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="3">STORE</text>
+  <text x="900" y="440" text-anchor="middle" fill="#DCEBF7" font-family="Menlo, monospace" font-weight="700" font-size="21">Prometheus</text>
+  <circle cx="900" cy="480" r="13" fill="#0C2033" stroke="#38BDF8" stroke-width="3.5"/>
+  <circle cx="900" cy="480" r="4" fill="#38BDF8"/>
+
+  <!-- Grafana : VISUALIZE -->
+  <text x="1150" y="414" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="3">VISUALIZE</text>
+  <text x="1150" y="440" text-anchor="middle" fill="#DCEBF7" font-family="Menlo, monospace" font-weight="700" font-size="21">Grafana</text>
+  <circle cx="1150" cy="480" r="13" fill="#0C2033" stroke="#38BDF8" stroke-width="3.5"/>
+  <circle cx="1150" cy="480" r="4" fill="#38BDF8"/>
+
+  <!-- ===== platform layer chips ===== -->
+  <!-- Vault -->
+  <line x1="525" y1="480" x2="525" y2="536" stroke="#2B5878" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <g>
+    <rect x="455" y="536" width="140" height="34" rx="17" fill="#0E2A3E" stroke="#2B5878" stroke-width="1.5"/>
+    <text x="525" y="558" text-anchor="middle" font-family="Menlo, monospace" font-size="13"><tspan fill="#BFD6E6" font-weight="700">Vault</tspan><tspan fill="#6E93AC"> · secrets</tspan></text>
+  </g>
+  <!-- NGINX -->
+  <line x1="1025" y1="480" x2="1025" y2="536" stroke="#2B5878" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <g>
+    <rect x="953" y="536" width="144" height="34" rx="17" fill="#0E2A3E" stroke="#2B5878" stroke-width="1.5"/>
+    <text x="1025" y="558" text-anchor="middle" font-family="Menlo, monospace" font-size="13"><tspan fill="#BFD6E6" font-weight="700">NGINX</tspan><tspan fill="#6E93AC"> · access</tspan></text>
+  </g>
+
+</svg>
