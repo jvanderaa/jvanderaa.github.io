@@ -1,4 +1,8 @@
 github.com/KKKZOZ/hugo-admonitions v0.12.0 h1:x74ZrNUCrySH5JHPO2qGx+b1Mz8r+F1rBlH9qM833io=
 github.com/KKKZOZ/hugo-admonitions v0.12.0/go.mod h1:4PsJAsqo3mS3VzAtDLa8k0ds+CJQUWZhAo9kLi1NRlM=
+github.com/KKKZOZ/hugo-admonitions v0.12.1 h1:SMpeJ4/0VUXwpy1bgmyigNrXTPmAFrO28/+jQ4+dDpA=
+github.com/KKKZOZ/hugo-admonitions v0.12.1/go.mod h1:4PsJAsqo3mS3VzAtDLa8k0ds+CJQUWZhAo9kLi1NRlM=
 github.com/jpanther/congo/v2 v2.13.0 h1:kI73uW3e9aiPuN9so6lzZg+iEW8UVTmIPCNZvJ1cijI=
 github.com/jpanther/congo/v2 v2.13.0/go.mod h1:1S7DRoO1ZYS4YUdFd1LjTkdyjQwsjFWd8TqSfz3Jd+M=
+github.com/jpanther/congo/v2 v2.14.0 h1:qzd7vjZpSPJkyX27Yl3KT87jvYs2aghIHCHXPSmJtXo=
+github.com/jpanther/congo/v2 v2.14.0/go.mod h1:1S7DRoO1ZYS4YUdFd1LjTkdyjQwsjFWd8TqSfz3Jd+M=
