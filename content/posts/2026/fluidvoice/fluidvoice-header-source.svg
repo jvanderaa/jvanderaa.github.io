@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" font-family="Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A1B2A"/>
+      <stop offset="1" stop-color="#0C2033"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.62" cy="0.82" r="0.7">
+      <stop offset="0" stop-color="#12405E" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#12405E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="dots" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#173650" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="600" fill="url(#bg)"/>
+  <rect width="1600" height="600" fill="url(#glow)"/>
+  <rect width="1600" height="600" fill="url(#dots)"/>
+
+  <!-- hairline top rule -->
+  <rect x="100" y="70" width="1400" height="1" fill="#1E4463"/>
+
+  <!-- eyebrow -->
+  <text x="100" y="112" fill="#5EEAD4" font-family="Menlo, monospace" font-size="19" letter-spacing="4.5">HOLD A KEY. SPEAK. DONE.</text>
+
+  <!-- title -->
+  <text x="97" y="228" fill="#EAF4FF" font-weight="800" font-size="96" letter-spacing="-2">FluidVoice</text>
+
+  <!-- tagline -->
+  <text x="100" y="286" fill="#9FC1D8" font-size="25" font-weight="400">Push-to-talk dictation that turns speech into text wherever your cursor is.</text>
+
+  <!-- ============ THE STACK LINE : your voice → text ============ -->
+
+  <!-- push-to-talk source: mic + held hotkey -->
+  <g>
+    <!-- hotkey cap -->
+    <rect x="120" y="452" width="60" height="56" rx="10" fill="#0E2A3E" stroke="#3A6E92" stroke-width="2"/>
+    <rect x="120" y="452" width="60" height="56" rx="10" fill="#5EEAD4" opacity="0.10"/>
+    <text x="150" y="486" text-anchor="middle" fill="#BFD6E6" font-family="Menlo, monospace" font-weight="700" font-size="15">fn</text>
+    <text x="150" y="501" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="9" letter-spacing="1">HOLD</text>
+  </g>
+  <!-- mic glyph -->
+  <g stroke="#3A6E92" stroke-width="2" fill="#123147">
+    <rect x="212" y="446" width="24" height="40" rx="12"/>
+  </g>
+  <path d="M204 476 a20 20 0 0 0 40 0" fill="none" stroke="#5EEAD4" stroke-width="2"/>
+  <line x1="224" y1="496" x2="224" y2="508" stroke="#5EEAD4" stroke-width="2"/>
+  <line x1="212" y1="508" x2="236" y2="508" stroke="#5EEAD4" stroke-width="2"/>
+  <text x="120" y="540" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="2">YOUR VOICE</text>
+
+  <!-- main signal line -->
+  <line x1="270" y1="480" x2="1180" y2="480" stroke="url(#signal)" stroke-width="4" opacity="0.35" filter="url(#soft)"/>
+  <line x1="270" y1="480" x2="1180" y2="480" stroke="url(#signal)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- live waveform riding the front of the line -->
+  <g stroke="url(#wave)" stroke-width="4" stroke-linecap="round">
+    <line x1="292" y1="466" x2="292" y2="494"/>
+    <line x1="308" y1="452" x2="308" y2="508"/>
+    <line x1="324" y1="472" x2="324" y2="488"/>
+    <line x1="340" y1="440" x2="340" y2="520"/>
+    <line x1="356" y1="462" x2="356" y2="498"/>
+    <line x1="372" y1="428" x2="372" y2="532"/>
+    <line x1="388" y1="458" x2="388" y2="502"/>
+    <line x1="404" y1="470" x2="404" y2="490"/>
+    <line x1="420" y1="448" x2="420" y2="512"/>
+    <line x1="436" y1="464" x2="436" y2="496"/>
+  </g>
+
+  <!-- output: typed text landing at the cursor -->
+  <text x="1180" y="487" fill="#DCEBF7" font-family="Menlo, monospace" font-size="21" letter-spacing="0.5">just&#160;start&#160;talking</text>
+  <rect x="1420" y="466" width="11" height="28" fill="#FBBF24"/>
+  <text x="1180" y="520" fill="#F6C560" font-family="Menlo, monospace" font-size="13" letter-spacing="1">TEXT AT YOUR CURSOR</text>
+
+  <!-- ===== stations ===== -->
+
+  <!-- CAPTURE -->
+  <text x="470" y="414" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="3">CAPTURE</text>
+  <text x="470" y="440" text-anchor="middle" fill="#DCEBF7" font-family="Menlo, monospace" font-weight="700" font-size="21">Audio</text>
+  <circle cx="470" cy="480" r="13" fill="#0C2033" stroke="#38BDF8" stroke-width="3.5"/>
+  <circle cx="470" cy="480" r="4" fill="#38BDF8"/>
+
+  <!-- TRANSCRIBE : the magic (amber) -->
+  <text x="720" y="414" text-anchor="middle" fill="#C79448" font-family="Menlo, monospace" font-size="12" letter-spacing="3">TRANSCRIBE</text>
+  <text x="720" y="440" text-anchor="middle" fill="#FBE3AE" font-family="Menlo, monospace" font-weight="700" font-size="21">Whisper</text>
+  <circle cx="720" cy="480" r="17" fill="#0C2033" stroke="#FBBF24" stroke-width="4"/>
+  <circle cx="720" cy="480" r="5.5" fill="#FBBF24"/>
+  <circle cx="720" cy="480" r="26" fill="none" stroke="#FBBF24" stroke-width="1.2" opacity="0.35"/>
+
+  <!-- ENHANCE -->
+  <text x="970" y="414" text-anchor="middle" fill="#6E93AC" font-family="Menlo, monospace" font-size="12" letter-spacing="3">ENHANCE</text>
+  <text x="970" y="440" text-anchor="middle" fill="#DCEBF7" font-family="Menlo, monospace" font-weight="700" font-size="21">AI</text>
+  <circle cx="970" cy="480" r="13" fill="#0C2033" stroke="#38BDF8" stroke-width="3.5"/>
+  <circle cx="970" cy="480" r="4" fill="#38BDF8"/>
+
+  <!-- MODELS chip under CAPTURE→TRANSCRIBE span -->
+  <line x1="595" y1="480" x2="595" y2="536" stroke="#2B5878" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <rect x="503" y="536" width="184" height="34" rx="17" fill="#0E2A3E" stroke="#2B5878" stroke-width="1.5"/>
+  <text x="595" y="558" text-anchor="middle" font-family="Menlo, monospace" font-size="13"><tspan fill="#BFD6E6" font-weight="700">models</tspan><tspan fill="#6E93AC"> &#183; local or cloud</tspan></text>
+
+  <!-- PROVIDERS chip under ENHANCE -->
+  <line x1="1075" y1="480" x2="1075" y2="536" stroke="#2B5878" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <rect x="975" y="536" width="200" height="34" rx="17" fill="#0E2A3E" stroke="#2B5878" stroke-width="1.5"/>
+  <text x="1075" y="558" text-anchor="middle" font-family="Menlo, monospace" font-size="13"><tspan fill="#BFD6E6" font-weight="700">OpenAI</tspan><tspan fill="#6E93AC"> &#183; Anthropic &#183; Ollama</tspan></text>
+
+</svg>
