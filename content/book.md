@@ -17,23 +17,9 @@ For several years I have been providing content in blog posts. This has evolved 
 
 <img src="/images/osnm2-cover.png" alt="Open Source Network Management, 2nd Edition Cover" class="float-right ml-4 mb-4 w-1/3 rounded-lg shadow-lg">
 
-The fully rewritten **Second Edition** is out now. It is a hands-on guide to building a complete, modern network management platform — source of truth to full observability — entirely from open source, on your own infrastructure. Every chapter builds on a real [Containerlab](https://containerlab.dev/) lab of Arista cEOS devices, so you can follow along end to end.
+The **Second Edition** is out now — an improvement and modernization of the first. Across thirteen hands-on chapters it is a guide to building a complete, modern network management platform — source of truth to full observability — entirely from open source, on your own infrastructure, all in a real [Containerlab](https://containerlab.dev/) lab you can follow along with end to end.
 
-The tools covered in the second edition:
-
-- [Containerlab](https://containerlab.dev/)
-- [Nautobot](https://www.nautobot.com) 3.x, including [Golden Config](https://docs.nautobot.com/projects/golden-config/en/latest/)
-- [HashiCorp Vault](https://www.vaultproject.io/) (with an honest look at licensing and [OpenBao](https://openbao.org/))
-- [InfluxData Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)
-- [VictoriaMetrics](https://victoriametrics.com/) and [VictoriaLogs](https://victoriametrics.com/products/victorialogs/)
-- [Grafana](https://grafana.com/grafana/)
-- [NGINX](https://www.nginx.com/)
-
-Get it at **[osnm.josh-v.com](https://osnm.josh-v.com/)** — the digital edition (PDF + EPUB) is delivered instantly and includes every digital release of the Second Edition as the tools evolve. The paperback and the digital + print bundle are open for pre-order, shipping August 2026. There is a free sample with the full first chapter and table of contents on the site if you want to look before you buy.
-
-### First Edition
-
-The 2022 first edition (Nautobot 1.x, Prometheus) has been superseded by the Second Edition, which is a full rewrite. If you are a first-edition reader from Leanpub, watch your inbox — a loyalty discount for the new edition is on the way.
+Head to **[osnm.josh-v.com](https://osnm.josh-v.com/)** for the full details, formats, and a free sample chapter.
 
 ## Network Automation with Nautobot
 
