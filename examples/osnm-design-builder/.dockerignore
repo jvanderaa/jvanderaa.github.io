@@ -1,0 +1,7 @@
+.lab.env
+vendor
+screenshots
+evidence
+.git
+**/__pycache__
+**/*.pyc

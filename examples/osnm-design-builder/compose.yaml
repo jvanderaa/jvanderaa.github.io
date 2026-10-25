@@ -1,0 +1,66 @@
+name: osnm-design-address
+x-nautobot: &nautobot
+  image: osnm-design-blog/nautobot:3.2.7-design-builder-3.1.2
+  env_file: .lab.env
+  volumes:
+    - media:/opt/nautobot/media
+  restart: unless-stopped
+services:
+  media-init:
+    image: osnm-design-blog/nautobot:3.2.7-design-builder-3.1.2
+    user: root
+    entrypoint: ['chown', '-R', 'nautobot:nautobot', '/opt/nautobot/media']
+    volumes:
+      - media:/opt/nautobot/media
+    healthcheck:
+      disable: true
+  nautobot:
+    <<: *nautobot
+    build: .
+    ports:
+      - '127.0.0.1:8089:8080'
+    command: nautobot-server runserver 0.0.0.0:8080 --insecure --noreload
+    depends_on:
+      media-init:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'python', '-c', 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:8080/health/")']
+      interval: 15s
+      timeout: 10s
+      start_period: 120s
+      retries: 20
+  worker:
+    <<: *nautobot
+    entrypoint: ['nautobot-server', 'celery', 'worker', '--loglevel=INFO', '--concurrency=2']
+    depends_on:
+      nautobot:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+  db:
+    image: postgres:17-alpine
+    env_file: .lab.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U nautobot -d nautobot']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+volumes:
+  pgdata:
+  media:

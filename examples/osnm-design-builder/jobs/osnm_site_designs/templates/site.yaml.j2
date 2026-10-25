@@ -1,0 +1,48 @@
+---
+# Executable Design Builder template, verified against the pinned lab versions.
+locations:
+  - "!create_or_update:name": "{{ location_name }}"
+    location_type__name: "{{ location_type }}"
+    status__name: "Planned"
+    description: "OSNM enterprise topology / {{ location_name }} / synthetic blog lab"
+{% if location_type == 'Branch' %}
+    physical_address: {{ site_address | string | tojson }}
+{% endif %}
+racks:
+  - "!create_or_update:name": "{{ location_name }}-R01"
+    location__name: "{{ location_name }}"
+    status__name: "Planned"
+    u_height: {{ rack_units }}
+    width: 19
+    type: "4-post-frame"
+devices:
+{% for device in devices %}
+  - "!create_or_update:name": "{{ device.name }}"
+    location__name: "{{ location_name }}"
+    role__name: "{{ device.role }}"
+    device_type__model: "{{ 'Alpine lab endpoint' if device.role == 'Endpoint' else 'cEOS lab node' }}"
+    status__name: "Planned"
+    comments: "OSNM chapter 3 / {{ device.role }} / synthetic inventory"
+{% if device.position %}
+    rack__name: "{{ location_name }}-R01"
+    position: {{ device.position }}
+    face: front
+    platform__name: "Arista EOS"
+{% endif %}
+    interfaces:
+{% for interface in device.interfaces %}
+      - "!create_or_update:name": "{{ interface.name }}"
+        type: "1000base-t"
+        status__name: "Planned"
+        description: "OSNM logical connection / {{ device.name }} {{ interface.name }}"
+{% if interface.peer is defined %}
+        "!connect_cable":
+          status__name: "Planned"
+          label: "{{ interface.peer.label }}"
+          type: "cat6"
+          to:
+            device__name: "{{ interface.peer.device }}"
+            name: "{{ interface.peer.port }}"
+{% endif %}
+{% endfor %}
+{% endfor %}

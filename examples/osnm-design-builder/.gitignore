@@ -1,0 +1,8 @@
+.lab.env
+__pycache__/
+*.pyc
+vendor/
+evidence/*.json
+!evidence/osnm-topology.json
+!evidence/verification.json
+!evidence/address-verification.json

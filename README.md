@@ -39,3 +39,16 @@ The site will be available at http://localhost:1313.
 ```bash
 hugo new content content/posts/YYYY/YourTitle/index.md
 ```
+
+## Runnable examples
+
+The [`examples/`](examples/) directory contains editable source for examples featured
+in posts. Hugo does not publish this directory. Reader downloads live alongside
+their posts under `content/posts/`.
+
+For the [OSNM Design Builder lab](examples/osnm-design-builder/README.md), regenerate
+the ZIP and standalone template after editing the source:
+
+```bash
+python3 examples/osnm-design-builder/scripts/package_lab.py
+```
