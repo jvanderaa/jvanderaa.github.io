@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Josh VanDeraa's personal blog (https://josh-v.com), built with Hugo and the Congo v2 theme, deployed to GitHub Pages via GitHub Actions on push to `main`. CI builds PRs with `.github/workflows/test-build.yml` (Hugo extended 0.152.2 + Dart Sass, `hugo --gc --minify`).
+Josh VanDeraa's personal blog (https://josh-v.com), built with Hugo and the Congo v2 theme, deployed to GitHub Pages via GitHub Actions on push to `main`. CI builds PRs with `.github/workflows/test-build.yml` (Hugo extended 0.168.0 + Dart Sass, `hugo --gc --minify`).
 
 ## Commands
 
