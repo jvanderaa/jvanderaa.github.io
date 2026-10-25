@@ -1,0 +1,10 @@
+{
+  "passed": 5,
+  "checks": [
+    "Initial creation stores the physical address",
+    "Dry run preserves the stored address",
+    "Quoted multiline addresses round-trip through YAML",
+    "Blank input reuses the stored address",
+    "Updates and repeat runs create no duplicate inventory"
+  ]
+}

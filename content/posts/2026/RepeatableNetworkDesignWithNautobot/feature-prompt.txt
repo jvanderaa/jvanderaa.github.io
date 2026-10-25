@@ -1,0 +1,5 @@
+Generated with the built-in image_gen tool on October 25, 2026.
+Asset: feature.png
+Conceptual illustration; not the OSNM lab topology.
+
+Use case: stylized-concept. Create a sophisticated editorial header illustration for a personal network engineering blog post titled Repeatable Network Design With Nautobot Design Builder. Wide landscape 16:9 composition, useful at thumbnail size. Visual metaphor: a precise network topology blueprint on drafting paper becomes three neatly arranged miniature network equipment racks with consistent repeated branch patterns, fine physical cable connections, a small requirements card with abstract lines and checkmarks. Tactile architectural model / technical editorial illustration, restrained navy ink, warm off-white paper, subtle teal and amber accents, soft directional studio light, elegant ample negative space, crisp considered details, technically plausible network switches. No words, no lettering, no logos, no brand marks, no people, no glowing cyberpunk effects, no fake application UI. This is conceptual cover art, not a literal screenshot or exact topology diagram.

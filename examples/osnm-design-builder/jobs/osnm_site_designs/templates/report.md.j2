@@ -1,0 +1,12 @@
+# OSNM {{ context.location_name }} design
+
+Created or reconciled **{{ context.devices | length }} devices** in **{{ context.location_name }}**.
+
+| Device | Role | Interfaces |
+| --- | --- | --- |
+{% for device in context.devices %}
+| {{ device.name }} | {{ device.role }} | {{ device.interfaces | length }} |
+{% endfor %}
+
+The location, rack, devices, interfaces and labeled cables are Nautobot model objects.
+No configuration was generated or sent to a network device.

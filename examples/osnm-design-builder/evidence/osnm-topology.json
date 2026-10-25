@@ -1,0 +1,80 @@
+{
+  "source": "Open Source Network Management, Second Edition, Chapter 3",
+  "source_port_mapping": "Containerlab ethN is represented as EthernetN on cEOS inventory; Linux endpoint ethN is retained.",
+  "nodes": [
+    "spine-01",
+    "spine-02",
+    "leaf-01",
+    "leaf-02",
+    "wan-rtr",
+    "site1-rtr",
+    "site1-sw",
+    "site2-rtr",
+    "site2-sw",
+    "site1-pc",
+    "site2-pc",
+    "dc-pc-01",
+    "dc-pc-02"
+  ],
+  "links": [
+    [
+      "spine-01:Ethernet1",
+      "leaf-01:Ethernet1"
+    ],
+    [
+      "spine-01:Ethernet2",
+      "leaf-02:Ethernet1"
+    ],
+    [
+      "spine-02:Ethernet1",
+      "leaf-01:Ethernet2"
+    ],
+    [
+      "spine-02:Ethernet2",
+      "leaf-02:Ethernet2"
+    ],
+    [
+      "leaf-01:Ethernet3",
+      "dc-pc-01:eth1"
+    ],
+    [
+      "leaf-02:Ethernet3",
+      "dc-pc-02:eth1"
+    ],
+    [
+      "spine-01:Ethernet3",
+      "wan-rtr:Ethernet1"
+    ],
+    [
+      "wan-rtr:Ethernet2",
+      "site1-rtr:Ethernet1"
+    ],
+    [
+      "wan-rtr:Ethernet3",
+      "site2-rtr:Ethernet1"
+    ],
+    [
+      "site1-rtr:Ethernet2",
+      "site1-sw:Ethernet1"
+    ],
+    [
+      "site1-sw:Ethernet2",
+      "site1-pc:eth1"
+    ],
+    [
+      "site2-rtr:Ethernet2",
+      "site2-sw:Ethernet1"
+    ],
+    [
+      "site2-sw:Ethernet2",
+      "site2-pc:eth1"
+    ]
+  ],
+  "locations": [
+    "DC1",
+    "site1",
+    "site2"
+  ],
+  "network_devices": 9,
+  "endpoint_records": 4
+}

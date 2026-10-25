@@ -1,0 +1,76 @@
+{
+  "counts": {
+    "locations": 3,
+    "racks": 3,
+    "devices": 13,
+    "interfaces": 26,
+    "cables": 13,
+    "deployments": 3
+  },
+  "checks": [
+    "All 13 OSNM device names match",
+    "All 13 OSNM cable endpoint pairs match",
+    "Three locations, three racks and three deployments exist",
+    "fabric-dryrun: SUCCESS with unchanged inventory counts",
+    "site1-dryrun: SUCCESS with unchanged inventory counts",
+    "site1-repeat-apply: SUCCESS with unchanged inventory counts",
+    "insufficient rack: rejected with HTTP 400 and no inventory change",
+    "conflicting WAN port: rejected with HTTP 400 and no inventory change"
+  ],
+  "passed": 8,
+  "topology_pairs": [
+    [
+      "dc-pc-01:eth1",
+      "leaf-01:Ethernet3"
+    ],
+    [
+      "dc-pc-02:eth1",
+      "leaf-02:Ethernet3"
+    ],
+    [
+      "leaf-01:Ethernet1",
+      "spine-01:Ethernet1"
+    ],
+    [
+      "leaf-01:Ethernet2",
+      "spine-02:Ethernet1"
+    ],
+    [
+      "leaf-02:Ethernet1",
+      "spine-01:Ethernet2"
+    ],
+    [
+      "leaf-02:Ethernet2",
+      "spine-02:Ethernet2"
+    ],
+    [
+      "site1-pc:eth1",
+      "site1-sw:Ethernet2"
+    ],
+    [
+      "site1-rtr:Ethernet1",
+      "wan-rtr:Ethernet2"
+    ],
+    [
+      "site1-rtr:Ethernet2",
+      "site1-sw:Ethernet1"
+    ],
+    [
+      "site2-pc:eth1",
+      "site2-sw:Ethernet2"
+    ],
+    [
+      "site2-rtr:Ethernet1",
+      "wan-rtr:Ethernet3"
+    ],
+    [
+      "site2-rtr:Ethernet2",
+      "site2-sw:Ethernet1"
+    ],
+    [
+      "spine-01:Ethernet3",
+      "wan-rtr:Ethernet1"
+    ]
+  ],
+  "notes": "Real API/Design Builder execution; synthetic inventory only; no device configuration rollout."
+}
