@@ -36,15 +36,11 @@ The part that interested me was the work before device configuration: choosing d
 
 <!-- more -->
 
-## From requirements to a design
+## Start with a branch we can repeat
 
 Meter's [engineering article](https://www.meter.com/blog/automating-network-topology-design) describes engineers entering site requirements, with rules producing the topology, device records, wiring details, and labels. I like the idea of entering those requirements once instead of maintaining a diagram and recreating its decisions in the source of truth.
 
-In Nautobot, I would start with a native Job form. A branch design could ask for the location, physical address, endpoint count, growth allowance, hardware profile, and redundancy requirements. Existing objects can be selected with [ObjectVar fields](https://docs.nautobot.com/projects/core/en/stable/development/jobs/job-structure/#objectvar), so we don't have to type information Nautobot already knows.
-
-We supply the design rules: capacity calculations, naming, hardware selection, and uplink assignments. I would keep that logic in Python, where it can be tested, and use Jinja templates to describe the resulting Nautobot objects.
-
-A [DesignJob](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_development/#designjob) ties this together: it defines the inputs, a context class provides computed values and lookups, and templates render the YAML that Design Builder applies. The [design development guide](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_development/) covers the components and template syntax.
+For this example, the question is smaller: can we describe a branch once, run it again for the same site without duplicates, and use it for the next site? That gives us something concrete to work through in Nautobot.
 
 ## Build on the book's lab
 
@@ -55,7 +51,7 @@ For this example, we will build on what we started in my book, [*Open Source Net
 
 I brought up an isolated Docker Compose lab with Nautobot **3.2.7** and Design Builder **3.1.2**. The topology has a two-spine/two-leaf data center, a WAN router, and two branches. Each branch has a router, a switch, and an Alpine endpoint. The screenshots below show native Nautobot Jobs with synthetic inventory.
 
-The data center design creates DC1 and the WAN hub. The branch design takes a site name, physical address, WAN hub port, access-port pattern, rack height, and an option to include the endpoint. For site1, I used Ethernet2 on `wan-rtr`; site2 repeats the design on Ethernet3. The two-port access pattern matches the book's lab.
+The data center design creates DC1 and the WAN hub. From there, let's look at the branch Job. It asks for a site name, physical address, WAN hub port, access-port pattern, rack height, and whether to include the endpoint. For site1, I used Ethernet2 on `wan-rtr`. The two-port access pattern matches the book's lab; site2 uses the same design with Ethernet3 on the hub.
 
 ![OSNM branch design inputs](branch-design-inputs.png)
 
@@ -63,9 +59,11 @@ The data center design creates DC1 and the WAN hub. The branch design takes a si
 
 The street address was a big part of what caught my attention in the podcast. Here, we store it on the Nautobot Location alongside the site's inventory. A new branch requires an address; on repeat runs, leaving it blank reuses the existing one.
 
-### A look at the Python and YAML
+### Work out the address before writing the Location
 
-The context resolves the address and checks the inputs before the template runs. Here are excerpts from the lab's Python and YAML; the full source is linked below.
+For this branch, the [Job](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_development/#designjob) collects the inputs. The context works out values such as which address to use and checks the rack space. The template describes the Nautobot objects we want to create or update. Let's look at the address handling first.
+
+If we enter an address, `site_address` uses it. If we leave it blank, it looks for the address already stored on the branch Location. That lets us rerun a site without entering its address again, while still requiring one for a new branch. Here are the Python and YAML excerpts; the full source is linked below.
 
 > [!EXAMPLE]- Python: reuse an address and check rack space
 > ```python
@@ -105,9 +103,9 @@ The YAML uses `site_address` to save the resolved value on the Location:
 >
 > The filters quote the address for YAML, including embedded quotes and line breaks.
 
-`!create_or_update:name` looks up an object by name, updating it if found or creating it otherwise. Using stable, unambiguous names lets repeat runs reuse the same objects. For interfaces, the lookup is scoped to the parent device.
+The choice of lookup matters when we run site1 again. `!create_or_update:name` looks up an object by name, updating it if found or creating it otherwise. We need stable, unambiguous names so that rerunning the design finds the same objects. For interfaces, the lookup is scoped to the parent device.
 
-The full template also uses `!connect_cable` to connect an interface to its peer. The Job enables `CableConnectionExtension` in `Meta.extensions` to handle that action.
+The branch also needs its connections. The full template uses `!connect_cable` to connect an interface to its peer. The Job enables `CableConnectionExtension` in `Meta.extensions` to handle that action. The [design development guide](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_development/) has more on the components and template syntax.
 
 You can [download the full template](site.yaml.j2) or the [runnable lab and Job source](osnm-design-builder-lab.zip). The package includes the reference catalog needed by the design.
 
@@ -119,26 +117,32 @@ I ran the branch design in dry-run mode first. The Job retained its rendered YAM
 
 *The "Created" entries describe work inside the transaction. Dry run rolled those inventory changes back.*
 
-After applying DC1, site1, and site2, Nautobot contained **3 locations, 3 racks, 13 device records, 26 interfaces, and 13 cables**. Nine devices are network equipment and four are endpoints. I checked all thirteen cable pairs against the topology and re-ran site1 without creating duplicates. Invalid rack space and an occupied WAN port were also rejected without changing inventory.
-
 ![OSNM site1 rack output](site1-rack.png)
 
 *The generated site1 rack and elevation. The router and switch occupy two units in this illustrative 6U layout. The `site1-pc` endpoint belongs to the site1 Location and has no rack or position, so it does not appear here.*
 
-## Repeat the design
+## Rerun site1 and repeat for site2
 
-The branches use the same design with different inputs and separate deployment records. To enable that tracking, select Deployment mode with `Meta.design_mode = DesignModeChoices.DEPLOYMENT`; Classic mode is the default. The [design lifecycle docs](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_lifecycle/) explain updates, ownership, and decommissioning.
+Creating the inventory is one part of the check. We also need to run the design again for an existing site. I re-ran site1 without creating duplicates, so we can reuse the design for that site.
+
+For the second branch, site2 repeats the same design using Ethernet3 on `wan-rtr`, where site1 uses Ethernet2. The branches use different inputs and separate deployment records. To enable that tracking, select Deployment mode with `Meta.design_mode = DesignModeChoices.DEPLOYMENT`; Classic mode is the default. The [design lifecycle docs](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_lifecycle/) explain updates, ownership, and decommissioning.
 
 ![OSNM active design deployments](design-deployments.png)
 
 *The three deployments: `osnm-dc1`, `osnm-site1`, and `osnm-site2`.*
 
-When updating a deployment, review what will be removed as well as what will be created. If you want to protect managed objects from manual edits, configure [model protection](https://docs.nautobot.com/projects/design-builder/en/latest/admin/install/); the protected-model list defaults to empty.
+After applying DC1, site1, and site2, Nautobot contained **3 locations, 3 racks, 13 device records, 26 interfaces, and 13 cables**. Nine devices are network equipment and four are endpoints. I checked all thirteen cable pairs against the topology. Invalid rack space and an occupied WAN port were also rejected without changing inventory. Those are the checks completed for this lab.
+
+My recommendation when updating a deployment is to review what will be removed as well as what will be created. If you want to protect managed objects from manual edits, configure [model protection](https://docs.nautobot.com/projects/design-builder/en/latest/admin/install/); the protected-model list defaults to empty.
 
 ## Where I would go next
 
-Native Job forms and dry-run output are a useful place to start. If I wanted a graphical topology preview or change comparison, I would build it inside a [Nautobot App](https://docs.nautobot.com/projects/core/en/stable/development/apps/) using the same design logic.
+The lab above uses native Job forms and dry-run output. The following additions would be future work.
+
+A broader branch design could ask for endpoint count, growth allowance, hardware profile, and redundancy requirements. We would need to supply the rules for capacity, hardware selection, naming, and uplink assignments. I would keep those calculations in Python, where they can be tested, and use Jinja templates to describe the resulting objects. For inputs that refer to existing Nautobot objects, I would use [ObjectVar fields](https://docs.nautobot.com/projects/core/en/stable/development/jobs/job-structure/#objectvar) so we don't have to type information Nautobot already knows.
+
+If I wanted a graphical topology preview or change comparison, I would build it inside a [Nautobot App](https://docs.nautobot.com/projects/core/en/stable/development/apps/) using the same design logic.
 
 Before expanding the design, I would test capacity boundaries, duplicate names, missing catalog data, conflicting cabling, and changes to existing deployments. The [Design Job testing guide](https://docs.nautobot.com/projects/design-builder/en/stable/user/design_job_testing/) provides a starting point. A physical design also needs checks for PoE, optics, cable reach, rack space, and power.
 
-Device configuration remains a separate step after the intended state is in Nautobot. What I wanted to show here is the part before that: take a network pattern, make its rules explicit, and use it again for the next site. Design Builder gives us a practical way to do that.
+Device configuration remains a separate step after the intended state is in Nautobot. For getting started, I would keep the scope to a pattern you can check: create the inventory, rerun it for the same site, and repeat it for another site. That is what this branch lab walks through.
