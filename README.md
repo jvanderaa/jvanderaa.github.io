@@ -6,7 +6,7 @@ Personal blog site migrated to Hugo with the Congo theme.
 
 ### Prerequisites
 
-- [Hugo Extended](https://gohugo.io/installation/) (v0.168.0, pinned in `.tool-versions`)
+- [Hugo Extended](https://gohugo.io/installation/) (v0.170.0, pinned in `.tool-versions`)
 - Go (for modules)
 
 ### Setup
