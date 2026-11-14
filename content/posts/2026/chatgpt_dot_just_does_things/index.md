@@ -29,7 +29,7 @@ I'm finding ChatGPT Dots more and more helpful. The little things are starting t
 
 Kermit (what I have named my Dot, because of the green frog face) sent me a heads-up about a schedule conflict with my colleague's lightning talk at AutoCon and my travel plans. A small thing, but exactly the kind of help I want from an assistant.
 
-The biggest part about it was it was completely unexpected, unplanned, and just showed up and gave me a smile that the ChatGPT Dot was working for me.
+The best part about it was it was completely unexpected & unplanned. It just showed up without a prompt, and it is what excites me most about where we are going.
 
 <!-- more -->
 
@@ -41,6 +41,11 @@ The biggest part about it was it was completely unexpected, unplanned, and just 
 My colleague Max was listed in Friday's lightning-talk block. Kermit connected that with the hotel departure time it had already suggested for my flight. The talk block started after I would be leaving.
 
 It also called out a detail that matters: the agenda listed Max second, but didn't give his individual start time. There was enough information to flag the conflict, with a suggestion to look for a recording or another chance to hear the talk.
+
+> [!NOTE] Catch the Network to Code talks at AutoCon 6
+> If you're at [AutoCon 6](https://networkautomation.forum/autocon6) in Tucson, or catching the recordings afterward, tune in to Max's lightning talk, *The Peanut Butter & Jelly Method: Transforming Manual Tasks into Automated Workflows*. He's the second speaker in Friday's 11:40 a.m.–12:30 p.m. lightning-talk block. Since Kermit tells me I'll be headed to the airport by then, I'm counting on you to catch it for me.
+>
+> The day before, Jeff Kala from Network to Code joins Joey Coakley from Microsoft for *Compliance as an Enabling Constraint: Federating Nautobot Across a Segmented Network*. That one is Thursday at 11:05 a.m. on Track A.
 
 That's useful. The conference agenda and my travel plans were pieces of information that needed to be considered together. Having that connection brought to my attention is one less thing for me to keep track of.
 
