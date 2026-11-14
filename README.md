@@ -34,11 +34,30 @@ hugo server
 
 The site will be available at http://localhost:1313.
 
+### Article sidebar
+
+The table of contents appears as a sticky progress card on desktop and a
+collapsible card above the article on smaller screens. Earlier sections receive
+checkmarks as the reader scrolls, and the current section is highlighted. Jump
+links work without JavaScript. The customization lives in
+`layouts/_partials/toc.html`, `assets/js/reading-agenda.js`, and
+`assets/css/custom.css`.
+
+Run the sidebar behavior checks with Node.js:
+
+```bash
+node --test tests/reading-agenda.test.cjs
+```
+
 ### Creating a New Post
 
 ```bash
 hugo new content content/posts/YYYY/YourTitle/index.md
 ```
+
+Social video exports, their build scripts, and suggested post copy live under
+[`social/`](social/). See the [ChatGPT Dots teaser](social/2026/chatgpt-dots/README.md)
+for an example. Hugo does not publish this directory.
 
 ## Runnable examples
 

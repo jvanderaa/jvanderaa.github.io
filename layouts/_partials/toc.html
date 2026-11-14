@@ -1,0 +1,11 @@
+<details open class="reading-agenda" data-reading-agenda>
+  <summary class="reading-agenda__header">
+    <span>{{ i18n "article.table_of_contents" }}</span>
+    <span class="reading-agenda__progress" data-agenda-progress hidden></span>
+  </summary>
+  <div class="reading-agenda__links">
+    {{ .TableOfContents | emojify }}
+  </div>
+</details>
+{{- $agenda := resources.Get "js/reading-agenda.js" | resources.Minify | resources.Fingerprint "sha512" -}}
+<script defer src="{{ $agenda.RelPermalink }}" integrity="{{ $agenda.Data.Integrity }}"></script>
