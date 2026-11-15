@@ -3,9 +3,31 @@
     <span>{{ i18n "article.table_of_contents" }}</span>
     <span class="reading-agenda__progress" data-agenda-progress hidden></span>
   </summary>
-  <div class="reading-agenda__links">
+  <div class="reading-agenda__meter" data-agenda-meter role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" hidden><span></span></div>
+  <div class="reading-agenda__links agenda-rail">
     {{ .TableOfContents | emojify }}
   </div>
 </details>
+{{/* Mobile reading bar: revealed by reading-agenda.js below the lg breakpoint. */}}
+<div class="reading-bar" data-reading-bar data-title="{{ .Title }}" inert hidden>
+  <div class="reading-bar__row">
+    <button type="button" class="reading-bar__toggle" data-bar-toggle aria-expanded="false" aria-controls="reading-bar-panel">
+      <span class="reading-bar__text">
+        <span class="reading-bar__meta" data-bar-meta></span>
+        <span class="reading-bar__title" data-bar-title></span>
+      </span>
+      <svg class="reading-bar__chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <span class="reading-bar__track" aria-hidden="true"><span data-bar-fill></span></span>
+  </div>
+  <div id="reading-bar-panel" class="reading-bar__panel" data-bar-panel hidden>
+    <nav class="agenda-rail" aria-label="{{ i18n "article.table_of_contents" }}" data-bar-links></nav>
+    <a class="reading-bar__top" href="#the-top" data-bar-close>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      {{ i18n "nav.scroll_to_top_title" }}
+    </a>
+  </div>
+</div>
+<div class="reading-bar__backdrop" data-bar-backdrop hidden></div>
 {{- $agenda := resources.Get "js/reading-agenda.js" | resources.Minify | resources.Fingerprint "sha512" -}}
 <script defer src="{{ $agenda.RelPermalink }}" integrity="{{ $agenda.Data.Integrity }}"></script>
