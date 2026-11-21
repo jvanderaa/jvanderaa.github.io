@@ -894,6 +894,24 @@ html.dark .bookshelf__link:hover .bookshelf__title { color: rgb(var(--color-prim
 html.dark .bookshelf__edition { color: rgb(var(--color-neutral-400)); }
 html.dark .bookshelf__meta { color: rgb(var(--color-neutral-400)); }
 
+/* OSNM call to action (layouts/shortcodes/osnm-cta.html). */
+.osnm-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin: 1.5rem 0; }
+.osnm-cta__btn {
+  display: inline-block;
+  padding: 0.65rem 1.2rem;
+  border-radius: 0.375rem;
+  background: rgb(var(--color-primary-700));
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.osnm-cta__btn:hover { background: rgb(var(--color-primary-800)); }
+.osnm-cta__link { font-weight: 500; color: rgb(var(--color-primary-700)); }
+html.dark .osnm-cta__btn { background: rgb(var(--color-primary-600)); }
+html.dark .osnm-cta__btn:hover { background: rgb(var(--color-primary-700)); }
+html.dark .osnm-cta__link { color: rgb(var(--color-primary-300)); }
+.osnm-cta a:focus-visible { outline: 2px solid rgb(var(--color-primary-500)); outline-offset: 2px; }
+
 /* Speaking timeline */
 
 .talks { margin: 2rem 0 1rem; }
@@ -1039,21 +1057,3 @@ html.dark .about-badges figcaption { color: rgb(var(--color-neutral-400)); }
   .prose img.book-cover { float: right; width: min(34%, 13rem); margin: 0.35rem 0 1rem 1.75rem; }
   article:has(img.book-cover) .prose h2 { clear: both; }
 }
-
-/* OSNM call to action (layouts/shortcodes/osnm-cta.html). */
-.osnm-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin: 1.5rem 0; }
-.osnm-cta__btn {
-  display: inline-block;
-  padding: 0.65rem 1.2rem;
-  border-radius: 0.375rem;
-  background: rgb(var(--color-primary-700));
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-}
-.osnm-cta__btn:hover { background: rgb(var(--color-primary-800)); }
-.osnm-cta__link { font-weight: 500; color: rgb(var(--color-primary-700)); }
-html.dark .osnm-cta__btn { background: rgb(var(--color-primary-600)); }
-html.dark .osnm-cta__btn:hover { background: rgb(var(--color-primary-700)); }
-html.dark .osnm-cta__link { color: rgb(var(--color-primary-300)); }
-.osnm-cta a:focus-visible { outline: 2px solid rgb(var(--color-primary-500)); outline-offset: 2px; }
