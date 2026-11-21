@@ -92,7 +92,7 @@ html.dark .reading-bar {
 /* (sr-only, flex-1, bg-primary-600 on a button, ...) are missing. Style the  */
 /* form directly so the label is screen-reader only and the button passes    */
 /* WCAG AA contrast.                                                          */
-form[data-subscribe-form] { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0.5rem; }
+form[data-subscribe-form] { display: flex; flex-direction: row; flex-wrap: wrap; align-items: stretch; gap: 0.5rem; }
 #footer-subscribe-form { max-width: 28rem; margin: 0 auto; }
 form[data-subscribe-form] label {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
