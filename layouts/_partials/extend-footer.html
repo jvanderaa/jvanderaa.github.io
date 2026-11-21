@@ -1,7 +1,7 @@
-{{/* Email subscribe form - powered by Cloudflare Workers. Suppressed on /subscribe to avoid duplicating the page form. */}}
+{{/* Email subscribe form - powered by Cloudflare Workers. Suppressed on /subscribe and on blog posts, which get an end-of-post form instead. */}}
 {{ $page := . }}
 {{ with .Site.Params.newsletter }}
-{{ if and .enabled (ne $page.Section "subscribe") }}
+{{ if and .enabled (ne $page.Section "subscribe") (not (and $page.IsPage (eq $page.Section "posts"))) }}
 <div class="mt-8 border-t border-neutral-200 pt-8 dark:border-neutral-600 print:hidden">
   <div class="mx-auto max-w-md text-center">
     <p class="mb-3 text-sm font-semibold text-neutral-700 dark:text-neutral-300">
