@@ -1,0 +1,92 @@
+{{- /*
+  Shared newsletter subscribe form (Cloudflare Workers backend).
+  Params:
+    - id: unique prefix (e.g. "footer-subscribe", "page-subscribe")
+    - endpoint: POST URL from .Site.Params.newsletter.endpoint
+    - variant: "footer" | "page"
+*/ -}}
+{{- $id := .id | default "subscribe" -}}
+{{- $endpoint := .endpoint -}}
+{{- $variant := .variant | default "page" -}}
+{{- $isPage := eq $variant "page" -}}
+<form
+  id="{{ $id }}-form"
+  data-subscribe-form
+  data-endpoint="{{ $endpoint }}"
+  data-msg-id="{{ $id }}-msg"
+  class="{{ if $isPage }}not-prose flex flex-col gap-3 sm:flex-row sm:items-center{{ else }}flex flex-col gap-2 sm:flex-row sm:justify-center{{ end }}"
+>
+  <label for="{{ $id }}-email" class="sr-only">Email address</label>
+  <input
+    id="{{ $id }}-email"
+    type="email"
+    name="email"
+    autocomplete="email"
+    placeholder="you@example.com"
+    required
+    class="{{ if $isPage }}flex-1 {{ end }}rounded-md border border-neutral-300 bg-neutral px-3 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral dark:placeholder-neutral-500"
+  />
+  <button
+    type="submit"
+    class="rounded-md bg-primary-600 {{ if $isPage }}px-5{{ else }}px-4{{ end }} py-2 text-sm font-semibold text-white hover:bg-primary-700 focus:outline-none"
+  >
+    Subscribe
+  </button>
+</form>
+<p
+  id="{{ $id }}-msg"
+  role="status"
+  aria-live="polite"
+  class="mt-2 text-xs text-neutral-500 dark:text-neutral-400"
+>
+  No spam. Unsubscribe any time.
+</p>
+<script>
+(function() {
+  if (window.__newsletterFormsBound) return;
+  window.__newsletterFormsBound = true;
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (!form || !form.hasAttribute || !form.hasAttribute('data-subscribe-form')) return;
+    e.preventDefault();
+    var msg = document.getElementById(form.getAttribute('data-msg-id'));
+    var input = form.querySelector('input[name="email"]');
+    var btn = form.querySelector('button[type="submit"]');
+    var endpoint = form.getAttribute('data-endpoint');
+    if (!input || !btn || !endpoint) return;
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    if (msg) {
+      msg.classList.remove('subscribe-msg--error', 'subscribe-msg--ok');
+    }
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: input.value })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (msg) {
+        if (data.error) {
+          msg.textContent = data.error;
+          msg.classList.add('subscribe-msg--error');
+        } else {
+          msg.textContent = data.message || 'Check your email to confirm!';
+          msg.classList.add('subscribe-msg--ok');
+          form.reset();
+        }
+      }
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    })
+    .catch(function() {
+      if (msg) {
+        msg.textContent = 'Something went wrong. Please try again.';
+        msg.classList.add('subscribe-msg--error');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    });
+  });
+})();
+</script>
