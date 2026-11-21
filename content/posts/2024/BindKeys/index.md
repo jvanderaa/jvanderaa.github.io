@@ -13,6 +13,8 @@ params:
 
 I have been looking at migrating over to the [Starship shell](https://starship.rs) for a little while. The allure of running a rust shell prompt that gives me a ton of information is what I look for in a shell prompt. Such as the prompt below:
 
+<!-- more -->
+
 ```
 joshv in 🌐 my_device in nautobot on  u/jvanderaa-update_install_home_doc is 📦 v2.2.5b1 via 🐍 v3.11.9 (nautobot-py3.11)
 ```

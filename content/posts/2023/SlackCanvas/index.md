@@ -16,6 +16,8 @@ Hot Take:
 
 Newly released (at some point anyway) is Slack Canvas, what looks to be a little bit of on demand wiki, collaboration space, and possibly (based on marketing materials) workflow organizer. This came to light as a "pop up" when I went into a Slack window on my mobile. Being a curious person and someone that is willing to try out new things I jumped right in.
 
+<!-- more -->
+
 ## The Take
 
 Without reading any marketing pages or anything else, I just started to do a few things with it. The first look at the canvas I immediately attempted to write with Markdown. I instinctively tried making some headings, and it actually _worked_, I was very surprised as I would have thought that the canvas would remain a very Slack flavor of Markdown, which hasn't really worked in the past. But the headings came right in and it even provides a collapsible menu for the headings.

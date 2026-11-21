@@ -10,6 +10,8 @@ toc: true
 
 With Nautobot, one of the things that came up was how to work with secrets. Nautobot itself is not the place to maintain secrets, as it is not a vault. There may be some good cryptographic libraries out to handle this, but by its nature, that is not the intent. So Nautobot has written methods to be able to retrieve secrets from proper vault sources and be able to leverage them. These can be tricky to get set up however. I had struggled for a while myself. So now that I have it working, I thought it would be a good time to have a quick personal blog about it.
 
+<!-- more -->
+
 ## Secrets Set Up
 
 In my writing within the [Open Source Network Management](https://josh-v.com/book/) book I showed how to get started with Hashicorp Vault for secrets within Ansible. This is a natural progression to house my secrets for my Nautobot recommendation as well. This will not cover the set up of Nautobot for secrets. That is best to be done by the provider [documentation](https://github.com/nautobot/nautobot-plugin-secrets-providers#hashicorp-vault-1). This will however dive into how the vault is set up in my environment, and how that translates into Nautobot.

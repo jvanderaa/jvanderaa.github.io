@@ -14,6 +14,8 @@ coverCaption: |
 
 As a long time MacBook user and of recent years on the M1 using the TouchID system that allows for fingerprint authentication, this is something that I wanted to get to work pretty quickly for myself. I had tried a couple of different options to get fingerprint reading to work. Through the 3 methods, I finally have one that works, and I figured it would be worth the share.
 
+<!-- more -->
+
 ## Attempted Routes
 
 Now some of these may seem foolish as I write after the fact. But I had some reason to think that there would be success. The three options that I tried (only the last/third one worked):

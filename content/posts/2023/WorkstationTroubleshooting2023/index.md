@@ -14,6 +14,8 @@ coverCaption: |
 
 In my [previous post](https://josh-v.com/desktop-build-2023/) I wrote about a workstation that I was working on building. It took an incredibly long time to get up and into a stable environment. But I have finally accomplished stability (hoping to not jinx it here with the post). I went through a fair bit of troubleshooting to get to this point.
 
+<!-- more -->
+
 ## Symptom
 
 The symptom that was having instability was that the system would freeze randomly. There was not a particular application or otherwise that would be point me to an application that was causing the failures. The system would just freeze overnight or at the start of getting into the desktop UI.

@@ -17,6 +17,8 @@ toc: true
 ---
 Platforms are an optional item when adding devices into Nautobot. The platform is the OS that you are going to be using. Most often this is used to help identify which driver your automation platform is going to be using. Specifically the slug of the platform is what needs to match. So in the terms of Ansible (since we are using Ansible to populate Nautobot), you will want to set Cisco IOS devices to **ios**. By having the slug match the automation platform name you have that information in your inventory. For these reasons I strongly recommend setting the Platform for devices.
 
+<!-- more -->
+
 ## Module Documentation
 
 * [Read the Docs](https://nautobot-ansible.readthedocs.io/en/latest/plugins/platform_module.html)

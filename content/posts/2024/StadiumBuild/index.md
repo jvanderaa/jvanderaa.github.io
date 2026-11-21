@@ -16,6 +16,8 @@ params:
 
 At a previous position to joining Network to Code I was asked to help to build automation to help with the configuration of switches going into a MLS stadium. The stadium was under construction and the network build out would take place at the same time as the stadium was being built out. It was definitely a first and maybe only opportunity that I would have to build out a new stadium.
 
+<!-- more -->
+
 ## Scenario
 
 The task at hand is that each of the ports would need to be configured leveraging a good L2/L3 separation with each of the service providers that provide a service to the stadium their own network segment to work through. A large number of ports were going to need to be configured.

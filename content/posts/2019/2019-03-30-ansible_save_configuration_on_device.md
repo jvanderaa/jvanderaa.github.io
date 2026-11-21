@@ -29,6 +29,8 @@ during an Ansible Playbook to NVRAM. There are options to save the configuration
 within the modules such as **ios_config** or **cli_config**, however, this can slow down the
 execution of your playbook.
 
+<!-- more -->
+
 First I will take a look at saving the configuration within its own task just for saving
 configuration. This is how I have many of my playbooks as I'm executing several tasks, breaking them
 out. I then have a dedicated task that will save the configuration. I do this for speed of the

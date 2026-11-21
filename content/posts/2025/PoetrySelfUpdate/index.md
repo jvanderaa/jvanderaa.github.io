@@ -43,3 +43,5 @@ Spawning shell within /Users/joshv/projects/nautobot-app-sandbox-app/.venv
 ~/projects/nautobot-app-sandbox-app is 📦 v0.1.0 via 🐍 v3.12.8
 ❯ emulate bash -c '. /Users/joshv/projects/nautobot-app-sandbox-app/.venv/bin/activate'
 ```
+
+<!-- more -->

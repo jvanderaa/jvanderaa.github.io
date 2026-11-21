@@ -14,6 +14,8 @@ toc: true
 ---
 This post dives into the [Nautobot Ansible Content Collection](https://nautobot-ansible.readthedocs.io/en/latest/) sites module to create/update a [Site](https://nautobot-ansible.readthedocs.io/en/latest/plugins/site_module.html). This series for the beginning will be a clone of what I had done previously with NetBox. So some of the language will be very similar. 
 
+<!-- more -->
+
 When it comes to creating and deleting sites in Nautobot, the question of should I be using Ansible to do this? In my opinion this is a **yes it should be**. Most likely an IT tool is not the tool that will be the Source of Truth as it comes to physical sites involved in an organization. So this module in particular that should be looked at and put into production use with Ansible.
 
 ## Environment

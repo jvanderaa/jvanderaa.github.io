@@ -10,6 +10,8 @@ toc: true
 
 Today I was working to demonstrate how to get started with Nautobot Jobs within the Jobs root of Nautobot. This is not a pattern that I develop often, as I am typically developing Jobs within a plugin as my development standard. More to come on that later. During this case, the ask was to build a Job that would connect to a network device. I had a few troubles that I didn't want to have to work through on a call that had limited time and that was a screen share. So I am taking to working on this via a blog post to share, and hopefully will be helpful for others as well.
 
+<!-- more -->
+
 ## Nautobot Documentation
 
 The [Nautobot documentation](https://docs.nautobot.com/projects/core/en/stable/additional-features/jobs/?h=jobs) is pretty straight on. But it has grown organically over time. As such, this is going to be a small walkthrough in an _opinionated_ way. This post will dive into:

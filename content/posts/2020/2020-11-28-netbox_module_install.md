@@ -14,6 +14,8 @@ toc: true
 ---
 This is the first post as I start to look at the NetBox Ansible Collection. This is an impressive collection with modules for several of the NetBox applications, a query plugin, and an inventory plugin. This will take a deeper dive into several of the components of the **inventory plugin**, but not all of the options. The documentation for all of the collection can be found at:
 
+<!-- more -->
+
 - ReadTheDocs: [https://netbox-ansible-collection.readthedocs.io/en/latest/](https://netbox-ansible-collection.readthedocs.io/en/latest/)
 - Galaxy Page: [https://galaxy.ansible.com/netbox/netbox](https://galaxy.ansible.com/netbox/netbox)  
 

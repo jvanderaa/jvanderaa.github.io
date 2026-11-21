@@ -13,6 +13,8 @@ params:
 
 The year 2024 will showcase the remarkable evolution and contributions of AI. One prominent application of AI lies in its ability to streamline the coding process. In this post I demonstrate how to utilize the [Continue](https://continue.dev) VS Code plugin as a viable alternative to the GitHub Copilot system. This will allow you to have choice on the AI back end or in this scenario, the capability to self host the AI system using [Ollama](https://ollama.com).
 
+<!-- more -->
+
 <!--more-->
 
 ## Getting Code Completion in VSCode

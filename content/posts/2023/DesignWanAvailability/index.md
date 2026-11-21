@@ -14,6 +14,8 @@ coverCaption: |
 
 One of my hot topics in my past that I haven't seen written about often is the calculation of WAN availability and what the design is built for. There is often the number of 9's whether that is 5 9s or 3 9s or otherwise, where do you start? Well, in the past the [post by EventHelix.com](https://www.eventhelix.com/fault-handling/system-reliability-availability/) outlines system reliability. It talks about designing systems in parallel and in serial. What does that mean. Well, I am going to take the system availability and bring it into the Wide Area Network, which really could be brought to any environment that has a system uptime requirement as a way to calculate and validate the dollars that you are requesting. I am hoping that this will help you to be able to answer questions such as "What if we added another service provider?" or "What if we changed out hardware for a smaller/larger hardware choice?".
 
+<!-- more -->
+
 ## The Nines
 
 The first topic is to take a look at exactly what it means from a design availability perspective. When talking about availability the nines look like the following of availability from 525,600 minutes in a year (365 x 24 x 60):

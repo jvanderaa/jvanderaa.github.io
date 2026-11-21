@@ -16,6 +16,8 @@ params:
 
 In this post, we'll dive into WAN design and address a common question that I was provided with in the 2000s: "My home internet costs only $35 per month. Why do we spend $xxx per month per circuit?"
 
+<!-- more -->
+
 <!--more-->
 
 This question is one that WAN engineers in 2024 and beyond shouldn't have to worry about. As long as we design for the expected availability (which I discussed in a previous [post](https://josh-v.com/designing-wan-availability/)), the types of circuits are no longer a major concern.

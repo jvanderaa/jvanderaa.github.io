@@ -15,6 +15,8 @@ params:
 
 As the AI movement continues to expand its reach into the networking space, the need for an appropriate source of truth for network data becomes more critical than ever. What I have been seeing so far in the industry for networking and AI has been a lot of working on the individual devices one by one. But when looking at leveraging AI for the network, I believe it is best to look at the network as a whole. And that is where the Source of Truth data being stored in Nautobot is going to provide the right information about the network and the **relationships** between pieces of information -  AI thrives on context, and relationships provide that context for more accurate insights and actions.
 
+<!-- more -->
+
 <!--more-->
 
 ## Why a SOT?

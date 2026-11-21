@@ -14,6 +14,8 @@ coverCaption: |
 
 I'm back again with the switch back to Hugo Congo themed blog! Why the switch you ask? Well, I just needed a fresh coat of pain on the blog. I am still very happy writing content with mkdocs-material, but I really just wanted to get back to the theme that is built for a blog. It is purely a preference thing, and I think that this will be a nice clean and smooth change. I had to do a little bit of work to make sure that I get RSS squared away, which I think is in a good state. But overall, I'm going to plan to stick wit this for a little bit.
 
+<!-- more -->
+
 ## Old Theme
 
 Overall I was pretty happy with the Mkdocs-material theme. I could decide to go back to it again, and because of this I'm keeping the set up around for me to make the switch back if I wanted to. But at this point I'm likely sticking to what I have with [Hugo Congo](https://jpanther.github.io/congo/).

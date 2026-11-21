@@ -24,6 +24,8 @@ params:
 
 First and foremost is what is my promise to anyone that may read my blog posts, that I will write all of the bulk of the content of the blog posts. I may have some help from AI in some code snippet section type thing. I will definitely use AI to help edit and review the blog post, but the content that is coming to this blog is my own content.
 
+<!-- more -->
+
 My problem here was that I have some compute in my home that I would like to leverage to the best of my ability to do so. But far too often things have remained idle. Couple that thought with the fact that I am diving in on [OpenClaw](https://openclaw.ai/) coupled with [Claude](https://claude.ai) and I am exploring lots of possible use cases. For this today, I wanted to spin up some VMs that I would then be able to sync into **OpenClaw** that I have running. This time I decided to take a small bit of time to send the challenge at hand to Claude and see what it would come up with.
 
 ## Solution

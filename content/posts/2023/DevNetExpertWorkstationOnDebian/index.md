@@ -15,6 +15,8 @@ coverCaption: |
 
 As part of my journey of using my Debian based Dev Workstation, as well as my studies towards completion of the DevNet Expert, I wanted to get up and running with the [DevNet Workstation](https://learningnetwork.cisco.com/s/article/devnet-expert-equipment-and-software-list) example that would help to become familiar with the environment that would be found at the live exam. There were a few small quirks along the way, so I thought I would go ahead and create a post about how to get started.
 
+<!-- more -->
+
 ## Getting Started
 
 The process will look like the following:

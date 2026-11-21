@@ -18,6 +18,8 @@ toc: true
 
 All of the work through the modules thus far in the series have brought us to what we all want to see. How to get or update device information inside of Nautobot. Adding of sites, device types, device roles are required to get us to this point. Now you can see how to add a device to Nautobot using the networktocode.nautobot.device module.  
 
+<!-- more -->
+
 There are many optional parameters for the module specifically. I encourage you to take a look at the module documentation (linked below) in order to get a good sense of all of the options available. The required parameters for a device that is present are:
 
 * device_role

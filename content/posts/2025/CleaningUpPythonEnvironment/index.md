@@ -15,6 +15,8 @@ coverCaption: |
 
 The one challenge that I have had for many years is working with Python and the local system. So much so that I have had good discussions with many of the pure Python developers at [NTC](https://www.linkedin.com/company/network-to-code/). It often involved my statements along the lines of putting everything inside of a [Docker](https://www.docker.com/) container or something to that effect. I still distinctly remember my first attempt at installing pyenv completely borked my Ansible environment. A very technical term I know.
 
+<!-- more -->
+
 Now today I was suggested to take a look at using [Python UV](https://docs.astral.sh/uv/guides/install-python/) for managing the Python tools and environments. After taking a few steps on the journey I am convinced that this is the method that I am going to be going on.
 
 ## Making the Switch

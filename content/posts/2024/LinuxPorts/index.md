@@ -12,6 +12,8 @@ params:
 
 This post is will provide a brief overview of how port binding works in Linux. This topic that will be required for the small series of using Continue.Dev in your local environment, but before addressing the setup of a machine for remote access in a future post, I thought it would be important to quickly create a post regarding the concept of port binding.
 
+<!-- more -->
+
 ## Showing Listening Ports
 
 In Linux you can view all ports that are being listened on by using the `netstat`  or `ss` commands. This is useful for identifying active ports and their associated services. My preference in 2024 is to use the `ss` command, which, [according to Linux.com](https://www.linux.com/topic/networking/introduction-ss-command/), is a more modern version of the `netstat`.

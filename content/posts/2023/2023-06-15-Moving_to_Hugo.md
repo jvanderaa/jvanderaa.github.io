@@ -10,6 +10,8 @@ toc: true
 
 In this post I dive into more about my migration of the blog site to Hugo static content system. I will dive into primarily the why and how during this post. This also dives into the few changes that I had to make in order to make the change over from a Jekyll site to the Hugo site.
 
+<!-- more -->
+
 ## Why Migrate?
 
 While I do not have a ton of posts, I do have a few that I like to get out into the wild periodically. As I looked around the landscape of the blog pages these days, I was starting to see my page a bit dated. I had previously went with the Jekyll Minimal Mistakes theme. The theme itself was wonderful and quite extensible. However, one of my concerns besides the look was the lack of updates coming out on the theme. Not that I was going to be taking advantage of every new feature, there seems to have been a slow down.

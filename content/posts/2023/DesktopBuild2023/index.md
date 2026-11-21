@@ -14,6 +14,8 @@ coverCaption: |
 
 Here I'm going to dive into what I'm planning to build out for my next desktop here in 2023. Prime Day is nearly upon us, and I'm anticipating (but do not know for sure) that prices on some of the gear that I'm looking for will be available at a good price. I'm also looking to build out a bigger system in order to run some intense VMs up coming.
 
+<!-- more -->
+
 My goals:
 - Build a system that will last for 3-4 years at a minimum
 - Max out the RAM, that is my most limiting factor in my environments

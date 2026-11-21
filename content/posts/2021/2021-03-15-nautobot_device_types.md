@@ -18,6 +18,8 @@ toc: true
 
 A device type is the next piece in the Nautobot Device onboarding requirements. The device type corresponds to the model number of the hardware (or virtual machine). This is where you are able to template out devices during their creation. So if you have a console port on a device type, that console port will be created when you create the device. However, **there is NOT** a relationship built between the device type and the device. If the device type gets updated after the device is created, the device itself is **not** updated. 
 
+<!-- more -->
+
 ## Module Documentation
 
 * [Read the Docs](https://nautobot-ansible.readthedocs.io/en/latest/plugins/device_type_module.html)

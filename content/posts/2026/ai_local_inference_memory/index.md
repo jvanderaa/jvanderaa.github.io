@@ -21,6 +21,8 @@ params:
 
 For a long while I was getting it all wrong with my setup of AI local inference. I thought that for each sub-agent that I would spin up on my OpenClaw, the system would use that amount of VRAM. I've been running [Qwen3.5-122B-A10B](https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF) at 6-bit quantization. This model uses 101GB when loading the weights. So I thought if I had two sub-agents using this model, I would need 202GB of RAM. **I was wrong**.
 
+<!-- more -->
+
 So what I was doing was loading multiple models into my system and pointing different sub-agents at different models. My heavy coding agent would use a much lighter model than the one I was using for reasoning and research.
 
 ![Wrong memory footprint](image.png)

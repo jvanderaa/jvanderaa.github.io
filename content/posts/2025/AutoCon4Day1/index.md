@@ -20,6 +20,8 @@ params:
 
 [AutoCon4](https://networkautomation.forum/autocon4) and [NautoCon@AutoCon](https://go.networktocode.com/nautocon-autocon) are in the books. It was quite the day, and I have to say that it ranks among my best days of the year in Network Automation, right up there with being able to meet up with the Network to Code team earlier in the year. It was great to see many friends from across the community. Hopefully we’ll be able to keep the conversation going in Slack and maintain the momentum.
 
+<!-- more -->
+
 <!--more-->
 
 ## Personal Highlights

@@ -12,6 +12,8 @@ toc: true
 ---
 This is a topic that I'm fairly opinionated on as of late is looking at what should be maintained within an inventory and the strategy of how to set up the inventory. 
 
+<!-- more -->
+
 > For the case of this blog post, I am going to use the term playbook to represent the automation being run. This is yes an Ansible term, but also apply this as your automation run that is using Nornir or any other automation framework.
 
 ## What Should Be In an Inventory
