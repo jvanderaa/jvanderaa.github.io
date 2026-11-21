@@ -1,0 +1,21 @@
+{{- /*
+  About page intro: headshot beside a short introduction.
+  Usage:
+    {{< about-hero image="2025_ai_headshot.png" name="Josh VanDeraa" >}}
+    Markdown intro...
+    {{< /about-hero >}}
+  The image is resolved from assets/ so Hugo can resize and fingerprint it.
+*/ -}}
+{{- $name := .Get "name" | default site.Params.author.name -}}
+{{- $src := .Get "image" | default site.Params.author.image -}}
+{{- $img := resources.Get $src -}}
+<section class="about-hero not-prose" aria-label="Introduction">
+  {{- with $img }}
+    {{- $one := .Fill "240x240 Center webp q85" }}
+    {{- $two := .Fill "480x480 Center webp q85" }}
+  <img class="about-hero__photo" src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x" width="240" height="240" alt="Portrait of {{ $name }}">
+  {{- end }}
+  <div class="about-hero__body">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+</section>

@@ -1,74 +1,90 @@
 ---
 title: About
+description: Josh VanDeraa is a network engineer who automates networks with code, author of Open Source Network Management, and a speaker at user groups and conferences.
 date: 2023-06-13
+lastmod: 2026-11-21
 draft: false
 showWordCount: false
 showReadingTime: false
 showDate: false
+showDateUpdated: false
 showTableOfContents: false
-hide:
-- footer
+showComments: false
+showAuthor: false
+showPagination: false
+sharingLinks: false
+showEdit: false
 ---
 
-I'm a veteran Network Engineer who has finally caught on how to put together CS teachings with a Networking degree. Working on doing almost all things via automation.
+{{< about-hero image="2025_ai_headshot.png" name="Josh VanDeraa" >}}
+<p class="about-hero__hello">Hi, I'm Josh.</p>
 
-Self re-taught network/automation engineer. I've primarily been digging around within Ansible and Python. I've been doing Python networking since 2015 when a speaker came in and talked about how he had put together a NOC for a conference heavily leveraging automation capabilities via Python. Since then I have been going deep down the rabbit hole that is Network Automation.
+I'm a network engineer from the Twin Cities who has spent the last decade automating networks with code. At [Network to Code](https://networktocode.com/) I deliver network automation solutions built on open source tools, with a lot of focus on network observability and on Nautobot as the network source of truth.
 
-In 2020 Cisco released the Cisco DevNet certification program. I am one of the first 500 individuals to achieve a Cisco DevNet certification, with passing first the DevNet Associate exam. Later I followed up that certification with the DevNet Professional certification as well.
+I share what I learn here on the blog, in books, and on stage at user groups and conferences.
 
-![DevNet Cert Badges](/images/cisco_certs.png)
-<!-- ![DevNet Professional](/images/cisco-certified-devnet-professional.png)
-![DevNet 500](/images/devnet-500.png)
-![DevNet Associate](/images/cisco-certified-devnet-associate.png)
-![DevNet Class of 2020](/images/devnet-class-of-2020.png) -->
+<nav class="about-hero__links" aria-label="On this page">
+  <a href="#books">Books</a>
+  <a href="#speaking">Speaking</a>
+  <a href="#podcasts-courses-and-writing">Podcasts</a>
+</nav>
+<p class="about-hero__cta"><a href="https://linkedin.com/in/josh-vanderaa" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+{{< /about-hero >}}
 
-## My Work
+## How I got here
 
-### Books
+I came to network automation the long way around. My degree is in networking, and I spent years as a network engineer before code became part of the job. In 2015 a conference speaker walked through how they had built the event's NOC on Python-driven automation, and I've been working my way down that rabbit hole ever since. It started with Ansible and Python, and has grown into source of truth, telemetry, and CI/CD for the network.
 
-During the pandemic, I thought what better way to get started than with writing a book about getting started with open source network tools. Get it on [LeanPub](https://leanpub.com/opensourcenetworkmanagement/). See the [Open Source Network Management tab](book.md) for more.
+When Cisco launched its DevNet certification program in 2020, I was one of the first 500 people to earn a DevNet certification, starting with the DevNet Associate and following up with the DevNet Professional.
 
-2024 brought the release of two more books, published by Packt. The first released book [Network Automation with Nautobot](nautobot_book.md) introduces how to automate networks with the use of Nautobot. See the tab linked for more. 
+The writing grew out of this blog. During the pandemic I wrote *Open Source Network Management*. That led to co-authoring two Packt books in 2024 and, in 2026, a rebuilt second edition of that first book.
 
-The second book in 2024 is Modern Network Observability, which provides a hands-on approach to using open source tools for network observability in 2024.
+## Books
 
-### Podcasts
+{{< bookshelf >}}
 
-- Packet Pushers - [Ansible or Terraform](https://packetpushers.net/ansible-or-terraform-choose-one/)
-- Network Automation Nerds - [Interview Part 1](https://podcast.networkautomationnerds.com/1864201/12167008-033-interview-with-josh-vanderaa-part-1)
-- Network Automation Nerds - [Interview Part 2](https://podcast.networkautomationnerds.com/1864201/12167016-034-interview-with-josh-vanderaa-part-2)
+More on each book is on the [Books]({{< relref "book.md" >}}) page.
 
-## Speaking Engagements
+## Speaking
+
+I enjoy speaking at local user groups as much as at conferences. If you run a networking or automation event and want a talk on source of truth, Nautobot, observability, or getting started with automation, reach out on [LinkedIn](https://linkedin.com/in/josh-vanderaa).
 
 {{< timeline path="speaking_engagements" >}}
 
-### Ansible Content
+## Podcasts, courses, and writing
 
-In 2019 I worked to develop a Network Automation Course with Ansible for Packet Pushers. This was in my transition time to Network to Code. Note that the course was developed at a time when only NetBox was around. At this point in time I would swap out NetBox in favor of Nautobot. 
+### Podcast appearances
 
-- Packet Pushers Network Automation with Ansible: [YouTube](https://www.youtube.com/playlist?list=PLtO_OYBiEo6lW_LO-ucRuz7Z8_DJ62NAM)
-- Network Automation Course (Packet Pushers): [Ignition](https://ignition.packetpushers.net/courses/ansible-for-network-automation/) page.
-- [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
-  - First half using NetBox with the NetBox Ansible Collections
-  - Second half on creating your own custom filters
-- [Ansible Guest Blog Post - Using NetBox as Ansible Source of Truth](https://www.ansible.com/blog/using-netbox-for-ansible-source-of-truth)
-- [Minneapolis Ansible Meetup January 2021 - Ansible Records](https://www.youtube.com/watch?v=Cz3vw1Sv-B4)
+- Packet Pushers: [Ansible or Terraform? Choose One](https://packetpushers.net/ansible-or-terraform-choose-one/)
+- Network Automation Nerds: [Interview, part 1](https://podcast.networkautomationnerds.com/1864201/12167008-033-interview-with-josh-vanderaa-part-1) and [part 2](https://podcast.networkautomationnerds.com/1864201/12167016-034-interview-with-josh-vanderaa-part-2)
 
-### Telemetry Content
+### Ansible course
 
-- [How to Introduce Telemetry Streaming (gNMI) in Your Network with SNMP with Telegraf](https://www.influxdata.com/resources/how-to-introduce-telemetry-streaming-gnmi-in-your-network-with-snmp-with-telegraf/)
-- Upcoming: [DZone: How to Introduce Telemetry Streaming (gNMI) in Your Network with SNMP with Telegraf](https://bit.ly/39sakM3)
+In 2019 I built a network automation with Ansible course for Packet Pushers, around the time I moved to Network to Code. It was written when NetBox was the only option for a source of truth; today I would reach for Nautobot instead.
 
-#### NTC Blog Posts I Wrote
+- [Ansible for Network Automation](https://ignition.packetpushers.net/courses/ansible-for-network-automation/) on Packet Pushers Ignition
+- [The course playlist](https://www.youtube.com/playlist?list=PLtO_OYBiEo6lW_LO-ucRuz7Z8_DJ62NAM) on YouTube
+- [Using NetBox for Ansible Source of Truth](https://www.ansible.com/blog/using-netbox-for-ansible-source-of-truth), a guest post on the Ansible blog
 
-- [Network Telemetry for SNMP Devices](http://blog.networktocode.com/post/network_telemetry_for_snmp_devices/)
-- [How to Monitor Your VPN Infrastructure with Netmiko, NTC-Templates, and a Time Series Database](http://blog.networktocode.com/post/using_python_and_telegraf_for_metrics/)
-- [Monitor Your Network With gNMI, SNMP, and Grafana](http://blog.networktocode.com/post/monitor_your_network_with_gnmi_snmp_and_grafana/)
-- [Monitoring Websites with Telegraf and Prometheus](http://blog.networktocode.com/post/monitoring_websites_with_telegraf_and_prometheus/)
-- [Alerting with Prometheus](https://blog.networktocode.com/post/prometheus_alerting/)
+### Telemetry and observability writing
 
-## Cisco Champion
+- [How to Introduce Telemetry Streaming (gNMI) in Your Network with SNMP with Telegraf](https://www.influxdata.com/resources/how-to-introduce-telemetry-streaming-gnmi-in-your-network-with-snmp-with-telegraf/), an InfluxData webinar
+- On the Network to Code blog:
+  - [Network Telemetry for SNMP Devices](https://blog.networktocode.com/post/network_telemetry_for_snmp_devices/)
+  - [How to Monitor Your VPN Infrastructure with Netmiko, NTC-Templates, and a Time Series Database](https://blog.networktocode.com/post/using_python_and_telegraf_for_metrics/)
+  - [Monitor Your Network With gNMI, SNMP, and Grafana](https://blog.networktocode.com/post/monitor_your_network_with_gnmi_snmp_and_grafana/)
+  - [Monitoring Websites with Telegraf and Prometheus](https://blog.networktocode.com/post/monitoring_websites_with_telegraf_and_prometheus/)
+  - [Alerting with Prometheus](https://blog.networktocode.com/post/prometheus_alerting/)
 
-2021 - Cisco Champion
+## Certifications and recognition
 
-![Cisco Champion](/images/cisco_champ_logo_blue.png)
+<div class="about-badges not-prose">
+  <figure>
+    <img src="/images/cisco_certs.png" alt="Cisco DevNet Professional, DevNet 500, DevNet Associate, and DevNet Class of 2020 badges" width="620" height="157" loading="lazy">
+    <figcaption>Cisco DevNet Professional and Associate, and among the first 500 people DevNet certified</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/cisco_champ_logo_blue.png" alt="Cisco Champion logo" width="96" height="96" loading="lazy">
+    <figcaption>Cisco Champion, 2021</figcaption>
+  </figure>
+</div>

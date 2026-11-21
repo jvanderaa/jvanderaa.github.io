@@ -1,0 +1,31 @@
+---
+# Books, newest first. Rendered by layouts/shortcodes/bookshelf.html.
+# cover: image path under assets/ (resized by Hugo). Leave it out to render a typographic cover.
+- title: Open Source Network Management
+  edition: Second Edition
+  year: 2026
+  role: Author
+  cover: images/books/osnm2-cover.png
+  url: https://osnm.josh-v.com/
+
+- title: Modern Network Observability
+  year: 2024
+  role: Co-author
+  publisher: Packt
+  cover: images/books/mno-cover.jpg
+  url: /observability/
+
+- title: Network Automation with Nautobot
+  year: 2024
+  role: Co-author
+  publisher: Packt
+  cover: images/books/nautobot-cover.jpg
+  url: /nautobot_book/
+
+- title: Open Source Network Management
+  edition: First Edition
+  year: 2021
+  role: Author
+  publisher: Leanpub
+  cover: images/books/osnm1-cover.png
+  url: https://leanpub.com/opensourcenetworkmanagement/

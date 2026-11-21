@@ -691,3 +691,324 @@ html.dark .code-block-title {
     color: #d8dee9;
     border-color: #4c566a;
 }
+
+/* ------------------------------------------------------------------ */
+/* About page: hero, bookshelf, speaking timeline, badges.            */
+/* Plain CSS on Congo's color variables, so it follows the active     */
+/* color scheme and dark mode without needing new Tailwind classes.   */
+/* ------------------------------------------------------------------ */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin: 0.5rem 0 3rem;
+}
+
+@media (min-width: 640px) {
+  .about-hero { grid-template-columns: 11rem 1fr; gap: 2.25rem; }
+}
+
+.about-hero__photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2rem;
+  object-fit: cover;
+  outline: 3px solid rgb(var(--color-primary-500));
+  outline-offset: 5px;
+  margin: 8px 8px 0;
+}
+
+@media (min-width: 640px) {
+  .about-hero__photo { width: 10rem; height: 10rem; border-radius: 2.5rem; }
+}
+
+.about-hero__body {
+  color: rgb(var(--color-neutral-700));
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  max-width: 38rem;
+}
+
+.about-hero__body p { margin: 0 0 0.85rem; }
+
+.about-hero__body a { color: rgb(var(--color-primary-700)); text-decoration: underline; text-underline-offset: 3px; }
+
+.about-hero__hello.about-hero__hello {
+  margin: 0 0 0.5rem;
+  font-size: 1.875rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: rgb(var(--color-neutral-900));
+}
+
+.about-hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.about-hero__links a {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid rgb(var(--color-primary-300));
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(var(--color-primary-700));
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.about-hero__links a:hover { background: rgb(var(--color-primary-50)); border-color: rgb(var(--color-primary-500)); }
+
+.about-hero__cta.about-hero__cta { margin: 0.75rem 0 0; }
+
+.about-hero__cta a {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgb(var(--color-primary-600));
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+
+.about-hero__cta a:hover { background: rgb(var(--color-primary-700)); }
+
+html.dark .about-hero__body { color: rgb(var(--color-neutral-300)); }
+html.dark .about-hero__body a { color: rgb(var(--color-primary-300)); }
+html.dark .about-hero__hello.about-hero__hello { color: rgb(var(--color-neutral-50)); }
+html.dark .about-hero__photo { outline-color: rgb(var(--color-primary-400)); }
+html.dark .about-hero__links a { border-color: rgb(var(--color-primary-700)); color: rgb(var(--color-primary-200)); }
+html.dark .about-hero__links a:hover { background: rgb(var(--color-primary-900)); border-color: rgb(var(--color-primary-500)); }
+html.dark .about-hero__cta a { background: rgb(var(--color-primary-600)); color: #fff; }
+html.dark .about-hero__cta a:hover { background: rgb(var(--color-primary-700)); }
+
+/* Bookshelf */
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 1.25rem;
+  margin: 1.5rem 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .bookshelf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.bookshelf__link { display: block; text-decoration: none; color: inherit; }
+
+/* Covers keep their own proportions and sit on a common baseline, like a shelf. */
+.bookshelf__frame {
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 5 / 7;
+}
+
+.bookshelf__cover {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 3px 7px 7px 3px;
+  box-shadow: 0 10px 18px -10px rgb(0 0 0 / 0.45), 0 2px 4px rgb(0 0 0 / 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bookshelf__link:hover .bookshelf__cover,
+.bookshelf__link:focus-visible .bookshelf__cover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 24px -12px rgb(0 0 0 / 0.5), 0 2px 4px rgb(0 0 0 / 0.08);
+}
+
+.bookshelf__cover--type {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0.85rem 0.85rem 1.1rem;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.18) 0 6px, transparent 6px),
+    linear-gradient(160deg, rgb(var(--color-primary-700)), rgb(var(--color-primary-900)));
+  color: #fff;
+}
+
+.bookshelf__type-title { font-size: 1.05rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+.bookshelf__type-pub { font-size: 0.75rem; opacity: 0.8; }
+
+.bookshelf__title {
+  display: block;
+  margin-top: 0.85rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: rgb(var(--color-neutral-900));
+}
+
+.bookshelf__link:hover .bookshelf__title { color: rgb(var(--color-primary-700)); }
+
+.bookshelf__edition { display: block; font-weight: 400; color: rgb(var(--color-neutral-600)); }
+
+.bookshelf__meta { display: block; margin-top: 0.25rem; font-size: 0.85rem; line-height: 1.4; color: rgb(var(--color-neutral-500)); }
+
+html.dark .bookshelf__title { color: rgb(var(--color-neutral-100)); }
+html.dark .bookshelf__link:hover .bookshelf__title { color: rgb(var(--color-primary-300)); }
+html.dark .bookshelf__edition { color: rgb(var(--color-neutral-400)); }
+html.dark .bookshelf__meta { color: rgb(var(--color-neutral-400)); }
+
+/* Speaking timeline */
+
+.talks { margin: 2rem 0 1rem; }
+
+.talks__year { display: grid; grid-template-columns: 1fr; }
+
+@media (min-width: 640px) {
+  .talks__year { grid-template-columns: 4.5rem 1fr; }
+}
+
+.talks__year-label {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: rgb(var(--color-primary-700));
+}
+
+@media (min-width: 640px) {
+  .talks__year-label { position: sticky; top: 1rem; align-self: start; margin: 0; line-height: 1.5; }
+}
+
+.talks__list {
+  margin: 0 0 0 0.4rem;
+  padding: 0 0 0.5rem 1.6rem;
+  list-style: none;
+  border-left: 2px solid rgb(var(--color-neutral-200));
+}
+
+@media (min-width: 640px) {
+  .talks__list { margin-left: 0; }
+}
+
+.talks__item { position: relative; padding-bottom: 1.75rem; }
+
+.talks__item::before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: calc(-1.6rem - 8px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgb(var(--color-neutral-400));
+  background: rgb(var(--color-neutral));
+}
+
+.talks__item--keynote::before {
+  border-color: rgb(var(--color-primary-600));
+  background: rgb(var(--color-primary-600));
+  box-shadow: 0 0 0 4px rgb(var(--color-primary-100));
+}
+
+.talks__item--panel::before {
+  border-color: rgb(var(--color-primary-600));
+  background: rgb(var(--color-neutral));
+  box-shadow: inset 0 0 0 2px rgb(var(--color-neutral)), inset 0 0 0 6px rgb(var(--color-primary-600));
+}
+
+.talks__head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.75rem; }
+
+.talks__role {
+  padding: 0.05rem 0.6rem;
+  border: 1px solid rgb(var(--color-neutral-300));
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgb(var(--color-neutral-600));
+}
+
+.talks__item--keynote .talks__role { background: rgb(var(--color-primary-600)); border-color: rgb(var(--color-primary-600)); color: #fff; }
+.talks__item--panel .talks__role { background: rgb(var(--color-primary-50)); border-color: rgb(var(--color-primary-300)); color: rgb(var(--color-primary-800)); }
+
+.talks__when { font-size: 0.85rem; color: rgb(var(--color-neutral-500)); }
+
+.talks__where { margin-left: 0.5rem; padding-left: 0.5rem; border-left: 1px solid rgb(var(--color-neutral-300)); }
+
+.talks__event {
+  margin: 0.4rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: rgb(var(--color-neutral-900));
+}
+
+.talks__session { margin: 0.15rem 0 0; font-weight: 500; color: rgb(var(--color-primary-700)); }
+
+.talks__summary { margin-top: 0.4rem; max-width: 40rem; font-size: 0.95rem; line-height: 1.6; color: rgb(var(--color-neutral-600)); }
+.talks__summary p { margin: 0; }
+
+.talks__links { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.5rem 0 0; font-size: 0.9rem; }
+.talks__links a { color: rgb(var(--color-primary-700)); text-decoration: underline; text-underline-offset: 3px; }
+
+html.dark .talks__year-label { color: rgb(var(--color-primary-300)); }
+html.dark .talks__list { border-left-color: rgb(var(--color-neutral-700)); }
+html.dark .talks__item::before { border-color: rgb(var(--color-neutral-500)); background: rgb(var(--color-neutral-800)); }
+html.dark .talks__item--keynote::before { border-color: rgb(var(--color-primary-400)); background: rgb(var(--color-primary-400)); box-shadow: 0 0 0 4px rgb(var(--color-primary-900)); }
+html.dark .talks__item--panel::before { border-color: rgb(var(--color-primary-400)); background: rgb(var(--color-neutral-800)); box-shadow: inset 0 0 0 2px rgb(var(--color-neutral-800)), inset 0 0 0 6px rgb(var(--color-primary-400)); }
+html.dark .talks__role { border-color: rgb(var(--color-neutral-600)); color: rgb(var(--color-neutral-300)); }
+html.dark .talks__item--keynote .talks__role { background: rgb(var(--color-primary-600)); border-color: rgb(var(--color-primary-600)); color: #fff; }
+html.dark .talks__item--panel .talks__role { background: rgb(var(--color-primary-900)); border-color: rgb(var(--color-primary-700)); color: rgb(var(--color-primary-200)); }
+html.dark .talks__when { color: rgb(var(--color-neutral-400)); }
+html.dark .talks__where { border-left-color: rgb(var(--color-neutral-600)); }
+html.dark .talks__event { color: rgb(var(--color-neutral-100)); }
+html.dark .talks__session { color: rgb(var(--color-primary-300)); }
+html.dark .talks__summary { color: rgb(var(--color-neutral-400)); }
+html.dark .talks__links a { color: rgb(var(--color-primary-300)); }
+
+/* Certification badges */
+
+.about-badges { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1.5rem 2.5rem; margin: 1.5rem 0; }
+.about-badges figure { margin: 0; }
+.about-badges img { display: block; max-width: 100%; height: auto; }
+.about-badges figure:first-child img { width: 26rem; padding: 0.5rem; border-radius: 0.75rem; background: #fff; }
+.about-badges figure:last-child img { width: 6rem; border-radius: 0.5rem; }
+.about-badges figcaption { margin-top: 0.6rem; max-width: 26rem; font-size: 0.85rem; line-height: 1.4; color: rgb(var(--color-neutral-500)); }
+html.dark .about-badges figcaption { color: rgb(var(--color-neutral-400)); }
+
+/* Shared focus and motion handling for the components above. */
+:is(.about-hero__links, .about-hero__cta, .bookshelf, .talks__links) a:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookshelf__cover, .about-hero__links a, .about-hero__cta a { transition: none; }
+  .bookshelf__link:hover .bookshelf__cover, .bookshelf__link:focus-visible .bookshelf__cover { transform: none; }
+}
+
+/* Book pages: floated covers from the book-cover shortcode. */
+.prose img.book-cover {
+  display: block;
+  width: 10rem;
+  height: auto;
+  margin: 0.5rem auto 1.5rem;
+  border-radius: 3px 7px 7px 3px;
+  box-shadow: 0 10px 18px -10px rgb(0 0 0 / 0.45), 0 2px 4px rgb(0 0 0 / 0.08);
+}
+
+@media (min-width: 640px) {
+  .prose img.book-cover { float: right; width: min(34%, 13rem); margin: 0.35rem 0 1rem 1.75rem; }
+  article:has(img.book-cover) .prose h2 { clear: both; }
+}

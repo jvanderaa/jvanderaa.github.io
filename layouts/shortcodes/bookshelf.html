@@ -1,0 +1,30 @@
+{{- /*
+  Book covers from data/books.yml (or the data file named in `path`).
+  `cover` is a path under assets/, resized here so the page never ships the full-size file.
+  Books without a `cover` get a typographic cover so the shelf stays even.
+*/ -}}
+{{- $books := index hugo.Data (.Get "path" | default "books") -}}
+<ul class="bookshelf not-prose" role="list">
+  {{- range $books }}
+  {{- $url := .url }}
+  <li class="bookshelf__item">
+    <a class="bookshelf__link" href="{{ $url }}"{{ if strings.HasPrefix $url "http" }} target="_blank" rel="noopener"{{ end }}>
+      <span class="bookshelf__frame">
+      {{- $cover := "" }}{{ with .cover }}{{ $cover = resources.Get . }}{{ end }}
+      {{- with $cover }}
+        {{- $one := .Resize "200x webp q85" }}
+        {{- $two := .Resize "400x webp q85" }}
+        <img class="bookshelf__cover" src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x" width="{{ $one.Width }}" height="{{ $one.Height }}" alt="" loading="lazy">
+      {{- else }}
+      <span class="bookshelf__cover bookshelf__cover--type" aria-hidden="true">
+        <span class="bookshelf__type-title">{{ .title }}</span>
+        {{- with .publisher }}<span class="bookshelf__type-pub">{{ . }}</span>{{ end }}
+      </span>
+      {{- end }}
+      </span>
+      <span class="bookshelf__title">{{ .title }}{{ with .edition }}<span class="bookshelf__edition">{{ . }}</span>{{ end }}</span>
+    </a>
+    <span class="bookshelf__meta">{{ .role }}, {{ .year }}{{ with .publisher }}<br>{{ . }}{{ end }}</span>
+  </li>
+  {{- end }}
+</ul>

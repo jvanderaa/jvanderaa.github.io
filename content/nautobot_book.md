@@ -1,17 +1,14 @@
 ---
-title: Nautobot Book
+title: Network Automation with Nautobot
 date: 2024-06-24
+lastmod: 2026-11-21
 draft: false
-hide:
-- navigation
-- footer
+showDateUpdated: false
 ---
 
-# Nautobot Book
+{{< book-cover src="images/books/nautobot-cover.jpg" alt="Network Automation with Nautobot cover" >}}
 
-![Nautobot Book Cover](https://m.media-amazon.com/images/I/81tjWDoYk3L._SL1500_.jpg){ align=right width="400" }
-
-I'm proud to have been an author in the [Network Automation with Nautobot found on Amazon](https://a.co/d/7JPvYpC) book that has recently been released. The book covers:
+I'm proud to be one of the authors of [Network Automation with Nautobot](https://a.co/d/7JPvYpC), published by Packt in 2024. The book covers:
 
 * Learn how documenting your network in Nautobot can accelerate your network automation journey
 * Apply NetDevOps to your network by leveraging Nautobot as a network source of truth
@@ -35,3 +32,7 @@ By the end of this book, you'll be able to design and manage Nautobot as a netwo
 ## Who this book is for
 
 This book is for network engineers, network automation engineers, and software engineers looking to support their network teams by building custom Nautobot Apps. A basic understanding of networking (e.g. CCNA) and knowledge of the fundamentals of Linux, Python programming, Jinja2, YAML, and JSON are needed to get the most out of this book.
+
+## Get it today
+
+Network Automation with Nautobot is published by Packt and available on [Amazon](https://a.co/d/7JPvYpC).

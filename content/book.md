@@ -1,44 +1,56 @@
 ---
 title: Books
 date: 2026-07-17
+lastmod: 2026-11-21
 draft: false
 type: "page"
-hide:
-- navigation
-- footer
-- title
+showDate: false
+showDateUpdated: false
+showReadingTime: false
+showWordCount: false
+showAuthor: false
+showPagination: false
+sharingLinks: false
+showComments: false
+showEdit: false
 ---
 
-# Books
-
-For several years I have been providing content in blog posts. This has evolved into writing books as well.
+For several years I have shared what I learn in blog posts, and that has grown into writing books. Here is everything I have written or co-written, newest first.
 
 ## Open Source Network Management, 2nd Edition
 
-<img src="/images/osnm2-cover.png" alt="Open Source Network Management, 2nd Edition Cover" class="float-right ml-4 mb-4 w-1/3 rounded-lg shadow-lg">
+{{< book-cover src="images/books/osnm2-cover.png" alt="Open Source Network Management, 2nd Edition cover" >}}
 
-The **Second Edition** is out now — an improvement and modernization of the first. Across thirteen hands-on chapters it is a guide to building a complete, modern network management platform — source of truth to full observability — entirely from open source, on your own infrastructure, all in a real [Containerlab](https://containerlab.dev/) lab you can follow along with end to end.
+The **Second Edition** is out now, a rebuilt and modernized version of the first. Across thirteen hands-on chapters it walks through building a complete, modern network management platform from open source tools on your own infrastructure, from the source of truth all the way to full observability. Everything runs in a real [Containerlab](https://containerlab.dev/) lab you can follow along with end to end.
 
 Head to **[osnm.josh-v.com](https://osnm.josh-v.com/)** for the full details, formats, and a free sample chapter.
 
+## Modern Network Observability
+
+{{< book-cover src="images/books/mno-cover.jpg" alt="Modern Network Observability cover" >}}
+
+*Modern Network Observability* (Packt, 2024) is a hands-on guide I co-wrote with David Flores and Christian Adell. It builds a network observability stack from open source tools: Telegraf to collect the data, Prometheus to store and alert on it, and Grafana to visualize it. From there it shows how to enrich that data with a source of truth and put it to work in a network automation strategy. Eric Chou and Damien Garros wrote the forewords.
+
+- [More about the book]({{< relref "observability.md" >}})
+- [Get it on Amazon](https://a.co/d/1SDM5EM)
+
 ## Network Automation with Nautobot
 
-<img src="https://m.media-amazon.com/images/I/81tjWDoYk3L._SL1500_.jpg" alt="Nautobot Book Cover" class="float-right ml-4 mb-4 w-1/3 rounded-lg shadow-lg">
+{{< book-cover src="images/books/nautobot-cover.jpg" alt="Network Automation with Nautobot cover" >}}
 
-I'm proud to have been an author in the [Network Automation with Nautobot found on Amazon](https://a.co/d/7JPvYpC) book that has recently been released. The book covers:
+I'm proud to be one of the authors of *Network Automation with Nautobot* (Packt, 2024). The book covers how to:
 
-* Learn how documenting your network in Nautobot can accelerate your network automation journey
-* Apply NetDevOps to your network by leveraging Nautobot as a network source of truth
-* Minimize tool sprawl by extending, using, or building Nautobot Apps
+- Document your network in Nautobot to accelerate your network automation journey
+- Apply NetDevOps to your network by using Nautobot as the network source of truth
+- Minimize tool sprawl by extending, using, or building Nautobot Apps
 
 > Nautobot enables network teams to build a scalable and extensible network source of truth that provides a foundation to power any network automation stack.
 
-With the help of this guide, you'll learn how to deploy, manage, and integrate Nautobot as a source of truth and network automation platform. As you progress, you'll learn what a network source of truth is, the relationship between data and network automation, and network data models. You'll also gain a broad understanding of Nautobot and its robust features that allow maximum flexibility. A dedicated section will show you how to construct a single source of truth with Nautobot and help you explore its programmatic APIs, including REST APIs, GraphQL, webhooks, and Nautobot Job Hooks. Later, you'll develop custom data models and custom apps for Nautobot and experience its extensibility and powerful developer API. In the last part of this book, you'll discover how to deploy configuration compliance and automated remediation once Nautobot is deployed as a network source of truth.
+- [More about the book]({{< relref "nautobot_book.md" >}})
+- [Get it on Amazon](https://a.co/d/7JPvYpC)
 
-By the end of this book, you'll be able to design and manage Nautobot as a network source of truth, understand its key features, and extend Nautobot by creating custom data models and apps that suit your network and your team.
+## Open Source Network Management, First Edition
 
-## Modern Network Observability
+{{< book-cover src="images/books/osnm1-cover.png" alt="Open Source Network Management, First Edition cover" >}}
 
-The second book in 2024 is Modern Network Observability, which provides a hands-on approach to using open source tools for network observability in 2024. _(More details coming soon)_
-
--Josh
+My first book, written during the pandemic and published on [Leanpub](https://leanpub.com/opensourcenetworkmanagement/) in 2021. It introduced a set of open source tools for getting started with network management. For the current version of that material, rebuilt from the ground up, pick up the Second Edition above.

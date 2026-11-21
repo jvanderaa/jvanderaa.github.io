@@ -1,13 +1,41 @@
-<div class="relative pl-8 border-l border-neutral-300 dark:border-neutral-600 ml-4 my-8">
-  {{ $data := index .Site.Data (.Get "path") }}
-  {{ range $data }}
-  <div class="mb-10 ml-2">
-    <div class="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full border border-white bg-neutral-300 dark:border-neutral-900 dark:bg-neutral-600"></div>
-    <time class="mb-1 text-sm font-normal leading-none text-neutral-400 dark:text-neutral-500">{{ .sub_title }}</time>
-    <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">{{ .title }}</h3>
-    <div class="mb-4 text-base font-normal text-neutral-500 dark:text-neutral-400 prose dark:prose-invert">
-      {{ .content | markdownify }}
-    </div>
-  </div>
-  {{ end }}
+{{- /*
+  Speaking timeline, grouped by year, from the data file named in `path`.
+  Usage: {{< timeline path="speaking_engagements" >}}
+  See data/speaking_engagements.yml for the fields.
+*/ -}}
+{{- $items := index hugo.Data (.Get "path") -}}
+{{- $years := slice -}}
+{{- range $items }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end -}}
+<div class="talks not-prose">
+  {{- range $years }}
+  {{- $year := . }}
+  <section class="talks__year" aria-labelledby="talks-{{ $year }}">
+    <h3 class="talks__year-label" id="talks-{{ $year }}">{{ $year }}</h3>
+    <ol class="talks__list" role="list">
+      {{- range where $items "year" $year }}
+      {{- $role := .role | default "Talk" }}
+      <li class="talks__item talks__item--{{ $role | lower }}">
+        <div class="talks__head">
+          <span class="talks__role">{{ $role }}</span>
+          <span class="talks__when">{{ .when }}{{ with .location }}<span class="talks__where">{{ . }}</span>{{ end }}</span>
+        </div>
+        <h4 class="talks__event">{{ .event }}</h4>
+        {{- with .session }}
+        <p class="talks__session">{{ . }}</p>
+        {{- end }}
+        {{- with .summary }}
+        <div class="talks__summary">{{ . | markdownify }}</div>
+        {{- end }}
+        {{- with .links }}
+        <p class="talks__links">
+          {{- range . }}
+          <a href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>
+          {{- end }}
+        </p>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ol>
+  </section>
+  {{- end }}
 </div>
