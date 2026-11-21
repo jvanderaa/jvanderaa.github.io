@@ -15,6 +15,8 @@ coverCaption: |
 
 One observation lately is that Python is moving along quickly with new versions and new EOLs. Along with needing to make these updates, the applications that Python uses will also need to be moving along. Nautobot is my favorite, and in my opinion the best SOT platform available in the open source ecosystem today. So let's dive into the updating of the Python version.
 
+<!-- more -->
+
 For this post, I've created a new Rocky 8 Virtual Machine to be the host. See the note below for the reasoning. This will start off with a Nautobot [install](https://docs.nautobot.com/projects/core/en/stable/installation/) from the Nautobot docs. I won't dive into all of that, assume that is the starting point with a fresh Nautobot application.
 
 > I originally thought just doing a DNF update on the host that I would be able to use Python 3.8 or something of that nature. I was wrong. Running the DNF update put Python3.11 on the host. So now it is on to removing Python3.11 and move to 3.8 for this post. I completed this step with a `sudo dnf install python3.8`

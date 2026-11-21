@@ -15,6 +15,8 @@ coverCaption: |
 
 I'm going to diverge a small bit from the straight network automation space that I have blogged about primarily and dive a small bit into the world of using Google Earth to help prepare for your golf game. Upcoming, I'm playing in a Minnesota Golf event at two courses in late August. I'm going to put together a green book for myself and figure this would be a great topic to touch on how I'm going about this activity.
 
+<!-- more -->
+
 ## Requirements
 
 The first requirement is to have Google Earth installed on a desktop environment. This may be something that you can use the web version for, but I have had better luck using Google Earth Pro installed onto the desktop.

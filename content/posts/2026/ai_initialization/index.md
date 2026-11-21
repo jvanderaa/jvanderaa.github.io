@@ -22,6 +22,8 @@ params:
 
 A year ago I called AI a 50/50 bet. Half the time it worked, half the time I was re-checking and re-prompting. I was paying $20 a month to multiple providers just to keep an eye on things. AI was around, but it wasn't transforming how I worked. Not yet.
 
+<!-- more -->
+
 Then a few weeks ago, something clicked. And I burned through my Anthropic and OpenAI credits faster than I thought possible.
 
 It's early 2026, and many are pointing to the [Opus 4.6 Release](https://www.anthropic.com/news/claude-opus-4-6) and [GPT5.3](https://openai.com/index/introducing-gpt-5-3-codex/) as a pivotal point in the AI space. I'd agree, but I'd also say the previous generation of models were already laying the groundwork. What changed was how I started using them.

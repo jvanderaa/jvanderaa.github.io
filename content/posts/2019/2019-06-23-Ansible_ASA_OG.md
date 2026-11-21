@@ -27,6 +27,8 @@ This one is particularly exciting for the configurations that are being managed
 heavily with Object Groups on firewalls. I'm particularly excited to review the
 **asa_og** module, time to dig in.  
 
+<!-- more -->
+
 **New** in this post is the finished playbooks being added to Github. I'm hoping
 that this may be helpful and I am uploading the contents to Github for more to
 be able to see and get access to if necessary. This will improve as I continue.  

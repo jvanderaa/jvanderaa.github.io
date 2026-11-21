@@ -25,6 +25,8 @@ Automation and certification realm I asked the question "How are you simulating
 your network environment?" At the same time there has been thought on the idea
 of leveraging cloud resources to gain experience there.  
 
+<!-- more -->
+
 First requirement for me is that whatever tool/simulation set that I use it has
 to work. That being said, I need to be able to generate configurations, connect
 devices to each other, and have packets flow through the simulated network, just

@@ -15,6 +15,8 @@ params:
 
 Nornir includes a function that allows for the transformation of inventory data, a feature integrated within the Nornir platform itself. The documentation for Nornir 3.0 is somewhat sparse regarding the usage of Transform functions, so I often refer to the more comprehensive [2.5 documentation](https://nornir.readthedocs.io/en/v2.5.0/howto/transforming_inventory_data.html#Modifying-hosts'-data). According to the Nornir documentation:
 
+<!-- more -->
+
 > A transform function is a plugin that manipulates the inventory independently from the inventory plugin used. Useful to extend data using the environment, a secret store or similar.
 
 <!--more-->

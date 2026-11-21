@@ -20,6 +20,8 @@ params:
 
 Managing audio settings on Mac devices can be repetitive, especially when switching between different microphones for calls, recordings, or meetings. Siri Shortcuts provides a powerful way to automate this process.
 
+<!-- more -->
+
 <!--more-->
 
 ## The Problem

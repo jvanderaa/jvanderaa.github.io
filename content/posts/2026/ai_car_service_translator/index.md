@@ -20,6 +20,8 @@ params:
 
 I have been trying to diagnose a recurring Check Engine light on our family vehicle. It's been a frustrating back and forth with the dealership service center, and what finally got my answer that I needed - it didn't come from the service center, it was my AI assistant.
 
+<!-- more -->
+
 ## The Dealership Runaround
 
 The first time the light came on, we had the codes scanned and identified. The dealership service center needed to see the code themselves, not just hear what it was. So we continued about our normal days with the vehicle, without harm to driving it and without knowing if it would come back on again or if this would become a major repair.

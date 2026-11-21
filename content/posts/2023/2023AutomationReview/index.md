@@ -14,6 +14,8 @@ coverCaption: |
 
 The year of 2023 I think may have had some of the biggest leaps in the Network Automation capabilities that are being delivered by some of the best in the business. With Nautobot's Golden Config App adding the ability to complete configuration remediation and Ansible release Event Driven Ansible, there are a couple of powerful tools to help you with your Network Automation. And all with a great new conference addition specific to Network Automation.
 
+<!-- more -->
+
 ## Nautobot Golden Config - Configuration Remediation
 
 On the surface [configuration remediation](https://docs.nautobot.com/projects/golden-config/en/latest/user/app_feature_remediation/) may not sound like a big deal. But I was astonished when the team that worked on the feature within Nautobot Golden Config demo'd the features and capabilities internally before the webinar releasing it. Initially, ok this is going to be pushing configuration. To me that is generally a solved problem, and wouldn't be a big deal.

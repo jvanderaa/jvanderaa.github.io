@@ -12,6 +12,8 @@ toc: true
 
 The Python [Poetry](https://python-poetry.org/) is our go to package management system thus far, you can see that in all of the Python projects that Network to Code open sources, such as [Nautobot](https://docs.nautobot.com/projects/core/en/stable/), [pyntc](https://pyntc.readthedocs.io/en/latest/user/lib_overview/), [network-importer](https://github.com/networktocode/network-importer), and [NTC-Templates](https://github.com/networktocode/ntc-templates). Lately though, I've been having some challenges when my HomeBrew updates happen and my system Python gets updated. I've been able to recover with the help of the same few pages I land on from my Google searches. But since I've done this twice now, I'm using this post to document the fix as much as for myself, but for anyone else that may come across Poetry issues.
 
+<!-- more -->
+
 ## The Issue
 
 The issue occurs when I'm updating the system Python through HomeBrew. I start to see errors where Poetry is unable to be detected, with some nasty looking MacOS shell issues. Such as:

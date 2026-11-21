@@ -10,6 +10,8 @@ toc: true
 
 In this post I'm going to dive into a bit more on the Nautobot custom validators. This is a powerful validation tool that will allow for you to write your own validation capability, including in this demonstration on how to complete a validation against a remote API endpoint. The custom validators are a part of the Nautobot App extension capability. This allows for custom code to be written to validate data upon the `clean()` method being called, which is used in the majority of API calls and form inputs of Nautobot.
 
+<!-- more -->
+
 I will look to accomplish four different objectives in this post from my point of view. This will help to get some targeted experiences with what I believe the DevNet Expert exam has in mind for Web Services, working with Flask. In my day to day I deal more so within the Django Web Framework to build web applications that are part of the Nautobot ecosystem. So the need to write some Flask applications is a good way to branch out some.
 
 The goals that I have for this post:

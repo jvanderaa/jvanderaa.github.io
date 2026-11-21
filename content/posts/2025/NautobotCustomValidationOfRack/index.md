@@ -16,6 +16,8 @@ coverCaption: |
 
 I recently was presented with a request to look at where there was a request to validate that a Rack would be unique at a Location in Nautobot. I took a look at the data validation engine and wasn't able to determine a method to make this work there. So here is the solution.
 
+<!-- more -->
+
 ## Solution
 
 The solution to this is to create a [Custom Validator](https://docs.nautobot.com/projects/core/en/stable/development/apps/api/platform-features/custom-validators/). The whole point of the Custom Validators is to allow you to enforce your own business rules while allowing the Open Source project to remain open and general. In the case of keeping Nautobot generic, Racks are allowed to have the same name anywhere. Sometimes within the same location. Which some organizations may have. The project shouldn't enforce something when there is the possibility of the scenario being true.

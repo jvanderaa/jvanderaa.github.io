@@ -15,6 +15,8 @@ params:
 
 It’s been a while since my last post, life and work have both been full. Today, I’m diving into one of the most quietly critical aspects of network design: **time synchronization**. Specifically, how to design NTP within an enterprise network and how to think about time zones when correlating logs.
 
+<!-- more -->
+
 We'll look at two main topics in this post: designing NTP (Network Time Protocol) and managing time zone display in logs. 
 
 <!--more-->

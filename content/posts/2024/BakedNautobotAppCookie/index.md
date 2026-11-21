@@ -18,6 +18,8 @@ params:
 
 Just recently released at the beginning of 2024 is a project that I am super excited to see in the open source by Network to Code. This is the Nautobot App cookiecutter template. This may already be the biggest thing to become available for Network Automation in 2024. I know, its fresh at this point in the year, but this is something that is going to make getting started with your own Nautobot Application so much quicker.
 
+<!-- more -->
+
 <!--more-->
 
 ## CookieCutter

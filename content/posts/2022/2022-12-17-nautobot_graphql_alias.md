@@ -15,6 +15,8 @@ toc: true
 
 One of the features that I find myself using periodically that I think is underrated as far as using GraphQL is its ability to alias return keys in the response. This can be extremely helpful for developers writing applications, as it allows them to have the API response with the keys they are looking for. I have found this feature particularly useful when working on applications like Meraki and Nautobot together. In Nautobot a place is typically defined as the key `site`. In the Meraki world this is commonly set up as a `network`. Without GraphQL's alias feature, the developer would need to translate this data over.
 
+<!-- more -->
+
 Let's explore two scenarios where a developer might choose to alias the response from GraphQL:
 
 - Quick translation between systems

@@ -15,6 +15,8 @@ coverCaption: |
 
 In my home environment I am leveraging Nautobot as my source of truth. This is for the network, which is probably not all that interesting in my home environment, and my virtual machines. Why am I tracking my virtual machines in Nautobot? Simple, to help automate them. I think that this is a clever methodology to help use tags and to get automation working within the environment. This same type of thing may be applicable to your network environment as well.
 
+<!-- more -->
+
 ## My VM Environment
 
 I'm still in the process at the moment of having to build my virtual machines a bit manual. I hope to automate this some more in the future yet. I'm leveraging an open source hypervisor that is running on several NUC class hosts that make up the cluster. These are running in HA mode, so if one of the hosts go down, then I should have another host that will pick up the slack and take care of running the virtual machine.

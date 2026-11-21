@@ -12,6 +12,8 @@ params:
 
 So, if you are a returning user you notice something that is a little bit different. I have migrated my blog site to a new site generator and format. I am now using [mkdocs-material] blog them that was introduced in late 2022 to the platform. The migration was not too painful to make, but I'm feeling in a good place about it at this point. The blog has been on a journey so far. It started off with a Jekyll themed site which I liked. Then I decided to move onto something that has a little more development. So I moved into the land of Hugo.
 
+<!-- more -->
+
 <!--more-->
 
 ## Why the Change

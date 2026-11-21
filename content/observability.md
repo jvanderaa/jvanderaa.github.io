@@ -1,13 +1,12 @@
 ---
 title: Modern Network Observability
 date: 2024-09-07
+lastmod: 2026-11-21
 draft: false
-hide:
-- navigation
-- footer
+showDateUpdated: false
 ---
 
-# Modern Network Observability
+{{< book-cover src="images/books/mno-cover.jpg" alt="Modern Network Observability cover" >}}
 
 I'm proud to be one of the three authors to put together the book on Modern Network Observability. It's been a great joy to write and contribute to the Networking community with this book on setting up a modern network observability platform using open source tools. The book aims to help you:
 
@@ -15,7 +14,7 @@ I'm proud to be one of the three authors to put together the book on Modern Netw
 - Utilize the network observability stack to address real network operation challenges
 - Learn about obtaining various data types programmatically and how to utilize them to enhance a network automation strategy
 
-In the book we dive into an observability pipeline that starts with the metrics collection, how to enhance and transform the data using a source of truth, storing the data for long term retrieval, visualizing the data, and how to leverage the data driving business success.
+In the book we dive into an observability pipeline that starts with metrics collection, then enhances and transforms the data using a source of truth, stores it for long-term retrieval, visualizes it, and uses it to drive business decisions. The stack is built on three open source tools:
 
 - Telegraf
 - Prometheus
@@ -23,20 +22,20 @@ In the book we dive into an observability pipeline that starts with the metrics 
 
 ## Who This Book is For
 
-This book is intended for all network engineering roles such as network analysts, administrators, architects, security personnel, support staff, and managers working in both on-premises and cloud environments who are tasked with implementing or using network monitoring solutions. All of these roles will benefit from understanding what can be achieved through the integration of network observability within a network automation strategy. Basic programming knowledge in Python and Go, familiarity with networking concepts, and a basic understanding of Docker containers for the lab scenarios.
+This book is intended for all network engineering roles such as network analysts, administrators, architects, security personnel, support staff, and managers working in both on-premises and cloud environments who are tasked with implementing or using network monitoring solutions. All of these roles will benefit from understanding what can be achieved through the integration of network observability within a network automation strategy. To get the most out of it, you should have basic programming knowledge in Python and Go, familiarity with networking concepts, and a basic understanding of Docker containers for the lab scenarios.
 
 ## What You Will Learn
 
-- Learn how network observability improve network operations
+- Learn how network observability improves network operations
 - Understand the main components of a network observability stack
 - Implement a complete solution using Telegraf, Prometheus, and Grafana
 - Identify multiple available solutions and their relevance to the stack
 - Use network observability to empower business decisions
-- How to orchestrate the solutions to simplify managing the stack
+- Orchestrate the solutions to simplify managing the stack
 
-## Get it today!
+## Get it today
 
-[:simple-amazon: Amazon](https://a.co/d/1SDM5EM){ .md-button}
+Modern Network Observability is published by Packt and available on [Amazon](https://a.co/d/1SDM5EM).
 
 ## Thank You
 

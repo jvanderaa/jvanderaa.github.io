@@ -14,6 +14,8 @@ toc: true
 ---
 This post dives into the [NetBox Ansible Content Collection](https://netbox-ansible-collection.readthedocs.io/en/latest/) module to create/update a [Site](https://netbox-ansible-collection.readthedocs.io/en/latest/plugins/modules/netbox_site/netbox.netbox.netbox_site_module.html). As I start into this series on looking at the modules that create/update/delete data from NetBox, the question that I keep asking myself is should I be looking at the modules that are creating/updating/deleting items? The reason that I ask this to myself is because I am a firm believer that automation should be coming from NetBox as its Source of Truth (SoT). You can hear/read plenty more about these thoughts on posts and videos here:
 
+<!-- more -->
+
 - [Minneapolis Ansible Meetup April 2020 Talk](https://www.youtube.com/watch?v=GyQf5F0gr3w&t)
 - [Ansible Guest Blog Post](https://www.ansible.com/blog/using-netbox-for-ansible-source-of-truth)
 

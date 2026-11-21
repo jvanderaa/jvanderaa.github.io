@@ -15,6 +15,8 @@ coverCaption: |
 
 Recently Slack started introducing a new UI that is bringing back the importance of knowing keyboard shortcuts. Keyboard shortcuts within Slack are immensely helpful in my day to day, and it is essential for me being able to keep up with what is going on within my organization and some of the other 20 Slack organizations that I have joined. So much so, I don't believe that once I am in the Slack UI on my machines, I am ever touching the mouse to get from one place to another. About the only time I may need to use the mouse is to scroll back in the thread, so I'm not even clicking when using the mouse.
 
+<!-- more -->
+
 {{< alert "circle-info">}}
 The keyboard shortcuts that I will be describing here will be demonstrated with `CMD + <keyboard key>`. These are for the Mac keyboard. If the Linux keyboard shortcuts of using the control key, should be the equivalent on the Windows platform as I understand it. If I am off on these keys, please let me know in the comments.
 {{< /alert >}}

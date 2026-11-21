@@ -16,6 +16,8 @@ sidebar:
 
 This originates from a conversation had on Twitter about how to get the IP Prefix information from an IPAM tool, specifically	NetBox using Ansible. There are a couple of methodologies to go through, and I had originally started down the path of using the URI module. Which could be done. The more elegant solution is to use the NetBox Ansible Collections to handle the logic for you! Let’s take a look.
 
+<!-- more -->
+
 Thank you to @ttl255 for the inspiration to the journey with the Collection!
 
 {{< alert "circle-info" >}}

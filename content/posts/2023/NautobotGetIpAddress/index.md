@@ -10,6 +10,8 @@ toc: true
 
 One of Nautobot's primary functions is to serve as an IPAM solution. Within that realm, the application needs to provide a method to get at IP address data for a device, quickly and easily. In this post I will review three prominent methods to get an IP address from Nautobot. It will demonstrate getting the address via:
 
+<!-- more -->
+
 - Nautobot REST API
   - curl
   - Python Requests

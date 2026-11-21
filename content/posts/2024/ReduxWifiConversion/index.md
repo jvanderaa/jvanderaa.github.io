@@ -17,6 +17,8 @@ params:
 
 This may be my favorite post within the realm of what is possible as I write this series. There are many more things that could be done, but we did pretty well considering. Going back over a decade now, I had the fortunate opportunity to work to deploy Guest WiFi 📶 for a large number of retail sites, with the heavy lifting of the work being done within a five month period of time. This post is about the conversion of access points from one management system to another.
 
+<!-- more -->
+
 <!--more-->
 
 ## The Task At Hand: Converting Management System

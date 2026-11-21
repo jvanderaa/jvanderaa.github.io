@@ -4,7 +4,7 @@ languageName = "English"
 weight = 1
 
 title = "Josh VanDeraa"
-copyright = "Copyright © 2025 Josh VanDeraa. All rights reserved."
+copyright = "Copyright © 2026 Josh VanDeraa. All rights reserved."
 
 [params]
   isoCode = "en"
@@ -17,7 +17,7 @@ copyright = "Copyright © 2025 Josh VanDeraa. All rights reserved."
   name = "Josh VanDeraa"
   image = "2025_ai_headshot.png"
   headline = "Network Automator"
-  bio = "Network Engineer turned to Automating networks via code."
+  bio = "Network engineer automating networks with code, and author of Open Source Network Management."
   links = [
     { linkedin = "https://linkedin.com/in/josh-vanderaa"},
     { mastodon = "https://fosstodon.org/@jvanderaa/"},

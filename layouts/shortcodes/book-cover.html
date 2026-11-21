@@ -1,0 +1,11 @@
+{{- /*
+  A floated book cover for book pages, resized from assets/.
+  Usage: {{< book-cover src="images/books/mno-cover.jpg" alt="Modern Network Observability cover" >}}
+*/ -}}
+{{- with resources.Get (.Get "src") -}}
+  {{- $one := .Resize "240x webp q85" -}}
+  {{- $two := .Resize "480x webp q85" -}}
+<img class="book-cover" src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x" width="{{ $one.Width }}" height="{{ $one.Height }}" alt="{{ $.Get "alt" }}" loading="lazy">
+{{- else -}}
+  {{- warnf "book-cover: image %q not found in assets/" ($.Get "src") -}}
+{{- end -}}

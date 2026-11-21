@@ -14,6 +14,8 @@ toc: true
 ---
 This is the first post as I shift into taking a closer look at the Nautobot Ansible Collection. The collection includes many of the needed modules to effectively manage your Nautobot environment. If  This will take a deeper dive into several of the components of the **inventory plugin**, but not all of the options. The documentation for all of the collection can be found at:
 
+<!-- more -->
+
 - ReadTheDocs: [https://nautobot-ansible.readthedocs.io](https://nautobot-ansible.readthedocs.io)
 - Galaxy Page: [https://galaxy.ansible.com/networktocode/nautobot](https://galaxy.ansible.com/networktocode/nautobot)  
 

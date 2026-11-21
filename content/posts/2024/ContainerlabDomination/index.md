@@ -14,6 +14,8 @@ params:
 
 Coming out of the 2024 AutoCon2 conference held in Denver the week of November 18th, 2024 - there is one thing that is standing out more so than anything else. Containerlab is a **HUGE** blowout success. In observing through several of the workshops at the conference on Monday and Tuesday, many were using Containerlab in some fashion. Now, Containerlab has been around for a while, so this isn't a press release of it. But it is re-affirming what many already know, that this is a great tool to be in the network engineer and network automator toolset.
 
+<!-- more -->
+
 <!--more-->
 
 ## What is Containerlab

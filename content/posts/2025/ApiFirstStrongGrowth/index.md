@@ -22,6 +22,8 @@ params:
 
 Recently, a discussion on the internal Slack at [Network to Code](https://networktocode.com) highlighted the "Amazon API Mandate" from 2002, a directive widely seen as transformative for Amazon. In the post (which can be found [here](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/)), the core tenet is clear: **All teams will henceforth expose their data and functionality through service interfaces.** Upon rereading this mandate, I was immediately reminded of why I am such a strong believer in this strategy. Let's take a deeper dive. First, the mandate included the following requirements:
 
+<!-- more -->
+
 1. All teams will henceforth expose their data and functionality through service interfaces.
 2. Teams must communicate with each other through these interfaces.
 3. There will be no other form of interprocess communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only communication allowed is via service interface calls over the network.
