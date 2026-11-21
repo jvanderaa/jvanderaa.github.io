@@ -1039,3 +1039,111 @@ html.dark .about-badges figcaption { color: rgb(var(--color-neutral-400)); }
   .prose img.book-cover { float: right; width: min(34%, 13rem); margin: 0.35rem 0 1rem 1.75rem; }
   article:has(img.book-cover) .prose h2 { clear: both; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Links page: jump nav, link cards, social row.                       */
+/* Plain CSS on Congo's color variables, like the About page styles.  */
+/* ------------------------------------------------------------------ */
+
+.link-lede { font-size: 1.125rem; color: rgb(var(--color-neutral-600)); }
+html.dark .link-lede { color: rgb(var(--color-neutral-300)); }
+
+.link-nav,
+.link-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.link-nav a,
+.link-social a {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgb(var(--color-neutral-300));
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+  color: rgb(var(--color-neutral-700));
+}
+
+.link-nav a:hover,
+.link-social a:hover {
+  border-color: rgb(var(--color-primary-500));
+  color: rgb(var(--color-primary-700));
+}
+
+html.dark .link-nav a,
+html.dark .link-social a { border-color: rgb(var(--color-neutral-600)); color: rgb(var(--color-neutral-200)); }
+html.dark .link-nav a:hover,
+html.dark .link-social a:hover { border-color: rgb(var(--color-primary-400)); color: rgb(var(--color-primary-300)); }
+
+.link-group { scroll-margin-top: 5rem; }
+
+.link-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .link-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(var(--color-neutral-200));
+  border-radius: 0.5rem;
+  background: rgb(var(--color-neutral-50));
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link-card:hover,
+.link-card:focus-within {
+  border-color: rgb(var(--color-primary-400));
+  box-shadow: 0 4px 12px -6px rgb(0 0 0 / 0.25);
+}
+
+.link-card__title {
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  color: rgb(var(--color-neutral-900));
+}
+
+.link-card__title:hover { color: rgb(var(--color-primary-700)); text-decoration: underline; }
+
+.link-card__by,
+.link-card__note { font-size: 0.875rem; line-height: 1.45; color: rgb(var(--color-neutral-600)); }
+
+.link-card__by a { color: rgb(var(--color-primary-700)); }
+
+.link-card__host {
+  margin-top: auto;
+  padding-top: 0.25rem;
+  font-size: 0.75rem;
+  color: rgb(var(--color-neutral-500));
+}
+
+html.dark .link-card { border-color: rgb(var(--color-neutral-700)); background: rgb(var(--color-neutral-800)); }
+html.dark .link-card__title { color: rgb(var(--color-neutral-100)); }
+html.dark .link-card__title:hover { color: rgb(var(--color-primary-300)); }
+html.dark .link-card__by,
+html.dark .link-card__note { color: rgb(var(--color-neutral-400)); }
+html.dark .link-card__by a { color: rgb(var(--color-primary-300)); }
+
+.link-group__note { font-size: 0.95rem; }
+
+:is(.link-nav, .link-social, .link-cards) a:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 2px;
+}

@@ -1,0 +1,339 @@
+# Links page data. Rendered by layouts/shortcodes/link-groups.html on content/links.md.
+#
+# Each group has:
+#   id:    anchor for the jump nav
+#   title: section heading
+#   intro: optional sentence, Markdown allowed
+#   note:  optional Markdown shown after the cards (tips, snippets)
+#   items: list of links
+#
+# Each item has:
+#   title: link text
+#   url:   destination
+#   note:  optional one-line description, Markdown allowed
+#   by:    optional author or show name
+#   social: optional {label, url} for a person's social profile
+#   review: optional reason the link is a candidate for removal. Not rendered;
+#           it is a reminder for the next cleanup pass. Checked 2026-11-21.
+
+- id: my-work-elsewhere
+  title: My work on other sites
+  items:
+    - title: Using NetBox as a SoT for Ansible + Diving into Ansible Filters
+      url: https://www.youtube.com/watch?v=GyQf5F0gr3w
+      by: Minneapolis Ansible Meetup
+      note: NetBox as your source of truth with Ansible, then using Ansible filters to audit NetBox data against device data.
+    - title: Introduction to Ansible for Network Automation
+      url: https://ignition.packetpushers.net/courses/ansible-for-network-automation/
+      by: Packet Pushers Ignition
+      note: A real-world introduction to network automation with Ansible, walking through common tasks with plenty of examples.
+      review: "Dead: ignition.packetpushers.net no longer resolves. The YouTube course playlist on the About page is the live copy."
+
+- id: podcasts
+  title: Podcast episodes worth your time
+  intro: Particular episodes that resonated with me.
+  items:
+    - title: CI/CD - See Why
+      url: https://zigbits.tech/zndp-033-ci-cd-see-why-with-nick-russo/
+      by: Zigbits Network Design
+      note: One of my favorites on CI/CD, including definitions and examples.
+    - title: Designing for DevOps with Nick Russo
+      url: https://zigbits.tech/zndp-030-designing-for-devops-with-nick-russo/
+      by: Zigbits Network Design
+      note: Nick Russo on designing networks for DevOps.
+    - title: Building a Network Automation Framework
+      url: https://packetpushers.net/podcasts/heavy-networking/HN402-building-a-network-automation-framework/
+      by: Packet Pushers, Heavy Networking
+      note: A long one with Ken Celenza, but excellent on what an automated environment looks like.
+      social: { label: "@itdependsnet", url: "https://x.com/itdependsnet" }
+    - title: The Source of Truth Shall Set You Free (To Automate)
+      url: https://packetpushers.net/podcasts/heavy-networking/HN442-the-source-of-truth-shall-set-you-free-to-automate/
+      by: Packet Pushers, Heavy Networking
+      note: NetBox, Grafana, and Influx in a modern company system.
+    - title: Zigbits.tech
+      url: https://zigbits.tech/
+      by: Zigbits Network Design
+      note: The show's home page.
+
+- id: blogs
+  title: Automation blogs I read
+  items:
+    - title: Byrn Baker
+      url: https://www.byrnbaker.me/
+    - title: Nick Russo
+      url: https://njrusmc.net/
+      social: { label: "@nickrusso42518", url: "https://x.com/nickrusso42518" }
+    - title: Katherine McNamara
+      url: https://www.network-node.com/
+      social: { label: "@kmcnam1", url: "https://x.com/kmcnam1" }
+    - title: John Capobianco
+      url: https://automateyournetwork.com/
+    - title: Jason Edelman
+      url: https://jedelman.com/
+      review: "Still online, but no recent posts."
+    - title: Ken Celenza
+      url: https://itdependsnetworks.com/
+    - title: Scott Lowe
+      url: https://blog.scottlowe.org/
+    - title: Kirk Byers
+      url: https://pynet.twb-tech.com/
+      note: Python for Network Engineers.
+
+- id: ansible
+  title: Ansible
+  items:
+    - title: Ken's list of links (awesome-network-automation)
+      url: https://github.com/networktocode/awesome-network-automation
+    - title: Network CLI connection types
+      url: https://docs.ansible.com/projects/ansible/latest/network/user_guide/platform_index.html
+    - title: Ansible Lint
+      url: https://github.com/ansible/ansible-lint
+    - title: Other tools and programs
+      url: https://docs.ansible.com/projects/ansible/latest/community/other_tools_and_programs.html
+    - title: Ansible ecosystem home page
+      url: https://docs.ansible.com/ecosystem.html
+    - title: Pinakes
+      url: https://github.com/ansible/pinakes/blob/devel/INSTALL.md
+      note: Self-service portal.
+      review: "Project inactive since April 2023."
+    - title: Ansible for DevOps
+      url: https://github.com/geerlingguy/ansible-for-devops
+      by: Jeff Geerling
+    - title: Ansible with Windows 10 (WSL)
+      url: https://www.jeffgeerling.com/blog/2017/using-ansible-through-windows-10s-subsystem-linux
+      by: Jeff Geerling
+      review: "404."
+    - title: Save IOS configs with Ansible
+      url: https://networklore.com/how-to-save-ios_config/
+    - title: Ansible 2.5 networking changes
+      url: https://www.redhat.com/en/blog/coming-soon-networking-features-in-ansible-2.5
+      review: "Ansible 2.5 is from 2018; long superseded by collections."
+    - title: IPvSean IP address filter
+      url: https://github.com/network-automation/ipaddr_filter
+      review: "No commits since 2019; ipaddr now lives in ansible.utils."
+    - title: Ansible Network Automation on GitHub
+      url: https://github.com/network-automation
+    - title: Ansible Networking on GitHub
+      url: https://github.com/ansible-network
+    - title: Building dynamic documentation using parser
+      url: https://github.com/ansible/workshops/tree/master/exercises/ansible_network/supplemental/3-1-parser
+      review: "404 on both the master and main branches."
+    - title: ASA for Vagrant
+      url: https://techbloc.net/archives/2360
+    - title: Copy SSH keys, playbook format, and more
+      url: https://gist.github.com/devynspencer/effa29af449c46477ac71213210e7043
+    - title: Create a dictionary from registered results
+      url: https://stackoverflow.com/questions/35605603/using-ansible-set-fact-to-create-a-dictionary-from-register-results
+    - title: Coding Packets Ansible
+      url: https://codingpackets.com/code/ansible/
+      review: "404."
+    - title: Setting up Ansible in Jenkins
+      url: https://medium.com/devops-process-and-tools/configure-jenkins-job-with-ansible-jenkins-plugin-to-setup-ci-for-ansible-playbooks-3ed23137d314
+
+- id: tools
+  title: Automation tools and data formats
+  note: "Nornir: content coming soon."
+  items:
+    - title: Cisco pyATS
+      url: https://developer.cisco.com/pyats/
+    - title: Genie parsers
+      url: https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers
+    - title: JSON in flat format (pycatj)
+      url: https://github.com/dbarrosop/pycatj
+      by: David Barroso
+    - title: Learn YAML in Y minutes
+      url: https://learnxinyminutes.com/docs/yaml/
+    - title: Template rendering online tester (TD4A)
+      url: https://td4a.codethenetwork.com/
+      review: "Times out; site appears to be down."
+    - title: DBeaver
+      url: https://dbeaver.io/
+      note: Database tool. Thanks @itdependsnet.
+    - title: Fabio load balancer
+      url: https://github.com/fabiolb/fabio
+    - title: PiKVM controlling four systems
+      url: https://blog.ktz.me/use-1-pikvm-instance-to-control-4-systems/
+    - title: Proxmox Kubernetes environment
+      url: https://blog.andreasm.io/2024/01/15/proxmox-with-opentofu-kubespray-and-kubernetes/
+
+- id: monitoring
+  title: Monitoring and telemetry
+  items:
+    - title: Getting started with streaming telemetry (IOS XE)
+      url: https://developer.cisco.com/docs/ios-xe/#!streaming-telemetry-quick-start-guide/streaming-telemetry
+      review: "Redirects to a generic IOS XE guide list; the quick-start page is gone."
+    - title: Scaling IOS-XR telemetry with InfluxDB
+      url: https://community.cisco.com/t5/service-providers-documents/how-to-scale-ios-xr-telemetry-with-influxdb/ta-p/4442024
+    - title: Panos2Grafana
+      url: https://github.com/vbarahona/Panos2Grafana
+      review: "No commits since 2021."
+    - title: Panograf
+      url: https://github.com/stealthllama/panograf
+      review: "No commits since 2021."
+    - title: APC UPS monitoring with TICK and Grafana
+      url: https://opsandautomation.com/2018/10/24/monitoring-your-apc-ups-with-the-tick-stack-and-grafana/
+      review: "2018 TICK stack; the OSNM book covers a current stack."
+
+- id: python
+  title: Python and Netmiko
+  items:
+    - title: Real Python code quality
+      url: https://realpython.com/python-code-quality/
+    - title: Python cheat sheets
+      url: https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/
+    - title: Bandit (security linter)
+      url: https://pypi.org/project/bandit/
+    - title: Python switch/case statement
+      url: https://jaxenter.com/implement-switch-case-statement-python-138315.html
+      review: "Redirects to a generic devm.io blog page; also obsolete now that Python 3.10 has match/case."
+    - title: Loading base configs into VIRL images (GNS3)
+      url: https://github.com/ktbyers/netmiko/issues/721
+    - title: Threading with Netmiko example
+      url: https://github.com/tyler-8/pynet-ons-oct17/blob/master/threads_procs/cf_usage.py
+    - title: Cisco YANG Development Kit on GitHub
+      url: https://github.com/CiscoDevNet/ydk-py
+      review: "Repository archived by Cisco."
+    - title: Cisco YANG Development Kit docs
+      url: http://ydk.cisco.com/py/docs/getting_started.html
+      review: "Dead: ydk.cisco.com no longer resolves."
+
+- id: network-tech
+  title: Network design and technology
+  items:
+    - title: VXLAN overview
+      url: https://networkdirection.net/articles/routingandswitching/vxlanoverview/
+      by: Network Direction
+    - title: VXLAN overview video
+      url: https://www.youtube.com/watch?v=YNqKDI_bnPM
+    - title: Ansible playbook to push VXLAN VNIs
+      url: https://www.chasewright.com/blog/using-ansible-push-new-vxlan-vnis/
+    - title: BGP in EVPN-based data center fabrics
+      url: https://blog.ipspace.net/2018/04/bgp-in-evpn-based-data-center-fabrics/
+      by: Ivan Pepelnjak
+    - title: Cisco DC spine and leaf design white paper
+      url: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-7000-series-switches/white-paper-c11-737022.html
+      review: "Nexus 7000 is end of life."
+    - title: Cisco security events via syslog
+      url: https://www.cisco.com/c/en/us/about/security-center/identify-incidents-via-syslog.html
+    - title: "Spanning tree: Nexus 5000 guide"
+      url: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5000/sw/configuration/guide/cli/CLIConfigurationGuide/SpanningEnhanced.html
+      review: "Nexus 5000 is end of life."
+    - title: "Spanning tree: Catalyst 2960 guide"
+      url: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-2_53_se/configuration/guide/2960scg/swstp.html
+      review: "IOS 12.2 on Catalyst 2960, end of life."
+    - title: VSS configuration guide
+      url: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/vss.html
+      review: "Catalyst 6500 IOS 12.2SX, end of life."
+    - title: Guide to better SSH security
+      url: https://supportforums.cisco.com/t5/security-documents/guide-to-better-ssh-security/ta-p/3133344
+      review: "Old supportforums.cisco.com URL; could not verify it still resolves to the document."
+    - title: Catalyst 9300 management port (16.10)
+      url: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/16-10/configuration_guide/int_hw/b_1610_int_and_hw_9300_cg/configuring_ethernet_management_port.pdf
+      review: "IOS XE 16.10 guide, several releases old."
+    - title: Cumulus command comparison
+      url: https://www.slideshare.net/ScottSuehle/cumulus-networks-conversion-guide
+      review: "Cumulus Linux is now NVIDIA; deck is years old."
+
+- id: labs
+  title: Labs and simulators
+  note: |
+    If you're connecting to GNS3 with Netmiko, this may help:
+
+    ```python
+    net_connect = ConnectHandler(
+        device_type='generic_termserver_telnet',        # changed
+        ip='127.0.0.1',
+        username='pyclass',
+        password='cisco',
+        global_delay_factor=4,
+        default_enter='\r\n',
+        port=5000)
+    ```
+  items:
+    - title: Cisco DevNet Sandbox (online VIRL)
+      url: https://developer.cisco.com/sandbox
+    - title: Introducing free VIRL (video)
+      url: https://www.youtube.com/watch?v=S0jfZLobFdU
+      review: "VIRL was replaced by Cisco Modeling Labs in 2020."
+    - title: Automate your network labs with Ansible and GNS3
+      url: https://davidban77.hashnode.dev/automate-your-network-labs-with-ansible-and-gns3-part-1
+      by: NetPanda
+    - title: VXLAN in GNS3 with CSR1000V and OSPF
+      url: https://gns3.com/community/blog/vxlan-in-gns3-using-ospf
+    - title: GNS3 DMVPN intro
+      url: http://resources.intenseschool.com/gns3-lab-introduction-to-dmvpn/
+      review: "Dead: resources.intenseschool.com no longer resolves."
+    - title: GNS3 Python for Network Engineers course (paid)
+      url: http://academy.gns3.com/p/python-for-network-engineers-netmiko-napalm-pyntc-telnet-ssh-and-more-learn-to-code
+      review: "Redirects to the GNS3 Teachable home page; course page is gone."
+    - title: Greg Mueller YouTube series
+      url: https://www.youtube.com/playlist?list=PLtw40n4ybvFoHoigW7IwITNilmZn2cfNv
+    - title: Getting started with network Vagrant images
+      url: https://codingpackets.com/blog/#vagrant
+
+- id: web-dev
+  title: Web development
+  intro: |
+    Django was my original network development platform, picked because Flask made it hard to get a "pretty" Bootstrap look. Today I'd point network engineers at Flask first, and the Flask Mega-Tutorial is well worth the purchase.
+  items:
+    - title: Flask Mega-Tutorial
+      url: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+      by: Miguel Grinberg
+    - title: Flask authentication with LDAP
+      url: https://code.tutsplus.com/flask-authentication-with-ldap--cms-23101t
+    - title: Django LDAP example
+      url: https://github.com/etianen/django-python3-ldap
+    - title: GitHub Pages with Jekyll
+      url: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
+      review: "This site moved to Hugo."
+
+- id: cheat-sheets
+  title: Cheat sheets
+  items:
+    - title: Markdown cheat sheet
+      url: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+    - title: Markdown quick reference (WordPress)
+      url: https://wordpress.com/support/markdown-quick-reference/
+    - title: Packet Life protocol cheat sheets
+      url: http://packetlife.net/library/cheat-sheets/
+      review: "Dead: packetlife.net no longer resolves."
+    - title: Online subnet calculator
+      url: http://ccna.exampointers.com/sub.php
+
+- id: workstation
+  title: Workstation, home office, and more
+  items:
+    - title: USB-C 4K video explained
+      url: https://www.bigmessowires.com/2019/05/19/explaining-4k-60hz-video-through-usb-c-hub/
+    - title: macOS setup guide
+      url: https://sourabhbajaj.com/mac-setup/
+      by: Sourabh Bajaj
+    - title: Standing desk
+      url: https://www.autonomous.ai/standing-desks/smart-desk-2-home
+      review: "The Smart Desk 2 product page now redirects to a different desk."
+    - title: Raspberry Pi as a DNS server
+      url: https://forums.raspberrypi.com/viewtopic.php?t=46154
+    - title: Raw dnsmasq role for the Pi DNS server
+      url: https://raw.githubusercontent.com/stephen-mw/raspberrypi/master/roles/dnsmasq_server
+    - title: "Build a portfolio, not just a resume"
+      url: http://packetpushers.net/go-beyond-resume-build-portfolio-career-video/
+      by: Packet Pushers
+      review: "Redirects to the Packet Pushers blog index; the article is gone."
+    - title: Admiral McRaven at UT
+      url: https://www.youtube.com/watch?v=pxBQLFLei70
+      note: Inspiration.
+
+- id: sublime
+  title: Sublime Text
+  items:
+    - title: Sublime Text
+      url: https://www.sublimetext.com/
+    - title: Package Control syncing
+      url: https://packagecontrol.io/docs/syncing
+    - title: "Mac: map Home and End keys"
+      url: https://www.coderwall.com/p/upolqw/fix-sublime-text-home-and-end-key-usage-on-mac-osx
+    - title: Spacegray themes
+      url: https://github.com/phackwer/spacegray
+      review: "No commits since 2016."
+    - title: Open Sublime from the terminal
+      url: https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal
