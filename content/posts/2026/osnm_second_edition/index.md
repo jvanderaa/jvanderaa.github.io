@@ -6,7 +6,7 @@ categories:
 - book
 title: "Open Source Network Management Second Edition"
 summary: >
-  Announcing today, the availability of the second edition of my book Open Source Network Management. The book is now available first only at https://osnm.josh-v.com for digital purchase. You can pre-order for the physical book + digital bundle today and get the both. Physical books are expected in August.
+  The second edition of my book Open Source Network Management is out. Digital, paperback, and digital + print bundles are all available now at https://osnm.josh-v.com, and print copies have been shipping since August 28.
 toc: true
 tags:
   - open-source
@@ -21,6 +21,11 @@ coverAlt: >
 params:
   showComments: true
 ---
+
+> [!NOTE]
+> **Update (November 2026):** The paperback is here. Print copies started shipping on August 28, and digital, print, and bundle orders all ship now from [osnm.josh-v.com](https://osnm.josh-v.com/).
+
+{{< osnm-cta >}}
 
 Today (July 11, 2026) I'm announcing the availability of the second edition of my book - Open Source Network Management. This is an updated version on the writing that I put together several years ago about how to manage networks using Open Source tooling. I wanted to take the time to get an update out and make a few general updates as well to the guide. On top of the initial writing, I'm also working on alternative chapters or a take on a "Choose Your Own Adventure" books that I used to love as a kid. I'm working on putting together additional chapters with tooling that I think Enterprises may want to adopt in order to continue managing networks in a new, modern way.
 
@@ -42,6 +47,8 @@ A lot of the rest is remaining consistent, but there are new capabilities within
 
 ## Summary
 
-You can get your copy now, it is live at https://osnm.josh-v.com. The digital versions are available now and the bundle of digital + physical print is available for pre-order, with the digital versions being delivered immediately. Let me know your thoughts on the book below.
+You can get your copy now at [osnm.josh-v.com](https://osnm.josh-v.com/). Digital, paperback, and the digital + print bundle are all available, and you can read the full first chapter before you buy. Let me know your thoughts on the book below.
+
+{{< osnm-cta >}}
 
 -Josh
