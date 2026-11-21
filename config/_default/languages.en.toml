@@ -1,6 +1,6 @@
 # config/_default/languages.en.toml
-languageCode = "en"
-languageName = "English"
+locale = "en"
+label = "English"
 weight = 1
 
 title = "Josh VanDeraa"

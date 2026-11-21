@@ -19,6 +19,7 @@ The theme is loaded two ways: Hugo modules (`config/_default/module.toml` + `go.
 
 ## Content structure
 
+- See `WRITING_STYLE.md` for Josh's blog voice, tone, and post-structure guidelines.
 - Posts are page bundles: `content/posts/<YYYY>/<PostTitle>/index.md` with a `feature.jpg`/`feature.png` cover image alongside.
 - Permalinks strip the date: posts publish at `/:slug` (set `slug:` in front matter or the bundle directory name is used).
 - Front matter is YAML: `date`, `title`, `summary`, `categories`, `tags`, `author: jvanderaa`, `coverAlt`, `coverCaption` (HTML attribution for Unsplash images), `params.showComments`.

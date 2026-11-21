@@ -1,24 +1,38 @@
-{{- $src := .Destination -}}
+{{- $url := urls.Parse .Destination -}}
 {{- $alt := .PlainText -}}
 {{- $title := .Title -}}
-{{- $class := "" -}}
+{{- $imgClass := "mx-auto my-0 rounded-md" -}}
+{{- $figureClass := "" -}}
+{{- $src := .Destination -}}
 
-{{- if strings.HasSuffix $src "#light-mode" -}}
+{{- if eq $url.Fragment "light-mode" -}}
   {{- $src = strings.TrimSuffix "#light-mode" $src -}}
-  {{- $class = "img-light-mode" -}}
-{{- else if strings.HasSuffix $src "#dark-mode" -}}
+  {{- $figureClass = "img-light-mode" -}}
+{{- else if eq $url.Fragment "dark-mode" -}}
   {{- $src = strings.TrimSuffix "#dark-mode" $src -}}
-  {{- $class = "img-dark-mode" -}}
+  {{- $figureClass = "img-dark-mode" -}}
 {{- end -}}
 
-{{- if $class -}}
-<figure class="{{ $class }}">
-  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="mx-auto my-0 rounded-md">
-  {{- with $title }}<figcaption class="text-center">{{ . }}</figcaption>{{ end -}}
-</figure>
-{{- else -}}
-<figure>
-  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="mx-auto my-0 rounded-md">
-  {{- with $title }}<figcaption class="text-center">{{ . }}</figcaption>{{ end -}}
-</figure>
+{{- $file := $url.Path -}}
+{{- $img := .Page.Resources.GetMatch $file -}}
+{{- if and (not $img) .Page.File -}}
+  {{- $path := path.Join .Page.File.Dir $file -}}
+  {{- $img = resources.Get $path -}}
 {{- end -}}
+
+{{- $lazy := .Page.Site.Params.enableImageLazyLoading | default true -}}
+{{- $webp := .Page.Site.Params.enableImageWebp | default true -}}
+{{- $x2 := eq ($url.Query.Get "2x") "true" -}}
+
+<figure{{ with $figureClass }} class="{{ . }}"{{ end }}>
+  {{- with $img -}}
+    {{- if eq .MediaType.SubType "gif" -}}
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="{{ $imgClass }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }} />
+    {{- else -}}
+      {{- partial "picture.html" (dict "img" . "alt" $alt "class" $imgClass "x2" $x2 "lazy" $lazy "webp" $webp) -}}
+    {{- end -}}
+  {{- else -}}
+    <img src="{{ $src | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} class="{{ $imgClass }}"{{ if $lazy }} loading="lazy" decoding="async"{{ end }} />
+  {{- end -}}
+  {{- with $title }}<figcaption class="text-center">{{ . | markdownify }}</figcaption>{{ end -}}
+</figure>

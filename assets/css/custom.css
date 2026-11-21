@@ -602,39 +602,66 @@ html.dark .chroma .gt { color:#bf616a }
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not(.light) .tab-container,
-  html.dark .tab-container {
+  html:not(.light) .tab-container {
     border-color: #374151;
   }
 
-  html:not(.light) .tab-header,
-  html.dark .tab-header {
+  html:not(.light) .tab-header {
     background: #111827;
     border-color: #374151;
   }
 
-  html:not(.light) .tab-button,
-  html.dark .tab-button {
+  html:not(.light) .tab-button {
     color: #d1d5db;
   }
 
-  html:not(.light) .tab-button:not(.active):hover,
-  html.dark .tab-button:not(.active):hover {
+  html:not(.light) .tab-button:not(.active):hover {
     color: #f9fafb;
   }
 
-  html:not(.light) .tab-button.active,
-  html.dark .tab-button.active {
+  html:not(.light) .tab-button.active {
     background: #1f2937;
     color: #f9fafb;
     box-shadow: 0 -1px 0 #1f2937 inset, 0 1px 0 #374151 inset;
   }
 
-  html:not(.light) .tab-content,
-  html.dark .tab-content {
+  html:not(.light) .tab-content {
     background: #1f2937;
   }
 }
+
+html.dark .tab-container {
+  border-color: #374151;
+}
+
+html.dark .tab-header {
+  background: #111827;
+  border-color: #374151;
+}
+
+html.dark .tab-button {
+  color: #d1d5db;
+}
+
+html.dark .tab-button:not(.active):hover {
+  color: #f9fafb;
+}
+
+html.dark .tab-button.active {
+  background: #1f2937;
+  color: #f9fafb;
+  box-shadow: 0 -1px 0 #1f2937 inset, 0 1px 0 #374151 inset;
+}
+
+html.dark .tab-content {
+  background: #1f2937;
+}
+
+/* Newsletter form feedback states */
+.subscribe-msg--error { color: #dc2626; }
+.subscribe-msg--ok { color: #16a34a; }
+html.dark .subscribe-msg--error { color: #f87171; }
+html.dark .subscribe-msg--ok { color: #4ade80; }
 
 
 /* -------------------------------------------------------------------------- */
