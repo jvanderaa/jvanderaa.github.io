@@ -34,7 +34,7 @@ based configuration. The newer modules being written by the Ansible team have an
 configuration to them. This being that you need to send through your entire defined state to the
 modules, or else they will be seen as intended to have a blank configuration. The modules will then
 configure the devices as such. To see more on that look at my
-[post on the interfaces module](https://josh-v.com/blog/2020/01/26/ansible-cisco-ios-interfaces-module.html).
+[post on the interfaces module](https://josh-v.com/ansible-cisco-ios-interfaces-module/).
 
 If you are running an OS in your network that is Linux based, then you are in luck as well! Continue
 to the next section about Linux automation.

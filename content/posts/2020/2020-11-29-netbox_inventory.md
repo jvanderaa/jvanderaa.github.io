@@ -33,7 +33,7 @@ The purpose of the NetBox Inventory plugin is to provide an inventory to use wit
 
 ## Install
 
-Please checkout the first post in the series for the [getting started / installation](https://www.josh-v.com/netbox_ansible_collection/collection_install/) process. 
+Please checkout the first post in the series for the [getting started / installation](https://josh-v.com/netbox-collection-install/) process. 
 
 ## Environment
 

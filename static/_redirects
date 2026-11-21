@@ -1,3 +1,45 @@
 # RSS feed aliases - serve index.xml content at legacy feed URLs
 /feed.xml /index.xml 200
 /feed_rss_created.xml /index.xml 200
+
+# Netbox collection install post moved off the slug it shared with the Nautobot install post
+/netbox_ansible_collection/collection_install/ /netbox-collection-install/ 301
+/netbox_ansible_collection/collection_install /netbox-collection-install/ 301
+/netbox_ansible_collection/* /:splat 301
+
+# Legacy Jekyll post URLs (/blog/YYYY/MM/DD/slug.html) from 2018-2020
+/blog/2018/06/17/ansible-blocks.html /ansible-blocks/ 301
+/blog/2018/11/11/network-cicd.html /network-cicd/ 301
+/blog/2018/11/22/blog_getting_started.html /getting-started-with-the-blog/ 301
+/blog/2018/11/24/keeping-up-on-tech.html /keeping-up-on-tech/ 301
+/blog/2018/12/06/microsegmentation.html /microsegmentation/ 301
+/blog/2018/12/08/discontiguous_masks.html /discontiguous_masks/ 301
+/blog/2019/01/05/ansible-output-work.html /ansible-output-work/ 301
+/blog/2019/01/12/ansible-cli-vs-ios-high-level.html /ansible-cli-vs-ios-high-level/ 301
+/blog/2019/01/27/ansible-network-engine-ntc-templates.html /ansible-network-engine-ntc-templates/ 301
+/blog/2019/02/10/ansible-ios-banner.html /ansible-ios-banner/ 301
+/blog/2019/03/09/ansible-ios-vlan.html /ansible-ios-vlan/ 301
+/blog/2019/03/17/ansible-cisco-ios-interface.html /ansible-cisco-ios-interface/ 301
+/blog/2019/03/30/ansible-saving-cisco-configs-ios.html /ansible-saving-cisco-configs-ios/ 301
+/blog/2019/06/20/ansible-asa-command.html /ansible-asa-command/ 301
+/blog/2019/06/23/ansible-asa-og.html /ansible-asa-og/ 301
+/blog/2019/07/14/ansible-ios-bgp-module.html /ansible-ios-bgp-module/ 301
+/blog/2019/08/04/eveng-for-autoamtion-practice-and-testing.html /eveng-for-autoamtion-practice-and-testing/ 301
+/blog/2019/10/19/ansible-cli-vs-ios-command.html /ansible-cli-vs-ios-command/ 301
+/blog/2019/11/14/disney_plus_streaming.html /disney_plus_streaming/ 301
+/blog/2020/01/26/ansible-cisco-ios-interfaces-module.html /ansible-cisco-ios-interfaces-module/ 301
+/blog/2020/03/14/ansible-cisco-ios-user.html /ansible-cisco-ios-user/ 301
+/blog/2020/06/21/apple_automator.html /apple_automator/ 301
+/blog/2020/06/27/docker_for_automation_environment_ansible_210.html /docker_for_automation_environment_ansible_210/ 301
+/blog/2020/08/09/ansible_for_enterprise.html /ansible_for_enterprise/ 301
+/blog/2020/11/01/practicing_with_gns3.html /practicing_with_gns3/ 301
+/blog/2020/11/18/blog_update_v2.html /blog_update_v2/ 301
+/blog/2020/11/21/homeassistant-prometheus.html /homeassistant-prometheus/ 301
+/blog/2020/11/22/netbox_ansible_allocate_prefix_ipaddress.html /netbox_ansible_allocate_prefix_ipaddress/ 301
+/blog/2020/11/28/jekyll-url-redirection.html /jekyll-url-redirection/ 301
+/blog/2020/11/28/collection_install.html /netbox-collection-install/ 301
+/blog/2020/11/29/netbox-ansible-inventory_plugin.html /netbox-ansible-inventory_plugin/ 301
+/blog/2020/12/12/netbox-ansible-lookup-plugin.html /netbox-ansible-lookup-plugin/ 301
+/blog/2020/12/13/netbox-ansible-sites.html /netbox-ansible-sites/ 301
+/blog/2020/12/20/netbox-ansible-manufacturers.html /netbox-ansible-manufacturers/ 301
+/blog/2020/12/20/netbox-ansible-platforms.html /netbox-ansible-platforms/ 301

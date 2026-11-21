@@ -187,7 +187,7 @@ Now when you go to execute the job, you are able to get the `show version` outpu
 
 ## Summary
 
-With Nautobot, there are many ways that you can get started with executing your own custom Jobs. By using Nautobot Jobs you can centralize your power scripts into one place, allowing for those power scripts to be put to use and then some by the entire organization, not just a select few. Take some design caution in what you do make available though. Nautobot centralizes, but also provides for authentication, user logging, and creates an API that is available for use to others. Looking for more on how the Jobs are an API endpoint, take a look at my [previous post on creating that API endpoint.](https://josh-v.com/nautobot-jobs-your-custom-api-endpoint/)
+With Nautobot, there are many ways that you can get started with executing your own custom Jobs. By using Nautobot Jobs you can centralize your power scripts into one place, allowing for those power scripts to be put to use and then some by the entire organization, not just a select few. Take some design caution in what you do make available though. Nautobot centralizes, but also provides for authentication, user logging, and creates an API that is available for use to others. Looking for more on how the Jobs are an API endpoint, take a look at my [previous post on creating that API endpoint.](https://josh-v.com/nautobot-jobs-execution/)
 
 Thanks for the read and Happy Automating!
 

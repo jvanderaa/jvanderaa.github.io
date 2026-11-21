@@ -109,7 +109,7 @@ a file, but you can also have a variable of say output from a previous command r
 Line 5: `name`, this is where you will store the output data, it will be in a structured format
 
 > This will not get into reading the output of the structured data. For more on that please take a
-> look back at my [previous post on working without output](https://josh-v.com/blog/2019/01/05/ansible-output-work.html) 
+> look back at my [previous post on working without output](https://josh-v.com/ansible-output-work/) 
 
 The original tricky part was the part about the `File`. Originally a lot of posts related to having
 a parser file all set to go. My original thinking was I don't see those parsers, but they are in the
