@@ -2,6 +2,9 @@
 
 colorScheme = "ocean"
 
+# Default social share image for pages without their own feature image.
+images = ["images/og-default.png"]
+
 defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
 

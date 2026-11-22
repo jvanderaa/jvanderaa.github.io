@@ -73,6 +73,7 @@
 #   pageRef = "privacy"
 [[footer]]
   name = "GitHub"
+  title = "GitHub"
   url = "https://github.com/jvanderaa/"
   weight = 100
   [footer.params]
@@ -82,6 +83,7 @@
 
 [[footer]]
   name = "LinkedIn"
+  title = "LinkedIn"
   url = "https://www.linkedin.com/in/josh-vanderaa/"
   weight = 70
   [footer.params]
@@ -91,6 +93,7 @@
 
 [[footer]]
   name = "Mastodon"
+  title = "Mastodon"
   url = "https://fosstodon.org/@jvanderaa/"
   weight = 75
   [footer.params]
@@ -100,6 +103,7 @@
 
 [[footer]]
   name = "Twitter"
+  title = "X (Twitter)"
   url = "https://twitter.com/vanderaaj/"
   weight = 80
   [footer.params]
@@ -109,6 +113,7 @@
 
 [[footer]]
   name = "Blue Sky"
+  title = "Bluesky"
   url = "https://bsky.app/profile/joshv.me"
   weight = 77
   [footer.params]
