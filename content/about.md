@@ -1,8 +1,8 @@
 ---
 title: About
-description: Josh VanDeraa is a network engineer who automates networks with code, author of Open Source Network Management, and a speaker at user groups and conferences.
+description: Josh VanDeraa is a network automation leader who got his start as a network engineer. Author of Open Source Network Management, co-author of Modern Network Observability and Network Automation with Nautobot, and a speaker at user groups and conferences.
 date: 2023-06-13
-lastmod: 2026-11-21
+lastmod: 2026-11-22
 draft: false
 showWordCount: false
 showReadingTime: false
@@ -19,7 +19,7 @@ showEdit: false
 {{< about-hero image="2025_ai_headshot.png" name="Josh VanDeraa" >}}
 <p class="about-hero__hello">Hi, I'm Josh.</p>
 
-I'm a network engineer from the Twin Cities who has spent the last decade automating networks with code. At [Network to Code](https://networktocode.com/) I deliver network automation solutions built on open source tools, with a lot of focus on network observability and on Nautobot as the network source of truth.
+I'm a network automation leader from the Twin Cities who got my start as a network engineer. At [Network to Code](https://networktocode.com/) I lead network automation work built on open source tools, with a lot of focus on Nautobot as the network source of truth, network observability, and lately the AI tools that are starting to do real work.
 
 I share what I learn here on the blog, in books, and on stage at user groups and conferences.
 
@@ -33,11 +33,11 @@ I share what I learn here on the blog, in books, and on stage at user groups and
 
 ## How I got here
 
-I came to network automation the long way around. My degree is in networking, and I spent years as a network engineer before code became part of the job. In 2015 a conference speaker walked through how they had built the event's NOC on Python-driven automation, and I've been working my way down that rabbit hole ever since. It started with Ansible and Python, and has grown into source of truth, telemetry, and CI/CD for the network.
+I came to network automation the long way around. My degree is in networking, and I spent years as a network engineer before code became part of the job. In 2015 a conference speaker walked through how they had built the event's NOC on Python-driven automation, and I've been working my way down that rabbit hole ever since. It started with Ansible and Python, and has grown into source of truth, telemetry, CI/CD for the network, and now AI.
 
 When Cisco launched its DevNet certification program in 2020, I was one of the first 500 people to earn a DevNet certification, starting with the DevNet Associate and following up with the DevNet Professional.
 
-The writing grew out of this blog. During the pandemic I wrote *Open Source Network Management*. That led to co-authoring two Packt books in 2024 and, in 2026, a rebuilt second edition of that first book.
+The writing grew out of this blog. During the pandemic I wrote *Open Source Network Management*. That led to co-authoring two Packt books in 2024, *Network Automation with Nautobot* and *Modern Network Observability*, and, in 2026, a rebuilt second edition of that first book.
 
 ## Books
 
