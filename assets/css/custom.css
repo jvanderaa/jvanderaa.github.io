@@ -199,6 +199,20 @@ html.dark .reading-bar {
   .reading-agenda__header { cursor: default; }
 }
 
+/* End-of-post newsletter sign-up (layouts/_partials/sharing-links.html). */
+.post-subscribe {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid rgb(var(--color-primary-200));
+  border-radius: 0.5rem;
+  background: rgb(var(--color-primary-50));
+}
+.post-subscribe__title { margin: 0 0 0.25rem; font-size: 1.15rem; font-weight: 700; color: rgb(var(--color-neutral-900)); }
+.post-subscribe__text { margin: 0 0 0.85rem; font-size: 0.95rem; color: rgb(var(--color-neutral-700)); }
+html.dark .post-subscribe { border-color: rgb(var(--color-neutral-700)); background: rgb(var(--color-neutral-800)); }
+html.dark .post-subscribe__title { color: rgb(var(--color-neutral-100)); }
+html.dark .post-subscribe__text { color: rgb(var(--color-neutral-300)); }
+
 /* Mobile reading bar: pinned to the top once the in-page agenda scrolls away. */
 .reading-bar {
   position: fixed;

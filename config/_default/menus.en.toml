@@ -42,6 +42,11 @@
   weight = 25
 
 [[main]]
+  name = "Subscribe"
+  pageRef = "subscribe"
+  weight = 40
+
+[[main]]
   name = "Tags"
   pageRef = "tags"
   weight = 30
