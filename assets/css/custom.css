@@ -1257,3 +1257,35 @@ html.dark .link-card__by a { color: rgb(var(--color-primary-300)); }
   outline: 2px solid rgb(var(--color-primary-500));
   outline-offset: 2px;
 }
+
+/*
+ * Site footer layout.
+ * Congo stacks footer menu links vertically and right-aligns them on phones,
+ * which suits text links but strands our icon-only social links on the right.
+ * Show them as a centered row instead, and put the subscribe block first so
+ * the footer reads: subscribe, socials, copyright.
+ */
+footer.py-10 {
+  display: flex;
+  flex-direction: column;
+}
+footer.py-10 > div.mt-8 {
+  order: -1;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgb(var(--color-neutral-200));
+}
+html.dark footer.py-10 > div.mt-8 {
+  border-bottom-color: rgb(var(--color-neutral-600));
+}
+@media (max-width: 639.98px) {
+  footer.py-10 > nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.75rem;
+  }
+  footer.py-10 > nav li {
+    margin-bottom: 0;
+  }
+}
