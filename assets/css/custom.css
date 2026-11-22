@@ -1039,3 +1039,37 @@ html.dark .about-badges figcaption { color: rgb(var(--color-neutral-400)); }
   .prose img.book-cover { float: right; width: min(34%, 13rem); margin: 0.35rem 0 1rem 1.75rem; }
   article:has(img.book-cover) .prose h2 { clear: both; }
 }
+
+/*
+ * Tailwind utility shim.
+ * Congo ships a precompiled Tailwind 3 stylesheet, so utility classes that
+ * Congo itself never uses are absent from the bundle and silently do nothing
+ * in our templates. These are the ones our subscribe form and footer rely on.
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.mt-2 { margin-top: 0.5rem; }
+.max-w-md { max-width: 28rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.flex-1 { flex: 1 1 0%; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.text-white { color: #fff; }
+.placeholder-neutral-400::placeholder { color: rgba(var(--color-neutral-400), 1); }
+.dark .dark\:placeholder-neutral-500::placeholder { color: rgba(var(--color-neutral-500), 1); }
+.hover\:bg-primary-700:hover { background-color: rgba(var(--color-primary-700), 1); }
+.focus\:border-primary-500:focus { border-color: rgba(var(--color-primary-500), 1); }
+.focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+@media (min-width: 640px) {
+  .sm\:justify-center { justify-content: center; }
+}
+
