@@ -16,5 +16,31 @@
     "archive/**",
     "_archive/**",
     "temp/**"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Keep HUGO_VERSION in GitHub workflows in step with .tool-versions",
+      "managerFilePatterns": [
+        "/^\\.github/workflows/.+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "HUGO_VERSION: (?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "hugo",
+      "packageNameTemplate": "gohugoio/hugo",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Bump Hugo in .tool-versions and workflows in one PR",
+      "matchPackageNames": [
+        "hugo",
+        "gohugoio/hugo"
+      ],
+      "groupName": "hugo"
+    }
   ]
 }
