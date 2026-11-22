@@ -115,7 +115,7 @@ see with the _ios_config_ module.
 #### Lab Setup
 
 The lab setup for this is pretty simple. I have added a Cisco IOS L2 switch image to the previous
-lab that I had in the [previous post](https://josh-v.com/blog/2019/01/05/ansible-output-work.html).
+lab that I had in the [previous post](https://josh-v.com/ansible-output-work/).
 This is really just for a device to connect to.
 
 I am configuring a port channel, only because that is something that I had lined up quick in the

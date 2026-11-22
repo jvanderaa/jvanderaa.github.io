@@ -21,7 +21,7 @@ sidebar:
   nav: ansible
 ---
 
-In an earlier [post](https://josh-v.com/blog/2019/01/12/ansible-cli-vs-ios-high-level.html) I
+In an earlier [post](https://josh-v.com/ansible-cli-vs-ios-high-level/) I
 covered the differences between `ios_config` and  `cli_config`. However I did not cover what the
 difference was between `ios_command` and `cli_command`. Most of the items covered there remain the
 same. So this will be a post that mostly gets straight to it and sees what the difference is.  

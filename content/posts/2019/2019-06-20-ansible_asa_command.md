@@ -165,7 +165,7 @@ asa1                       : ok=3    changed=0    unreachable=0    failed=0    s
 
 This is another example of how to issue multiple commands against a device
 within a single task. For a deeper dive on that you can see an earlier post
-[here](https://josh-v.com/blog/2019/01/05/ansible-output-work.html).
+[here](https://josh-v.com/ansible-output-work/).
 
 ## Summary
 

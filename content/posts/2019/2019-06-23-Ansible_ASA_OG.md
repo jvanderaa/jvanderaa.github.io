@@ -39,7 +39,7 @@ be able to see and get access to if necessary. This will improve as I continue.
 > When working with this module there is not an option to save the configuration
 > available with it. Please remember this in your playbook logic. If needing
 > to save the configuration there are options. Take a look for samples on my
-> previous post [Saving Configurations](https://josh-v.com/blog/2019/03/30/ansible-saving-cisco-configs-ios.html)
+> previous post [Saving Configurations](https://josh-v.com/ansible-saving-cisco-configs-ios/)
 > which does not include an example with ASAs yet. I will have to write a follow
 > up post on this at which point I will update hte link and content.
 
@@ -102,7 +102,7 @@ fw01# show run | i RFC 1918
 We see that there is not the object group that is desired to be there.  
 
 We are going to modify the _Playbook_ created in the last blog post for
-[asa_command](https://josh-v.com/blog/2019/06/20/ansible-asa-command.html) and
+[asa_command](https://josh-v.com/ansible-asa-command/) and
 change it to managing our object groups. Starting out it will look like this:
 
 ```yaml

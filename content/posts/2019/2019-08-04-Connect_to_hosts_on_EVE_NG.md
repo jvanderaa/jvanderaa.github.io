@@ -149,7 +149,7 @@ each device from your home network, you are able to do testing of various
 playbooks. Start with some simple show commands using the **ios_command** or the
 newer **cli_command** module. And then debug it. Head on over to the post my
 earlier post
-[Ansible - working with command output](https://josh-v.com/blog/2019/01/05/ansible-output-work.html)
+[Ansible - working with command output](https://josh-v.com/ansible-output-work/)
 for some samples on getting started with Cisco devices.  
 
 Hope this is something that is helpful for you at home already running EVE

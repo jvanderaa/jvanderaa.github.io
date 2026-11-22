@@ -31,8 +31,8 @@ end the post had quite a bit of good detail about the module. I think you will l
 
 > Previous Posts
 >
-> - [ios_interface](https://josh-v.com/blog/2019/03/17/ansible-cisco-ios-interface.html)
-> - [ios_vlan](https://josh-v.com/blog/2019/03/09/ansible-ios-vlan.html)
+> - [ios_interface](https://josh-v.com/ansible-cisco-ios-interface/)
+> - [ios_vlan](https://josh-v.com/ansible-ios-vlan/)
 
 ## Module Deprecations
 

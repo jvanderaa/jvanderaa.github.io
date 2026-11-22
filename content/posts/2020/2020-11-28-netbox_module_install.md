@@ -3,7 +3,7 @@ author: Josh VanDeraa
 date: 2020-11-28 07:00:00+00:00
 layout: single
 comments: true
-slug: collection_install
+slug: netbox-collection-install
 title: "NetBox Ansible Collection: Installation"
 collections:
   - netbox_ansible_collection
@@ -344,5 +344,5 @@ Overall the process for getting going with this collection is two steps, of inst
 
 ## Up Next
 
-- [Ansible Inventory](https://www.josh-v.com/netbox_ansible_collection/netbox-ansible-inventory_plugin/)
+- [Ansible Inventory](https://josh-v.com/netbox-ansible-inventory_plugin/)
 
