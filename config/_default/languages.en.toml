@@ -9,14 +9,14 @@ copyright = "Copyright © 2026 Josh VanDeraa. All rights reserved."
 [params]
   isoCode = "en"
   displayName = "EN"
-  description = "Network automation, networking, Python, and GoLang"
+  description = "Josh VanDeraa on network automation, Nautobot, network observability, and practical AI. Author of Open Source Network Management."
   rtl = false
   dateFormat = "2006-01-02"
 
 [params.author]
   name = "Josh VanDeraa"
   image = "2025_ai_headshot.png"
-  headline = "Network Automator"
+  headline = "Network automation, observability, and practical AI"
   bio = "Network engineer automating networks with code, and author of Open Source Network Management."
   links = [
     { linkedin = "https://linkedin.com/in/josh-vanderaa"},
