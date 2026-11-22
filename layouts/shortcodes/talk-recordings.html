@@ -1,0 +1,19 @@
+{{- /*
+  Talks that have a recording, from data/speaking_engagements.yml (or `path`).
+  Usage: {{< talk-recordings >}}
+*/ -}}
+{{- $items := index hugo.Data (.Get "path" | default "speaking_engagements") -}}
+<ul class="link-cards not-prose" role="list">
+  {{- range $items }}
+  {{- $talk := . }}
+  {{- range .links }}
+  {{- if in (lower .label) "recording" }}
+  <li class="link-card">
+    <a class="link-card__title" href="{{ .url }}" target="_blank" rel="noopener">{{ $talk.session | default $talk.event }}</a>
+    <span class="link-card__by">{{ $talk.event }}, {{ $talk.year }}</span>
+    <span class="link-card__host">Watch the recording</span>
+  </li>
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</ul>

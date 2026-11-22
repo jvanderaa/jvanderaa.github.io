@@ -1,0 +1,47 @@
+{{- /*
+  Grouped link cards from data/links.yml (or the data file named in `path`).
+  Usage:
+    {{< link-groups >}}                  all groups
+    {{< link-groups only="podcasts" >}}  one group, by id
+    {{< link-groups nav="true" >}}       just the jump nav for every group
+  Items with a `review` field still render; `review` is a cleanup note only.
+*/ -}}
+{{- $groups := index hugo.Data (.Get "path" | default "links") -}}
+{{- $only := .Get "only" -}}
+{{- if eq (.Get "nav") "true" }}
+<nav class="link-nav not-prose" aria-label="Link sections">
+  {{- range $groups }}
+  <a href="#{{ .id }}">{{ .title }}</a>
+  {{- end }}
+</nav>
+{{- else }}
+{{- range $groups }}
+{{- if or (not $only) (eq $only .id) }}
+<section class="link-group" aria-labelledby="{{ .id }}">
+  <h3 id="{{ .id }}">{{ .title }}</h3>
+  {{- with .intro }}{{ . | markdownify | safeHTML }}{{ end }}
+  <ul class="link-cards not-prose" role="list">
+    {{- range .items }}
+    <li class="link-card">
+      <a class="link-card__title" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+      {{- if or .by .social }}
+      <span class="link-card__by">
+        {{- with .by }}{{ . }}{{ end }}
+        {{- if and .by .social }} · {{ end }}
+        {{- with .social }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end -}}
+      </span>
+      {{- end }}
+      {{- with .note }}
+      <span class="link-card__note">{{ . | markdownify }}</span>
+      {{- end }}
+      <span class="link-card__host">{{ (urls.Parse .url).Host | replaceRE "^www\\." "" }}</span>
+    </li>
+    {{- end }}
+  </ul>
+  {{- with .note }}
+  <div class="link-group__note">{{ . | markdownify }}</div>
+  {{- end }}
+</section>
+{{- end }}
+{{- end }}
+{{- end }}
